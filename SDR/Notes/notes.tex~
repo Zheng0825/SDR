@@ -513,17 +513,5 @@ After it ran I was still having issues. I tried re-running it to just install
 	can be found at \href{https://www.youtube.com/watch?v=ZuNOD3XWp4A}{this location}.
 
 	He also discusses building a home made doppler system. Here is a presentation discussing this \href{http://static1.1.sqspcdn.com/static/f/679473/21303404/1355863220773/seeber-DirectionFinding.pdf?token=5JaIYIRnVDZKyXjyXksT%2B3xSZ8o%3D}{in more detail}.
-		\section{10-23-2015}
-		Today I started playing around with the Ettus Research E310. Im so excited to get to work with this
-		piece of cutting edge technology. I was able to start by connecting to the device over 
-		UART with the USB connector plugged into the "console" port. For Linux, this would probably work
-		out of the box. For windows you'll need \href{www.ftdichip.com/Products/ICs/FT230X.html}{The FT230X driver from FTDI}
-		We'll be using our noble terminal emulator Putty to help too. We need to get an x-server setup
-		on our computer so that we can view the GNU Radio GUI. To do that we'll use XMING. This can be
-		found \href{sourceforge.net/projects/xming}{on sourceforge}. Finally, we'll need to configure
-		Putty properly as shown \href{wiki.utdallas.edu/wiki/display/FAQ/X11+Forwarding+using+Xming+and+PuTTY}{here}. 
-		This let me acces GNU radio fine and I could see the window on my computer. If any of the links
-		are dead, just try googling some of the keywords. Nearly all of the links I used were just
-		the first or second result. 
 \end{document}
 	
