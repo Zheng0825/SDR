@@ -27,4 +27,23 @@ I need to install texlive-full and texmaker.
 Currently I am set back by needing to update ubuntu. I can't install
 anything else while the updates are installing. 
 
+So far I have made decent progress. The RTL is working with GNU SDR. I had trouble
+at first when the kernel was loading a separate driver that bogs it down. 
 
+I used this command to fix that problem:
+
+sudo rmmod dvb_usb_rtl28xxu rtl2823
+
+There are more permanent ways of fixing the problem but I wanted to start
+with this as it is non-permanent and will default back to normal on a restart. 
+
+The new file in the RTL-SDR will allow you to hear FM stations. But 
+they are extremely faint. I'm going to continue to play with the file settings to
+see if I can get a clearer transmission. 
+
+--7-2-2015--
+
+Spent last night installing Linux onto what I thought was a faster computer, 
+however my memory of the machine was incorrect. It was too slow to even open 
+most webpages. So I'm back to the other Linux machine. Hopefully tonight I will
+have time to try to get linux on my laptop. I remember I had issues before. 

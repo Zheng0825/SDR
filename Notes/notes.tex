@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\title{Notes on SDR}
+\date{2015-07-01}
+\author{J.D. McCormack}
+
+\begin{document}
+	\pagenumbering{gobble}
+	\maketitle
+	\newpage
+	\pagenumbering{arabic}
+	
+	\section{Introduction}
+
+	The following document will contain information related to my efforts in software defined radio.
+	From time to time, the document may include information on other topics as well. It will initially
+	serve as a day to day journal of my activites. After a certain discovery phase, this document will
+	be updated to create a manual or tutorial for future students to learn from. It is not recommended
+	that the document be used for self study until a newer version is created. Many of the steps 
+	that are outlined will be dead ends or poor practices while the disocvery process takes place. 
+
+	\newpage
+
+	\section{7-1-2015}
+
+	Currently working on using the RTL SDR. 
+
+	What I have learned so far: 
+		\begin{itemize}
+			\item This SDR is different than a FUNCUBE dongle
+			\item It will work from around 500 Hz to 1700 Hz
+			\item It can only RECIEVE 
+		\end{itemize}
+	The fact that this can only recieve is by far the largest setback.
+	This will ultimately not be what we can use for cognitive radio. 
+
+	However, the tutorials still seem more widely available than those
+	found for the BladeRF which is bi-directional. Therefore I will
+	continue for a bit. It may serve a purpose as part of the larger 
+	sensor network at some point. We could still use it to relay information
+	over a large distance. 
+
+	There are "Cubelites" being sent out that are basically funcube dongle
+	based satellites. These sound pretty cool. 
+
+	I want to start taking notes in Latex so they will be more readable than
+	a plain .txt file and still useable with version control. 
+
+	I need to install texlive-full and texmaker. 
+
+	Currently I am set back by needing to update ubuntu. I can't install
+	anything else while the updates are installing. 
+	
+\end{document}
