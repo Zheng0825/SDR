@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\newcommand{\shellcmd}[1]{\indent\indent\texttt{\footnotesize\# #1}\\}
+
 \title{Notes on SDR}
 \date{2015-07-01}
 \author{J.D. McCormack}
@@ -51,7 +53,7 @@
 	Currently I am set back by needing to update ubuntu. I can't install
 	anything else while the updates are installing. 
 	
-	/paragraph{Success}
+	\paragraph{Success}
 		
 		
 	So far I have made decent progress. The RTL is working with GNU SDR. I had trouble
@@ -59,7 +61,7 @@
 
 	I used this command to fix that problem:
 
-	sudo rmmod dvb_usb_rtl28xxu rtl2823
+	\shellcmd{sudo rmmod dvb\_usb\_rtl28xxu rtl2823}
 
 	There are more permanent ways of fixing the problem but I wanted to start
 	with this as it is non-permanent and will default back to normal on a restart. 
@@ -67,8 +69,8 @@
 	The new file in the RTL-SDR will allow you to hear FM stations. But 
 	they are extremely faint. I'm going to continue to play with the file settings to
 	see if I can get a clearer transmission. 
-
-	\Section{7-2-2015}
+	\newpage
+	\section{7-2-2015}
 
 	I began the day with a quick interlude into learning LaTex. After about an hour
 	and a half of studying I was able to produce the document you are currently reading.
