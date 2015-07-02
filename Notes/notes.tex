@@ -51,4 +51,44 @@
 	Currently I am set back by needing to update ubuntu. I can't install
 	anything else while the updates are installing. 
 	
+	/paragraph{Success}
+		
+		
+	So far I have made decent progress. The RTL is working with GNU SDR. I had trouble
+	at first when the kernel was loading a separate driver that bogs it down. 
+
+	I used this command to fix that problem:
+
+	sudo rmmod dvb_usb_rtl28xxu rtl2823
+
+	There are more permanent ways of fixing the problem but I wanted to start
+	with this as it is non-permanent and will default back to normal on a restart. 
+
+	The new file in the RTL-SDR will allow you to hear FM stations. But 
+	they are extremely faint. I'm going to continue to play with the file settings to
+	see if I can get a clearer transmission. 
+
+	\Section{7-2-2015}
+
+	I began the day with a quick interlude into learning LaTex. After about an hour
+	and a half of studying I was able to produce the document you are currently reading.
+	I'm not making use of many libraries but I believe it already seems more 
+	organized and official than my traditional notes. Also, it is much more portable
+	than a normal word document and less prone to formating failures seen in google docs. 
+	
+	Yesterday I got the SDR to recieve FM stations. However, they were staticy and sounded
+	slowed down. I'm not sure if this is an error in my demodulation values or just that
+	the computer that I'm using is too slow. I tried using a different one but that ended 
+	up being slower than I remembered. I will try to get linux installed on my laptop later
+	tonight when I'm done working, but I'm not confident it will work as I had trouble in the past. 
+
+	Today I will try to replicate the results I had yesterday, but through the use of the python
+	libraries instead of relying on the GNURadio GUI interface. A small note about the gui interface.
+	I did learn that its possible to make variables, attach them to GUI widgets, and then alter then live. 
+	It appears that having more than 3 of these can severely impact performace. To use the GUI widgets,
+	simple drag one onto your workspace (I used the Wx widgets) and then give it a unique name, and 
+	appropriate value range (if its a slider). Then in the blocks for different components, you can use 
+	these variable names instead of hardcoded values. This is useful for gains and frequencies. 
+
+	
 \end{document}
