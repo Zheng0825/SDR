@@ -1,6 +1,9 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
 \newcommand{\shellcmd}[1]{\indent\indent\texttt{\footnotesize\# #1}\\}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[margin=0.5in]{geometry}
 
 \title{Notes on SDR}
 \date{2015-07-01}
@@ -92,5 +95,10 @@
 	appropriate value range (if its a slider). Then in the blocks for different components, you can use 
 	these variable names instead of hardcoded values. This is useful for gains and frequencies. 
 
-	
+	/paragraph{GNURadio in Python}
+
+	I will be following the tutorial found \href{http://gnuradio.org/redmine/projects/gnuradio/wiki/TutorialsWritePythonApplications}{here}. I will begin with the dial tone generator.
+	\lstset{tabsize=2, caption=dial\_tone.py,}
+	\lstinputlisting[language=Python]{../RTL-SDR/dial_tone.py}
+		
 \end{document}
