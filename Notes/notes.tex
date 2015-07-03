@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass{article}
 
 \newcommand{\shellcmd}[1]{\indent\indent\texttt{\footnotesize\# #1}\\}
 \usepackage{hyperref}
@@ -100,5 +100,21 @@
 	I will be following the tutorial found \href{http://gnuradio.org/redmine/projects/gnuradio/wiki/TutorialsWritePythonApplications}{here}. I will begin with the dial tone generator.
 	\lstset{tabsize=2, caption=dial\_tone.py,}
 	\lstinputlisting[language=Python]{../RTL-SDR/dial_tone.py}
-		
+
+	\paragraph{Static}
+	I'm still only getting static when I run the RTL-SDR. I was able to use the GNURadio toolchain from just python
+	no problem, however I still need to implent the RTL-SDR from the python toolchain. I used an additional
+	tool put out by osmocom but that did not product better results. Automatic gain was on, so its possible I need 
+	to manually set the gain, but I am not sure. It could also be the poor quality of the antenna. the command was:
+	\shellcmd{rtl\_fm -f 96.3e6 -M wbfm -s 200000 -r 48000 - | aplay -r 48k -f S16\_LE}
+
+	aplay is a command line utility for playing audio. I had to run that separately as piping the data did not seem to work. I got 	      this command from \href{http://sdr.osmocom.org/trac/wiki/rtl-sdr}{osmocom's website}		
+
+	\newpage
+	\section{07-03-2015}
+	
+	I will not have much time to work today due to the holiday weekend. I will try to get Linux installed on 
+	my laptop in my free time. Either tomorrow or next week I will try to find a python example using the RTL-SDR
+	driver. After that, I may switch gears back to the BladeRF. 
 \end{document}
+
