@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\newcommand{\shellcmd}[1]{\indent\indent\texttt{\footnotesize\# #1}\\}
+\newcommand{\shellcmd}[1]{\\\\\indent\indent\texttt{\footnotesize\# #1}\\}
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage[margin=0.5in]{geometry}
@@ -63,7 +63,6 @@
 	at first when the kernel was loading a separate driver that bogs it down. 
 
 	I used this command to fix that problem:
-
 	\shellcmd{sudo rmmod dvb\_usb\_rtl28xxu rtl2823}
 
 	There are more permanent ways of fixing the problem but I wanted to start
