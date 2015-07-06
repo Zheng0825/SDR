@@ -110,19 +110,33 @@
 
 	aplay is a command line utility for playing audio. I had to run that separately as piping the data did not seem to work. I got 	      this command from \href{http://sdr.osmocom.org/trac/wiki/rtl-sdr}{osmocom's website}		
 
-	\newpage
 	\section{07-03-2015}
 	
 	I will not have much time to work today due to the holiday weekend. I will try to get Linux installed on 
 	my laptop in my free time. Either tomorrow or next week I will try to find a python example using the RTL-SDR
 	driver. After that, I may switch gears back to the BladeRF. 
 	
-	\newpage
 	\section{07-04-2015}
 	Happy 4th of July! No progress will be made today as I'll be busy all day. 
 
-	\newpage
 	\section{07-05-2015}
 	Didn't get a chance to work today either. Family event. Will continue progress tomorrow. 
+
+	\newpage
+	\section{07-06-2015}
+	Back to work today. I was attempting to install a program called Gqrx. Using the instructions from their github
+	I added a repository and installed just the gqrx program. However, this created a massive conflict in my repositories. I 
+	uninstalled and figured I would just go back to working on the FM model to see if I could be sure its working right. However,
+	installing that package messed up my installation of gnu radio. So now I must uninstall and reinstall evertyhing. At the time, I was following this tutorial \href{https://github.com/mossmann/hackrf/wiki/Installing-gnuradio-on-Ubuntu-14.04-with-the-packaging-manager}{On Gqrx}. I found a person with a similar problem to mine \href{https://github.com/kpreid/shinysdr/issues/12}{here}. 
+	There are instructions below on how to reinstall everything. I will be trying that next and will hopefully get back to where
+	I was. It may also be time to start learning more about virtuan environments or just how to reimage a computer quickly.	 
+
+	Currently trying to use the following command to reset the broken packages. This is taking a long time so I will have to wait
+	for it to finish in order to continue reinstalling gnuradio. The command is:
+	\shellcmd{sudo apt-get dist-upgrade}	
+	This did not end up working. Next I tried using aptitude, which as I have read, will work to fix these broken dependencies and
+	packages. The command for that is:
+	\shellcmd{sudo aptitude install <packagename>}
+
 \end{document}
 
