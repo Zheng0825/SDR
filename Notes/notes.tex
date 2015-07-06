@@ -137,6 +137,18 @@
 	This did not end up working. Next I tried using aptitude, which as I have read, will work to fix these broken dependencies and
 	packages. The command for that is:
 	\shellcmd{sudo aptitude install <packagename>}
+	Still trying to get everything installed and working. The repository made GNURadio work again, but I lost the Osmocom
+	packages. Still trying. I have been following the instructions direct from osmocom but I'm getting errors related to
+	"Gruel" when I try to use cmake. 
+	\paragraph{Success}
+	Finally remembered that the instructables I was using previously had the commands listed (although for arch). The three
+	necessary components can be installed by using:
+	\shellcmd{sudo apt-get install gnuradio}
+	\shellcmd{sudo apt-get install rtl-sdr}
+	\shellcmd{sudo apt-get install gr-osmosdr}
+	As a note, the instructable used arch linux and the final package was installed as gr-osmosdr-git. Debian/Fedora/Arch users
+	may need to use this form of the package instead of gr-osmosdr. 
 
+	
 \end{document}
 
