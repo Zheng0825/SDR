@@ -1,6 +1,6 @@
 \documentclass{article}
 
-\newcommand{\shellcmd}[1]{\\\\\indent\indent\texttt{\footnotesize\# #1}\\}
+\newcommand{\shellcmd}[1]{\\\indent\indent\texttt{\footnotesize\# #1}\\}
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage[margin=0.5in]{geometry}
@@ -131,20 +131,15 @@
 	I was. It may also be time to start learning more about virtuan environments or just how to reimage a computer quickly.	 
 
 	Currently trying to use the following command to reset the broken packages. This is taking a long time so I will have to wait
-	for it to finish in order to continue reinstalling gnuradio. The command is:
-	\shellcmd{sudo apt-get dist-upgrade}	
+	for it to finish in order to continue reinstalling gnuradio. The command is:\shellcmd{sudo apt-get dist-upgrade}	
 	This did not end up working. Next I tried using aptitude, which as I have read, will work to fix these broken dependencies and
-	packages. The command for that is:
-	\shellcmd{sudo aptitude install <packagename>}
+	packages. The command for that is: \shellcmd{sudo aptitude install <packagename>}
 	Still trying to get everything installed and working. The repository made GNURadio work again, but I lost the Osmocom
 	packages. Still trying. I have been following the instructions direct from osmocom but I'm getting errors related to
 	"Gruel" when I try to use cmake. 
 	\paragraph{Success}
 	Finally remembered that the instructables I was using previously had the commands listed (although for arch). The three
-	necessary components can be installed by using:
-	\shellcmd{sudo apt-get install gnuradio}
-	\shellcmd{sudo apt-get install rtl-sdr}
-	\shellcmd{sudo apt-get install gr-osmosdr}
+	necessary components can be installed by using:\shellcmd{sudo apt-get install gnuradio}\shellcmd{sudo apt-get install rtl-sdr}\shellcmd{sudo apt-get install gr-osmosdr}
 	As a note, the instructable used arch linux and the final package was installed as gr-osmosdr-git. Debian/Fedora/Arch users
 	may need to use this form of the package instead of gr-osmosdr. Another github was found \href{https://github.com/csete/gnuradio-grc-examples}{here} with plenty of examples. They may be out of date as the AM example did not compile correctly. Another useful site was \href{https://tapiovalli.wordpress.com/2014/08/02/rtl-sdr-gnu-radio-and-building-my-own-am-receiver/}{found here} this site had
 	a single example, but it seemed to be working. I'm going to try to test to see if I can use my CB radio with this. I 
@@ -170,5 +165,59 @@
 		\item http://greatscottgadgets.com/sdr/
 	\end{itemize}
 	
+	\newpage
+	\section{07-07-2015}
+	Today I will be taking a look at the bladeRF SDR. The first problem that comes up is it appears I forgot to bring 
+	a compatible antenna with me. I have to double check all my stuff to be sure, but due to the typically large size of
+	these antennas I think it is likely that they got left behind. 
+	Anyway, despite not having an antenna I'm going to push on anyway and then see what I have lying around. I should be able
+	to order something on Amazon fairly quickly if needed anyway. Nuand is nice enough to have a fairly detailed set of
+	documents on their github account. It also looks like these may have been updated since the last time I went through this
+	process. The github account is found \href{https://github.com/nuand/bladeRF/wiki#Getting\_Started}{here}. I also just saw on
+	this webpage that there is now matlab support for the bladeRF on windows. I'm not sure if this was always a feature 
+	or if this is indeed new to the program. Eitherway it is something to be aware of. It has support for Simulink too. 
+	
+	Following the tutorial, the first step is to add the appriproate repository so we can download the files. There is a 
+	snapshot section that allows you to get the most up to date releases but these are usually far from stable. The commands
+	used are. 
+	\subsection{Install BladeRF}
+	The commands are:
+	\shellcmd{sudo apt-get-repository ppa:bladerf/bladerf}
+	\shellcmd{sudo apt-get update}
+	\shellcmd{sudo apt-get install bladerf}
+
+	Of course I immediately get an error saying "you have held broken packages." I should probably do more research into how
+	to avoid this scenario, as it seems to come up quite a lot in working with GNURadio. This could be related to using the
+	other PPA from before. I'm going to try to use aptitude to install this and see if that helps. Aptitude seems to be able
+	to solve the problem, however it will be removing:
+	\begin{itemize}
+		\item gr-osmosdr (which I know I need)
+		\item libbladerf0
+		\item libgnuradio-osmosdr0.0
+	\end{itemize} 
+	So I know that all three of these libraries are needed to run the blade and all but the libbladerf0 are needed to also
+	run the RTL-SDR. I'll give it a shot and see what happens, I can always reinstall from the repository (I Hope). After running 		\shellcmd{sudo aptitude install bladerf} and accepting their suggestions it seems to have installed properly. I also ran:
+	\shellcmd {sudo apt-get install libbladerf-dev} but it seemed to have already been installed. Now we can install the 
+	updated FPGA drivers. 
+	\subsection{Download new firmware}
+	The commands are:
+	\shellcmd{sudo apt-get install bladerf-firmware-fx3}
+	\shellcmd{sudo apt-get install bladerf-fpga-hostedx40}
+	\shellcmd{sudo apt-get install bladerf-fpga-hostedx115} 
+	It's worth noting that we have the x40 not the x115 so we only need to install the x40. 
+	\subsection{Reinstall GNURadio}
+	The next step seems to indicate that
+	I should build the gnuradio from sources and not use the version found in the repository. Luckily, BladeRF links to a 
+	download script that pretty much puts cruise control on. Hopefully you have luck too. Here are the commands. 
+	\shellcmd{mkdir -p ~/software/gnuradio-build}
+	\shellcmd{cd ~/software/gnuradio-build}
+	\shellcmd{wget http://www.sbrac.org/files/build-gnuradio}
+	\shellcmd{chmod +x ./build-gnuradio}
+	\shellcmd{./build-gnuradio -m prereqs gitfetch}
+
+	It took about 15-20 minutes to finish but everything downloaded successfully. Afterwards its necessary to actually build
+	the downloaded programs. I followed the steps outlined to build GNURadio and the program halts halfway through with a 
+	cryptic error message. Hopefully I can diagnose the problem because it took roughly an hour to get that far.  
+	 	
 \end{document}
 
