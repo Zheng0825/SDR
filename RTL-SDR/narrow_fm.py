@@ -2,7 +2,7 @@
 ##################################################
 # Gnuradio Python Flow Graph
 # Title: Narrow Fm
-# Generated: Wed Jul  1 15:08:21 2015
+# Generated: Mon Jul  6 17:05:19 2015
 ##################################################
 
 from gnuradio import analog
@@ -31,11 +31,11 @@ class narrow_fm(grc_wxgui.top_block_gui):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 1200000
+        self.samp_rate = samp_rate = 1400000
         self.corr = corr = 0
-        self.Gain2 = Gain2 = 25
-        self.Gain1 = Gain1 = 25
-        self.Freq = Freq = 1079e5
+        self.Gain2 = Gain2 = 40
+        self.Gain1 = Gain1 = 40
+        self.Freq = Freq = 108e6
 
         ##################################################
         # Blocks
@@ -126,7 +126,7 @@ class narrow_fm(grc_wxgui.top_block_gui):
         	callback=self.set_Freq,
         	minimum=80e6,
         	maximum=115e6,
-        	num_steps=1000,
+        	num_steps=100,
         	style=wx.SL_HORIZONTAL,
         	cast=float,
         	proportion=1,
@@ -150,28 +150,28 @@ class narrow_fm(grc_wxgui.top_block_gui):
         self.Add(self.wxgui_fftsink2_0.win)
         self.rational_resampler_xxx_0 = filter.rational_resampler_fff(
                 interpolation=48,
-                decimation=500,
+                decimation=240,
                 taps=None,
                 fractional_bw=None,
         )
         self.osmosdr_source_0 = osmosdr.source( args="numchan=" + str(1) + " " + "" )
-        self.osmosdr_source_0.set_sample_rate(2e6)
+        self.osmosdr_source_0.set_sample_rate(samp_rate)
         self.osmosdr_source_0.set_center_freq(Freq, 0)
         self.osmosdr_source_0.set_freq_corr(corr, 0)
-        self.osmosdr_source_0.set_dc_offset_mode(2, 0)
-        self.osmosdr_source_0.set_iq_balance_mode(2, 0)
-        self.osmosdr_source_0.set_gain_mode(1, 0)
+        self.osmosdr_source_0.set_dc_offset_mode(0, 0)
+        self.osmosdr_source_0.set_iq_balance_mode(0, 0)
+        self.osmosdr_source_0.set_gain_mode(0, 0)
         self.osmosdr_source_0.set_gain(Gain1, 0)
         self.osmosdr_source_0.set_if_gain(Gain2, 0)
         self.osmosdr_source_0.set_bb_gain(20, 0)
         self.osmosdr_source_0.set_antenna("", 0)
         self.osmosdr_source_0.set_bandwidth(0, 0)
           
-        self.low_pass_filter_0 = filter.fir_filter_ccf(int(samp_rate/500e3), firdes.low_pass(
-        	1, samp_rate, 100e3, 1e6, firdes.WIN_HAMMING, 6.76))
+        self.low_pass_filter_0 = filter.fir_filter_ccf(5, firdes.low_pass(
+        	1, samp_rate, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
         self.audio_sink_0 = audio.sink(48000, "", True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
-        	quad_rate=500e3,
+        	quad_rate=240e3,
         	audio_decimation=1,
         )
 
@@ -192,8 +192,9 @@ class narrow_fm(grc_wxgui.top_block_gui):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate, 100e3, 1e6, firdes.WIN_HAMMING, 6.76))
         self.wxgui_fftsink2_0.set_sample_rate(self.samp_rate / 25)
+        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
+        self.osmosdr_source_0.set_sample_rate(self.samp_rate)
 
     def get_corr(self):
         return self.corr
@@ -227,10 +228,10 @@ class narrow_fm(grc_wxgui.top_block_gui):
 
     def set_Freq(self, Freq):
         self.Freq = Freq
-        self.osmosdr_source_0.set_center_freq(self.Freq, 0)
-        self.wxgui_fftsink2_0.set_baseband_freq(self.Freq)
         self._Freq_slider.set_value(self.Freq)
         self._Freq_text_box.set_value(self.Freq)
+        self.wxgui_fftsink2_0.set_baseband_freq(self.Freq)
+        self.osmosdr_source_0.set_center_freq(self.Freq, 0)
 
 if __name__ == '__main__':
     import ctypes
