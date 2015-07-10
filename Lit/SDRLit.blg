@@ -1,47 +1,56 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: SDRLit.aux
-I found no \bibdata command---while reading file SDRLit.aux
-I found no \bibstyle command---while reading file SDRLit.aux
-You've used 2 entries,
-            0 wiz_defined-function locations,
-            85 strings with 500 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: SDRLit.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+You've used 12 entries,
+            4039 wiz_defined-function locations,
+            878 strings with 10225 characters,
+and the built_in function-call counts, 9956 in all, are:
+= -- 705
+> -- 267
+< -- 68
++ -- 144
+- -- 50
+* -- 491
+:= -- 1378
+add.period$ -- 24
+call.type$ -- 12
+change.case$ -- 12
+chr.to.int$ -- 168
+cite$ -- 12
+duplicate$ -- 727
+empty$ -- 931
+format.name$ -- 61
+if$ -- 2359
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
+int.to.str$ -- 12
+missing$ -- 146
+newline$ -- 59
+num.names$ -- 12
+pop$ -- 389
+preamble$ -- 1
 purify$ -- 0
-quote$ -- 0
-skip$ -- 0
+quote$ -- 2
+skip$ -- 746
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 404
+swap$ -- 555
+text.length$ -- 12
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
+top$ -- 5
+type$ -- 12
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+while$ -- 48
+width$ -- 14
+write$ -- 130
