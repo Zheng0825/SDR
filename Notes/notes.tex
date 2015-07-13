@@ -254,6 +254,32 @@
 	\section{07-12-15}
 	Today I will be converting the Latex notes into an excel spreadsheet for sharing. I may not have much time to work
 	today or tomorrow but I will put full days on Tuesday and Wednesday. 
+
+	\section{07-13-15}
+	I'm going to try to make some more progress on the SDR today. I realized I may be more limited by this computer
+	than I thought. It only has USB 2.0's at best and that could be throttling it too much as this is a USB3.0 boad.
+	Regardless, I'll keep trying to build GNURadio for it to at least get the correct way to set that up. 
+
+	First run: \shellcmd{git clone https://github.com/Nuand/bladeRF.git}
+	
+	From there I followed the directions found on their github account 
+	\href{https://github.com/Nuand/bladeRF}{here}. In step four I switched to the directions
+	\href{https://github.com/Nuand/bladeRF/tree/master/host}{here} and was able to build the software without errors.
+	You can check to make sure it worked by running \shellcmd{bladeRF-cli -e info -e version} or
+	\shellcmd{bladeRF-cli -p} So now again I was back to the point where I needed to build GNURadio. I also need to
+	load the drivers to allow for the expansion board, but one step at a time. 
+
+	Here I would like to point out that it is possible to just use a live CD to run all of this without having
+	to configure anything. However, the live CD does not come with the ability to install itself. I'm not sure
+	what their thought process was for that, maybe to keep everything fresh and up to date, but it is a huge inconvience. 
+	If all else fails, the live CD combined with github would allow you to rebuild the environment pretty quickly each time.
+	There is also direct support for bladeRF in Pentoo, a penetration testing varient of Gentoo. I can try this route if all
+	else fails. 
+
+	I am currently Running PyBombs again to try to get GNURadio to install. Hopefully it works this time, but it is
+	unlikely that it will. 	
+	
+	
 \end{document}
 
 
