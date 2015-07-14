@@ -294,6 +294,27 @@
 	\shellcmd{:~/software/BladeRF/bladeRF/build/pybombs\$ ./pybombs env}
 	\shellcmd{~/software/BladeRF/bladeRF/build/target\$ source setup\_env.sh }
 	\shellcmd{~/software/BladeRF/bladeRF/build/target\$ gnuradio-companion} 
+
+	After installing a few other modules and running an old test program, I can confirm that it is back up and running
+	with the RTL-SDR. Now I am beginning the test with the BladeRF. One problem with the BladeRF is in order to easily
+	test a signal I will have to use the transverter board. This is mostly because FM/CB Radio channels are below
+	the normal operating range of the board. To activate the transverter board use the command:
+	\shellcmd{bladerf-cli -i}
+	\shellcmd{xb 200 enable 200} 
+	Note the spaces in the command. The first command is just used to bring up the interactive inteface. This command was
+	listed wrong on the wiki page, so I submitted a request to edit it accordingly. 
+
+	A book to be aware of can be found 
+	\href{http://people.scs.carleton.ca/~barbeau/SDRCRBook/index.shtml}{here}. This book's link was also incorrect
+	so I fixed that on the wiki as well. 
+	
+	The biggest issue now is trying to remove the DC offset. Everytime I open the radio in the GNU Radio Companion there is a
+	large spike in the center, and no audio is heard. Currently, my computer keeping freezing whenever I try to run
+	anything using the BladeRF, I believe this may have to do with the limitations of this computer. I will begin trying to
+	get Ubuntu running on my laptop tonight. First I have to clear off a lot of space on the harddrive. It may
+	also have to do with the fact that I am using USB 2.0 ports on this computer. If thats the case, chaning to my laptop
+	will not fix the problem.
+	
 \end{document}
 
 
