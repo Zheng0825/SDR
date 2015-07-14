@@ -279,7 +279,21 @@
 	I am currently Running PyBombs again to try to get GNURadio to install. Hopefully it works this time, but it is
 	unlikely that it will. 	
 	
+	\section{07-14-15}
+	I don't want to speak too soon but it looks like GNURadio may have installed. I need to make a note of the following:
+	\shellcmd{ \$prefix = ~/software/BladeRF/bladeRF/build/target}
+
+	I had been running the following without the sudo command, adding sudo seemed to work. I'm not sure why I didn't see
+	a clearer error before:
+	\shellcmd{ sudo ./pybombs install gnuradio }
 	
+	For reference. Pybombs is located here:
+	\shellcmd{~/software/BladeRF/bladeRF/build/pybombs}
+
+	The steps to open GNURadio were:
+	\shellcmd{:~/software/BladeRF/bladeRF/build/pybombs\$ ./pybombs env}
+	\shellcmd{~/software/BladeRF/bladeRF/build/target\$ source setup\_env.sh }
+	\shellcmd{~/software/BladeRF/bladeRF/build/target\$ gnuradio-companion} 
 \end{document}
 
 
