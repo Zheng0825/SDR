@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='ASCII'?>
 <flow_graph>
-  <timestamp>Wed Jul  1 15:08:18 2015</timestamp>
+  <timestamp>Wed Jul 29 09:38:13 2015</timestamp>
   <block>
     <key>options</key>
     <param>
@@ -72,66 +72,11 @@
     </param>
     <param>
       <key>value</key>
-      <value>1200000</value>
+      <value>2000000</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(10, 170)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_slider</key>
-    <param>
-      <key>id</key>
-      <value>corr</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>min</key>
-      <value>-100</value>
-    </param>
-    <param>
-      <key>max</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>num_steps</key>
-      <value>200</value>
-    </param>
-    <param>
-      <key>style</key>
-      <value>wx.SL_HORIZONTAL</value>
-    </param>
-    <param>
-      <key>converver</key>
-      <value>float_converter</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(15, 253)</value>
+      <value>(215, 289)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -206,45 +151,6 @@
     </param>
   </block>
   <block>
-    <key>analog_wfm_rcv</key>
-    <param>
-      <key>id</key>
-      <value>analog_wfm_rcv_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>quad_rate</key>
-      <value>500e3</value>
-    </param>
-    <param>
-      <key>audio_decimation</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(855, 500)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>audio_sink</key>
     <param>
       <key>id</key>
@@ -284,124 +190,14 @@
     </param>
   </block>
   <block>
-    <key>variable_slider</key>
-    <param>
-      <key>id</key>
-      <value>Gain2</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>25</value>
-    </param>
-    <param>
-      <key>min</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>max</key>
-      <value>50</value>
-    </param>
-    <param>
-      <key>num_steps</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>style</key>
-      <value>wx.SL_HORIZONTAL</value>
-    </param>
-    <param>
-      <key>converver</key>
-      <value>float_converter</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(609, 529)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_slider</key>
-    <param>
-      <key>id</key>
-      <value>Gain1</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value></value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>25</value>
-    </param>
-    <param>
-      <key>min</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>max</key>
-      <value>50</value>
-    </param>
-    <param>
-      <key>num_steps</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>style</key>
-      <value>wx.SL_HORIZONTAL</value>
-    </param>
-    <param>
-      <key>converver</key>
-      <value>float_converter</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(402, 521)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>wxgui_fftsink2</key>
     <param>
       <key>id</key>
-      <value>wxgui_fftsink2_1</value>
+      <value>wxgui_fftsink2_0</value>
     </param>
     <param>
       <key>_enabled</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>type</key>
@@ -413,11 +209,11 @@
     </param>
     <param>
       <key>samp_rate</key>
-      <value>samp_rate</value>
+      <value>samp_rate / 25</value>
     </param>
     <param>
       <key>baseband_freq</key>
-      <value>Freq - 100000</value>
+      <value>Freq</value>
     </param>
     <param>
       <key>y_per_div</key>
@@ -481,7 +277,152 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(579, 49)</value>
+      <value>(856, 135)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>rational_resampler_xxx</key>
+    <param>
+      <key>id</key>
+      <value>rational_resampler_xxx_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>fff</value>
+    </param>
+    <param>
+      <key>interp</key>
+      <value>48</value>
+    </param>
+    <param>
+      <key>decim</key>
+      <value>500</value>
+    </param>
+    <param>
+      <key>taps</key>
+      <value></value>
+    </param>
+    <param>
+      <key>fbw</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(863, 597)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_slider</key>
+    <param>
+      <key>id</key>
+      <value>corr</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>min</key>
+      <value>-100</value>
+    </param>
+    <param>
+      <key>max</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>num_steps</key>
+      <value>200</value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>wx.SL_HORIZONTAL</value>
+    </param>
+    <param>
+      <key>converver</key>
+      <value>float_converter</value>
+    </param>
+    <param>
+      <key>grid_pos</key>
+      <value></value>
+    </param>
+    <param>
+      <key>notebook</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(288, 522)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>analog_wfm_rcv</key>
+    <param>
+      <key>id</key>
+      <value>analog_wfm_rcv_0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>quad_rate</key>
+      <value>500e3</value>
+    </param>
+    <param>
+      <key>audio_decimation</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(856, 492)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -512,7 +453,7 @@
     </param>
     <param>
       <key>sample_rate</key>
-      <value>2e6</value>
+      <value>samp_rate</value>
     </param>
     <param>
       <key>freq0</key>
@@ -536,11 +477,11 @@
     </param>
     <param>
       <key>gain0</key>
-      <value>Gain1</value>
+      <value>50</value>
     </param>
     <param>
       <key>if_gain0</key>
-      <value>Gain2</value>
+      <value>50</value>
     </param>
     <param>
       <key>bb_gain0</key>
@@ -736,152 +677,6 @@
     </param>
   </block>
   <block>
-    <key>wxgui_fftsink2</key>
-    <param>
-      <key>id</key>
-      <value>wxgui_fftsink2_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>FFT Plot</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate / 25</value>
-    </param>
-    <param>
-      <key>baseband_freq</key>
-      <value>Freq</value>
-    </param>
-    <param>
-      <key>y_per_div</key>
-      <value>10</value>
-    </param>
-    <param>
-      <key>y_divs</key>
-      <value>10</value>
-    </param>
-    <param>
-      <key>ref_level</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>ref_scale</key>
-      <value>2.0</value>
-    </param>
-    <param>
-      <key>fft_size</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>fft_rate</key>
-      <value>15</value>
-    </param>
-    <param>
-      <key>peak_hold</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>average</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>avg_alpha</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>win</key>
-      <value>None</value>
-    </param>
-    <param>
-      <key>win_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>freqvar</key>
-      <value>None</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(856, 135)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>rational_resampler_xxx</key>
-    <param>
-      <key>id</key>
-      <value>rational_resampler_xxx_0</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>fff</value>
-    </param>
-    <param>
-      <key>interp</key>
-      <value>48</value>
-    </param>
-    <param>
-      <key>decim</key>
-      <value>500</value>
-    </param>
-    <param>
-      <key>taps</key>
-      <value></value>
-    </param>
-    <param>
-      <key>fbw</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(863, 597)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
     <key>variable_slider</key>
     <param>
       <key>id</key>
@@ -897,7 +692,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>1079e5</value>
+      <value>107.9e6</value>
     </param>
     <param>
       <key>min</key>
@@ -963,12 +758,6 @@
   <connection>
     <source_block_id>osmosdr_source_0</source_block_id>
     <sink_block_id>low_pass_filter_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>osmosdr_source_0</source_block_id>
-    <sink_block_id>wxgui_fftsink2_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

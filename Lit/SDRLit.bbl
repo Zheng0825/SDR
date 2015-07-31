@@ -100,7 +100,7 @@ A.~Arcia-Moret, E.~Pietrosemoli, and M.~Zennaro, ``Whisppi: White space
   Symposium, 2013}, Oct 2013, pp. 1--6.
 
 \bibitem{6826076}
-P.~Sutton and L.~Doyle, ``The gamification of dynamic spectrum access amp;
+P.~Sutton and L.~Doyle, ``The gamification of dynamic spectrum access and
   cognitive radio,'' in \emph{Global Engineering Education Conference (EDUCON),
   2014 IEEE}, April 2014, pp. 107--113.
 
@@ -129,5 +129,27 @@ Y.~Ding and L.~Xiao, ``Video on-demand streaming in cognitive wireless mesh
 Y.~Xu, D.~Hu, and S.~Mao, ``Relay-assisted multiuser video streaming in
   cognitive radio networks,'' \emph{Circuits and Systems for Video Technology,
   IEEE Transactions on}, vol.~24, no.~10, pp. 1758--1770, Oct 2014.
+
+\bibitem{5457842}
+J.~Sydor, A.~Ghasemi, S.~Palaninathan, and W.~Wong, ``Cognitive, radio-aware,
+  low-cost (coral) research platform,'' in \emph{New Frontiers in Dynamic
+  Spectrum, 2010 IEEE Symposium on}, April 2010, pp. 1--2.
+
+\bibitem{6654982}
+A.~Saeed, M.~Ibrahim, K.~Harras, and M.~Youssef, ``A low-cost large-scale
+  framework for cognitive radio routing protocols testing,'' in
+  \emph{Communications (ICC), 2013 IEEE International Conference on}, June
+  2013, pp. 2900--2904.
+
+\bibitem{6127507}
+H.-C. Chen, H.~Kung, D.~Vlah, D.~Hague, M.~Muccio, and B.~Poland,
+  ``Collaborative compressive spectrum sensing in a uav environment,'' in
+  \emph{MILITARY COMMUNICATIONS CONFERENCE, 2011 - MILCOM 2011}, Nov 2011, pp.
+  142--148.
+
+\bibitem{7124942}
+P.~Kumar, S.~Malarvizhi, and M.~Hariprasath, ``Low cost reception scheme for
+  mimo cognitive radio,'' in \emph{Electronics and Communication Systems
+  (ICECS), 2015 2nd International Conference on}, Feb 2015, pp. 43--46.
 
 \end{thebibliography}
