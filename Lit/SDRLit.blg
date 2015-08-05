@@ -13,44 +13,44 @@ Database file #1: SDRLit.bib
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 23 entries,
+You've used 33 entries,
             4039 wiz_defined-function locations,
-            936 strings with 12203 characters,
-and the built_in function-call counts, 19427 in all, are:
-= -- 1425
-> -- 490
-< -- 151
-+ -- 273
-- -- 86
-* -- 945
-:= -- 2675
-add.period$ -- 46
-call.type$ -- 23
-change.case$ -- 23
-chr.to.int$ -- 372
-cite$ -- 23
-duplicate$ -- 1409
-empty$ -- 1771
-format.name$ -- 108
-if$ -- 4621
+            985 strings with 14010 characters,
+and the built_in function-call counts, 28250 in all, are:
+= -- 2092
+> -- 686
+< -- 234
++ -- 388
+- -- 115
+* -- 1362
+:= -- 3864
+add.period$ -- 66
+call.type$ -- 33
+change.case$ -- 33
+chr.to.int$ -- 585
+cite$ -- 33
+duplicate$ -- 2034
+empty$ -- 2562
+format.name$ -- 146
+if$ -- 6738
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 268
-newline$ -- 92
-num.names$ -- 23
-pop$ -- 693
+int.to.str$ -- 33
+missing$ -- 376
+newline$ -- 122
+num.names$ -- 33
+pop$ -- 969
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1475
+skip$ -- 2153
 stack$ -- 0
-substring$ -- 890
-swap$ -- 1114
-text.length$ -- 27
+substring$ -- 1392
+swap$ -- 1629
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 23
+type$ -- 33
 warning$ -- 0
-while$ -- 92
-width$ -- 25
-write$ -- 233
+while$ -- 132
+width$ -- 35
+write$ -- 325

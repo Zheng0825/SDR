@@ -141,15 +141,68 @@ A.~Saeed, M.~Ibrahim, K.~Harras, and M.~Youssef, ``A low-cost large-scale
   \emph{Communications (ICC), 2013 IEEE International Conference on}, June
   2013, pp. 2900--2904.
 
+\bibitem{6421105}
+A.~Young and C.~Bostian, ``Simple and low-cost platforms for cognitive radio
+  experiments [application notes],'' \emph{Microwave Magazine, IEEE}, vol.~14,
+  no.~1, pp. 146--157, Jan 2013.
+
+\bibitem{6100954}
+S.~Schroeter, L.~Zimmermann, O.~Schwender, G.~Fischer, and A.~Koelpin,
+  ``Demonstrator of a scanning receiver subsystem for cognitive professional
+  wireless microphone systems,'' in \emph{Telecom World (ITU WT), 2011
+  Technical Symposium at ITU}, Oct 2011, pp. 193--198.
+
 \bibitem{6127507}
 H.-C. Chen, H.~Kung, D.~Vlah, D.~Hague, M.~Muccio, and B.~Poland,
   ``Collaborative compressive spectrum sensing in a uav environment,'' in
   \emph{MILITARY COMMUNICATIONS CONFERENCE, 2011 - MILCOM 2011}, Nov 2011, pp.
   142--148.
 
+\bibitem{7119159}
+H.~Reyes, N.~Gellerman, and N.~Kaabouch, ``A cognitive radio system for
+  improving the reliability and security of uas/uav networks,'' in
+  \emph{Aerospace Conference, 2015 IEEE}, March 2015, pp. 1--9.
+
 \bibitem{7124942}
 P.~Kumar, S.~Malarvizhi, and M.~Hariprasath, ``Low cost reception scheme for
   mimo cognitive radio,'' in \emph{Electronics and Communication Systems
   (ICECS), 2015 2nd International Conference on}, Feb 2015, pp. 43--46.
+
+\bibitem{5784217}
+A.~Mate, K.-H. Lee, and I.-T. Lu, ``Spectrum sensing based on time covariance
+  matrix using gnu radio and usrp for cognitive radio,'' in \emph{Systems,
+  Applications and Technology Conference (LISAT), 2011 IEEE Long Island}, May
+  2011, pp. 1--6.
+
+\bibitem{5700251}
+H.~Kung, C.-K. Lin, T.-H. Lin, S.~Tarsa, and D.~Vlah, ``Measuring diversity on
+  a low-altitude uav in a ground-to-air wireless 802.11 mesh network,'' in
+  \emph{GLOBECOM Workshops (GC Wkshps), 2010 IEEE}, Dec 2010, pp. 1799--1804.
+
+\bibitem{4225050}
+C.-M. Cheng, P.-H. Hsiao, H.~Kung, and D.~Vlah, ``Maximizing throughput of
+  uav-relaying networks with the load-carry-and-deliver paradigm,'' in
+  \emph{Wireless Communications and Networking Conference, 2007.WCNC 2007.
+  IEEE}, March 2007, pp. 4417--4424.
+
+\bibitem{6564779}
+O.~Sahingoz, ``Mobile networking with uavs: Opportunities and challenges,'' in
+  \emph{Unmanned Aircraft Systems (ICUAS), 2013 International Conference on},
+  May 2013, pp. 933--941.
+
+\bibitem{6842275}
+S.~Mahmoud and N.~Mohamed, ``Collaborative uavs cloud,'' in \emph{Unmanned
+  Aircraft Systems (ICUAS), 2014 International Conference on}, May 2014, pp.
+  365--373.
+
+\bibitem{6127519}
+H.~Kung and S.~Tarsa, ``Partitioned compressive sensing with neighbor-weighted
+  decoding,'' in \emph{MILITARY COMMUNICATIONS CONFERENCE, 2011 - MILCOM 2011},
+  Nov 2011, pp. 149--156.
+
+\bibitem{6712555}
+C.~Heller and C.~Blumm, ``A cognitive radio enabled wireless aircraft cabin
+  management system,'' in \emph{Digital Avionics Systems Conference (DASC),
+  2013 IEEE/AIAA 32nd}, Oct 2013, pp. 3A4--1--3A4--13.
 
 \end{thebibliography}

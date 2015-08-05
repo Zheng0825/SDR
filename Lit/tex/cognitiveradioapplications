@@ -1,0 +1,6 @@
+\section{Applications of Cognitive Radio}
+
+The authors in \cite{6712555} present a cognitive radio based wireless cabin management system for airplanes. The team created an actual system based off of an FPGA
+and a transciever to demonstrate the basic functionality needed by an airplane cabin management system. Their paper also presents a detailed testing plan
+and the results of the test.
+
