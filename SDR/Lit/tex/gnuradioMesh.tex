@@ -1,0 +1,16 @@
+\section{GNU Radio and Mesh Networks}
+
+In \cite{4509617} and \cite{5062250} the authors use GNU Radio as a way to verify the succesful use of algorithms for mesh 
+networking.However, they do not specify that they are using SDR's and it seems like they use GNU Radio for simulation. GNU Radio has
+also been used with the USRP to create a device capable of communicating with both Bluetooth and WiFi devices. However, this does not
+create a mesh network or attempt to bridge communication between the two protocols. However, a significant amount of information about
+communicating with each type of network is presented \cite{4292880}. This also presents the concept of Police Nodes which monitor
+traffic in an attempt to block out improper use of the spectrum. 
+
+Research has been done in using the GNURadio toolset along with the USRP to test Mesh Network routing protocols. One test 
+used varied data transmission rates to exploit opportunities in physically close proximity Nodes \cite{5462112}. The GNU Radio 
+toolset was also used to test using cognitive radio within a mesh network. USRPs were used as nodes trying to communicate on a
+"shared" frequency. A separate USRP was used to replicate a primary user, or one that had a license to operate in that spectrum. 
+Whenever the primary user began to transmit in the spectrum, the other nodes would use reinforcement learning to move to an 
+unoccupied channel automatically and continue transmitting \cite{7141228}. A similar test bed is also presented in \cite{5508221}.
+ 
