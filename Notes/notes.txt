@@ -1,0 +1,49 @@
+--7-1-2015--
+
+Currently working on using the RTL SDR. 
+
+What I have learned so far: 
+	* This SDR is different than a FUNCUBE dongle
+	* It will work from around 500 Hz to 1700 Hz
+	* It can only RECIEVE 
+
+The fact that this can only recieve is by far the largest setback.
+This will ultimately not be what we can use for cognitive radio. 
+
+However, the tutorials still seem more widely available than those
+found for the BladeRF which is bi-directional. Therefore I will
+continue for a bit. It may serve a purpose as part of the larger 
+sensor network at some point. We could still use it to relay information
+over a large distance. 
+
+There are "Cubelites" being sent out that are basically funcube dongle
+based satellites. These sound pretty cool. 
+
+I want to start taking notes in Latex so they will be more readable than
+a plain .txt file and still useable with version control. 
+
+I need to install texlive-full and texmaker. 
+
+Currently I am set back by needing to update ubuntu. I can't install
+anything else while the updates are installing. 
+
+So far I have made decent progress. The RTL is working with GNU SDR. I had trouble
+at first when the kernel was loading a separate driver that bogs it down. 
+
+I used this command to fix that problem:
+
+sudo rmmod dvb_usb_rtl28xxu rtl2823
+
+There are more permanent ways of fixing the problem but I wanted to start
+with this as it is non-permanent and will default back to normal on a restart. 
+
+The new file in the RTL-SDR will allow you to hear FM stations. But 
+they are extremely faint. I'm going to continue to play with the file settings to
+see if I can get a clearer transmission. 
+
+--7-2-2015--
+
+Spent last night installing Linux onto what I thought was a faster computer, 
+however my memory of the machine was incorrect. It was too slow to even open 
+most webpages. So I'm back to the other Linux machine. Hopefully tonight I will
+have time to try to get linux on my laptop. I remember I had issues before. 
