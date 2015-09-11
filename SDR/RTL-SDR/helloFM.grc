@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='ASCII'?>
 <flow_graph>
-  <timestamp>Wed Jul 29 09:38:13 2015</timestamp>
+  <timestamp>Tue Aug 25 14:38:46 2015</timestamp>
   <block>
     <key>options</key>
     <param>
@@ -692,7 +692,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>107.9e6</value>
+      <value>88.5e6</value>
     </param>
     <param>
       <key>min</key>

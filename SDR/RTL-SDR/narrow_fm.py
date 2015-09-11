@@ -2,7 +2,7 @@
 ##################################################
 # Gnuradio Python Flow Graph
 # Title: Narrow Fm
-# Generated: Wed Jul 29 09:38:16 2015
+# Generated: Tue Aug 25 14:38:46 2015
 ##################################################
 
 from gnuradio import analog
@@ -33,7 +33,7 @@ class narrow_fm(grc_wxgui.top_block_gui):
         ##################################################
         self.samp_rate = samp_rate = 2000000
         self.corr = corr = 0
-        self.Freq = Freq = 107.9e6
+        self.Freq = Freq = 88.5e6
 
         ##################################################
         # Blocks

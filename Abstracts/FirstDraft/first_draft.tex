@@ -1,0 +1,106 @@
+\documentclass{IEEEtran}
+
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+
+\title{Abstract and Overview of Topics for Graduate Research}
+\date{2015-09-11}
+\author{John McCormack}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	This document serves to organizes thoughts and ideas about
+the remainder of my time at Florida Polytechnic. It discusses areas of interest
+that I would like to explore, and hopes to find projects that will give me
+exposure to the topics. 
+\end{abstract}
+\begin{IEEEkeywords}
+Software Defined Radio, Mesh Network, HCI/HMI, Machine Learning, NodeJs, 
+Internet of Things, Robotics, Serious Games
+\end{IEEEkeywords}
+\section{SDR}
+Currently, GNU Radio has been used successfully with the RTL-SDR. The biggest
+issue is that this SDR is extremely minimalistic and cannot be used for our
+long term goals. It has a limited useable band, and can only recieve. The next
+step is to continue working with the BladeRF and GNURadio. Right now, there is an 
+issue with the DC offset of the chip which is causing difficulties. 
+
+Long term, we need the SDR to be able to act as the Wi-Fi card of the computer. 
+We also need to then develop a model for sensing the ambient RF activity and
+autonomously adjusting the transmit and recieve frequency. 
+
+Additionally, testing needs to be done to determine if the Two Yagi antennas are
+able to be used in Stereo. 
+
+\section{Mesh Networks}
+
+The mesh network is currently in an early alpha stage. It is functioning, but
+is lacking of any proper documentation and it would not be easy to rebuild
+with out help from students that are no longer with the school. 
+
+Most of my personal interests around the mesh network would involve embedding it 
+into smaller packages so that it could be manufactured as part of an IoT SoC/SoP. 
+However, that would likely fall much too far out of the scope of what I would be
+able to accomplish while at florida polytechnic. 
+
+Most of the interest with Mesh Networks lies in using it with an SDR, visualization
+tool, or IoT Application. I am interested in the basic configuration, but would
+like to focus on the applications more than the implementation. 
+
+\section{Internet of Things}
+
+I am very interested in applications of Internet of Things. I would like to
+pursue Contiki, TinyOs, or RiotOs. I believe that these tools, along with Angular,
+NodeJs, Flask, and other similar tools, I could put myself in a good position
+with potential employers should I ultimately decide to not pursue a PhD program. 
+
+I am very interested in the integration of these tools with Unity for visualization
+and control. 
+
+\section{Robotics}
+
+As robotics is such a broad topic, it is hard to find a small enough chunk
+that could be doable alongside the other topics presented. In the context
+of the rest of the other research areas, communication makes the most sense. 
+Robots could be used alongside the mesh network to allow for remote control. 
+SDRs could also be deployed on top of some of the robots we have to allow
+for a dynamic mesh that is capable of changing shapes with the demands of the
+network. 
+
+As a side project, I would like to implement SLAM on a GoPiGo and possibly store
+the map on the mesh for other robots and the sensor nodes themselves to reference.
+It would be interesting to place the nodes, then have a robot map out the space,
+marking where each node was in order to then use both the map and the presence of
+nodes to allow other robots to perform localization. 
+
+\section{Machine Learning}
+Machine learning would be performed alongside the SDRs. This will probably be
+very basic to not take away from the other topics. If time permitted,
+using Erlang with the mesh nodes to create a distributed ANN would be intriguing. 
+
+\section{Serious Games}
+
+I would like to continue working with Unity to map out the mesh nodes. I 
+would also like to expand to using it to control some of the less complex
+robots in the lab. Eventually, if time permits and there is student interest,
+I would like to return to the King of the Mesh concept. 
+
+\section{Various Programming Languages and Tools}
+
+\begin{itemize}
+	\item NodeJs - Continue Progress
+	\item Angular - Continue Progres
+	\item Erlang - Dive into OTP
+	\item C++ - Possible if Switching to Unreal
+	\item Lua - Possible if Switching to Unreal
+	\item Docker - may be useful for expanding to other students
+	\item DevOps - Continue Udacity Course
+	\item Networking - Continue Udacity Course
+	\item Graphics - Continue Udacity Course
+\end{itemize}
+
+\end{document}
