@@ -389,4 +389,13 @@
 	website. I also learned that there are string arugments that allows GNURadio to add the xb200
 	as well as automatically load the FPGA firmware. More information can be found
 	\href{http://sdr.osmocom.org/trac/wiki/GrOsmoSDR}{here}. 
+
+	\subection{09-14-15}
+	Finally back at it. Today I will be focusing on the Ettus Research USRP B200 board. I'm going to try to follow
+	the tutorial found at \href{http://www.ettus.com/kb/detail/software-defined-radio-usrp-and-gnu-radio-tutorial-set}{Ettus Research}.
+	I was able to use pybombs to install the first set of software. This was simply called "UHD" under the hardware tag in pybombs. 
+	As last time, make sure you start pybombs with sudo. There was another set of drivers called "Ettus" that would not install. 
+	I later saw this comand \shellcmd{sudo apt-get install libuhd-dev libuhd003 uhd-host}
+	It said the last two were already installed, but then installed libuhd-dev. I'm still getting errors that the device is not
+	found in GNURadio. Typing in "lsusb" shows that Linux doesnt seem to recognize the device. I'm going to reboot and see if that helps. 		
 \end{document}
