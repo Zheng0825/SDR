@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Narrow Fm
-# Generated: Mon Sep 14 12:30:57 2015
+# Generated: Tue Sep 15 14:20:55 2015
 ##################################################
 
 if __name__ == '__main__':
@@ -37,6 +37,8 @@ class narrow_fm(grc_wxgui.top_block_gui):
 
     def __init__(self):
         grc_wxgui.top_block_gui.__init__(self, title="Narrow Fm")
+        _icon_path = "/usr/share/icons/hicolor/32x32/apps/gnuradio-grc.png"
+        self.SetIcon(wx.Icon(_icon_path, wx.BITMAP_TYPE_ANY))
 
         ##################################################
         # Variables
@@ -96,16 +98,16 @@ class narrow_fm(grc_wxgui.top_block_gui):
         )
         self.uhd_usrp_source_0.set_samp_rate(samp_rate)
         self.uhd_usrp_source_0.set_center_freq(Freq, 0)
-        self.uhd_usrp_source_0.set_gain(10, 0)
+        self.uhd_usrp_source_0.set_gain(15, 0)
         self.uhd_usrp_source_0.set_antenna("RX2", 0)
         self.rational_resampler_xxx_0 = filter.rational_resampler_fff(
                 interpolation=48,
-                decimation=500,
+                decimation=250,
                 taps=None,
                 fractional_bw=None,
         )
-        self.low_pass_filter_0 = filter.fir_filter_ccf(int(samp_rate/500e3), firdes.low_pass(
-        	1, samp_rate, 100e3, 1e6, firdes.WIN_HAMMING, 6.76))
+        self.low_pass_filter_0 = filter.fir_filter_ccf(20, firdes.low_pass(
+        	1, samp_rate, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
         _corr_sizer = wx.BoxSizer(wx.VERTICAL)
         self._corr_text_box = forms.text_box(
         	parent=self.GetWin(),
@@ -131,7 +133,7 @@ class narrow_fm(grc_wxgui.top_block_gui):
         self.Add(_corr_sizer)
         self.audio_sink_0 = audio.sink(48000, "", True)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
-        	quad_rate=500e3,
+        	quad_rate=250e3,
         	audio_decimation=1,
         )
 
@@ -150,7 +152,7 @@ class narrow_fm(grc_wxgui.top_block_gui):
 
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
-        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate, 100e3, 1e6, firdes.WIN_HAMMING, 6.76))
+        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
         self.uhd_usrp_source_0.set_samp_rate(self.samp_rate)
         self.wxgui_fftsink2_0.set_sample_rate(self.samp_rate / 25)
 
