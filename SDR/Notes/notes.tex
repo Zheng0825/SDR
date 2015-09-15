@@ -390,7 +390,7 @@
 	as well as automatically load the FPGA firmware. More information can be found
 	\href{http://sdr.osmocom.org/trac/wiki/GrOsmoSDR}{here}. 
 
-	\subection{09-14-15}
+	\subsection{09-14-15}
 	Finally back at it. Today I will be focusing on the Ettus Research USRP B200 board. I'm going to try to follow
 	the tutorial found at \href{http://www.ettus.com/kb/detail/software-defined-radio-usrp-and-gnu-radio-tutorial-set}{Ettus Research}.
 	I was able to use pybombs to install the first set of software. This was simply called "UHD" under the hardware tag in pybombs. 
@@ -398,4 +398,75 @@
 	I later saw this comand \shellcmd{sudo apt-get install libuhd-dev libuhd003 uhd-host}
 	It said the last two were already installed, but then installed libuhd-dev. I'm still getting errors that the device is not
 	found in GNURadio. Typing in "lsusb" shows that Linux doesnt seem to recognize the device. I'm going to reboot and see if that helps. 		
+
+	That did not fix the issue. Next, I double checked that "apt-get" covered everything. As some part of the install may be from pybombs,
+	which creates a virtual environment, I'm hoping that this does not cause a mismatch. Ok, so that had no effect. I'm going to google
+	a bit more and see if I can figure out what I'm missing. \shellcmd{uhd\_find\_devices} Can be used to locate the device. Originally, it was 
+	throwing an error message. Similar to the below: 
+	\shellcmd{/usr/bin/uhd\_find\_devices: symbol lookup error:}
+	\shellcmd{/usr/bin/uhd\_find\_devices: undefined symbol:}
+	\shellcmd{\_ZN3uhd6device4findERKNS\_\_\_13device\_addr\_tENS0\_15device\_\_\_filter\_tE}
+	Which brought me \href{http://lists.ettus.com/pipermail/usrp-users\_lists.ettus.com/2014-November/011546.html}{here}. Eventually,
+	I discovered that the main issue was I had used the repositores to download the 3 files shown above (libuhd-dev, libuhd003, uhd-host) and then
+	also done the commands shown below:
+	\shellcmd{sudo bash -c 'echo "deb http://files.ettus.com/binaries/uhd/repo/uhd/ubuntu/`lsb\_release -cs` `lsb\_release -cs` main" > /etc/apt/sources.list.d/ettus.list'}
+	\shellcmd{sudo apt-get update}
+	\shellcmd{sudo apt-get install -t `lsb\_release -cs` uhd}
+	When I went back and used \shellcmd{sudo apt-get remove libuhd-dev libuhd003 uhd-host} and then ran \shellcmd{sudo uhd\_find\_devices} I got the below message
+	showing that it was now registerd:
+
+	-- Loading firmware image: /usr/share/uhd/images/usrp\_b200\_fw.hex... done
+	--------------------------------------------------
+	-- UHD Device 0
+	--------------------------------------------------
+	Device Address:
+	    type: b200
+	    name: 
+	    serial: 3087692
+	    product: B200
+		
+	However I'm still getting an "Empty device address" error in GNURadio. I did recently read that with out using USB 3.0 (my computer only has 2.0) It may
+	be necessary to use either an external power adapter rated at 6 V, 3A or to use one of the 2 A to 1 B type connectors. I saw a brief document
+	saying it may be an issue with not having root access, but running in a shell with root access via \shellcmd{sudo -i} did not change anything. 
+
+	Eventually I Came across the command \shellcmd{uhd\_usrp\_probe}. This loaded the firmware and FPGA. After running this and returning to GNU Radio, I still
+	am getting the errors as before. It looks like the problem may be in switching into the virtual envinronment created with pybombs. I ran the uhd\_usrp\_probe
+	command again and it mentioned that there were no images installed. The error message provides a command to run which will download the images. 
+	The command for me was \shellcmd{~/software/target/lib/uhd/utils/uhd\_images\_downloader.py} But make sure whatever you run is whats given to you
+	in the error output. I then ran the uhd\_usrp\_probe command again but got errors about the compatibility error:
+	\shellcmd{Error: RuntimeError: Expected firmware compatibility number 8.0, but got 7.0:} With information saying to run the same image downloader python
+	script. 
+	
+	At this point I realized I messed up more than I can probably recover from easily. I tried to delete the images but wasn't double checking the folder I was
+	in and removed the entire target directory that pybombs outputs to. So I'm going to cut my losses and go back to the Ettus page and install GNU 
+	radio per their instructions instead of fighting pybombs to get everything to work. 
+	
+	While going through the documentation trying to find the GNU Radio section, I realized there is a post-download set of instructions found
+	\href{http://files.ettus.com/manual/page\_build\_guide.html#post\_install\_tasks}{here}. I'm going to go through those now which include
+	\shellcmd{uhd\_images\_downloader}.  
+
+	Also changing a configuration so non-root users can access the radio:
+	\shellcmd{cd <install-path>/lib/uhd/utils}
+	\shellcmd{sudo cp uhd-usrp.rules /etc/udev/rules.d/}
+	\shellcmd{sudo udevadm control --reload-rules}
+	\shellcmd{sudo udevadm trigger}
+	For my case, <install-path> was simply "usr". 
+
+	I was hoping to just use apt-get to install gnuradio but that installs otherfiles not compatible with the UHD drivers installed earlier. 
+	Using the same remove command we used the last time we got the error message worked (apt-get remove gnuradio was all that was really needed though). 
+	Back to square one. 
+	
+	\section{09-15-15}
+
+	Last night before class I ran the GNURadio build script found \href{https://gnuradio.org/redmine/projects/gnuradio/wiki/InstallingGRFromSource#Using-the-build-gnuradio-script}{here}. 
+After it ran I was still having issues. I tried re-running it to just install
+	the UHD Drivers, but I had to go to class. When I got back it was waiting for a user acknolowedgement (press the Y key). So I don't believe it actually ran.
+	When I got in today I ran \shellcmd{sudo apt-get remove gnuradio} again to see if that would remove the build script install. It clearly stated it was removing
+	something, but when I got back to the terminal and ran the USRP Probe command and then gnuradio suddenly everything was working. I'm assuming the one from
+	sources never uninstalled and was actually the one that ended up running. Its likely I forgot to uninstall the one from the repositories and that that was
+	the one that was causing issues. Either way, there is now "appropriate sounding static" on the audio from the FM block. I'll have to run further testing
+	once I finish with TA stuff for the day to make sure its working. I should be able to broadcast FM and pick it up on the spectrum analyzers. I assume
+	I will be unable to get FM in the VTC due to the nature of the building. I could always bring it outside to test though. 
+
+	
 \end{document}
