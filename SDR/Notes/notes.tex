@@ -487,4 +487,9 @@ After it ran I was still having issues. I tried re-running it to just install
 	I have success creating a python program that slowly ramps up the frequency it is outputting. Using my trusty Tivoli Audio PAL radio I was able to keep
 	turning the dial to keep the signal in tune. The key was to put a separate thread to handle this task. I realized this when I saw that the gui function
 	used a callback. This prevents the function that changes the frequency from blocking the flow of data through the other filter blocks. 
+	This file is saved as FMThread.py and will be shown below. 
+	
+	\lstset{tabsize=2, caption=dial\_tone.py,}
+        \lstinputlisting[language=Python]{../USRP_B200/FMThread.py}
 \end{document}
+
