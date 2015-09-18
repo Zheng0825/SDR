@@ -483,4 +483,8 @@ After it ran I was still having issues. I tried re-running it to just install
 	There's also the main webpage found \href{http://ecewp.ece.wpi.edu/wordpress/wireless/files/}{Here}
 
 	They have a textbook available as well \href{http://www.qsl.net/yo4tnv/docs/Cognitive\%20Radio\%20Communications\%20and\%20Networks\%20-\%20A.\%20Wyglinski,\%20et\%20al.,\%20\%28AP,\%202010\%29\%20WW.pdf}{Here}
+
+	I have success creating a python program that slowly ramps up the frequency it is outputting. Using my trusty Tivoli Audio PAL radio I was able to keep
+	turning the dial to keep the signal in tune. The key was to put a separate thread to handle this task. I realized this when I saw that the gui function
+	used a callback. This prevents the function that changes the frequency from blocking the flow of data through the other filter blocks. 
 \end{document}
