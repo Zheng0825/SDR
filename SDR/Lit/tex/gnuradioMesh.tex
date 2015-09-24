@@ -13,4 +13,13 @@ toolset was also used to test using cognitive radio within a mesh network. USRPs
 "shared" frequency. A separate USRP was used to replicate a primary user, or one that had a license to operate in that spectrum. 
 Whenever the primary user began to transmit in the spectrum, the other nodes would use reinforcement learning to move to an 
 unoccupied channel automatically and continue transmitting \cite{7141228}. A similar test bed is also presented in \cite{5508221}.
- 
+
+In \cite{5984947} researchers at UCSB investigated using an SDR with GNURadio to
+improve upon the needs of rural networks. The topic was found while search for mesh
+networks but seems to be mostly focused on non-mesh applications. They created
+the solution WhiteRate which allows for the changing of the PHY layer without 
+changing any other components. 
+
+In \cite{5462039} the authors utilize GNU Radio to implemenet a PHY layer that is 
+able to broadcast and recieve on several channels simultaneously. The paper
+tests using 2 USRP boards and also simulates a larger scale.  
