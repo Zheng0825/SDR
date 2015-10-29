@@ -92,8 +92,9 @@ class top_block(grc_wxgui.top_block_gui):
                 taps=None,
                 fractional_bw=None,
         )
-        self.blocks_wavfile_source_0 = blocks.wavfile_source("/home/john/Downloads/documents-export-2015-09-15/Inspired But Too Tired Acoustic.wav", True)
-        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((25, ))
+        #self.blocks_wavfile_source_0 = blocks.wavfile_source("/home/john/Downloads/documents-export-2015-09-15/Inspired But Too Tired Acoustic.wav", True)
+        self.blocks_wavfile_source_0 = blocks.wavfile_source("John_Prine.wav", True)
+	self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((25, ))
         self.analog_wfm_tx_0 = analog.wfm_tx(
         	audio_rate=audio_rate,
         	quad_rate=audio_rate * audio_interp,
@@ -147,7 +148,7 @@ class top_block(grc_wxgui.top_block_gui):
             start_freq = self.get_freq()
 	    self.set_freq(start_freq + 100000)
 	    print start_freq
-	    time.sleep(1)
+	    time.sleep(0.6)
 
 if __name__ == '__main__':
     parser = OptionParser(option_class=eng_option, usage="%prog: [options]")
