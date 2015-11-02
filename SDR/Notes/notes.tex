@@ -513,14 +513,12 @@ After it ran I was still having issues. I tried re-running it to just install
 	can be found at \href{https://www.youtube.com/watch?v=ZuNOD3XWp4A}{this location}.
 
 	He also discusses building a home made doppler system. Here is a presentation discussing this \href{http://static1.1.sqspcdn.com/static/f/679473/21303404/1355863220773/seeber-DirectionFinding.pdf?token=5JaIYIRnVDZKyXjyXksT%2B3xSZ8o%3D}{in more detail}.
-<<<<<<< HEAD
 
 	\section{10-2-15}
 
 	Found another useful ppt from Ettus \href{https://archive.fosdem.org/2014/schedule/event/tutorial_ofdm_packet_transceivers/attachments/slides/383/export/events/attachments/tutorial_ofdm_packet_transceivers/slides/383/MartinBraun_GNURadio_OFDM.pdf}{here}.
 
 
-=======
 		\section{10-23-2015}
 		Today I started playing around with the Ettus Research E310. Im so excited to get to work with this
 		piece of cutting edge technology. I was able to start by connecting to the device over 
@@ -533,6 +531,10 @@ After it ran I was still having issues. I tried re-running it to just install
 		This let me acces GNU radio fine and I could see the window on my computer. If any of the links
 		are dead, just try googling some of the keywords. Nearly all of the links I used were just
 		the first or second result. 
->>>>>>> 7cded6c54ddb6b5c1b28327d61f91f1230b18a80
+
+	\section{11-1-15}
+	I have started researching TUN and TAP Adapters. These seem to be the key to what we are trying to do but I am not confident enough to say that. TUNs are virtual ports that
+	accept IP packets and TAPs are ports that accept virtual ethernet packets. In theory I should be able to use a TAP to abstract out the MAC Address, but that doesnt seem the case. 
+	The way I understand it TAPs are the layer that connects PHY To MAC and TUNS connect MAC to layer 3. I'll continue to research these topics.
 \end{document}
 	
