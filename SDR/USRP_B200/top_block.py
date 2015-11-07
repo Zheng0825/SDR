@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Fri Oct 30 16:11:05 2015
+# Generated: Wed Nov  4 15:01:22 2015
 ##################################################
 
 if __name__ == '__main__':
@@ -16,10 +16,12 @@ if __name__ == '__main__':
             print "Warning: failed to XInitThreads()"
 
 from gnuradio import analog
+from gnuradio import audio
 from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import filter
 from gnuradio import gr
+from gnuradio import uhd
 from gnuradio import wxgui
 from gnuradio.eng_option import eng_option
 from gnuradio.fft import window
@@ -28,6 +30,7 @@ from gnuradio.wxgui import fftsink2
 from gnuradio.wxgui import forms
 from grc_gnuradio import wxgui as grc_wxgui
 from optparse import OptionParser
+import time
 import wx
 
 
@@ -89,6 +92,28 @@ class top_block(grc_wxgui.top_block_gui):
         	peak_hold=False,
         )
         self.Add(self.wxgui_fftsink2_0.win)
+        self.uhd_usrp_source_0 = uhd.usrp_source(
+        	",".join(("", "")),
+        	uhd.stream_args(
+        		cpu_format="fc32",
+        		channels=range(1),
+        	),
+        )
+        self.uhd_usrp_source_0.set_samp_rate(samp_rate_rec)
+        self.uhd_usrp_source_0.set_center_freq(Freq, 0)
+        self.uhd_usrp_source_0.set_gain(20, 0)
+        self.uhd_usrp_source_0.set_antenna("RX2", 0)
+        self.uhd_usrp_sink_0 = uhd.usrp_sink(
+        	",".join(("", "")),
+        	uhd.stream_args(
+        		cpu_format="fc32",
+        		channels=range(1),
+        	),
+        )
+        self.uhd_usrp_sink_0.set_samp_rate(samp_rate_send)
+        self.uhd_usrp_sink_0.set_center_freq(Freq, 0)
+        self.uhd_usrp_sink_0.set_normalized_gain(0.5, 0)
+        self.uhd_usrp_sink_0.set_antenna("TX/RX", 0)
         self.rational_resampler_xxx_0_0 = filter.rational_resampler_fff(
                 interpolation=48,
                 decimation=250,
@@ -103,9 +128,9 @@ class top_block(grc_wxgui.top_block_gui):
         )
         self.low_pass_filter_0 = filter.fir_filter_ccf(20, firdes.low_pass(
         	1, samp_rate_rec, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
-        self.blocks_udp_source_0 = blocks.udp_source(gr.sizeof_float*1, "127.0.0.1", 8084, 1472, True)
-        self.blocks_udp_sink_0 = blocks.udp_sink(gr.sizeof_float*1, "127.0.0.1", 8048, 1472, True)
+        self.blocks_wavfile_source_0 = blocks.wavfile_source("/home/john/Downloads/documents-export-2015-09-15/Inspired But Too Tired Acoustic.wav", True)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((25, ))
+        self.audio_sink_0 = audio.sink(48000, "", True)
         self.analog_wfm_tx_0 = analog.wfm_tx(
         	audio_rate=audio_rate,
         	quad_rate=audio_rate * audio_interp,
@@ -123,11 +148,12 @@ class top_block(grc_wxgui.top_block_gui):
         self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0_0, 0))    
         self.connect((self.analog_wfm_tx_0, 0), (self.rational_resampler_xxx_0, 0))    
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.analog_wfm_tx_0, 0))    
-        self.connect((self.blocks_udp_source_0, 0), (self.blocks_multiply_const_vxx_0, 0))    
+        self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_multiply_const_vxx_0, 0))    
         self.connect((self.low_pass_filter_0, 0), (self.analog_wfm_rcv_0, 0))    
         self.connect((self.low_pass_filter_0, 0), (self.wxgui_fftsink2_0, 0))    
-        self.connect((self.rational_resampler_xxx_0, 0), (self.low_pass_filter_0, 0))    
-        self.connect((self.rational_resampler_xxx_0_0, 0), (self.blocks_udp_sink_0, 0))    
+        self.connect((self.rational_resampler_xxx_0, 0), (self.uhd_usrp_sink_0, 0))    
+        self.connect((self.rational_resampler_xxx_0_0, 0), (self.audio_sink_0, 0))    
+        self.connect((self.uhd_usrp_source_0, 0), (self.low_pass_filter_0, 0))    
 
 
     def get_samp_rate_send(self):
@@ -135,6 +161,7 @@ class top_block(grc_wxgui.top_block_gui):
 
     def set_samp_rate_send(self, samp_rate_send):
         self.samp_rate_send = samp_rate_send
+        self.uhd_usrp_sink_0.set_samp_rate(self.samp_rate_send)
 
     def get_samp_rate_rec(self):
         return self.samp_rate_rec
@@ -142,6 +169,7 @@ class top_block(grc_wxgui.top_block_gui):
     def set_samp_rate_rec(self, samp_rate_rec):
         self.samp_rate_rec = samp_rate_rec
         self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate_rec, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
+        self.uhd_usrp_source_0.set_samp_rate(self.samp_rate_rec)
         self.wxgui_fftsink2_0.set_sample_rate(self.samp_rate_rec / 25)
 
     def get_audio_rate(self):
@@ -163,6 +191,8 @@ class top_block(grc_wxgui.top_block_gui):
         self.Freq = Freq
         self._Freq_slider.set_value(self.Freq)
         self._Freq_text_box.set_value(self.Freq)
+        self.uhd_usrp_sink_0.set_center_freq(self.Freq, 0)
+        self.uhd_usrp_source_0.set_center_freq(self.Freq, 0)
         self.wxgui_fftsink2_0.set_baseband_freq(self.Freq)
 
 
