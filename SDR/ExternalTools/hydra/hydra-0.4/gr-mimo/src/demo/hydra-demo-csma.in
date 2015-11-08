@@ -1,0 +1,141 @@
+#!  /bin/bash
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+
+# print usage
+function usage {
+  echo "usage: hydra-demo-csma [HYDRA OPTIONS] [SETUP OPTIONS]"
+  echo ""
+  echo "    Runs hydra-tunnel, hydra-csma, and hydra-mimo. No multi-hop routing"
+  echo "    is supported with this demo."
+  echo ""
+  echo "HYDRA OPTIONS"
+  echo ""
+  echo "    Additional arguments sent to hydra-mimo."
+  echo ""
+  echo "SETUP OPTIONS"
+  echo ""
+  echo "    --usage, --help"
+  echo "            Print this help message."
+  echo ""
+  echo "    --node-num=NUM"
+  echo "            Specify the node number for the current demo node."
+  echo "            Default is 1. Node numbers 1-4 are supported."
+  echo ""
+  echo "    --verbose=VERBOSE"
+  echo "            Specify the verbose level for the system. "
+  echo "            Default is 1."
+  echo ""
+  echo "    --tunnel-conf=CONFIGFILE"
+  echo "            Specify the tun/tap configuration file to run the "
+  echo "            MAC layer. This file name is normally derived "
+  echo "            from the NODENUM option."
+  echo "            (i.e.\$GR/share/hydra/sconf-\$NODENUM)"
+  echo ""
+}
+
+# General configuration
+BASHEXEC=`which bash`
+PYTHON=`which python`
+CURRDIR=`pwd`
+GNOMETERM=`which gnome-terminal`
+command_line_args=$@;   # local copy of command line arguments
+
+# Demo parameters
+NODENUM=1
+VERBOSE=1
+
+# process command line arguments
+for arg in $command_line_args; do
+  marg1=`expr match "$arg" '\(--usage\)'`;
+  marg2=`expr match "$arg" '\(--node-num=.*\)'`;
+  marg3=`expr match "$arg" '\(--verbose=.*\)'`;
+  marg4=`expr match "$arg" '\(--help\)'`;
+  if [ -n "$marg1" ]; then
+    usage;
+    exit;
+  elif [ -n "$marg2" ]; then
+    NODENUM=${arg//--node-num=/};
+    command_line_args=${command_line_args[@]//--node-num=*/};
+  elif [ -n "$marg3" ]; then
+    VERBOSE=${arg//--verbose=/};
+    command_line_args=${command_line_args[@]//--verbose=*/};
+  elif [ -n "$marg4" ]; then
+    usage;
+    exit;
+  fi
+done
+
+# Setup for Tunnel
+TUNCONF=$GR/share/hydra/sconf-$NODENUM
+
+# process command line arguments
+settunnel=0;
+for arg in $@; do
+  marg1=`expr match "$arg" '\(--tunnel-conf=.*\)'`;
+  if [ -n "$marg1" ]; then
+    TUNCONF=${arg//--tunnel-conf=/};
+    command_line_args=${command_line_args[@]//--tunnel-conf=*/};
+    settunnel=1;
+  fi
+done
+
+# Setup for CSMA MAC
+# * No setup needed *
+
+# Start Tunnel - run tunnel in a new window
+RUNTUNNEL="hydra-tunnel -v $VERBOSE $TUNCONF";
+
+x="if [ $settunnel -lt 1 ]; then ";
+x="$x   echo \"====================================================\"; ";
+x="$x   echo \"starting tun/tap iface for 192.168.255.$NODENUM ...\"; ";
+x="$x   echo \"====================================================\"; ";
+x="$x   echo \"\"; ";
+x="$x else"
+x="$x   echo \"====================================================\"; ";
+x="$x   echo \"starting tun/tap from conf file $TUNCONF ...\"; ";
+x="$x   echo \"====================================================\"; ";
+x="$x fi;"
+y="$x echo '$RUNTUNNEL'; $RUNTUNNEL;";
+tuncmd="$y";
+$BASHEXEC -c "$x";
+$GNOMETERM -x $BASHEXEC -c "$tuncmd";
+
+# Start CSMA MAC
+RUNCSMA="hydra-csma -v $VERBOSE"
+
+x="   echo \"====================================================\"; ";
+x="$x echo \"starting CSMA MAC ...\"; ";
+x="$x echo \"====================================================\"; ";
+x="$x echo \"\"; ";
+y="$x echo '$RUNCSMA'; $RUNCSMA;";
+csmacmd="$y";
+$BASHEXEC -c "$x";
+$GNOMETERM -x $BASHEXEC -c "$csmacmd";
+
+# Start PHY
+RUNPHY="hydra-mimo ${command_line_args[@]} > temp_phy_log 2>&1";
+
+x="   echo \"====================================================\"; ";
+x="$x echo \"starting PHY ...\"; ";
+x="$x echo \"====================================================\"; ";
+x="$x echo \"\"; ";
+y="$x echo '$RUNPHY'; $RUNPHY;";
+phycmd="$y";
+$BASHEXEC -c "$phycmd";

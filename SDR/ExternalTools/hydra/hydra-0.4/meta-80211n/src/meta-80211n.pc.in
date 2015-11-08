@@ -1,0 +1,29 @@
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@/meta-80211n
+
+Name: meta-80211n
+Description: IEEE 802.11n Meta Physical Layer
+Requires: itpp wicom
+Version: @VERSION@
+Libs: -L${libdir} -lmeta-80211n
+Cflags: -I${includedir} @DEFINES@

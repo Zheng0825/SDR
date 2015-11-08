@@ -1,0 +1,92 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet type="application/xml" href="http://www.lcdf.org/click/xml/elementmap.xsl"?>
+<?xml-stylesheet type="application/xml" href="file:///home/wkim/nfs/click-piggyback/click-hydra-1.5.0/trunk/package/etc/elementmap.xsl"?>
+<elementmap xmlns="http://www.lcdf.org/click/xml/" sourcedir="/home/wkim/nfs/click-piggyback/click-hydra-1.5.0/trunk/package" src="file:///home/wkim/nfs/click-piggyback/click-hydra-1.5.0/trunk/package" provides="hydra" drivers="userlevel">
+<entry name="ActiveMACTX" cxxclass="ActiveMACTX" headerfile="./activemactx.hh" sourcefile="./activemactx.cc" portcount="2/1" processing="lh/h" flowcode="xy/x" requires="MACNotifier MACListener" />
+<entry name="AggSetCRC32" cxxclass="AggSetCRC32" headerfile="./aggsetcrc32.hh" sourcefile="./aggsetcrc32.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="BEBPolicy" cxxclass="BEBPolicy" docname="BEBPolicy" headerfile="./bebpolicy.hh" sourcefile="./bebpolicy.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="BEBPolicyArf" cxxclass="BEBPolicyArf" headerfile="./bebpolicyarf.hh" sourcefile="./bebpolicyarf.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="CalculateRSSI" cxxclass="CalculateRSSI" headerfile="./calculaterssi.hh" sourcefile="./calculaterssi.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="CarrierSense" cxxclass="CarrierSense" headerfile="./carriersense.hh" sourcefile="./carriersense.cc" portcount="-/1" processing="h/h" flowcode="x/x" />
+<entry name="CheckCRCBER" cxxclass="CheckCRCBER" headerfile="./checkcrcber.hh" sourcefile="./checkcrcber.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="CollisionPolicy" cxxclass="CollisionPolicy" docname="CollisionPolicy" headerfile="./collisionpolicy.hh" sourcefile="./collisionpolicy.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="DCFScheduler" cxxclass="DCFScheduler" docname="DCFScheduler" headerfile="./dcfscheduler.hh" sourcefile="./dcfscheduler.cc" portcount="2/5" processing="la/hh" flowcode="xy/xx" />
+<entry name="DCFScheduler1" cxxclass="DCFScheduler1" headerfile="./dcfscheduler1.hh" sourcefile="./dcfscheduler1.cc" portcount="2/5" processing="la/hh" flowcode="xy/xx" />
+<entry name="DCFScheduler2" cxxclass="DCFScheduler2" headerfile="./dcfscheduler2.hh" sourcefile="./dcfscheduler2.cc" portcount="2/5" processing="la/hh" flowcode="xy/xx" />
+<entry name="DCFTransmitter" cxxclass="DCFTransmitter" docname="DCFTransmitter" headerfile="./dcftransmitter.hh" sourcefile="./dcftransmitter.cc" portcount="3/1" processing="lhh/h" flowcode="xxy/x" />
+<entry name="DeAggregator" cxxclass="DeAggregator" headerfile="./deaggregator.hh" sourcefile="./deaggregator.cc" portcount="1/1" processing="h/h" flowcode="x/x" />
+<entry name="FirstFrame" cxxclass="FirstFrame" headerfile="./firstframe.hh" sourcefile="./firstframe.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="FromLabviewPhy" cxxclass="FromLabviewPhy" headerfile="./fromlabviewphy.hh" sourcefile="./fromlabviewphy.cc" portcount="1/2" processing="h/h" flowcode="x/x" />
+<entry name="FromLabviewPhy1" cxxclass="FromLabviewPhy1" headerfile="./fromlabviewphy1.hh" sourcefile="./fromlabviewphy1.cc" portcount="1/2" processing="h/h" flowcode="x/x" />
+<entry name="FromPhy" cxxclass="FromPhy" headerfile="./fromphy.hh" sourcefile="./fromphy.cc" portcount="1/1" processing="h/h" flowcode="x/x" />
+<entry name="GrPhy" cxxclass="GrPhy" headerfile="./grphy.hh" sourcefile="./grphy.cc" portcount="2/2" processing="h/h" flowcode="x/x" />
+<entry name="HydraDecap" cxxclass="HydraDecap" docname="HydraDecap" headerfile="./hydradecap.hh" sourcefile="./hydradecap.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="HydraEncap" cxxclass="HydraEncap" headerfile="./hydraencap.hh" sourcefile="./hydraencap.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="HydraFromSocket" cxxclass="HydraFromSocket" headerfile="./hydrafromsocket.hh" sourcefile="./hydrafromsocket.cc" portcount="0/1" processing="a/a" flowcode="x/x" requires="userlevel" />
+<entry name="HydraToSocket" cxxclass="HydraToSocket" headerfile="./hydratosocket.hh" sourcefile="./hydratosocket.cc" portcount="1/0" processing="a/a" flowcode="x/x" requires="userlevel" />
+<entry name="LastFrame" cxxclass="LastFrame" headerfile="./lastframe.hh" sourcefile="./lastframe.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="LogTCP" cxxclass="LogTCP" headerfile="./logtcp.hh" sourcefile="./logtcp.cc" portcount="1/1" processing="h/h" flowcode="x/x" />
+<entry name="MACFrame" cxxclass="MACFrame" docname="MACFrame" headerfile="./macframe.hh" sourcefile="./macframe.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrame80211" cxxclass="MACFrame80211" headerfile="./macframe80211.hh" sourcefile="./macframe80211.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameACK" cxxclass="MACFrameACK" headerfile="./macframeack.hh" sourcefile="./macframeack.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameACKRbar" cxxclass="MACFrameACKRbar" headerfile="./macframeackrbar.hh" sourcefile="./macframeackrbar.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameCTS" cxxclass="MACFrameCTS" headerfile="./macframects.hh" sourcefile="./macframects.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameCTSRSSI" cxxclass="MACFrameCTSRSSI" headerfile="./macframectsrssi.hh" sourcefile="./macframectsrssi.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameCTSRbar" cxxclass="MACFrameCTSRbar" headerfile="./macframectsrbar.hh" sourcefile="./macframectsrbar.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameData" cxxclass="MACFrameData" headerfile="./macframedata.hh" sourcefile="./macframedata.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameDataRbar" cxxclass="MACFrameDataRbar" headerfile="./macframedatarbar.hh" sourcefile="./macframedatarbar.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameRTS" cxxclass="MACFrameRTS" headerfile="./macframerts.hh" sourcefile="./macframerts.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACFrameRTSRbar" cxxclass="MACFrameRTSRbar" headerfile="./macframertsrbar.hh" sourcefile="./macframertsrbar.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="MACTXScheduler" cxxclass="MACTXScheduler" docname="MACTXScheduler" headerfile="./mactxscheduler.hh" sourcefile="./mactxscheduler.cc" portcount="1/1" processing="la/hh" flowcode="xy/xx" />
+<entry name="MACTransmitter" cxxclass="MACTransmitter" docname="MACTransmitter" headerfile="./mactransmitter.hh" sourcefile="./mactransmitter.cc" portcount="1/1" processing="lhh/h" flowcode="xxy/x" />
+<entry name="MPIVector" cxxclass="MPIVector" docname="MPIVector" headerfile="./mpivector.hh" sourcefile="./mpivector.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="PHYProcessTime" cxxclass="PHYProcessTime" headerfile="./phyprocesstime.hh" sourcefile="./phyprocesstime.cc" portcount="0/0" processing="a/a" flowcode="x/x" />
+<entry name="PHYProcessTime1" cxxclass="PHYProcessTime1" headerfile="./phyprocesstime1.hh" sourcefile="./phyprocesstime1.cc" portcount="0/0" processing="a/a" flowcode="x/x" />
+<entry name="PassCSI" cxxclass="PassCSI" docname="PassCSI" headerfile="./passcsi.hh" sourcefile="./passcsi.cc" portcount="2/1" processing="al/a" flowcode="x/x" />
+<entry name="PowerControl" cxxclass="PowerControl" headerfile="./powercontrol.hh" sourcefile="./powercontrol.cc" portcount="0/0" processing="a/a" flowcode="x/x" />
+<entry name="PowerControlConst" cxxclass="PowerControlConst" headerfile="./powercontrolconst.hh" sourcefile="./powercontrolconst.cc" portcount="0/0" processing="a/a" flowcode="x/x" />
+<entry name="PowerControlScen" cxxclass="PowerControlScen" headerfile="./powercontrolscen.hh" sourcefile="./powercontrolscen.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="Prioritizer" cxxclass="Prioritizer" headerfile="./prioritizer.hh" sourcefile="./prioritizer.cc" portcount="1/1" processing="h/l" flowcode="x/x" />
+<entry name="Probe" cxxclass="Probe" headerfile="./probe.hh" sourcefile="./probe.cc" portcount="0/1" processing="h/h" flowcode="x/x" />
+<entry name="PullPusher" cxxclass="PullPusher" headerfile="./pullpusher.hh" sourcefile="./pullpusher.cc" portcount="1/1" processing="l/h" flowcode="x/x" />
+<entry name="RXState" cxxclass="RXState" headerfile="./rxstate.hh" sourcefile="./rxstate.cc" portcount="1/0" processing="a/a" flowcode="x/y" />
+<entry name="RXVector" cxxclass="RXVector" docname="RXVector" headerfile="./rxvector.hh" sourcefile="./rxvector.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="RXVectorGr" cxxclass="RXVectorGr" headerfile="./rxvectorgr.hh" sourcefile="./rxvectorgr.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="RXVectorGrNew" cxxclass="RXVectorGrNew" headerfile="./rxvectorgrnew.hh" sourcefile="./rxvectorgrnew.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="RateControl" cxxclass="RateControl" docname="RateControl" headerfile="./ratecontrol.hh" sourcefile="./ratecontrol.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="RateControlArf" cxxclass="RateControlArf" headerfile="./ratecontrolarf.hh" sourcefile="./ratecontrolarf.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="RateControlConst" cxxclass="RateControlConst" docname="RateControlConst" headerfile="./ratecontrolconst.hh" sourcefile="./ratecontrolconst.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="RateControlRSSI" cxxclass="RateControlRSSI" headerfile="./ratecontrolrssi.hh" sourcefile="./ratecontrolrssi.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="RateControlRbar" cxxclass="RateControlRbar" headerfile="./ratecontrolrbar.hh" sourcefile="./ratecontrolrbar.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="RateControlRbarTh" cxxclass="RateControlRbarTh" headerfile="./ratecontrolrbarth.hh" sourcefile="./ratecontrolrbarth.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="RateControlTbar" cxxclass="RateControlTbar" headerfile="./ratecontroltbar.hh" sourcefile="./ratecontroltbar.cc" portcount="-/-" processing="a/a" flowcode="x/x" />
+<entry name="SetCRCBER" cxxclass="SetCRCBER" headerfile="./setcrcber.hh" sourcefile="./setcrcber.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="SetDefer" cxxclass="SetDefer" docname="SetDefer" headerfile="./setdefer.hh" sourcefile="./setdefer.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="SetDuration" cxxclass="SetDuration" docname="SetDuration" headerfile="./setduration.hh" sourcefile="./setduration.cc" portcount="1/1" processing="a/a" flowcode="#/#" />
+<entry name="SetDuration1" cxxclass="SetDuration1" docname="SetDuration1" headerfile="./setduration1.hh" sourcefile="./setduration1.cc" portcount="1/1" processing="a/a" flowcode="#/#" />
+<entry name="SetDurationRbar" cxxclass="SetDurationRbar" headerfile="./setdurationrbar.hh" sourcefile="./setdurationrbar.cc" portcount="1/1" processing="a/a" flowcode="#/#" />
+<entry name="SetPower" cxxclass="SetPower" headerfile="./setpower.hh" sourcefile="./setpower.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="SetPowerScen" cxxclass="SetPowerScen" headerfile="./setpowerscen.hh" sourcefile="./setpowerscen.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="SetRTSThreshold" cxxclass="SetRTSThreshold" docname="SetRTSThreshold" headerfile="./setrtsthreshold.hh" sourcefile="./setrtsthreshold.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="SetRateControl" cxxclass="SetRateControl" docname="SetRateControl" headerfile="./setratecontrol.hh" sourcefile="./setratecontrol.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="SimChannel" cxxclass="SimChannel" docname="SimChannel" headerfile="./simchannel.hh" sourcefile="./simchannel.cc" portcount="-/-" processing="h/h" flowcode="x/x" />
+<entry name="SimChannelPER" cxxclass="SimChannelPER" headerfile="./simchannelper.hh" sourcefile="./simchannelper.cc" portcount="-/-" processing="h/h" flowcode="x/x" />
+<entry name="SimGrPhy" cxxclass="SimGrPhy" headerfile="./simgrphy.hh" sourcefile="./simgrphy.cc" portcount="2/2" processing="h/h" flowcode="x/x" />
+<entry name="SimGrPhyNew" cxxclass="SimGrPhyNew" headerfile="./simgrphynew.hh" sourcefile="./simgrphynew.cc" portcount="2/2" processing="h/h" flowcode="x/x" />
+<entry name="SimPhy" cxxclass="SimPhy" headerfile="./simphy.hh" sourcefile="./simphy.cc" portcount="2/2" processing="h/h" flowcode="x/x" />
+<entry name="SimPhy1" cxxclass="SimPhy1" headerfile="./simphy1.hh" sourcefile="./simphy1.cc" portcount="2/2" processing="lh/hh" flowcode="x/x" />
+<entry name="StaticRouteTable" cxxclass="StaticRouteTable" headerfile="./staticroutetable.hh" sourcefile="./staticroutetable.cc" portcount="1/1" processing="h/h" flowcode="x/y" provides="GridGenericRouteTable" />
+<entry name="TXVector" cxxclass="TXVector" docname="TXVector" headerfile="./txvector.hh" sourcefile="./txvector.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="TXVectorGr" cxxclass="TXVectorGr" headerfile="./txvectorgr.hh" sourcefile="./txvectorgr.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="TXVectorGrNew" cxxclass="TXVectorGrNew" headerfile="./txvectorgrnew.hh" sourcefile="./txvectorgrnew.cc" portcount="1/1" processing="a/a" flowcode="x/x" />
+<entry name="ToLabviewPhy" cxxclass="ToLabviewPhy" headerfile="./tolabviewphy.hh" sourcefile="./tolabviewphy.cc" portcount="2/1" processing="lh/h" flowcode="xy/x" requires="MACNotifier" />
+<entry name="ToLabviewPhy1" cxxclass="ToLabviewPhy1" headerfile="./tolabviewphy1.hh" sourcefile="./tolabviewphy1.cc" portcount="2/1" processing="lh/h" flowcode="xy/x" requires="MACNotifier" />
+<entry name="ToPhy" cxxclass="ToPhy" docname="ToPhy" headerfile="./tophy.hh" sourcefile="./tophy.cc" portcount="2/1" processing="lh/h" flowcode="xy/x" requires="MACNotifier" />
+<entry name="UBAggregator" cxxclass="UBAggregator" docname="UBAggregator" headerfile="./ubaggregator.hh" sourcefile="./ubaggregator.cc" portcount="2/1" processing="ll/l" flowcode="x/x" />
+<entry name="UBAggregator1" cxxclass="UBAggregator1" headerfile="./ubaggregator1.hh" sourcefile="./ubaggregator1.cc" portcount="2/1" processing="ll/l" flowcode="x/x" />
+<entry name="UBAggregator2" cxxclass="UBAggregator2" headerfile="./ubaggregator2.hh" sourcefile="./ubaggregator2.cc" portcount="2/1" processing="ll/l" flowcode="x/x" />
+<entry name="VirtualCarrierSense" cxxclass="VirtualCarrierSense" docname="VirtualCarrierSense" headerfile="./virtualcarriersense.hh" sourcefile="./virtualcarriersense.cc" portcount="1/2" processing="h/h" flowcode="x/x" />
+<entry name="VirtualCarrierSenseRbar" cxxclass="VirtualCarrierSenseRbar" headerfile="./virtualcarriersenserbar.hh" sourcefile="./virtualcarriersenserbar.cc" portcount="1/2" processing="h/h" flowcode="x/x" />
+<entry headerfile="./macnotifier.hh" sourcefile="./macnotifier.cc" requires="userlevel" provides="MACNotifier MACListener" />
+<entry headerfile="./mactimer.hh" sourcefile="./mactimer.cc" provides="MACTimer" />
+</elementmap>

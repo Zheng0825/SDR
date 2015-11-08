@@ -1,0 +1,55 @@
+SHELL = /bin/sh
+
+
+# THESE VARIABLES MAY CHANGE BETWEEN PACKAGES
+
+# Set 'package' to the name of your package.
+package := hydra
+
+# Set these variables appropriately.
+top_builddir := .
+subdir := .
+
+# Require Click prefix settings.
+# Generally, you will provide a '--with-click=CLICKPREFIX' option, and set:
+include /home/wkim/nfs/click-piggyback/click-build-1.5.0/trunk/../../click-install-1.5.0/share/click/config.mk
+include /home/wkim/nfs/click-piggyback/click-build-1.5.0/trunk/../../click-install-1.5.0/share/click/pkg-config.mk
+
+srcdir = .
+top_srcdir = .
+AUTOCONF = $(CLICKAUTOCONF)
+ACLOCAL = :
+
+TARGETS = package
+
+all: Makefile $(TARGETS)
+
+package: Makefile
+	@cd package && $(MAKE) all
+
+elemlist: Makefile
+	@cd package && $(MAKE) elemlist
+
+install: Makefile
+	@for d in $(TARGETS); do (cd $$d && $(MAKE) install) || exit 1; done
+
+install-man:
+	@cd package && $(MAKE) install-man
+
+$(srcdir)/configure: $(srcdir)/configure.ac
+	cd $(srcdir) && $(ACLOCAL) && $(AUTOCONF)
+config.status: $(srcdir)/configure
+	$(SHELL) $(srcdir)/configure '--prefix=/home/wkim/nfs/click-piggyback/click-build-1.5.0/trunk/../../click-install-1.5.0'
+Makefile: config.status $(srcdir)/Makefile.in
+	cd $(top_builddir) && \
+	  CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+
+clean:
+	@-for d in $(TARGETS); do (cd $$d && $(MAKE) clean); done
+
+distclean:
+	@-for d in $(TARGETS); do (cd $$d && $(MAKE) distclean); done
+	-rm -f Makefile config.status config.cache config.log config.h
+
+.PHONY: all package elemlist clean distclean \
+	install install-doc install-man install-include

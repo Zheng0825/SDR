@@ -1,0 +1,250 @@
+==============================================================================
+                                  README
+==============================================================================
+
+Here we describe the packages for the Hydra. We describe the purpose and
+function of each package, and highlight particularly relevant parts of the
+codebase. Finally, we enumerate the procedure for running Hydra.
+
+We use the following notation in this document:
+
+  * $GR - install path for all packages
+  * $GNURADIO_SRCDIR - path to GNU Radio source code
+  * $PATH - common path environment variable used by the shell
+  * $GRMIMO - path to source code for gr-mimo package of Hydra
+  * $CLICKPATH - path to top-level of click-piggyback package of Hydra
+
+==============================================================================
+Version Info & News
+==============================================================================
+
+Package: Hydra Wireless Testbed
+Version: 0.4.1
+Website: http://hydra.ece.utexas.edu/
+
+  * Minor bug fix to upgrade channel emulator to work with gnuradio-3.2.2.
+
+  * This version of the code, hydra-0.4, has been upgraded to work with the
+    latest release of gnuradio (i.e. gnuradio-3.2.2).
+
+  * Inband testing and support from hydra-0.3 has been removed.
+
+  * hydra-demo-csma added to gr-mimo for top-level script to run CSMA MAC.
+
+==============================================================================
+Install Instructions
+==============================================================================
+
+Follow the installation directions in INSTALL.
+
+==============================================================================
+Physical Layer Packages
+==============================================================================
+
+The physical layer (PHY) of the Hydra testbed is implemented across four
+packages: wicom, meta-80211n, gr-hydra, and gr-mimo. These packages ultimately
+enable development of a custom PHY that can operate over USRP hardware using the
+GNU Radio codebase.
+
+  * wicom - Wireless communications library containing various algorithms for
+            physical layer operation.
+
+    This package contains algorithms for beamforming, precoding, and
+    a machine-learning approach to PHY adaptation.
+
+  * meta-80211n - Custom IEEE 802.11n PHY implementation.
+
+    This PHY supports most of the features specified in the 802.11n standard
+    with some additional modifications related to current research on Hydra.
+    This package is dependent on wicom.
+
+  * gr-hydra - Base package for system architecture of Hydra.
+
+    This establishes a framework that enables physical layer to interact with
+    USRP hardware as well as "talk" with a MAC layer over a UDP interface. In
+    particular, this framework abstracts away many of the details of these
+    interactions from the PHY design, allowing the development of the MAC and
+    PHY to be partly decoupled. This package also contains a number of patches
+    that are applied to "fix" certain aspects of GNU Radio codebase to operate
+    as needed by Hydra.
+
+  * gr-mimo - MIMO specific implementation of gr-hydra framework.
+
+    This package is a specific instance of the framework established by
+    gr-hydra. It contains all of the top-level scripts needed to run the entire
+    system as well. This package depends on gr-hydra and meta-80211n.
+
+==============================================================================
+MAC Layer Packages
+==============================================================================
+
+The medium access control (MAC) layer research for Hydra is done on a custom
+802.11 style MAC layer developed using the Click modular router. This MAC layer
+implements the DCF mode of IEEE 802.11 with additional features for rate
+adaptation. The MAC interacts with the PHY over a local UDP socket interface.
+
+  * click-piggyback - All-in-one package containing a tarball of the Click
+    modular router code as well as Hydra developed MAC code.
+
+==============================================================================
+Running the Hydra System -- with MAC layer
+==============================================================================
+
+After installing Hydra from the instructions in INSTALL, you will be able to run
+the system in two basic modes: (1) using a stripped down CSMA/CA MAC, or (2)
+using the DCF-MAC implemented in Click. All of the scripts described in this
+section have a '--usage' option which will print usage information.
+
+  * Procedure for running CSMA/CA system:
+
+    1. Start the tun/tap server for the MAC layer:
+
+          hydra-tunnel <server_conf_file> <options>
+
+       Root permissions are required to run the tun/tap interface, so make sure
+       that you have root permission or sudoers access when running this script.
+       A list of server configuration files can be found in $GR/share/hydra.
+       Each server configuration corresponds to a particular (IPv4, Ethernet)
+       address pair, and contains interface parameters. Modify these as needed.
+       The configuration file sconf-<nodenum> will configure the tun/tap
+       interface with the IP address 192.168.255.<nodenum>. Look at the
+       configuration files in $GR/share/hydra for more information.
+
+       This script is located in $GR/bin. It runs the python script
+       $GRMIMO/src/python/run_tunserver.py.
+
+    2. Start the CSMA/CA MAC:
+
+          hydra-csma <options>
+
+       In a new terminal, start the MAC layer using this script. All scripts,
+       except for 'hydra-tunnel', can be run as a normal user, i.e. without root
+       permissions. This CSMA/CA MAC layer runs entirely in python.
+
+       This script is located in $GR/bin. It runs the python script
+       $GRMIMO/src/python/test-csma.py.
+
+    3. Start the physical layer:
+
+          hydra-mimo <options>
+
+       In another new terminal, start the PHY using this script. There are a
+       number of default arguments set in this script. Overload these arguments
+       by passing your own arguments when running 'hydra-mimo'. The default
+       arguments used to run the PHY are:
+
+          --enable-socket -s1.0M -n2 -g7000 -G30 -T80 -u2 --debug=1
+
+       By default the PHY has a debug GUI which can be used to monitor normal
+       operation of the physical layer. The 'hydra-mimo' script is located in
+       $GR/bin. It runs the python script $GRMIMO/src/python/test.py.
+
+  * Procedure for running the DCF-MAC for Hydra:
+
+    1. Run the top-level all-in-one script below, which will spawn a new
+       terminal for MAC operation:
+
+          hydra-demo <options>
+
+       Use the '--usage' option to print out useful commands that can be used to
+       configure the Hydra system. The most common option used to configure the
+       demo is '--node-num' which specifies the node number that identifies the
+       interface. For example, '--node-num=13' would specify that the Click MAC
+       would create a tun/tap interface with the IP address 192.168.255.13,
+       which would interact with the MAC code running in Click. The only valid
+       node numbers are 12, 13, and 14.
+
+Now that you have started the system, you can send traffic between nodes using
+normal applications such as ping, ssh, or html web sessions. A common test to
+make sure the code is working is to send a single ping using the command:
+
+    ping <destination_ip> -i 10000 -s 256
+
+This sends a 256 byte ping request which should be acknowledged with a ping
+reply from the destination. Note: there is additional overhead which makes the
+PSDU at the PHY bigger than 256 bytes.
+
+In general, when starting the system, remember to start the PHY, then the MAC,
+and then application level traffic. And, when stopping, remember to stop
+application level traffic, then the MAC, and finally the PHY.
+
+==============================================================================
+Running the Hydra System -- Point-to-Point (i.e. without MAC layer)
+==============================================================================
+
+Some users may not be interested in running the system with a full blown MAC
+layer. Those users can run just the physical layer and execute a simple python
+script that generates and receives traffic from the PHY. This pseudo-MAC simply
+sends traffic to the PHY and monitors received packets.
+
+  * Procedure for running Hydra in Point-to-Point configuration:
+
+    1. Start the physical layer:
+
+          hydra-mimo <options>
+
+       As in the previous instructions, start the physical layer using this
+       script. There are a number of default arguments set in this script.
+       Overload these arguments  by passing your own arguments when running
+       'hydra-mimo'. The default arguments used to run the PHY are:
+
+          --enable-socket -s1.0M -n2 -g7000 -G30 -T80 -u2 --debug=1
+
+       By default the PHY has a debug GUI which can be used to monitor normal
+       operation of the physical layer. The 'hydra-mimo' script is located in
+       $GR/bin. It runs the python script $GRMIMO/src/python/test.py.
+
+    2. Start simple traffic module (i.e. pseudo-MAC):
+
+          $GRMIMO/src/python/simple-mac.py <options>
+
+       The simple-mac.py script has two important methods: send_80211data() and
+       recv_data(). The former method generates IEEE 802.11 formatted data
+       packets and forwards them on to the physical layer along with specific
+       transmit configuration information (i.e. transmit power and rate -- `Ptx`
+       and `MCS`). The latter method monitors received data packets and prints
+       some debug information about the packet.
+
+==============================================================================
+Highlighted Code
+==============================================================================
+
+The following files might be a useful place to start when modifying the code or
+trying to understand what happens when it runs:
+
+    * $GRMIMO/src/python/test.py - runs physical layer from meta-80211n package
+    * $GRMIMO/src/python/test-csma.py - runs CSMA/CA MAC developed in python
+    * $GRMIMO/src/python/run_tunserver.py - starts a tun/tap interface used by
+          CSMA/CA MAC for interfacing to normal Linus TCP/IP stack.
+    * $CLICKPATH/click-hydra-1.5.0/trunk/conf/frame-agg-<nodenum>.click -
+          specifies configuration for DCF-MAC which runs in Click.
+
+==============================================================================
+Known Issues
+==============================================================================
+
+The following are known issues that are still unresolved.
+
+1. Sample Rate Bug
+    - The system seems to work correctly only for sample rates of 1.0 MHz (with
+      and without upsampling) and 2.0 MHz (without upsampling). It seems that
+      although packets are being detected correctly at other sample rates, the
+      physical layer is not able to decode the header or estimate the frequency
+      offset correctly.
+
+2. Firewall Problems
+    - Since uses UDP/TCP ports for all of its IPC, problems can arise when
+      firewalls block certain ports. Although this problem doesn't typically
+      occur when these processes are started under the same account. When using
+      the channel emulator to perform simulations across different machines,
+      this problem needs to be addressed by unblocking the MAC/PHY and
+      PHY/Channel ports being used by the software.
+
+3. Documentation
+    - We currently do not have sufficient documentation for all of the software
+      and the overall architecture. In particular, we need further documentation
+      on the following:
+          * Click MAC (code/software architecture)
+          * MAC/PHY interface (frame format, IPC details)
+          * GNU Radio framework for PHY (software architecture)
+          * PHY (details on custom IEEE 802.11n implementation)

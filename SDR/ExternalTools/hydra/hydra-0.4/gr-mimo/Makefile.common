@@ -1,0 +1,66 @@
+# -*- Makefile -*-
+#
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# 
+
+# Definitions for gnuradio and hydra
+
+# includes
+grincludedir   = $(GNURADIO_CORE_INCLUDEDIR)
+hydraincludedir = $(HYDRA_INCLUDEDIR)
+
+# swig includes 
+grswigincludedir = $(grincludedir)/swig
+hydraswigincludedir = $(hydraincludedir)/swig
+
+# Install this stuff in the appropriate subdirectory
+# This usually ends up at:
+#   ${prefix}/lib/python${python_version}/site-packages/gnuradio
+
+grpythondir = $(pythondir)/gnuradio
+hydrapythondir = $(pythondir)/hydra
+grpyexecdir = $(pyexecdir)/gnuradio
+hydrapyexecdir = $(pyexecdir)/hydra
+
+# swig flags
+SWIGPYTHONFLAGS = -fvirtual -python -modern
+SWIGGRFLAGS = -I$(grincludedir) \
+							-I$(hydraincludedir) \
+							-I$(grswigincludedir) \
+							-I$(hydraswigincludedir)
+
+# Don't assume that make predefines $(RM), because BSD make does
+# not. We define it now in configure.ac using AM_PATH_PROG, but now
+# here have to add a -f to be like GNU make.
+RM=$(RM_PROG) -f
+
+# Definitions for mimo project
+mimoincludedir = $(hydraincludedir)/mimo
+mimoswigincludedir = $(hydraswigincludedir)/mimo
+mimopythondir = $(hydrapythondir)/mimo
+mimopyexecdir = $(hydrapyexecdir)/mimo
+
+# Additional definitions for mimo project
+
+# itpp flags
+ITPPCFLAGS=`itpp-config --cflags-opt`
+ITPPLDFLAGS=`itpp-config --libs-opt`
+
+DISTCLEANFILES = Makefile.in

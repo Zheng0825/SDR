@@ -1,0 +1,83 @@
+#!  /bin/bash
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+
+function usage {
+  echo "usage: hydra-tunnel [OPTIONS] [TUNNEL OPTIONS]"
+  echo ""
+  echo "OPTIONS"
+  echo ""
+  echo "    --usage"
+  echo "            Print this help message."
+  echo ""
+  echo "    Additional arguments passed to python script running tun/tap interface."
+  echo ""
+  echo "TUNNEL OPTIONS"
+  echo ""
+  echo "    Use the --help option to see available options"
+  echo "    for the tun/tap interface."
+  echo ""
+  echo "FIREWALL"
+  echo ""
+  echo "    If a firewall is present, you may need to add rules to allow the"
+  echo "    new tun/tap interface to be used."
+  echo ""
+  echo "    For example, when using iptables, add the following"
+  echo "    rules to allow access to the tun/tap interface tun0:"
+  echo "        iptables -A INPUT  -i tun0 -j ACCEPT"
+  echo "        iptables -A OUTPUT -o tun0 -j ACCEPT"
+  echo ""
+  echo "    Root permission are required to execute these commands."
+  echo "    Similarly, to remove these rules (with iptables):"
+  echo "        iptables -D INPUT  -i tun0 -j ACCEPT"
+  echo "        iptables -D OUTPUT -o tun0 -j ACCEPT"
+  echo ""
+}
+
+###############################################################################
+# SYS VARIABLES
+###############################################################################
+SUDOEXEC=`which sudo`
+SUDOARGS="PYTHONPATH=$PYTHONPATH"
+BASHEXEC=`which bash`
+PYTHONEXEC=`which python`
+command_line_args=$@;   # local copy of command line arguments
+
+###############################################################################
+# HYDRA VARIABLES
+###############################################################################
+GRMIMODIR=@abs_top_builddir@
+TUNPATH="$GRMIMODIR/src/python"
+TUNEXEC="$TUNPATH/run_tunserver.py"
+
+###############################################################################
+# PROCESS OPTIONS
+###############################################################################
+for arg in $@; do
+  marg1=`expr match "$arg" ".*--usage"`;
+  if [ $marg1 -ne 0 ]; then
+    usage;
+    exit;
+  fi
+done
+
+###############################################################################
+# RUN TUNNEL INTERFACE
+###############################################################################
+$SUDOEXEC $SUDOARGS $PYTHONEXEC $TUNEXEC $command_line_args

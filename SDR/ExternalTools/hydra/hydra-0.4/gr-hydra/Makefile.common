@@ -1,0 +1,62 @@
+# -*- Makefile -*-
+#
+# Copyright (C) 2009  The University of Texas at Austin.
+# Copyright 2004,2006 Free Software Foundation, Inc.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# 
+
+# usual gnuradio definitions
+grincludedir   = $(includedir)/gnuradio
+grswigincludedir = $(grincludedir)/swig
+grpythondir = $(pythondir)/gnuradio
+grpyexecdir = $(pyexecdir)/gnuradio
+
+# swig flags
+SWIGPYTHONFLAGS = -fvirtual -python -modern
+SWIGGRFLAGS = -I$(GNURADIO_CORE_INCLUDEDIR)/swig -I$(GNURADIO_CORE_INCLUDEDIR)
+
+# Don't assume that make predefines $(RM), because BSD make does
+# not. We define it now in configure.ac using AM_PATH_PROG, but now
+# here have to add a -f to be like GNU make.
+RM=$(RM_PROG) -f
+
+# Additional definitions for hydra
+
+# includes
+# This ends up at:
+# 	${prefix}/include/hydra[/swig]
+hydraincludedir = $(includedir)/hydra
+hydraswigincludedir = $(hydraincludedir)/swig
+
+# python install path
+# This ends up at:
+#   ${prefix}/lib/python${python_version}/site-packages/hydra
+hydrapythondir = $(pythondir)/hydra
+hydrapyexecdir = $(pyexecdir)/hydra
+
+# itpp flags
+ITPPCFLAGS=`itpp-config --cflags`
+ITPPLDFLAGS=`itpp-config --libs`
+
+# included to build using guile
+#RUN_GUILE = GUILE_LOAD_PATH="@abs_top_srcdir@/pmt/src/scheme:@abs_top_srcdir@/mblock/src/scheme" @GUILE@ -e main -s
+RUN_GUILE = GUILE_LOAD_PATH="$(GNURADIOSRCDIR)/pmt/src/scheme:$(GNURADIOSRCDIR)/mblock/src/scheme" @GUILE@ -e main -s
+#COMPILE_MBH = $(RUN_GUILE) $(top_srcdir)/mblock/src/scheme/gnuradio/compile-mbh.scm
+COMPILE_MBH = $(RUN_GUILE) $(GNURADIOSRCDIR)/mblock/src/scheme/gnuradio/compile-mbh.scm
+
+DISTCLEANFILES = Makefile.in

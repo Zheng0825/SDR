@@ -1,0 +1,2 @@
+Create Makefile to install rbf into gr/share/usrp/rev4
+Create patch for usrp_inband_usb.qsf file in gnuradio-srcdir

@@ -1,0 +1,113 @@
+= Hydra Build Guide =
+
+Here we document the procedure we used in installing the Hydra system on a Dell
+Latitude E6400 with Ubuntu 9.10 and using GNU Radio 3.2.2.
+
+1.  Install Ubuntu 9.10, Karmic Koala
+
+2.  Upgrade all packages using Update Manager or apt (and activate any necessary
+proprietary drivers, such as for wifi).
+
+3.  Check the SIMD instructions supported by your processor (such as 3DNow!,
+SSE, or SSE2) and install dependencies for Hydra.  Only libatlas is optimized
+for a particular instruction set---for the laptops, we used the sse2 optimized
+version of libatlas.
+
+    sudo apt-get -y install libatlas-sse2-dev liblapack-dev libitpp-dev \
+    python-scipy python-numpy python-matplotlib 
+
+4.  Install GNU Radio dependencies, as listed in their build guide
+[http://gnuradio.org/redmine/wiki/gnuradio/UbuntuInstall]
+
+    sudo apt-get -y install swig g++ automake libtool python-dev libfftw3-dev \
+    libcppunit-dev libboost1.38-dev libusb-dev fort77 sdcc sdcc-libraries \
+    libsdl1.2-dev python-wxgtk2.8 subversion git-core guile-1.8-dev \
+    libqt4-dev python-numpy ccache python-opengl libgsl0-dev \
+    python-cheetah python-lxml doxygen qt4-dev-tools \
+    libqwt5-qt4-dev libqwtplot3d-qt4-dev pyqt4-dev-tools
+
+5.  Follow the GNU Radio directions for creating a USRP group
+[http://gnuradio.org/redmine/wiki/gnuradio/UbuntuInstall].  Note that you must
+substitute your username below.
+
+    sudo addgroup usrp
+    sudo usermod -G usrp -a <USERNAME>
+    echo 'ACTION=="add", BUS=="usb", SYSFS{idVendor}=="fffe", SYSFS{idProduct}=="0002", GROUP:="usrp", MODE:="0660"' > tmpfile
+    sudo chown root.root tmpfile
+    sudo mv tmpfile /etc/udev/rules.d/10-usrp.rules
+    sudo udevadm control --reload-rules
+
+6.  Download Hydra Release 0.4
+[http://hydra.ece.utexas.edu/download/hydra-0.4.tar.gz] and unpack it from your
+home directory.  This should create a directory called `hydra-0.4/'.
+
+    cd $HOME
+    wget http://hydra.ece.utexas.edu/download/hydra-0.4.tar.gz
+    tar -xzvf hydra-0.4.tar.gz
+
+7.  From the hydra-0.4/ directory, download GNU Radio release 3.2.2
+[ftp://ftp.gnu.org/gnu/gnuradio/gnuradio-3.2.2.tar.gz] and unpack it. This
+should create the `gnuradio-3.2.2/' directory in hydra-0.4/.
+
+    cd $HOME/hydra-0.4/
+    wget ftp://ftp.gnu.org/gnu/gnuradio/gnuradio-3.2.2.tar.gz
+    tar -xzvf gnuradio-3.2.2.tar.gz
+
+8.  Add the following lines to your .bashrc.  Notice that we assume hydra-0.4/
+is in $HOME below; change this if necessary.
+
+    ## USER DEFINES ##
+    
+    # Python definitions
+    # Get python version number
+    PYTHONEXEC=`which python`
+    PYTHONVERSION=`pyversions -d`
+    PYTHONDIR=$PYTHONVERSION
+    PYTHONPATH=/usr/lib/$PYTHONDIR/site-packages:/usr/local/lib/$PYTHONDIR/site-packages
+    export PYTHONEXEC PYTHONVERSION PYTHONDIR PYTHONPATH
+    
+    # Package config definition
+    PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/local/lib/pkgconfig
+    export PKG_CONFIG_PATH
+    
+    # Hydra definitions
+    HYDRA=$HOME/hydra-0.4
+    GR=$HYDRA/gr
+    GNURADIO_SRCDIR=$HYDRA/gnuradio-3.2.2
+    PYTHONPATH=$GR/lib/$PYTHONDIR/site-packages:$PYTHONPATH
+    PKG_CONFIG_PATH=$GR/lib/pkgconfig:$PKG_CONFIG_PATH
+    PATH=$GR/bin:$PATH
+    export HYDRA GR GNURADIO_SRCDIR PYTHONPATH PKG_CONFIG_PATH PATH
+    
+    # Click definitions
+    CLICKPATH=$HYDRA/click-piggyback
+    CLICKINSTALLDIR=$CLICKPATH/click-install-1.5.0
+    PATH=$CLICKINSTALLDIR/bin:$PATH
+    export CLICKPATH CLICKINSTALLDIR PATH
+    
+    # Additional library definitions
+    LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH
+
+9.  Restart your terminal or source ~/.bashrc to ensure that these new
+definitions are loaded.
+
+10.  In the gnuradio-3.2.2, wicom, meta-80211n directories (in $HYDRA), run
+
+    ./bootstrap && ./configure --prefix=$GR && make && make install
+
+11.  To install the MAC (and click), from
+$HYDRA/click-piggyback/click-build-1.5.0/trunk run
+
+    ./build-click.sh
+    ./build-hydra.sh
+
+12.  In the $HYDRA/gr-hydra directory, run
+
+    ./bootstrap && ./configure --prefix=$GR --with-gnuradio-srcdir=$GNURADIO_SRCDIR && make && make install
+
+13.  In the $HYDRA/gr-mimo directory, run
+
+    ./bootstrap && ./configure --prefix=$GR && make && make install
+
+14.  Enjoy Hydra

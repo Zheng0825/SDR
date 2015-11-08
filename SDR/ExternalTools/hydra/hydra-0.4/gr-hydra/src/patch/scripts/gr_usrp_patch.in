@@ -1,0 +1,178 @@
+#!/bin/bash
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+pythondir=@pythondir@
+
+gnuradiosrcdir=@GNURADIOSRCDIR@
+
+# Directories for patch source and GNU Radio sources
+PATCHDIR=`pwd`/..
+GRDIR=$gnuradiosrcdir
+FIXDIR=$PATCHDIR/source
+GRUSRPDIR=$GRDIR/gr-usrp
+BACKUP=".backup"
+
+DIFFEXEC=`which diff`;
+DATEEXEC=`which date`;
+MAKE=`which make`;
+
+INSTALLPATCH="yes";
+UNINSTALLPATCH="no";
+
+if [ $# -gt 0 ] && [ $1 == "uninstall" ]; then
+  INSTALLPATCH="no";
+  UNINSTALLPATCH="yes"
+fi
+
+#
+# Run diff on files to patch ...
+# Apply patch if necessary.
+#
+
+if [ ! -d "$gnuradiosrcdir" ];
+then
+  echo "Warning! Patch cannot be applied!" >&2;
+  echo "GNU Radio source directory not defined." >&2;
+  echo "Run configure using \"--with-gnuradio-srcdir\" option." >&2;
+  exit 0
+else
+  echo "GNU Radio source directory = $gnuradiosrcdir" >&2;
+fi
+
+# usage:
+#   applypatch origfile patchfile [backup]
+#
+#   origfile: file to modify
+#   patchfile: fix to apply to origfile
+#   [backup]: optional backup directory to save backups in
+#
+#   returns: 0 if nothing was done; 1 if patch was applied.
+#
+function applypatch {
+  origfile=$1;
+  origname=${origfile##*/};
+  patchfile=$2;
+  backup="";
+  backupext="orig";
+  backupfile=$backup/$origname.$backupext
+  backupdate=`$DATEEXEC '+%Y%m%d%H%M'`;
+  if [ $# -gt 2 ]; then backup=$3; fi
+  if [ -f $origfile ] && [ -f $patchfile ]; then
+    if [ -n "`$DIFFEXEC $origfile $patchfile`" ]; then
+      # create backup
+      if [ -n $backup ]; then
+        if [ ! -d $backup ]; then mkdir $backup; fi
+        cp $origfile $backup/$origname.$backupext;
+        cp $origfile $backup/$origname.$backupdate;
+      fi
+      # apply fix
+      cp $patchfile $origfile;
+      return 1;
+    fi
+  fi
+  return 0;
+}
+
+# revert patch
+# usage:
+#   applypatch origfile patchfile backup
+#
+#   origfile: modified file in gnuradio source tree
+#   patchfile: applied patch file
+#   backup: backup directory where backups are saved
+#
+#   returns: 0 if nothing was done; 1 if patch was reverted.
+#
+function revertpatch {
+  origfile=$1;
+  origname=${origfile##*/};
+  patchfile=$2;
+  backup=$3;
+  backupext="orig";
+  backupfile=$backup/$origname.$backupext
+  backupdate=`$DATEEXEC '+%Y%m%d%H%M'`;
+  if [ -f $backupfile ]; then
+    if [ -z "`$DIFFEXEC $origfile $patchfile`" ] && [ -n "`$DIFFEXEC $origfile $backupfile`" ];
+    then
+      # restore from backup
+      cp $backupfile $origfile;
+      return 1;
+    fi
+  fi
+  return 0;
+}
+
+# rebuild gr-usrp
+function rebuild-gr-usrp {
+  grusrpdir=$1;
+  if [ -d $grusrpdir ]; then
+    pushd $grusrpdir;
+    #$MAKE clean;
+    $MAKE;
+    $MAKE install;
+    popd;
+  fi
+}
+
+GRUSRPSRC=$GRUSRPDIR/src;
+FIXPREFIX="$FIXDIR/gr-usrp.src";
+fixes[0]="$GRUSRPSRC/usrp_source_base.cc $FIXPREFIX.usrp_source_base.fix.cc $BACKUP";
+fixes[1]="$GRUSRPSRC/usrp_source_base.h  $FIXPREFIX.usrp_source_base.fix.h  $BACKUP";
+nfixes=${#fixes[@]};
+
+if [ $INSTALLPATCH == "yes" ]; then
+  # Apply patches
+  nfixed=0;
+  for ((i=0;i<$nfixes;i++)); do
+    echo "" >&2;
+    echo "files patched ... $nfixed" >&2;
+    echo "applying patch ... ${fixes[$i]}" >&2;
+    applypatch ${fixes[$i]};
+    rval=$?;
+    (( nfixed = nfixed + rval ));
+  done
+
+  # Rebuild gr-usrp
+  echo "" >&2;
+  echo -e "\ntotal files patched ... $nfixed" >&2;
+  if [ $nfixed -gt 0 ]; then
+    rebuild-gr-usrp $GRUSRPDIR
+  fi
+elif [ $UNINSTALLPATCH == "yes" ]; then
+  # Restore files
+  nrestored=0;
+  for ((i=0;i<$nfixes;i++)); do
+    echo "" >&2;
+    echo "files restored ... $nrestored" >&2;
+    echo "reverting patch ... ${fixes[$i]}" >&2;
+    revertpatch ${fixes[$i]};
+    rval=$?;
+    (( nrestored = nrestored + rval ));
+  done
+
+  # Rebuild gr-usrp
+  echo "" >&2;
+  echo -e "\ntotal files restored ... $nrestored" >&2;
+  if [ $nrestored -gt 0 ]; then
+    rebuild-gr-usrp $GRUSRPDIR
+  fi
+fi

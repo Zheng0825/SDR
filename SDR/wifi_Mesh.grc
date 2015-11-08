@@ -592,11 +592,11 @@
     </param>
     <param>
       <key>istunflag</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(312, 67)</value>
+      <value>(320, 67)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2357,7 +2357,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(447, 520)</value>
+      <value>(472, 523)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2575,7 +2575,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 411)</value>
+      <value>(816, 419)</value>
     </param>
     <param>
       <key>_rotation</key>

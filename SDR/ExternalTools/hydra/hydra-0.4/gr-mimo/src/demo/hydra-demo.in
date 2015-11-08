@@ -1,0 +1,199 @@
+#!  /bin/bash
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+
+# print usage
+function usage {
+  echo "usage: hydra-demo [SETUP OPTIONS] [HYDRA OPTIONS]"
+  echo ""
+  echo "SETUP OPTIONS"
+  echo ""
+  echo "    --usage"
+  echo "            Print this help message."
+  echo ""
+  echo "    --node-num=NUM"
+  echo "            Specify the node number for the current demo node."
+  echo "            Default is 13."
+  echo ""
+  echo "    --click-path=PATH"
+  echo "            Specify the path to the top level Click "
+  echo "            directory. By default, this is set to the value"
+  echo "            of the CLICKPATH environment variable"
+  echo ""
+  echo "    --click-prefix=PREFIXPATH"
+  echo "            Specify the install path for Click"
+  echo "            directory. By default, this will be derived from"
+  echo "            the CLICKPATH environment variable"
+  echo "            (i.e. \$CLICKPATH/click-install-1.5.0)"
+  echo ""
+  echo "    --demo-mac=CONFIGFILE"
+  echo "            Specify the Click configuration file to run the "
+  echo "            MAC layer. This file name is normally derived"
+  echo "            from the NODENUM option and the CLICKPATH environment variable."
+  echo "            (i.e.\$CLICKPATH/click-hydra-1.5.0/conf/trunk/frame-agg-\$NODENUM.click)"
+  echo ""
+  echo "    --disable-mac"
+  echo "            Disable MAC layer."
+  echo ""
+  echo "    --disable-phy"
+  echo "            Disable physical layer."
+  echo ""
+  echo ""
+  echo "HYDRA OPTIONS"
+  echo ""
+  echo "    Additional arguments sent to the physical layer python script."
+  echo "    --demo-phy=PHYFILE"
+  echo "            Python file to run the physical layer. Default is"
+  echo "            test.py located in the \$GR_MIMO/src/python"
+  echo "            directory."
+  echo ""
+}
+
+# General configuration
+BASHEXEC=/bin/bash
+PYTHON=python
+CURRDIR=`pwd`
+command_line_args=$@;   # local copy of command line arguments
+
+# Demo parameters
+NODENUM=13
+PHYENABLE="yes"
+MACENABLE="yes"
+
+# process command line arguments
+for arg in $command_line_args; do
+  marg1=`expr match "$arg" '\(--usage\)'`;
+  marg2=`expr match "$arg" '\(--node-num=.*\)'`;
+  marg3=`expr match "$arg" '\(--disable-mac\)'`;
+  marg4=`expr match "$arg" '\(--disable-phy\)'`;
+  if [ -n "$marg1" ]; then
+    usage;
+    exit;
+  elif [ -n "$marg2" ]; then
+    NODENUM=${arg//--node-num=/};
+    command_line_args=${command_line_args[@]//--node-num=*/};
+  elif [ -n "$marg3" ]; then
+    MACENABLE="no";
+    command_line_args=${command_line_args[@]//--disable-mac/};
+  elif [ -n "$marg4" ]; then
+    PHYENABLE="no";
+    command_line_args=${command_line_args[@]//--disable-phy/};
+  fi
+done
+
+# Setup for PHY
+PHYPATH=@abs_top_builddir@
+PHYEXEC=$PHYPATH/src/python/test.py   # script to run PHY
+
+# process command line arguments
+for arg in $command_line_args; do
+  marg1=`expr match "$arg" '\(--demo-phy=.*\)'`;
+  if [ -n "$marg1" ]; then
+    PHYEXEC=${arg//--demo-phy=/};
+    command_line_args=${command_line_args[@]//--demo-phy=*/};
+  fi
+done
+
+# Setup for MAC
+AC_CLICKPATH=$CLICKPATH
+AC_CLICKPREFIX=$AC_CLICKPATH/click-install-1.5.0  # Installation dir
+AC_CLICKEXEC=$AC_CLICKPREFIX/bin/click            # exec to run MAC
+MACEXEC=$AC_CLICKPATH/click-hydra-1.5.0/trunk/conf/frame-agg-$NODENUM.click
+
+# process command line arguments
+setpath=0;
+setprefix=0;
+setdemomac=0;
+for arg in $@; do
+  marg1=`expr match "$arg" '\(--click-path=.*\)'`;
+  marg2=`expr match "$arg" '\(--click-prefix=.*\)'`;
+  marg3=`expr match "$arg" '\(--demo-mac=.*\)'`;
+  if [ -n "$marg1" ]; then
+    AC_CLICKPATH=${arg//--click-path=/};
+    command_line_args=${command_line_args[@]//--click-path=*/};
+    setpath=1;
+  elif [ -n "$marg2" ]; then
+    AC_CLICKPREFIX=${arg//--click-prefix=/};
+    command_line_args=${command_line_args[@]//--click-prefix=*/};
+    setprefix=1;
+  elif [ -n "$marg3" ]; then
+    MACEXEC=${arg//--demo-mac=/};
+    command_line_args=${command_line_args[@]//--demo-mac=*/};
+    setdemomac=1;
+  fi
+done
+if [ $setprefix -lt 1 ]; then
+  AC_CLICKPREFIX=$AC_CLICKPATH/click-install-1.5.0
+fi
+if [ $setdemomac -lt 1 ]; then
+  MACEXEC=$AC_CLICKPATH/click-hydra-1.5.0/trunk/conf/frame-agg-$NODENUM.click
+fi
+AC_CLICKEXEC=$AC_CLICKPREFIX/bin/click
+
+# Start MAC - run Click in a new terminal window
+MACLOG="$CURRDIR/temp_mac_log";
+RUNMAC="sudo $AC_CLICKEXEC $MACEXEC 2>$MACLOG";
+GNOMETERM=gnome-terminal
+
+if [ "$MACENABLE" == "yes" ]; then
+  if [ -f $MACEXEC ]; then
+    x="if [ $setdemomac -lt 1 ]; then ";
+    x="$x   echo \"====================================================\"; ";
+    x="$x   echo \"starting MAC for 192.168.255.$NODENUM ...\"; ";
+    x="$x   echo \"====================================================\"; ";
+    x="$x   echo \"\"; ";
+    x="$x else echo \"starting MAC ...\"; fi;"
+    x="$x echo $RUNMAC; $RUNMAC;";
+    maccmd="$x";
+    $GNOMETERM -x $BASHEXEC -c "$maccmd" \&;
+  else
+    echo "[ERROR]: Could not find PHY demo file $PHYEXEC to run physical layer!"
+    usage;
+    exit;
+  fi
+fi  # endif MACENABLE
+
+# Set up default PHY arguments
+enable_socket="--enable-socket"
+sample_rate="-s 1.0M"
+nchannels="-n2"
+tx_gain="-g 7000"
+rx_gain="-G 30"
+threshold="-T 90"
+upsample="-u 2"
+debug="--debug=1"
+
+default_args="$enable_socket $sample_rate $nchannels $tx_gain $rx_gain $threshold $upsample $debug";
+phy_args="$default_args $command_line_args";
+
+# Start PHY
+PHYLOG="$CURRDIR/temp_phy_log";
+RUNPHY="$PYTHON $PHYEXEC $phy_args >$PHYLOG 2>&1";
+
+if [ "$PHYENABLE" == "yes" ]; then
+  if [ -f "$PHYEXEC" ]; then
+    echo "starting PHY with options $phy_args ...";
+    echo $RUNPHY;
+    $BASHEXEC -c "$RUNPHY";
+  else
+    echo "[ERROR]: Could not find PHY demo file $PHYEXEC to run physical layer!"
+    usage;
+    exit;
+  fi
+fi  # endif PHYENABLE

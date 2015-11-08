@@ -1,0 +1,12 @@
+The layout of the source directory is as follows:
+
+$(topsrcdir)/src/lib    - all c++ code and specific swig wrappers
+$(topsrcdir)/src/fpga   - fpga code development
+$(topsrcdir)/src/python - python code
+$(topsrcdir)/src/patch  - patches that are applied to the gnuradio source tree
+$(topsrcdir)/src/swig   - top level swig code to aggregate swig wrappers
+$(topsrcdir)/src/util   - miscellaneous utilities
+
+DEPRICATED CODE:
+$(topsrcdir)/src/examples - depricated directory contains old examples which are
+                            no longer supported and may not work anymore

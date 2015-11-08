@@ -1,0 +1,85 @@
+#!  /bin/bash
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+
+function usage {
+  echo "usage: hydra-mimo [OPTIONS] [MIMO OPTIONS]"
+  echo ""
+  echo "OPTIONS"
+  echo ""
+  echo "    --usage"
+  echo "            Print this help message."
+  echo ""
+  echo "    --disable-socket"
+  echo "            Omit '--enable-socket' from default options list."
+  echo ""
+  echo "    Additional arguments passed to python script running mimo physical layer."
+  echo ""
+}
+
+###############################################################################
+# SYS VARIABLES
+###############################################################################
+BASHEXEC=`which bash`
+PYTHONEXEC=`which python`
+command_line_args=$@;   # local copy of command line arguments
+
+###############################################################################
+# HYDRA VARIABLES
+###############################################################################
+GRMIMODIR=@abs_top_builddir@
+PHYPATH="$GRMIMODIR/src/python"
+PHYEXEC="$PHYPATH/test.py"
+
+
+###############################################################################
+# MIMO OPTIONS
+###############################################################################
+enable_socket="--enable-socket"
+sample_rate="-s 1.0M"
+nchannels="-n2"
+tx_gain="-g 7000"
+rx_gain="-G 30"
+threshold="-T 80"
+upsample="-u 2"
+debug="--debug=1"
+
+PHYARGS="$sample_rate $nchannels $tx_gain $rx_gain $threshold $upsample $debug";
+
+###############################################################################
+# PROCESS OPTIONS
+###############################################################################
+for arg in $@; do
+  marg1=`expr match "$arg" ".*--usage"`;
+  marg2=`expr match "$arg" ".*--disable-socket"`;
+  if [ $marg1 -ne 0 ]; then
+    usage;
+    exit;
+  elif [ $marg2 -ne 0 ]; then
+    enable_socket="";
+    command_line_args=${command_line_args[@]//--disable-socket/};
+  fi
+done
+
+PHYARGS="$enable_socket $PHYARGS $command_line_args"
+
+###############################################################################
+# RUN MIMO PHYSICAL LAYER
+###############################################################################
+$PYTHONEXEC $PHYEXEC $PHYARGS

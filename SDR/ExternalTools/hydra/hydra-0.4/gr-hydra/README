@@ -1,0 +1,48 @@
+#
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+# 
+
+This project is the basic framework for building a physical layer that can
+interact with gnuradio and a MAC layer. To build this project:
+
+  $ ./bootstrap
+  $ ./configure [--prefix=INSTALLDIR] [--with-gnuradio-srcdir=GNURADIO_SRCDIR]
+  $ make
+  $ make check
+
+
+The doc directory has been included from the directory structure taken from
+gnuradio. It is not currently used for anything.
+
+===============================================================================
+Hydra Dependencies
+===============================================================================
+1. GNU Radio >= 3.2.2
+
+
+2. Matplotlib >= 0.9
+
+3. NumPy >= 1.4 (or dev)
+
+4. Python >= 2.4.4
+
+5. wxPython >= 2.8
+
+6. IT++ >= 4.0

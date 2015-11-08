@@ -1,0 +1,35 @@
+TunServer
+=========
+
+Run TunServer to manage tun/tap interface. This can be done in one of two ways,
+either run the tunserver.py (with optional configuration file):
+
+  >>> python tunserver.py [serverconf]
+
+Or, call tunserver_mainloop() in tunserver.py from inside of custom code:
+
+  >>> from tunserver import tunserver_mainloop as mainloop
+  ...
+  >>> mainloop()
+
+
+This code must be run with root permission in order to access the tun/tap device
+/dev/net/tun. The remaining code in here is for enabling a framework to be used
+for MAC development.
+
+:note: The serverconf file is installed to the $PREFIX/share/hydra directory.
+
+MAC Development
+===============
+
+MAC objects that need to access the tun/tap interface should inherit from
+TunClient. This class will allow MACs to interact with the tun/tap server
+TunServer while still being run in user space (i.e. without root permissions).
+
+Overload the TunClient.configure() method and TunClient.CONFIG() state in order
+to create a non-trivial MAC subclass of TunClient.
+
+This framework is designed to implement protocols that are described by finite
+state machines. Experiment with the FSM class to get familiar with the
+capabilities and limitations of the underlying finite state machine framework
+provided here.

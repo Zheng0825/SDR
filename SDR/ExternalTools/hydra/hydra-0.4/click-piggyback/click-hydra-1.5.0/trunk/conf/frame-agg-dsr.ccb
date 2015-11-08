@@ -1,0 +1,331 @@
+// 
+// Copyright (C) 2009  The University of Texas at Austin.
+// 
+// This file is part of Hydra: A wireless multihop testbed.
+// 
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the "Software"),
+// to deal in the Software without restriction, subject to the conditions
+// listed in the Click LICENSE file. These conditions include: you must
+// preserve this copyright notice, and you cannot mention the copyright
+// holders in advertising related to the Software without their permission.
+// The Software is provided WITHOUT ANY WARRANTY, EXPRESS OR IMPLIED. This
+// notice is a summary of the Click LICENSE file; the license in that file is
+// legally binding.
+// 
+require(hydra);
+
+AddressInfo(me $IP $MAC);
+//AddressInfo(mac_ip 0.0.0.0, phy_ip 0.0.0.0); // for real test
+AddressInfo(mac_ip 0.0.0.0, phy_ip 192.168.0.12); // for mac emulator
+AddressInfo(broadcast 255.255.255.255 FF:FF:FF:FF:FF:FF);
+
+elementclass MPI {
+  // declare
+  to_socket::HydraToSocket(UDP, phy_ip, $TO_PORT, FRAME 0, SNAPLEN 4096);
+  from_socket::HydraFromSocket(UDP, mac_ip, $FROM_PORT, FRAME 0, SNAPLEN 4096);
+  gr_phy::GrPhy(VERBOSE 9);
+
+  // composing
+  input [0] -> [0] gr_phy [0] -> to_socket;
+  from_socket -> SetTimestamp -> [1] gr_phy [1] -> [0] output;
+};
+
+
+elementclass FromHydraMAC {
+  // from phy
+  //rxvector::RXVector(VERBOSE 0);
+  rxvector::RXVectorGrNew(VERBOSE 0);
+
+  deagg::DeAggregator(VERBOSE 0);
+
+  // filters
+  mpi_filter::PaintSwitch;
+  frame_filter::Classifier(0/1c%3f, 0/1d%3f, 0/1b%3f, 0/20%3f, - );
+  // extra change needs
+  address_filter::Classifier(6/FFFFFFFFFFFF, 6/$MAC_CL, - );
+  unicast_filter::Classifier(0/20%3f, - );
+
+  frame_tee::Tee;
+  unicast_tee::Tee;
+
+  // Frame processing for deaggregation
+  fframe::FirstFrame(VERBOSE 0);
+  lframe::LastFrame(VERBOSE 0);
+
+  // carriersense
+  rx_state::RXState(VERBOSE 0);
+  nav::VirtualCarrierSense(VERBOSE 0);
+  rx_cs::CarrierSense(-100.0, RXSTATE rx_state, VERBOSE 0);
+
+  // decap
+  data_frame::MACFrameData(me:eth, MODE 0, VERBOSE 0);
+  decap::HydraDecap(data_frame, VERBOSE 0);
+
+  input[0] -> rxvector -> mpi_filter;
+
+  mpi_filter [0] -> Print("R CS BUSY") -> [0] rx_cs -> [2] output;  // HYDRA_CCA_BUSY
+  mpi_filter [1] -> Print("R CS IDLE") -> [0] rx_cs;  //  HYDRA_CCA_IDLE
+  mpi_filter [2] -> Discard;     //  HYDRA_CCA_EIDLE
+  mpi_filter [3] -> Discard;     //  HYDRA_TX_DATA
+  //mpi_filter [4] -> CheckCRC32 -> frame_tee [0] -> rx_state;    
+  mpi_filter[4] -> deagg -> frame_tee[0] -> rx_state;
+
+  frame_tee [1] -> frame_filter [4] -> Print("R Invalid frame") -> Discard;
+  frame_filter [0] -> Print("R CTS") -> address_filter; 
+  frame_filter [1] -> Print("R ACK") -> address_filter; 
+  frame_filter [2] -> Print("R RTS") -> address_filter; 
+  frame_filter [3] -> Print("R DATA") -> address_filter;
+
+  address_filter [0] -> Print("R BROADCAST") -> decap -> [0] output;
+  address_filter [1] -> Print("R for me") -> unicast_filter;
+  address_filter [2] -> Print("R for other") -> fframe -> nav[0] -> [1] rx_cs;
+
+  nav [1] -> Discard;
+
+  unicast_filter [0] -> Print("R UNICAST") -> unicast_tee;
+  unicast_filter [1] -> [1] output ;
+
+  unicast_tee [0] -> decap;
+  unicast_tee [1] -> lframe -> [1] output; 
+
+};
+
+// ToMAC
+elementclass ToHydraMAC { $$mpi |
+  // frame formats
+  rts_frame::MACFrameRTS(me:eth, VERBOSE 0);
+  cts_frame::MACFrameCTS(me:eth, VERBOSE 0);
+  data_frame::MACFrameData(me:eth, MODE 0, VERBOSE 0);
+  ack_frame::MACFrameACK(me:eth, VERBOSE 0);
+
+  // rates
+  data_rate::RateControlConst(6, VERBOSE 0);
+  control_rate::RateControlConst(6, VERBOSE 0);
+
+  // to phy
+  //txv::TXVector(VERBOSE 0);
+  txv::TXVectorGrNew(VERBOSE 0);
+
+  // transmitter
+  transmitter::DCFTransmitter(NOTIFIER mpi/gr_phy, SLOTTIME difs, VERBOSE 0);
+
+  // tx frame aggregation
+  // the classifier should separate broadcast packets, UDP packets, and 
+  // TCP ACKs from everything else.
+  ub_classifier::IPClassifier((tcp ack) or (dst 255.255.255.255),-);
+  broadcast_queue::NotifierQueue(100);
+  prioritizer::Prioritizer();
+  aggregator::UBAggregator(prioritizer, 2, 3);
+
+  // tx scheduler
+  cp::BEBPolicy(MAX_RETRIES 6, MIN_CW 8, VERBOSE 0);
+
+  sifs::SetDefer(0.001, 0.0000, VERBOSE 0);
+  difs::SetDefer(0.030, 0.030, VERBOSE 0);
+  phy_time::PHYProcessTime1(0.100, 0.100, 0.005, 10.0, 0.0 0.0, 0.0 0.0, VERBOSE 0);
+
+  pass_csi::PassCSI();
+
+  set_nav::SetDuration1(SIFS sifs, PHYPROCESSTIME phy_time, VERBOSE 0);
+  txscheduler::DCFScheduler(cp, rts_frame, control_rate, set_nav, aggregator, NOTIFIER mpi/gr_phy, VERBOSE 0 );
+
+  // data reception
+  //encap::HydraEncap(data_frame, VERBOSE 0);
+  set_rts::SetRTSThreshold(0, VERBOSE 0);
+  //set_rts::SetRTSThreshold(4096, VERBOSE 0);
+  set_datarate::SetRateControl(data_rate, VERBOSE 0);
+  set_controlrate::SetRateControl(control_rate, VERBOSE 0);
+
+  // response reception (RTS, DATA)
+  response_classifier::Classifier(0/1b%3f, 0/20%3f, - );
+  tx_cs::CarrierSense(-100.0, VERBOSE 0);
+  cs_filter::PaintSwitch;
+
+  // classifier for broadcast packets
+  bfilter::Classifier(0/FFFFFFFFFFFF, - );
+ 
+  input [0] -> PullPusher() -> bfilter;
+  bfilter [0] -> broadcast_queue;
+  bfilter [1] -> ub_classifier; //This classifier is used only for tcp ack
+  ub_classifier [0] -> broadcast_queue;
+  ub_classifier [1] -> prioritizer -> [1] aggregator;
+  //input [0] -> PullPusher() -> ub_classifier;
+  //ub_classifier [0] -> broadcast_queue -> [0] aggregator;
+  //ub_classifier [1] -> prioritizer -> [1] aggregator;
+
+  aggregator -> set_rts -> set_datarate ->  Print("GOT AGG DATA", NBYTES 20, PRINTANNO false) -> [0] txscheduler;
+  input [1] -> [1] txscheduler;
+  input [2] -> [0] tx_cs -> cs_filter;
+
+  txscheduler [0] -> Print("S TRIGGER", NBYTES 20, PRINTANNO true) -> cp -> difs -> Queue(1) -> [0] transmitter;
+  txscheduler [1] -> Print("S DATA") -> [0] pass_csi;
+  txscheduler [2] -> response_classifier;
+  txscheduler [3] -> [1] tx_cs;
+  txscheduler [4] -> cts_queue :: Queue(1) -> [1] pass_csi;
+
+  pass_csi -> sifs -> Print("S SIFS") -> [1] transmitter;
+
+  cs_filter [0] -> Print("P CS BUSY") -> [2] transmitter // HYDRA_CCA_BUSY
+  cs_filter [1] -> Print("P CS IDLE") -> [2] transmitter // HYDRA_CCA_IDLE
+
+  response_classifier [0] -> cts_frame -> Print("S CTS") -> set_controlrate -> Print("S CTS1") -> set_nav -> Print("S CTS2") -> sifs;
+  response_classifier [1] -> ack_frame -> Print("S ACK") -> set_controlrate;
+  response_classifier [2] -> Discard;
+  
+  crc_class :: Classifier(0/1b%3f, 0/1c%3f, 0/1d%3f, 0/20%3f, - );
+  transmitter -> crc_class;
+  crc_class[0] -> Print("S TR RTS", 20) -> normal_crc::SetCRC32;
+  crc_class[1] -> Print("S TR CTS", 20) -> normal_crc;
+  crc_class[2] -> Print("S TR ACK", 20) -> normal_crc;
+  crc_class[3] -> Print("S TR DAT", 20) -> agg_crc::AggSetCRC32;
+  crc_class[4] -> Print("S TR INVAL", 20) -> Discard;
+
+  normal_crc -> txv;
+  agg_crc -> txv -> Print("S TXVECTOR", NBYTES 40) -> [0] output; 
+
+}; 
+
+//DSR 
+elementclass DSR{
+// [0] output: to Kernel Tun
+// [1] output: to toMAC
+// input [0]: from Kernel Tun
+// input [1]: from fromMAC
+
+  rt_q2 :: SimpleQueue(10); // just ahead of todevice
+  dsr_ls :: LinkStat(ETH me:eth, SIZE 148) -> rt_q0 :: Queue(5);
+  
+  dsr_lt :: LinkTable(IP me:ip);
+  dsr_rt :: DSRRouteTable(me:ip, dsr_lt, OUTQUEUE rt_q2, USE_BLACKLIST 1);
+
+  dsr_arp :: DSRArpTable(me:ip, me:eth);
+
+  dsr_filter :: HostEtherFilter(me:eth,1);
+
+  in_cl :: Classifier(12/7FFF, -);
+  in_cl[0] -> dsr_ls;
+
+  //cs::ControlSocket(TCP, 7777);
+
+  // [1]dsr_arp takes incoming packets, and passes them through
+  // unchanged to output 1, adding entries to an ARP table
+
+  input [1] -> in_cl;
+  in_cl[1] -> dsr_filter; // non-probes
+
+  // packets destined for this host
+  //input [0] -> Strip(14) -> icmp_cl :: Classifier(20/0302, -);
+  input [0] -> icmp_cl :: Classifier(20/0302, -);
+
+  icmp_cl[0] -> Discard; // icmp 'protocol not supported'
+  icmp_cl[1] -> IPPrint(0rt, CONTENTS true, NBYTES 128) -> 
+  [0]dsr_rt[0] -> CheckIPHeader -> 
+                IPPrint(rt0, CONTENTS true, NBYTES 128) -> 
+                setup_cl :: IPClassifier(udp port 8022, -);
+
+  setup_cl[0] -> Print(setup) -> Discard;
+  setup_cl[1] -> [0] output;
+
+  ls_prio :: PrioSched -> [1] output;
+    
+  dsr_filter[0] -> CheckIPHeader(14) -> [2]dsr_arp;
+
+  // drop packets with my ethernet source address
+  dsr_filter[1] -> // Print(Mine) -> 
+                   Discard;
+
+  dsr_arp[2] -> Print(_in, NBYTES 192) ->
+              Strip(14) ->
+              IPPrint ->
+              CheckIPHeader() ->
+              MarkIPHeader() ->
+              GetIPAddress(16) ->
+              DSR_class :: Classifier(09/C8, -);  // DSR packets
+
+  DSR_class[0] ->  DSR_class1::Classifier(24/01, 24/02, 24/03, -);
+  DSR_class[1] ->  Print(Other) -> Discard;
+
+  DSR_class1[0] -> Print("DSR RREP") -> [1]dsr_rt;
+  DSR_class1[1] -> Print("DSR RREQ") -> [1]dsr_rt;
+  DSR_class1[2] -> Print("DSR RERR") -> [1]dsr_rt;
+  DSR_class1[3] -> Print("DSR DATA") -> [1]dsr_rt;
+
+  // packets to send out on the wireless; dsr_arp puts on the ethernet
+  // header based on its ARP table
+  td_prio :: PrioSched;
+  dsr_rt[1] -> rt_q1 :: Queue(20) -> [0]td_prio;
+  dsr_rt[2] -> rt_q2 -> [1]td_prio;
+  td_prio -> [0]dsr_arp;
+
+  Idle -> [1] dsr_arp [1] -> Idle;
+
+  Idle -> [0]ls_prio;
+  rt_q0 -> Discard;
+
+  dsr_arp[0] -> Print(out, NBYTES 192) -> [1]ls_prio;
+
+  // packet spewer for throughput tests.
+//  spew :: RatedSource(ACTIVE false, RATE 700, DATA '00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000')
+//        -> Strip(42) // 14 + 20 + 8 = 42
+//                     // (eth + ip + udp)
+//        -> seq :: IncrementSeqNo(FIRST 0, OFFSET 0)
+//        -> SetIPAddress(me:ip)
+//        -> StoreIPAddress(4)
+//        -> udp :: UDPIPEncap(me:ip, 1111, 0.0.0.0, 8021)
+//        -> CheckIPHeader 
+//        -> GetIPAddress(16) 
+//        -> [0]dsr_rt;
+
+  // setup the DSR source route
+  setup :: RatedSource(ACTIVE false, RATE 1, DATA 'xxx')
+        -> SetIPAddress(me:ip)
+        -> StoreIPAddress(4)
+        -> udp2 :: UDPIPEncap(me:ip, 1111, 0.0.0.0, 8022)
+        -> CheckIPHeader 
+        -> GetIPAddress(16) 
+        -> [0]dsr_rt;
+
+//  poke :: PokeHandlers(pause,
+//		     write setup.active true,
+//		     wait 5,
+//		     write setup.active false,
+//		     wait 5,
+//                     write spew.active true,
+//		     wait 30,
+//                     write spew.active false,
+//                     loop);
+
+//  setup_poke :: PokeHandlers(pause, write setup.active true, wait 5, write setup.active false, loop);
+
+  Idle -> [2]dsr_rt;
+};
+
+// initialize IO
+//UDP + IP + MPI + 802.11 + ll + nbr + grid 
+//8   + 20 + 5   + 34     + 8  + 8   + 60     = 143
+//tun :: KernelTun(me/24, HEADROOM 143, MTU 1357);
+// MTU of 802.11 except header= 2312 
+// MTU of tun dev = 2312 - 8 - 8 -60 = 2236 
+//tun :: KernelTun(me/24, HEADROOM 143, MTU 2236, DEV_NAME "HYDRA_IF");
+tun :: KernelTun(me/24, HEADROOM 143, MTU 1357, DEV_NAME "hydra2");
+mpi::MPI;
+from_mac :: FromHydraMAC;
+to_mac :: ToHydraMAC(mpi);
+dsr :: DSR; 
+
+// MAC internal routine
+from_mac [1] -> [1] to_mac;
+from_mac [2] -> [2] to_mac;
+
+// Routine between tun and dsr
+tun -> IPPrint("S IP:") -> [0] dsr;
+dsr[0] -> tun;  	
+
+// Sending routine 
+dsr[1] -> [0] to_mac -> [0] mpi;
+
+// Receiving routine
+mpi [0] -> from_mac [0] -> Queue(100) -> Unqueue -> [1] dsr;
+
+// ControlSocket(tcp, 7777);

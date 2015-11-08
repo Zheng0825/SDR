@@ -1,0 +1,47 @@
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, subject to the conditions
+# listed in the Click LICENSE file. These conditions include: you must
+# preserve this copyright notice, and you cannot mention the copyright
+# holders in advertising related to the Software without their permission.
+# The Software is provided WITHOUT ANY WARRANTY, EXPRESS OR IMPLIED. This
+# notice is a summary of the Click LICENSE file; the license in that file is
+# legally binding.
+# 
+(install procedure)
+1. ./click_build-1.5.0/trunk/build_click.sh
+2. ./click_build-1.5.0/trunk/build_hydra.sh
+3. set path in .bash_profile
+$PATH=./click-piggyback/click-install-1.5.0/bin
+
+(Add element) 
+1. cd ./click-piggyback/click-hydra-1.5.0/trunk/package/
+2. make elemlist -> To include element
+3. make && make install
+
+(Directory structure)
+1. click=build-1.5.0
+  Include build scripts for click-1.5.0 lib and click hydra
+
+2. click-claw-1.5.0
+  Include click codes regarding cross-layer architecture written by soon-hyeok choi.
+
+3. click-hydra-1.5.0
+  Include all click hydra codes
+  3.1. conf folder
+    click configuration files 
+  3.2. include folder
+    click hydra header(.hh) files
+    3.2.1. click folder
+       define click hydra annotation fields
+    3.2.2. clicknet folder
+       define click hydra packet format 
+  3.3. package folder 
+    click hydra signal blocks (.cc) files
+  3.4. Util folder
+    application python codes (UDP and TCP traffic generator)  

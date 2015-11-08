@@ -1,0 +1,78 @@
+#!  /bin/bash
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+
+# print usage
+function usage {
+  echo "usage: run-addrserver [OPTIONS]"
+  echo ""
+  echo "OPTIONS"
+  echo ""
+  echo "    --usage"
+  echo "            Print this help message."
+  echo ""
+  echo "    --script=PYTHONFILE"
+  echo "            Specify the python file that will run the addess"
+  echo "            server. By default this script will run"
+  echo "            \$top_srcdir/src/python/phy/test-addrserver.py"
+  echo ""
+}
+
+# General configuration
+BASHEXEC=/bin/bash
+PYTHON=python
+CURRDIR=`pwd`
+command_line_args=$@;   # local copy of command line arguments
+
+# process command line arguments
+for arg in $command_line_args; do
+  marg1=`expr match "$arg" '\(--usage\)'`;
+  if [ -n "$marg1" ]; then
+    usage;
+    exit;
+  fi
+done
+
+# Setup for Address server
+GRHYDRA=@abs_top_builddir@
+# script to run address server
+AS_EXEC=$GRHYDRA/src/python/phy/test-addrserver.py
+
+# process command line arguments
+for arg in $command_line_args; do
+  marg1=`expr match "$arg" '\(--script=.*\)'`;
+  if [ -n "$marg1" ]; then
+    AS_EXEC=${arg//--script=/};
+    command_line_args=${command_line_args[@]//--script=*/};
+  fi
+done
+
+# Start PHY
+as_args="$command_line_args";
+AS_RUN="python $AS_EXEC $as_args";
+
+if [ -f "$AS_EXEC" ]; then
+  echo "starting address server with options $as_args ...";
+  echo $AS_RUN;
+  $BASHEXEC -c "$AS_RUN";
+else
+  echo "[ERROR]: Could not find $AS_EXEC to run address server!"
+  usage;
+  exit;
+fi

@@ -1,0 +1,61 @@
+#!  /bin/bash
+# 
+# Copyright (C) 2009  The University of Texas at Austin.
+# 
+# This file is part of Hydra: A wireless multihop testbed.
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# 
+
+function usage {
+  echo "usage: hydra-csma [OPTIONS] [CSMA OPTIONS]"
+  echo ""
+  echo "OPTIONS"
+  echo ""
+  echo "    --usage"
+  echo "            Print this help message."
+  echo ""
+  echo "    Additional arguments passed to python script running csma mac."
+  echo ""
+}
+
+###############################################################################
+# SYS VARIABLES
+###############################################################################
+BASHEXEC=`which bash`
+PYTHONEXEC=`which python`
+command_line_args=$@;   # local copy of command line arguments
+
+###############################################################################
+# HYDRA VARIABLES
+###############################################################################
+GRMIMODIR=@abs_top_builddir@
+MACPATH="$GRMIMODIR/src/python"
+MACEXEC="$MACPATH/test-csma.py"
+
+###############################################################################
+# PROCESS OPTIONS
+###############################################################################
+for arg in $@; do
+  marg1=`expr match "$arg" ".*--usage"`;
+  if [ $marg1 -ne 0 ]; then
+    usage;
+    exit;
+  fi
+done
+
+###############################################################################
+# RUN CSMA MAC
+###############################################################################
+$PYTHONEXEC $MACEXEC $command_line_args

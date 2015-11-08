@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Wifi Transceiver
-# Generated: Fri Oct  2 11:08:38 2015
+# Generated: Sat Nov  7 19:28:16 2015
 ##################################################
 
 if __name__ == '__main__':
@@ -214,7 +214,7 @@ class wifi_transceiver(grc_wxgui.top_block_gui):
         self.foo_wireshark_connector_0 = foo.wireshark_connector(127, True)
         self.foo_packet_pad2_0 = foo.packet_pad2(False, False, 0.001, 10000, 10000)
         (self.foo_packet_pad2_0).set_min_output_buffer(100000)
-        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu("tap0", 1532, False)
+        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu("tap0", 1532, True)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vcc((mult, ))
         (self.blocks_multiply_const_vxx_0).set_min_output_buffer(100000)
         self.blocks_file_sink_0 = blocks.file_sink(gr.sizeof_char*1, "/tmp/ofdm.pcap", True)
