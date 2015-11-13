@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Wed Nov  4 15:01:22 2015
+# Generated: Fri Nov 13 16:51:19 2015
 ##################################################
 
 if __name__ == '__main__':
@@ -93,7 +93,7 @@ class top_block(grc_wxgui.top_block_gui):
         )
         self.Add(self.wxgui_fftsink2_0.win)
         self.uhd_usrp_source_0 = uhd.usrp_source(
-        	",".join(("", "")),
+        	",".join(("addr=192.168.1.100", "")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),
@@ -104,7 +104,7 @@ class top_block(grc_wxgui.top_block_gui):
         self.uhd_usrp_source_0.set_gain(20, 0)
         self.uhd_usrp_source_0.set_antenna("RX2", 0)
         self.uhd_usrp_sink_0 = uhd.usrp_sink(
-        	",".join(("", "")),
+        	",".join(("addr=192.168.1.100", "")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),
