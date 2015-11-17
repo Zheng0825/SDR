@@ -559,7 +559,7 @@ After it ran I was still having issues. I tried re-running it to just install
 	Now trying to connect my linux laptop to the E310 using ssh -X root@192.168.1.100
 	
 	\section{11-14-15}
-	Spent most of the day trying to build the UHD driver on the E310 itself. This took about four hours to do. There still seemed to be an issue. 
+	Spent most of the day trying to build the UHD driver on the E310 itself. This took about four hours to do. There still seemed to be an issue.
 	I'm going to continue orking tomorrow. The website I am looking at right now can be found here:
 
 	\href{https://sdradventure.wordpress.com/2015/01/}{Link to the other person's website}
@@ -578,6 +578,23 @@ After it ran I was still having issues. I tried re-running it to just install
 	for now as its going to be awhile until the B200 gets here. I may
 	also continue looking into Vagrant tonight as it would be helpful
 	for trying to switch back and forth between versions quickly. 
+
+
+	\section{11-17-15}
+	So currently it appears that I have rolled back the PC to the proper
+	version of UHD and it apears this may be simple to switch between the two
+	versions should I have broken something. Basically, the repository version
+	of UHD is version 3.008 and the sources version is 3.010. So a 
+	make install or make uninstall will add and remove 3.010. On the other
+	hand a sudo apt-get install uhd or sudo apt-get remove will do the 
+	same for version 3.008. Hopefully when I try this tonight everything works
+	out. This will also help when it comes time to fix the vagrant file.
+	
+	Currently with vagrant I am unable to install UHD from the gnu radio
+	sources. If we end up going with 3.008 I will just apt-get UHD. When I 
+	run GNU-Radio companion I get an error about the python path. If this
+	goes away I wont discuss it further, but if it continues I'll include
+	some screenshots and such to help with debugging. 
 
 \end{document}
 
