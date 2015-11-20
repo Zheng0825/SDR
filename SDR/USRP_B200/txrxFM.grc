@@ -1344,7 +1344,7 @@
     </param>
     <param>
       <key>dev_addr</key>
-      <value>addr=192.168.1.100</value>
+      <value></value>
     </param>
     <param>
       <key>dev_args</key>
@@ -2159,7 +2159,7 @@
     </param>
     <param>
       <key>dev_addr</key>
-      <value>addr=192.168.1.100</value>
+      <value></value>
     </param>
     <param>
       <key>dev_args</key>
@@ -2358,7 +2358,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(808, 395)</value>
+      <value>(816, 395)</value>
     </param>
     <param>
       <key>_rotation</key>

@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Sat Nov 14 16:12:13 2015
+# Generated: Thu Nov 19 21:18:19 2015
 ##################################################
 
 if __name__ == '__main__':
@@ -15,19 +15,18 @@ if __name__ == '__main__':
         except:
             print "Warning: failed to XInitThreads()"
 
-from gnuradio import analog
 from gnuradio import audio
 from gnuradio import blocks
+from gnuradio import digital
 from gnuradio import eng_notation
-from gnuradio import filter
 from gnuradio import gr
 from gnuradio import uhd
 from gnuradio import wxgui
 from gnuradio.eng_option import eng_option
-from gnuradio.fft import window
 from gnuradio.filter import firdes
-from gnuradio.wxgui import fftsink2
 from gnuradio.wxgui import forms
+from gnuradio.wxgui import scopesink2
+from grc_gnuradio import blks2 as grc_blks2
 from grc_gnuradio import wxgui as grc_wxgui
 from optparse import OptionParser
 import time
@@ -76,24 +75,22 @@ class top_block(grc_wxgui.top_block_gui):
         	proportion=1,
         )
         self.Add(_Freq_sizer)
-        self.wxgui_fftsink2_0 = fftsink2.fft_sink_c(
+        self.wxgui_scopesink2_0 = scopesink2.scope_sink_c(
         	self.GetWin(),
-        	baseband_freq=Freq,
-        	y_per_div=10,
-        	y_divs=10,
-        	ref_level=0,
-        	ref_scale=2.0,
-        	sample_rate=samp_rate_rec / 25,
-        	fft_size=1024,
-        	fft_rate=15,
-        	average=False,
-        	avg_alpha=None,
-        	title="FFT Plot",
-        	peak_hold=False,
+        	title="Scope Plot",
+        	sample_rate=samp_rate_send,
+        	v_scale=0,
+        	v_offset=0,
+        	t_scale=0,
+        	ac_couple=False,
+        	xy_mode=False,
+        	num_inputs=1,
+        	trig_mode=wxgui.TRIG_MODE_AUTO,
+        	y_axis_label="Counts",
         )
-        self.Add(self.wxgui_fftsink2_0.win)
+        self.Add(self.wxgui_scopesink2_0.win)
         self.uhd_usrp_source_0 = uhd.usrp_source(
-        	",".join(("addr=192.168.1.100", "")),
+        	",".join(("", "")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),
@@ -101,59 +98,66 @@ class top_block(grc_wxgui.top_block_gui):
         )
         self.uhd_usrp_source_0.set_samp_rate(samp_rate_rec)
         self.uhd_usrp_source_0.set_center_freq(Freq, 0)
-        self.uhd_usrp_source_0.set_gain(20, 0)
-        self.uhd_usrp_source_0.set_antenna("RX2", 0)
+        self.uhd_usrp_source_0.set_gain(0, 0)
         self.uhd_usrp_sink_0 = uhd.usrp_sink(
-        	",".join(("addr=192.168.1.100", "")),
+        	",".join(("", "")),
         	uhd.stream_args(
         		cpu_format="fc32",
         		channels=range(1),
         	),
         )
-        self.uhd_usrp_sink_0.set_samp_rate(samp_rate_send)
+        self.uhd_usrp_sink_0.set_samp_rate(samp_rate_rec)
         self.uhd_usrp_sink_0.set_center_freq(Freq, 0)
-        self.uhd_usrp_sink_0.set_normalized_gain(0.5, 0)
-        self.uhd_usrp_sink_0.set_antenna("TX/RX", 0)
-        self.rational_resampler_xxx_0_0 = filter.rational_resampler_fff(
-                interpolation=48,
-                decimation=250,
-                taps=None,
-                fractional_bw=None,
-        )
-        self.rational_resampler_xxx_0 = filter.rational_resampler_ccc(
-                interpolation=int(samp_rate_send * 1.0),
-                decimation=audio_rate * audio_interp,
-                taps=None,
-                fractional_bw=None,
-        )
-        self.low_pass_filter_0 = filter.fir_filter_ccf(20, firdes.low_pass(
-        	1, samp_rate_rec, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
+        self.uhd_usrp_sink_0.set_gain(0, 0)
+        self.digital_qam_mod_0 = digital.qam.qam_mod(
+          constellation_points=16,
+          mod_code="gray",
+          differential=True,
+          samples_per_symbol=2,
+          excess_bw=0.35,
+          verbose=False,
+          log=False,
+          )
+        self.digital_qam_demod_0 = digital.qam.qam_demod(
+          constellation_points=16,
+          differential=True,
+          samples_per_symbol=2,
+          excess_bw=0.35,
+          freq_bw=6.28/100.0,
+          timing_bw=6.28/100.0,
+          phase_bw=6.28/100.0,
+          mod_code="gray",
+          verbose=False,
+          log=False,
+          )
         self.blocks_wavfile_source_0 = blocks.wavfile_source("/home/john/Downloads/documents-export-2015-09-15/Inspired But Too Tired Acoustic.wav", True)
-        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((25, ))
-        self.audio_sink_0 = audio.sink(48000, "", True)
-        self.analog_wfm_tx_0 = analog.wfm_tx(
-        	audio_rate=audio_rate,
-        	quad_rate=audio_rate * audio_interp,
-        	tau=75e-6,
-        	max_dev=5e3,
+        self.blks2_packet_encoder_0 = grc_blks2.packet_mod_f(grc_blks2.packet_encoder(
+        		samples_per_symbol=0,
+        		bits_per_symbol=4,
+        		preamble="",
+        		access_code="",
+        		pad_for_usrp=True,
+        	),
+        	payload_length=0,
         )
-        self.analog_wfm_rcv_0 = analog.wfm_rcv(
-        	quad_rate=250e3,
-        	audio_decimation=1,
+        self.blks2_packet_decoder_0 = grc_blks2.packet_demod_f(grc_blks2.packet_decoder(
+        		access_code="",
+        		threshold=-1,
+        		callback=lambda ok, payload: self.blks2_packet_decoder_0.recv_pkt(ok, payload),
+        	),
         )
+        self.audio_sink_0 = audio.sink(44100, "", True)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0_0, 0))    
-        self.connect((self.analog_wfm_tx_0, 0), (self.rational_resampler_xxx_0, 0))    
-        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.analog_wfm_tx_0, 0))    
-        self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_multiply_const_vxx_0, 0))    
-        self.connect((self.low_pass_filter_0, 0), (self.analog_wfm_rcv_0, 0))    
-        self.connect((self.low_pass_filter_0, 0), (self.wxgui_fftsink2_0, 0))    
-        self.connect((self.rational_resampler_xxx_0, 0), (self.uhd_usrp_sink_0, 0))    
-        self.connect((self.rational_resampler_xxx_0_0, 0), (self.audio_sink_0, 0))    
-        self.connect((self.uhd_usrp_source_0, 0), (self.low_pass_filter_0, 0))    
+        self.connect((self.blks2_packet_decoder_0, 0), (self.audio_sink_0, 0))    
+        self.connect((self.blks2_packet_encoder_0, 0), (self.digital_qam_mod_0, 0))    
+        self.connect((self.blocks_wavfile_source_0, 0), (self.blks2_packet_encoder_0, 0))    
+        self.connect((self.digital_qam_demod_0, 0), (self.blks2_packet_decoder_0, 0))    
+        self.connect((self.digital_qam_mod_0, 0), (self.uhd_usrp_sink_0, 0))    
+        self.connect((self.digital_qam_mod_0, 0), (self.wxgui_scopesink2_0, 0))    
+        self.connect((self.uhd_usrp_source_0, 0), (self.digital_qam_demod_0, 0))    
 
 
     def get_samp_rate_send(self):
@@ -161,16 +165,15 @@ class top_block(grc_wxgui.top_block_gui):
 
     def set_samp_rate_send(self, samp_rate_send):
         self.samp_rate_send = samp_rate_send
-        self.uhd_usrp_sink_0.set_samp_rate(self.samp_rate_send)
+        self.wxgui_scopesink2_0.set_sample_rate(self.samp_rate_send)
 
     def get_samp_rate_rec(self):
         return self.samp_rate_rec
 
     def set_samp_rate_rec(self, samp_rate_rec):
         self.samp_rate_rec = samp_rate_rec
-        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate_rec, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
+        self.uhd_usrp_sink_0.set_samp_rate(self.samp_rate_rec)
         self.uhd_usrp_source_0.set_samp_rate(self.samp_rate_rec)
-        self.wxgui_fftsink2_0.set_sample_rate(self.samp_rate_rec / 25)
 
     def get_audio_rate(self):
         return self.audio_rate
@@ -193,7 +196,6 @@ class top_block(grc_wxgui.top_block_gui):
         self._Freq_text_box.set_value(self.Freq)
         self.uhd_usrp_sink_0.set_center_freq(self.Freq, 0)
         self.uhd_usrp_source_0.set_center_freq(self.Freq, 0)
-        self.wxgui_fftsink2_0.set_baseband_freq(self.Freq)
 
 
 if __name__ == '__main__':
