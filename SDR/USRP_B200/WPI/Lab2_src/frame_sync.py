@@ -36,6 +36,7 @@ class frame_sync(gr.basic_block):
             # find the Barker sequence? How long is your data?
             # How do you not walk off the end of the input array?
             ##################################################
+            in
             n += 1 #Update n
 
         self.consume_each(nitems_read)
