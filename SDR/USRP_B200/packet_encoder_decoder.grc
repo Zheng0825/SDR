@@ -85,7 +85,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(72, 547)</value>
+      <value>(80, 779)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -112,7 +112,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 539)</value>
+      <value>(256, 779)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -166,7 +166,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(160, 475)</value>
+      <value>(240, 707)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -205,7 +205,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 307)</value>
+      <value>(792, 515)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -260,7 +260,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(712, 51)</value>
+      <value>(688, 59)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -303,7 +303,7 @@
     <key>blocks_file_sink</key>
     <param>
       <key>append</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>alias</key>
@@ -323,11 +323,11 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/john/IRG/SDR/USRP_B200/output.png</value>
+      <value>/home/john/IRG/SDR/USRP_B200/output.txt</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1040, 99)</value>
+      <value>(1032, 507)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -370,7 +370,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/john/Pictures/lambda.png</value>
+      <value>/home/john/IRG/SDR/USRP_B200/helloworld.txt</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -433,62 +433,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 315)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_packed_to_unpacked_xx_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>num_ports</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_packed_to_unpacked_xx</key>
-    <param>
-      <key>bits_per_chunk</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>endianness</key>
-      <value>gr.GR_MSB_FIRST</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(440, 467)</value>
+      <value>(448, 699)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -594,7 +539,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(672, 467)</value>
+      <value>(680, 699)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -630,7 +575,7 @@
     </param>
   </block>
   <block>
-    <key>digital_diff_decoder_bb</key>
+    <key>digital_dxpsk_demod</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -648,16 +593,32 @@
       <value>True</value>
     </param>
     <param>
+      <key>excess_bw</key>
+      <value>0.35</value>
+    </param>
+    <param>
+      <key>freq_bw</key>
+      <value>6.28/100.0</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(640, 315)</value>
+      <value>(520, 467)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
+      <key>mod_code</key>
+      <value>"gray"</value>
+    </param>
+    <param>
       <key>id</key>
-      <value>digital_diff_decoder_bb_0</value>
+      <value>digital_dxpsk_demod_0</value>
+    </param>
+    <param>
+      <key>log</key>
+      <value>False</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -668,12 +629,32 @@
       <value>0</value>
     </param>
     <param>
-      <key>modulus</key>
+      <key>phase_bw</key>
+      <value>6.28/100.0</value>
+    </param>
+    <param>
+      <key>samples_per_symbol</key>
       <value>2</value>
+    </param>
+    <param>
+      <key>sync_out</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>timing_bw</key>
+      <value>6.28/100.0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>dbpsk</value>
+    </param>
+    <param>
+      <key>verbose</key>
+      <value>False</value>
     </param>
   </block>
   <block>
-    <key>digital_diff_encoder_bb</key>
+    <key>digital_dxpsk_mod</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -691,16 +672,28 @@
       <value>True</value>
     </param>
     <param>
+      <key>excess_bw</key>
+      <value>0.35</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(440, 315)</value>
+      <value>(96, 347)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
+      <key>mod_code</key>
+      <value>"gray"</value>
+    </param>
+    <param>
       <key>id</key>
-      <value>digital_diff_encoder_bb_0</value>
+      <value>digital_dxpsk_mod_0</value>
+    </param>
+    <param>
+      <key>log</key>
+      <value>False</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -711,8 +704,16 @@
       <value>0</value>
     </param>
     <param>
-      <key>modulus</key>
+      <key>samples_per_symbol</key>
       <value>2</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>dbpsk</value>
+    </param>
+    <param>
+      <key>verbose</key>
+      <value>False</value>
     </param>
   </block>
   <block>
@@ -758,7 +759,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 171)</value>
+      <value>(376, 171)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -797,7 +798,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(976, 451)</value>
+      <value>(984, 683)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -874,7 +875,7 @@
   </connection>
   <connection>
     <source_block_id>blks2_packet_encoder_0_0</source_block_id>
-    <sink_block_id>blocks_packed_to_unpacked_xx_0</sink_block_id>
+    <sink_block_id>digital_dxpsk_mod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -887,12 +888,6 @@
   <connection>
     <source_block_id>blocks_file_source_0</source_block_id>
     <sink_block_id>virtual_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_packed_to_unpacked_xx_0</source_block_id>
-    <sink_block_id>digital_diff_encoder_bb_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -915,14 +910,14 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>digital_diff_decoder_bb_0</source_block_id>
+    <source_block_id>digital_dxpsk_demod_0</source_block_id>
     <sink_block_id>blks2_packet_decoder_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>digital_diff_encoder_bb_0</source_block_id>
-    <sink_block_id>digital_diff_decoder_bb_0</sink_block_id>
+    <source_block_id>digital_dxpsk_mod_0</source_block_id>
+    <sink_block_id>digital_dxpsk_demod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
