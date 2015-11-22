@@ -370,7 +370,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/john/IRG/SDR/USRP_B200/helloworld.txt</value>
+      <value>/home/john/todo.txt</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -712,11 +712,11 @@
     </param>
     <param>
       <key>norm_gain0</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>gain0</key>
-      <value>0</value>
+      <value>.5</value>
     </param>
     <param>
       <key>ant10</key>
@@ -1364,7 +1364,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 323)</value>
+      <value>(336, 315)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1527,11 +1527,11 @@
     </param>
     <param>
       <key>norm_gain0</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>gain0</key>
-      <value>0</value>
+      <value>.5</value>
     </param>
     <param>
       <key>ant10</key>
@@ -2179,7 +2179,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 499)</value>
+      <value>(224, 491)</value>
     </param>
     <param>
       <key>_rotation</key>
