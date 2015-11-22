@@ -85,7 +85,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(80, 779)</value>
+      <value>(80, 659)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -112,7 +112,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(256, 779)</value>
+      <value>(256, 659)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -166,7 +166,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(240, 707)</value>
+      <value>(240, 587)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -205,7 +205,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(792, 515)</value>
+      <value>(792, 395)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -260,7 +260,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 59)</value>
+      <value>(304, 99)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -284,7 +284,7 @@
     </param>
     <param>
       <key>pad_for_usrp</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>payload_length</key>
@@ -327,7 +327,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1032, 507)</value>
+      <value>(1032, 387)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -343,61 +343,6 @@
     </param>
     <param>
       <key>unbuffered</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_file_source</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>file</key>
-      <value>/home/john/todo.txt</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(8, 94)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_file_source_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
-    </param>
-    <param>
-      <key>repeat</key>
       <value>True</value>
     </param>
     <param>
@@ -433,7 +378,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(448, 699)</value>
+      <value>(464, 579)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -461,6 +406,69 @@
     </param>
   </block>
   <block>
+    <key>blocks_udp_source</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(72, 155)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_udp_source_0</value>
+    </param>
+    <param>
+      <key>ipaddr</key>
+      <value>127.0.0.1</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>eof</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>psize</key>
+      <value>1472</value>
+    </param>
+    <param>
+      <key>port</key>
+      <value>1234</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>digital_chunks_to_symbols_xx</key>
     <param>
       <key>alias</key>
@@ -484,7 +492,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(680, 699)</value>
+      <value>(680, 579)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -547,7 +555,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 467)</value>
+      <value>(520, 347)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -622,7 +630,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(96, 347)</value>
+      <value>(576, 115)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1364,7 +1372,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(336, 315)</value>
+      <value>(816, 83)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2179,7 +2187,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(224, 491)</value>
+      <value>(256, 371)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2338,7 +2346,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(376, 171)</value>
+      <value>(304, 235)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2377,7 +2385,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(984, 683)</value>
+      <value>(984, 563)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2440,6 +2448,93 @@
       <value>Counts</value>
     </param>
   </block>
+  <block>
+    <key>wxgui_scopesink2</key>
+    <param>
+      <key>ac_couple</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(88, 555)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>grid_pos</key>
+      <value></value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>wxgui_scopesink2_1</value>
+    </param>
+    <param>
+      <key>notebook</key>
+      <value></value>
+    </param>
+    <param>
+      <key>num_inputs</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>samp_rate</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>t_scale</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>title</key>
+      <value>Scope Plot</value>
+    </param>
+    <param>
+      <key>trig_mode</key>
+      <value>wxgui.TRIG_MODE_AUTO</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>v_offset</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>v_scale</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>win_size</key>
+      <value></value>
+    </param>
+    <param>
+      <key>xy_mode</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>y_axis_label</key>
+      <value>Counts</value>
+    </param>
+  </block>
   <connection>
     <source_block_id>Plot1</source_block_id>
     <sink_block_id>blocks_packed_to_unpacked_xx_1</sink_block_id>
@@ -2459,20 +2554,20 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_file_source_0</source_block_id>
+    <source_block_id>blocks_packed_to_unpacked_xx_1</source_block_id>
+    <sink_block_id>digital_chunks_to_symbols_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_udp_source_0</source_block_id>
     <sink_block_id>blks2_packet_encoder_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_file_source_0</source_block_id>
+    <source_block_id>blocks_udp_source_0</source_block_id>
     <sink_block_id>virtual_sink_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_packed_to_unpacked_xx_1</source_block_id>
-    <sink_block_id>digital_chunks_to_symbols_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -2497,6 +2592,12 @@
   <connection>
     <source_block_id>uhd_usrp_source_0</source_block_id>
     <sink_block_id>digital_dxpsk_demod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>uhd_usrp_source_0</source_block_id>
+    <sink_block_id>wxgui_scopesink2_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
