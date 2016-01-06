@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Sun Nov 22 14:57:33 2015
+# Generated: Mon Nov 30 12:53:57 2015
 ##################################################
 
 if __name__ == '__main__':
@@ -23,6 +23,7 @@ from gnuradio import uhd
 from gnuradio import wxgui
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
+from gnuradio.wxgui import constsink_gl
 from gnuradio.wxgui import scopesink2
 from grc_gnuradio import blks2 as grc_blks2
 from grc_gnuradio import wxgui as grc_wxgui
@@ -48,20 +49,6 @@ class top_block(grc_wxgui.top_block_gui):
         ##################################################
         # Blocks
         ##################################################
-        self.wxgui_scopesink2_1 = scopesink2.scope_sink_c(
-        	self.GetWin(),
-        	title="Scope Plot",
-        	sample_rate=samp_rate,
-        	v_scale=0,
-        	v_offset=0,
-        	t_scale=0,
-        	ac_couple=False,
-        	xy_mode=False,
-        	num_inputs=1,
-        	trig_mode=wxgui.TRIG_MODE_AUTO,
-        	y_axis_label="Counts",
-        )
-        self.Add(self.wxgui_scopesink2_1.win)
         self.wxgui_scopesink2_0 = scopesink2.scope_sink_f(
         	self.GetWin(),
         	title="Scope Plot",
@@ -76,6 +63,22 @@ class top_block(grc_wxgui.top_block_gui):
         	y_axis_label="Counts",
         )
         self.Add(self.wxgui_scopesink2_0.win)
+        self.wxgui_constellationsink2_0 = constsink_gl.const_sink_c(
+        	self.GetWin(),
+        	title="Constellation Plot",
+        	sample_rate=samp_rate,
+        	frame_rate=5,
+        	const_size=2048,
+        	M=4,
+        	theta=0,
+        	loop_bw=6.28/100.0,
+        	fmax=0.06,
+        	mu=0.5,
+        	gain_mu=0.005,
+        	symbol_rate=samp_rate/4.,
+        	omega_limit=0.005,
+        )
+        self.Add(self.wxgui_constellationsink2_0.win)
         self.uhd_usrp_source_0 = uhd.usrp_source(
         	",".join(("", "")),
         	uhd.stream_args(
@@ -147,8 +150,8 @@ class top_block(grc_wxgui.top_block_gui):
         self.connect((self.digital_chunks_to_symbols_xx_0, 0), (self.wxgui_scopesink2_0, 0))    
         self.connect((self.digital_dxpsk_demod_0, 0), (self.blks2_packet_decoder_0, 0))    
         self.connect((self.digital_dxpsk_mod_0, 0), (self.uhd_usrp_sink_0, 0))    
+        self.connect((self.digital_dxpsk_mod_0, 0), (self.wxgui_constellationsink2_0, 0))    
         self.connect((self.uhd_usrp_source_0, 0), (self.digital_dxpsk_demod_0, 0))    
-        self.connect((self.uhd_usrp_source_0, 0), (self.wxgui_scopesink2_1, 0))    
 
 
     def get_samp_rate(self):
@@ -158,8 +161,8 @@ class top_block(grc_wxgui.top_block_gui):
         self.samp_rate = samp_rate
         self.uhd_usrp_sink_0.set_samp_rate(self.samp_rate)
         self.uhd_usrp_source_0.set_samp_rate(self.samp_rate)
+        self.wxgui_constellationsink2_0.set_sample_rate(self.samp_rate)
         self.wxgui_scopesink2_0.set_sample_rate(self.samp_rate)
-        self.wxgui_scopesink2_1.set_sample_rate(self.samp_rate)
 
     def get_code2(self):
         return self.code2

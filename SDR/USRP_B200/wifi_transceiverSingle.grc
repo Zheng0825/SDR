@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <?grc format='1' created='3.7.8'?>
 <flow_graph>
-  <timestamp>Thu Jan  8 10:56:24 2015</timestamp>
+  <timestamp>Fri Jul 18 10:38:08 2014</timestamp>
   <block>
     <key>options</key>
     <param>
@@ -26,7 +26,7 @@
     </param>
     <param>
       <key>description</key>
-      <value>IEEE 802.15.4 Transceiver using CSS PHY</value>
+      <value></value>
     </param>
     <param>
       <key>_enabled</key>
@@ -34,7 +34,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(10, 10)</value>
+      <value>(12, 33)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>transceiver_CSS_USRP</value>
+      <value>wifi_transceiver</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -54,7 +54,7 @@
     </param>
     <param>
       <key>realtime_scheduling</key>
-      <value>1</value>
+      <value></value>
     </param>
     <param>
       <key>run_options</key>
@@ -70,61 +70,30 @@
     </param>
     <param>
       <key>title</key>
-      <value>IEEE 802.15.4 Transceiver using CSS PHY</value>
+      <value></value>
     </param>
   </block>
   <block>
-    <key>variable</key>
+    <key>variable_chooser</key>
+    <param>
+      <key>choices</key>
+      <value>[0,1,2,3,4,5,6,7]</value>
+    </param>
     <param>
       <key>comment</key>
       <value></value>
     </param>
     <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(184, 67)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
+      <key>value</key>
       <value>0</value>
     </param>
     <param>
-      <key>id</key>
-      <value>c</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>ieee802_15_4.css_phy(chirp_number=4, phy_packetsize_bytes=len(text_msg)+15)</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_static_text</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>converver</key>
-      <value>float_converter</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>freq</value>
-    </param>
-    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
-      <key>formatter</key>
-      <value>None</value>
-    </param>
-    <param>
       <key>_coordinate</key>
-      <value>(696, 147)</value>
+      <value>(929, 123)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -136,22 +105,34 @@
     </param>
     <param>
       <key>id</key>
-      <value>cur_freq</value>
+      <value>encoding</value>
     </param>
     <param>
       <key>label</key>
-      <value>Current center frequency</value>
+      <value>Encoding</value>
+    </param>
+    <param>
+      <key>labels</key>
+      <value>["BPSK 1/2", "BPSK 3/4", "QPSK 1/2", "QPSK 3/4", "16QAM 1/2", "16QAM 3/4", "64QAM 2/3", "64QAM 3/4"]</value>
     </param>
     <param>
       <key>notebook</key>
       <value></value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>wx.RA_HORIZONTAL</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>radio_buttons</value>
     </param>
   </block>
   <block>
     <key>variable_chooser</key>
     <param>
       <key>choices</key>
-      <value>[1000000 * (2400 + 5 * (i - 10)) for i in range(11, 27)]</value>
+      <value>[2412000000.0, 2417000000.0, 2422000000.0, 2427000000.0, 2432000000.0, 2437000000.0, 2442000000.0, 2447000000.0, 2452000000.0, 2457000000.0, 2462000000.0, 2467000000.0, 2472000000.0, 2484000000.0, 5170000000.0, 5180000000.0, 5190000000.0, 5200000000.0, 5210000000.0, 5220000000.0, 5230000000.0, 5240000000.0, 5260000000.0, 5280000000.0, 5300000000.0, 5320000000.0, 5500000000.0, 5520000000.0, 5540000000.0, 5560000000.0, 5580000000.0, 5600000000.0, 5620000000.0, 5640000000.0, 5660000000.0, 5680000000.0, 5700000000.0, 5745000000.0, 5765000000.0, 5785000000.0, 5805000000.0, 5825000000.0, 5860000000.0, 5870000000.0, 5880000000.0, 5890000000.0, 5900000000.0, 5910000000.0, 5920000000.0]</value>
     </param>
     <param>
       <key>comment</key>
@@ -159,7 +140,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>2480000000</value>
+      <value>5.89e9</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -167,7 +148,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(696, 19)</value>
+      <value>(755, 3)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -187,7 +168,235 @@
     </param>
     <param>
       <key>labels</key>
-      <value>[i for i in range(11, 27)]</value>
+      <value>['  1 | 2412.0 | 11g', '  2 | 2417.0 | 11g', '  3 | 2422.0 | 11g', '  4 | 2427.0 | 11g', '  5 | 2432.0 | 11g', '  6 | 2437.0 | 11g', '  7 | 2442.0 | 11g', '  8 | 2447.0 | 11g', '  9 | 2452.0 | 11g', ' 10 | 2457.0 | 11g', ' 11 | 2462.0 | 11g', ' 12 | 2467.0 | 11g', ' 13 | 2472.0 | 11g', ' 14 | 2484.0 | 11g', ' 34 | 5170.0 | 11a', ' 36 | 5180.0 | 11a', ' 38 | 5190.0 | 11a', ' 40 | 5200.0 | 11a', ' 42 | 5210.0 | 11a', ' 44 | 5220.0 | 11a', ' 46 | 5230.0 | 11a', ' 48 | 5240.0 | 11a', ' 52 | 5260.0 | 11a', ' 56 | 5280.0 | 11a', ' 58 | 5300.0 | 11a', ' 60 | 5320.0 | 11a', '100 | 5500.0 | 11a', '104 | 5520.0 | 11a', '108 | 5540.0 | 11a', '112 | 5560.0 | 11a', '116 | 5580.0 | 11a', '120 | 5600.0 | 11a', '124 | 5620.0 | 11a', '128 | 5640.0 | 11a', '132 | 5660.0 | 11a', '136 | 5680.0 | 11a', '140 | 5700.0 | 11a', '149 | 5745.0 | 11a', '153 | 5765.0 | 11a', '157 | 5785.0 | 11a', '161 | 5805.0 | 11a', '165 | 5825.0 | 11a', '172 | 5860.0 | 11p', '174 | 5870.0 | 11p', '176 | 5880.0 | 11p', '178 | 5890.0 | 11p', '180 | 5900.0 | 11p', '182 | 5910.0 | 11p', '184 | 5920.0 | 11p']</value>
+    </param>
+    <param>
+      <key>notebook</key>
+      <value></value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>wx.RA_HORIZONTAL</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>drop_down</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_chooser</key>
+    <param>
+      <key>choices</key>
+      <value>[0, 6e6, 11e6]</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(584, 7)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>grid_pos</key>
+      <value></value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>lo_offset</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>LO Offset</value>
+    </param>
+    <param>
+      <key>labels</key>
+      <value>['0 MHz', '6 MHz', '11 MHz']</value>
+    </param>
+    <param>
+      <key>notebook</key>
+      <value></value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>wx.RA_HORIZONTAL</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>drop_down</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_slider</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>converver</key>
+      <value>float_converter</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>0.38</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(963, 247)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>grid_pos</key>
+      <value></value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>mult</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>max</key>
+      <value>1</value>
+    </param>
+    <param>
+      <key>min</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>notebook</key>
+      <value></value>
+    </param>
+    <param>
+      <key>num_steps</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>wx.SL_HORIZONTAL</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_slider</key>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>converver</key>
+      <value>float_converter</value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>5</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(759, 132)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>grid_pos</key>
+      <value></value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rx_gain</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value></value>
+    </param>
+    <param>
+      <key>max</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>min</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>notebook</key>
+      <value></value>
+    </param>
+    <param>
+      <key>num_steps</key>
+      <value>100</value>
+    </param>
+    <param>
+      <key>style</key>
+      <value>wx.SL_HORIZONTAL</value>
+    </param>
+  </block>
+  <block>
+    <key>variable_chooser</key>
+    <param>
+      <key>choices</key>
+      <value>[5e6,10e6, 20e6]</value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>value</key>
+      <value>10e6</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(930, 5)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>grid_pos</key>
+      <value></value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>samp_rate</value>
+    </param>
+    <param>
+      <key>label</key>
+      <value>Sample Rate</value>
+    </param>
+    <param>
+      <key>labels</key>
+      <value>["5MHz", "10 MHz", "20 MHz"]</value>
     </param>
     <param>
       <key>notebook</key>
@@ -210,70 +419,11 @@
     </param>
     <param>
       <key>converver</key>
-      <value>int_converter</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>20</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1016, 243)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>gain</value>
-    </param>
-    <param>
-      <key>label</key>
-      <value>TX/RX Gain</value>
-    </param>
-    <param>
-      <key>max</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>min</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>num_steps</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>style</key>
-      <value>wx.SL_HORIZONTAL</value>
-    </param>
-  </block>
-  <block>
-    <key>variable_slider</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>converver</key>
       <value>float_converter</value>
     </param>
     <param>
       <key>value</key>
-      <value>1000</value>
+      <value>15</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -281,7 +431,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(696, 244)</value>
+      <value>(642, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -293,19 +443,19 @@
     </param>
     <param>
       <key>id</key>
-      <value>msg_interval</value>
+      <value>tx_gain</value>
     </param>
     <param>
       <key>label</key>
-      <value>Message interval [ms]</value>
+      <value></value>
     </param>
     <param>
       <key>max</key>
-      <value>5000</value>
+      <value>100</value>
     </param>
     <param>
       <key>min</key>
-      <value>1</value>
+      <value>0</value>
     </param>
     <param>
       <key>notebook</key>
@@ -313,65 +463,11 @@
     </param>
     <param>
       <key>num_steps</key>
-      <value>1000</value>
+      <value>100</value>
     </param>
     <param>
       <key>style</key>
       <value>wx.SL_HORIZONTAL</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(40, 175)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>1e6</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(976, 171)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>text_msg</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>"Hello World, this is GNU Radio using the IEEE 802.15.4 CSS PHY!"</value>
     </param>
   </block>
   <block>
@@ -394,15 +490,15 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>file</key>
-      <value>/tmp/sensor.pcap</value>
+      <value>/tmp/ofdm.pcap</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(896, 395)</value>
+      <value>(805, 300)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -426,7 +522,7 @@
     </param>
   </block>
   <block>
-    <key>blocks_message_strobe</key>
+    <key>blocks_multiply_const_vxx</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -434,6 +530,10 @@
     <param>
       <key>comment</key>
       <value></value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>mult</value>
     </param>
     <param>
       <key>affinity</key>
@@ -445,70 +545,74 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(160, 185)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_message_strobe_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>msg</key>
-      <value>pmt.intern(text_msg)</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>period</key>
-      <value>msg_interval</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_socket_pdu</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(432, 99)</value>
+      <value>(108, 390)</value>
     </param>
     <param>
       <key>_rotation</key>
       <value>180</value>
     </param>
     <param>
-      <key>host</key>
-      <value>127.0.0.1</value>
+      <key>id</key>
+      <value>blocks_multiply_const_vxx_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>100000</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_tuntap_pdu</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>istunflag</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(319, 80)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
-      <value>blocks_socket_pdu_0_0</value>
+      <value>blocks_tuntap_pdu_0</value>
+    </param>
+    <param>
+      <key>ifn</key>
+      <value>tap0</value>
     </param>
     <param>
       <key>mtu</key>
-      <value>10000</value>
+      <value>1532</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -518,17 +622,64 @@
       <key>minoutbuf</key>
       <value>0</value>
     </param>
+  </block>
+  <block>
+    <key>foo_packet_pad2</key>
     <param>
-      <key>port</key>
-      <value>8048</value>
+      <key>alias</key>
+      <value></value>
     </param>
     <param>
-      <key>tcp_no_delay</key>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>debug</key>
       <value>False</value>
     </param>
     <param>
-      <key>type</key>
-      <value>"UDP_SERVER"</value>
+      <key>delay_sec</key>
+      <value>0.001</value>
+    </param>
+    <param>
+      <key>delay</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(80, 523)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>foo_packet_pad2_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>100000</value>
+    </param>
+    <param>
+      <key>pad_front</key>
+      <value>10000</value>
+    </param>
+    <param>
+      <key>pad_tail</key>
+      <value>10000</value>
     </param>
   </block>
   <block>
@@ -547,15 +698,15 @@
     </param>
     <param>
       <key>debug</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_enabled</key>
       <value>False</value>
     </param>
     <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(688, 399)</value>
+      <value>(580, 308)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -575,26 +726,14 @@
     </param>
     <param>
       <key>tech</key>
-      <value>195</value>
+      <value>127</value>
     </param>
   </block>
   <block>
-    <key>ieee802_15_4_css_phy</key>
-    <param>
-      <key>bits_per_cw</key>
-      <value>c.bits_per_symbol</value>
-    </param>
+    <key>ieee802_11_ether_encap</key>
     <param>
       <key>alias</key>
       <value></value>
-    </param>
-    <param>
-      <key>chirp_seq</key>
-      <value>c.chirp_seq</value>
-    </param>
-    <param>
-      <key>codewords</key>
-      <value>c.codewords</value>
     </param>
     <param>
       <key>comment</key>
@@ -605,12 +744,16 @@
       <value></value>
     </param>
     <param>
+      <key>debug</key>
+      <value>False</value>
+    </param>
+    <param>
       <key>_enabled</key>
       <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 443)</value>
+      <value>(314, 157)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -618,11 +761,54 @@
     </param>
     <param>
       <key>id</key>
-      <value>ieee802_15_4_css_phy_1</value>
+      <value>ieee802_11_ether_encap_0</value>
     </param>
     <param>
-      <key>intlv_seq</key>
-      <value>c.intlv_seq</value>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
+    <key>ieee802_11_ofdm_mac</key>
+    <param>
+      <key>bss_mac</key>
+      <value>[0x42, 0x42, 0x42, 0x42, 0x42, 0x42]</value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>dst_mac</key>
+      <value>[0x30, 0x14, 0x4a, 0xe6, 0x46, 0xe4]</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(303, 258)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>ieee802_11_ofdm_mac_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -633,56 +819,12 @@
       <value>0</value>
     </param>
     <param>
-      <key>nzeros_padding</key>
-      <value>c.padded_zeros</value>
-    </param>
-    <param>
-      <key>nbytes_payload</key>
-      <value>c.phy_packetsize_bytes</value>
-    </param>
-    <param>
-      <key>num_subchirps</key>
-      <value>c.n_subchirps</value>
-    </param>
-    <param>
-      <key>phr</key>
-      <value>c.PHR</value>
-    </param>
-    <param>
-      <key>preamble</key>
-      <value>c.preamble</value>
-    </param>
-    <param>
-      <key>sfd</key>
-      <value>c.SFD</value>
-    </param>
-    <param>
-      <key>nsamp_frame</key>
-      <value>c.nsamp_frame</value>
-    </param>
-    <param>
-      <key>len_sub</key>
-      <value>38</value>
-    </param>
-    <param>
-      <key>sym_per_frame</key>
-      <value>c.nsym_frame</value>
-    </param>
-    <param>
-      <key>threshold</key>
-      <value>0.95</value>
-    </param>
-    <param>
-      <key>time_gap_1</key>
-      <value>c.time_gap_1</value>
-    </param>
-    <param>
-      <key>time_gap_2</key>
-      <value>c.time_gap_2</value>
+      <key>src_mac</key>
+      <value>[0x12, 0x34, 0x56, 0x78, 0x90, 0xab]</value>
     </param>
   </block>
   <block>
-    <key>ieee802_15_4_mac</key>
+    <key>ieee802_11_ofdm_parse_mac</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -705,7 +847,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(416, 352)</value>
+      <value>(22, 290)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -713,7 +855,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>ieee802_15_4_mac_0</value>
+      <value>ieee802_11_ofdm_parse_mac_0</value>
+    </param>
+    <param>
+      <key>log</key>
+      <value>False</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -722,197 +868,6 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>ieee802_15_4_rime_stack</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>bc_channels</key>
-      <value>[129]</value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(416, 208)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>ieee802_15_4_rime_stack_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>rime_add</key>
-      <value>[23,42]</value>
-    </param>
-    <param>
-      <key>ruc_channels</key>
-      <value>[132]</value>
-    </param>
-    <param>
-      <key>uc_channels</key>
-      <value>[131]</value>
-    </param>
-  </block>
-  <block>
-    <key>import</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(184, 11)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>import_0</value>
-    </param>
-    <param>
-      <key>import</key>
-      <value>import ieee802_15_4</value>
-    </param>
-  </block>
-  <block>
-    <key>notebook</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(992, 91)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>nb</value>
-    </param>
-    <param>
-      <key>labels</key>
-      <value>['RX Waterfall', 'RX FFT', 'RX Time', 'RX Symbols']</value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>style</key>
-      <value>wx.NB_TOP</value>
-    </param>
-  </block>
-  <block>
-    <key>note</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(400, 51)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>note_1</value>
-    </param>
-    <param>
-      <key>note</key>
-      <value>you can connect to the Socket PDU with: 'nc -u localhost 52002'</value>
-    </param>
-  </block>
-  <block>
-    <key>note</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(40, 134)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>note_samprate</value>
-    </param>
-    <param>
-      <key>note</key>
-      <value>Adjust sample rate as needed, standard compliant is 32e6 Hz</value>
     </param>
   </block>
   <block>
@@ -923,7 +878,7 @@
     </param>
     <param>
       <key>ant0</key>
-      <value>TX/RX</value>
+      <value></value>
     </param>
     <param>
       <key>bw0</key>
@@ -931,7 +886,7 @@
     </param>
     <param>
       <key>center_freq0</key>
-      <value>freq</value>
+      <value>uhd.tune_request(freq, rf_freq = freq - lo_offset, rf_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>norm_gain0</key>
@@ -939,7 +894,7 @@
     </param>
     <param>
       <key>gain0</key>
-      <value>gain</value>
+      <value>tx_gain</value>
     </param>
     <param>
       <key>ant10</key>
@@ -1587,7 +1542,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1008, 531)</value>
+      <value>(250, 511)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1595,7 +1550,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>uhd_usrp_sink_1</value>
+      <value>uhd_usrp_sink_0</value>
     </param>
     <param>
       <key>type</key>
@@ -1603,7 +1558,7 @@
     </param>
     <param>
       <key>len_tag_name</key>
-      <value></value>
+      <value>packet_len</value>
     </param>
     <param>
       <key>clock_source0</key>
@@ -1723,7 +1678,7 @@
     </param>
     <param>
       <key>sync</key>
-      <value></value>
+      <value>pc_clock</value>
     </param>
     <param>
       <key>otw</key>
@@ -1738,7 +1693,7 @@
     </param>
     <param>
       <key>ant0</key>
-      <value>RX2</value>
+      <value></value>
     </param>
     <param>
       <key>bw0</key>
@@ -1746,7 +1701,7 @@
     </param>
     <param>
       <key>center_freq0</key>
-      <value>freq</value>
+      <value>uhd.tune_request(freq, rf_freq = freq - lo_offset, rf_freq_policy=uhd.tune_request.POLICY_MANUAL)</value>
     </param>
     <param>
       <key>norm_gain0</key>
@@ -1754,7 +1709,7 @@
     </param>
     <param>
       <key>gain0</key>
-      <value>gain</value>
+      <value>rx_gain</value>
     </param>
     <param>
       <key>ant10</key>
@@ -2402,7 +2357,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(88, 524)</value>
+      <value>(447, 520)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2542,7 +2497,7 @@
     </param>
     <param>
       <key>sync</key>
-      <value></value>
+      <value>pc_clock</value>
     </param>
     <param>
       <key>otw</key>
@@ -2550,19 +2505,7 @@
     </param>
   </block>
   <block>
-    <key>wxgui_fftsink2</key>
-    <param>
-      <key>avg_alpha</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>average</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>baseband_freq</key>
-      <value>freq</value>
-    </param>
+    <key>wifi_phy_hier</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -2580,76 +2523,32 @@
       <value>True</value>
     </param>
     <param>
-      <key>fft_size</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>freqvar</key>
-      <value>None</value>
-    </param>
-    <param>
       <key>_coordinate</key>
-      <value>(208, 702)</value>
+      <value>(334, 360)</value>
     </param>
     <param>
       <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
+      <value>180</value>
     </param>
     <param>
       <key>id</key>
-      <value>wxgui_fftsink2_0</value>
+      <value>wifi_phy_hier_0</value>
     </param>
     <param>
-      <key>notebook</key>
-      <value>nb, 1</value>
-    </param>
-    <param>
-      <key>peak_hold</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>ref_level</key>
+      <key>maxoutbuf</key>
       <value>0</value>
     </param>
     <param>
-      <key>ref_scale</key>
-      <value>2.0</value>
+      <key>minoutbuf</key>
+      <value>0</value>
     </param>
     <param>
-      <key>fft_rate</key>
-      <value>15</value>
+      <key>chan_est</key>
+      <value>0</value>
     </param>
     <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>RX FFT</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>win_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>win</key>
-      <value>None</value>
-    </param>
-    <param>
-      <key>y_divs</key>
-      <value>10</value>
-    </param>
-    <param>
-      <key>y_per_div</key>
-      <value>10</value>
+      <key>encoding</key>
+      <value>0</value>
     </param>
   </block>
   <block>
@@ -2676,7 +2575,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(424, 763)</value>
+      <value>(808, 411)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2688,11 +2587,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>wxgui_scopesink2_2</value>
+      <value>wxgui_scopesink2_0</value>
     </param>
     <param>
       <key>notebook</key>
-      <value>nb, 2</value>
+      <value></value>
     </param>
     <param>
       <key>num_inputs</key>
@@ -2700,7 +2599,7 @@
     </param>
     <param>
       <key>samp_rate</key>
-      <value>samp_rate</value>
+      <value>5000</value>
     </param>
     <param>
       <key>t_scale</key>
@@ -2708,7 +2607,7 @@
     </param>
     <param>
       <key>title</key>
-      <value>RX Time Signal</value>
+      <value>Scope Plot</value>
     </param>
     <param>
       <key>trig_mode</key>
@@ -2732,206 +2631,30 @@
     </param>
     <param>
       <key>xy_mode</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>y_axis_label</key>
       <value>Counts</value>
-    </param>
-  </block>
-  <block>
-    <key>wxgui_scopesink2</key>
-    <param>
-      <key>ac_couple</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(784, 699)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>wxgui_scopesink2_3</value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value>nb,3</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>t_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>RX Correlator Output</value>
-    </param>
-    <param>
-      <key>trig_mode</key>
-      <value>wxgui.TRIG_MODE_AUTO</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>v_offset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>v_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>win_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>xy_mode</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>y_axis_label</key>
-      <value>Counts</value>
-    </param>
-  </block>
-  <block>
-    <key>wxgui_waterfallsink2</key>
-    <param>
-      <key>avg_alpha</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>average</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>baseband_freq</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>dynamic_range</key>
-      <value>100</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>fft_rate</key>
-      <value>15</value>
-    </param>
-    <param>
-      <key>fft_size</key>
-      <value>512</value>
-    </param>
-    <param>
-      <key>freqvar</key>
-      <value>None</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(168, 315)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>wxgui_waterfallsink2_0</value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value>nb,0</value>
-    </param>
-    <param>
-      <key>ref_scale</key>
-      <value>2.0</value>
-    </param>
-    <param>
-      <key>ref_level</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>RX Waterfall</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>win_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>win</key>
-      <value>None</value>
     </param>
   </block>
   <connection>
-    <source_block_id>blocks_message_strobe_0</source_block_id>
-    <sink_block_id>ieee802_15_4_rime_stack_0</sink_block_id>
-    <source_key>strobe</source_key>
-    <sink_key>bcin</sink_key>
+    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
+    <sink_block_id>foo_packet_pad2_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_socket_pdu_0_0</source_block_id>
-    <sink_block_id>ieee802_15_4_rime_stack_0</sink_block_id>
+    <source_block_id>blocks_tuntap_pdu_0</source_block_id>
+    <sink_block_id>ieee802_11_ether_encap_0</sink_block_id>
     <source_key>pdus</source_key>
-    <sink_key>bcin</sink_key>
+    <sink_key>from tap</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>foo_packet_pad2_0</source_block_id>
+    <sink_block_id>uhd_usrp_sink_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>foo_wireshark_connector_0</source_block_id>
@@ -2940,74 +2663,68 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>ieee802_15_4_css_phy_1</source_block_id>
-    <sink_block_id>wxgui_scopesink2_3</sink_block_id>
+    <source_block_id>ieee802_11_ether_encap_0</source_block_id>
+    <sink_block_id>blocks_tuntap_pdu_0</sink_block_id>
+    <source_key>to tap</source_key>
+    <sink_key>pdus</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>ieee802_11_ether_encap_0</source_block_id>
+    <sink_block_id>ieee802_11_ofdm_mac_0</sink_block_id>
+    <source_key>to wifi</source_key>
+    <sink_key>app in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>ieee802_11_ofdm_mac_0</source_block_id>
+    <sink_block_id>foo_wireshark_connector_0</sink_block_id>
+    <source_key>phy out</source_key>
+    <sink_key>in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>ieee802_11_ofdm_mac_0</source_block_id>
+    <sink_block_id>wifi_phy_hier_0</sink_block_id>
+    <source_key>phy out</source_key>
+    <sink_key>mac_in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>uhd_usrp_source_0</source_block_id>
+    <sink_block_id>wifi_phy_hier_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>wifi_phy_hier_0</source_block_id>
+    <sink_block_id>wxgui_scopesink2_0</sink_block_id>
     <source_key>1</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>ieee802_15_4_css_phy_1</source_block_id>
-    <sink_block_id>ieee802_15_4_mac_0</sink_block_id>
-    <source_key>rxout</source_key>
-    <sink_key>pdu in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>ieee802_15_4_css_phy_1</source_block_id>
-    <sink_block_id>uhd_usrp_sink_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>ieee802_15_4_mac_0</source_block_id>
-    <sink_block_id>ieee802_15_4_rime_stack_0</sink_block_id>
-    <source_key>app out</source_key>
-    <sink_key>fromMAC</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>ieee802_15_4_mac_0</source_block_id>
+    <source_block_id>wifi_phy_hier_0</source_block_id>
     <sink_block_id>foo_wireshark_connector_0</sink_block_id>
-    <source_key>pdu out</source_key>
+    <source_key>mac_out</source_key>
     <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>ieee802_15_4_mac_0</source_block_id>
-    <sink_block_id>ieee802_15_4_css_phy_1</sink_block_id>
-    <source_key>pdu out</source_key>
-    <sink_key>txin</sink_key>
+    <source_block_id>wifi_phy_hier_0</source_block_id>
+    <sink_block_id>ieee802_11_ether_encap_0</sink_block_id>
+    <source_key>mac_out</source_key>
+    <sink_key>from wifi</sink_key>
   </connection>
   <connection>
-    <source_block_id>ieee802_15_4_rime_stack_0</source_block_id>
-    <sink_block_id>blocks_socket_pdu_0_0</sink_block_id>
-    <source_key>bcout</source_key>
-    <sink_key>pdus</sink_key>
+    <source_block_id>wifi_phy_hier_0</source_block_id>
+    <sink_block_id>ieee802_11_ofdm_mac_0</sink_block_id>
+    <source_key>mac_out</source_key>
+    <sink_key>phy in</sink_key>
   </connection>
   <connection>
-    <source_block_id>ieee802_15_4_rime_stack_0</source_block_id>
-    <sink_block_id>ieee802_15_4_mac_0</sink_block_id>
-    <source_key>toMAC</source_key>
-    <sink_key>app in</sink_key>
+    <source_block_id>wifi_phy_hier_0</source_block_id>
+    <sink_block_id>ieee802_11_ofdm_parse_mac_0</sink_block_id>
+    <source_key>mac_out</source_key>
+    <sink_key>in</sink_key>
   </connection>
   <connection>
-    <source_block_id>uhd_usrp_source_0</source_block_id>
-    <sink_block_id>ieee802_15_4_css_phy_1</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>uhd_usrp_source_0</source_block_id>
-    <sink_block_id>wxgui_fftsink2_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>uhd_usrp_source_0</source_block_id>
-    <sink_block_id>wxgui_scopesink2_2</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>uhd_usrp_source_0</source_block_id>
-    <sink_block_id>wxgui_waterfallsink2_0</sink_block_id>
+    <source_block_id>wifi_phy_hier_0</source_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
