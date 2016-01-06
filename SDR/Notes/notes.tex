@@ -628,6 +628,9 @@ After it ran I was still having issues. I tried re-running it to just install
 	\section{12-29-15}
 	Met with Mathworks yesterday to discuss options from available for working with SDR. I'm excited to begin working with Houman and the rest of the team on this part of the project. Hopefully things will go smoother using a full featured piece of software versus the open source software we have been using. I would like to continue working with GNURadio while I still have a chance however as I believe some things, such as interfacing into Unity, will be significantly easier being able to use python than having to use MATLAB. 
 
+	\section{1-5-16}
+
+	I was finally able to test out my shell script that creates a GNU Radio Companion environment on a computer. It worked awesome but I forgot to design it to install the UHD drivers for GNURadio. I think I'll add a module that goes to the end and then downloads and opens PyBombs to allow for the rest of the modules to be installed as needed. This will make the system more robust to future changes to GNU Radio. 
 
 \end{document}
 
