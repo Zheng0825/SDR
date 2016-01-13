@@ -667,6 +667,67 @@ After it ran I was still having issues. I tried re-running it to just install
 
 		https://www.youtube.com/watch?v=f8emQ-TvD90
 
+	\subsection{SUCCESS}
+
+	Batman-adv was attached to two USRPs running on separate computers utilizing the gr-mac library fork made by Baliant Seeber. The fork can be found below:
+	\href{Link to Github Repo}{https://github.com/balint256/gr-mac.git}
+
+	This will need to be setup on two different computers using the following process:
+
+	\shellcmd{git clone htt[s://github.com/balin256/gr-mac.git}
+	\shellcmd{cd gr-mac}
+	\shellcmd{mkdir build}
+	\shellcmd{cd build}
+	\shellcmd{cmake ..}
+	\shellcmd{sudo make}
+	\shellcmd{sudo make install}
+	\shellcmd{sudo ldconfig}
+
+	Balint's fork doesn't have a very good readme as of the time of this writing, but following the original jmalsbury repo the next steps are below. His fork can be found
+	\href{here}{https://github.com/jmalsbury/gr-mac}
+
+	\shellcmd{cd ..}
+	\shellcmd{cd example} 
+	\shellcmd{sudo gnuradio-companion gmsk\_radio.grc}
+	Then Build and Run this flow chart. Then:
+	\shellcmd{sudo gnuradio-companion ofdm\_radio.grc}
+	Then Build and Run that flow char. Next:
+	\shellcmd{sudo gnuradio-companion simple\_trx.grc}
+	
+	Now we need to go to the first computer and follow the below commands:
+	\shellcmd{sudo python simple\_trx.py --port 12345 --radio-addr 85 --dest-addr 86}
+	In a 2nd terminal type 
+	\shellcmd{sudo ifconfig tun0 192.168.200.1}
+
+	Then we will go to the other computer and run the following commands:
+	\shellcmd{sudo python simple\_trx.py --port 12346 --radio-addr 86 --dest-addr 85}
+	Again in a 2nd terminal type
+	\shellcmd{sudo ifconfig tun0 192.168.200.2}
+
+	Back to computer 1, in the second terminal type:
+	\shellcmd{nc 192.168.200.2 12346}
+
+	In computer 2, in the second terminal type:
+	\shellcmd{nc 192.168.200.1 12345}
+
+	you should now be able to type messages and see them appear on the other radio, if not, check all your connections and ensure there are antennas. 
+
+	Now to add batman-adv we will go back to the first computer:
+	\shellcmd{sudo modprobe batman-adv}
+	\shellcmd{sudo ip link set mtu 1532 dev tun0}
+	\shellcmd{sudo batctl if add tun0}
+	\shellcmd{sudo ip link set up dev tun0}
+
+	On the other computer, the same commands are issued, repeated in case they need to be changed later:
+	\shellcmd{sudo modprobe batman-adv}
+	\shellcmd{sudo ip link set mtu 1532 dev tun0}
+	\shellcmd{sudo batctlif add tun0}
+	\shellcmd{sudo ip link set up dev tun0}
+
+	Then if you run the below command on either computer you should see one other batman node active:
+	\shellcmd{sudo batctl o}
+
+
 
 
 
