@@ -727,8 +727,14 @@ After it ran I was still having issues. I tried re-running it to just install
 	Then if you run the below command on either computer you should see one other batman node active:
 	\shellcmd{sudo batctl o}
 
+	\section{01-15-16}
+		
+	Confirmed that the flowgraph we are working from only uses the TX/RX antenna. This will obviously slow down the transmission of packets but may also present opportunities for using
+	the RX antenna for another use such as ambient energy detection or to scan for other active channels. 
 
-
+	We could potentially have this scan the ISM band and if a primary user or other instance tells the radio to move off it could then wait for a signal from another node to tell it
+	which channel to begin transmitting on. 
+	
 
 
 \end{document}
