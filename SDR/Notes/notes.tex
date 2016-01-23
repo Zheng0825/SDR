@@ -727,9 +727,19 @@ After it ran I was still having issues. I tried re-running it to just install
 	Then if you run the below command on either computer you should see one other batman node active:
 	\shellcmd{sudo batctl o}
 
+	\section{01-15-16}
+		
+	Confirmed that the flowgraph we are working from only uses the TX/RX antenna. This will obviously slow down the transmission of packets but may also present opportunities for using
+	the RX antenna for another use such as ambient energy detection or to scan for other active channels. 
 
+	We could potentially have this scan the ISM band and if a primary user or other instance tells the radio to move off it could then wait for a signal from another node to tell it
+	which channel to begin transmitting on. 
+	
+	\section{01-22-16}
 
-
+	Having trouble setting everything up on the new computers. Looks like the issue may be as simple as the distance between the transmitters is too far. These Antennas arent exactly great and I
+	have to use the adapters with them so this is very possible. I'm going to keep working to confirm this. It still works on the first two we used so if anything I will just make an image and copy
+	that to the new computers.
 
 \end{document}
 

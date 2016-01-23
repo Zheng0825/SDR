@@ -471,109 +471,11 @@
     </param>
   </block>
   <block>
-    <key>blocks_multiply_const_vxx</key>
+    <key>blocks_file_sink</key>
     <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>mult</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
+      <key>append</key>
       <value>True</value>
     </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(108, 390)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_const_vxx_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>100000</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_multiply_const_vxx</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>const</key>
-      <value>mult</value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(88, 891)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_multiply_const_vxx_0_0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>100000</value>
-    </param>
-    <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_throttle</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -591,8 +493,12 @@
       <value>True</value>
     </param>
     <param>
+      <key>file</key>
+      <value>/tmp/ofdm.pcap</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(264, 555)</value>
+      <value>(805, 300)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -600,82 +506,15 @@
     </param>
     <param>
       <key>id</key>
-      <value>blocks_throttle_0</value>
-    </param>
-    <param>
-      <key>ignoretag</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samples_per_second</key>
-      <value>samp_rate</value>
+      <value>blocks_file_sink_0</value>
     </param>
     <param>
       <key>type</key>
-      <value>complex</value>
+      <value>byte</value>
     </param>
     <param>
-      <key>vlen</key>
-      <value>1</value>
-    </param>
-  </block>
-  <block>
-    <key>blocks_throttle</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
+      <key>unbuffered</key>
       <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(264, 507)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>blocks_throttle_0_0</value>
-    </param>
-    <param>
-      <key>ignoretag</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samples_per_second</key>
-      <value>samp_rate</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
     </param>
     <param>
       <key>vlen</key>
@@ -702,7 +541,7 @@
     </param>
     <param>
       <key>istunflag</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -753,11 +592,11 @@
     </param>
     <param>
       <key>istunflag</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(344, 603)</value>
+      <value>(136, 643)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -769,7 +608,7 @@
     </param>
     <param>
       <key>ifn</key>
-      <value>tap1</value>
+      <value>tap0</value>
     </param>
     <param>
       <key>mtu</key>
@@ -785,7 +624,7 @@
     </param>
   </block>
   <block>
-    <key>foo_packet_pad2</key>
+    <key>foo_wireshark_connector</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -800,15 +639,7 @@
     </param>
     <param>
       <key>debug</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>delay_sec</key>
-      <value>0.001</value>
-    </param>
-    <param>
-      <key>delay</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -816,7 +647,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(80, 523)</value>
+      <value>(580, 308)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -824,7 +655,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>foo_packet_pad2_0</value>
+      <value>foo_wireshark_connector_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -832,74 +663,11 @@
     </param>
     <param>
       <key>minoutbuf</key>
-      <value>100000</value>
-    </param>
-    <param>
-      <key>pad_front</key>
-      <value>10000</value>
-    </param>
-    <param>
-      <key>pad_tail</key>
-      <value>10000</value>
-    </param>
-  </block>
-  <block>
-    <key>foo_packet_pad2</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>debug</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>delay_sec</key>
-      <value>0.001</value>
-    </param>
-    <param>
-      <key>delay</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(72, 763)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
       <value>0</value>
     </param>
     <param>
-      <key>id</key>
-      <value>foo_packet_pad2_0_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>100000</value>
-    </param>
-    <param>
-      <key>pad_front</key>
-      <value>10000</value>
-    </param>
-    <param>
-      <key>pad_tail</key>
-      <value>10000</value>
+      <key>tech</key>
+      <value>127</value>
     </param>
   </block>
   <block>
@@ -918,7 +686,7 @@
     </param>
     <param>
       <key>debug</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -926,7 +694,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(320, 177)</value>
+      <value>(314, 157)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -969,7 +737,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(440, 689)</value>
+      <value>(336, 713)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -992,7 +760,7 @@
     <key>ieee802_11_ofdm_mac</key>
     <param>
       <key>bss_mac</key>
-      <value>[0x12, 0x34, 0x56, 0x78, 0x90, 0xab]</value>
+      <value>[0x42, 0x42, 0x42, 0x42, 0x42, 0x42]</value>
     </param>
     <param>
       <key>alias</key>
@@ -1008,7 +776,7 @@
     </param>
     <param>
       <key>dst_mac</key>
-      <value>[0x12, 0x34, 0x56, 0x78, 0x90, 0xad]</value>
+      <value>[0x30, 0x14, 0x4a, 0xe6, 0x46, 0xe4]</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1043,7 +811,7 @@
     <key>ieee802_11_ofdm_mac</key>
     <param>
       <key>bss_mac</key>
-      <value>[0x12, 0x34, 0x56, 0x78, 0x90, 0xab]</value>
+      <value>[0x42, 0x42, 0x42, 0x42, 0x42, 0x42]</value>
     </param>
     <param>
       <key>alias</key>
@@ -1059,7 +827,7 @@
     </param>
     <param>
       <key>dst_mac</key>
-      <value>[0x12, 0x34, 0x56, 0x78, 0x90, 0xab]</value>
+      <value>[0x30, 0x14, 0x4a, 0xe6, 0x46, 0xe4]</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1067,7 +835,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(472, 779)</value>
+      <value>(752, 683)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1087,395 +855,9 @@
     </param>
     <param>
       <key>src_mac</key>
-      <value>[0x12, 0x34, 0x56, 0x78, 0x90, 0xad]</value>
+      <value>[0x12, 0x34, 0x56, 0x78, 0x90, 0xab]</value>
     </param>
   </block>
-  <block>
-    <key>ieee802_11_ofdm_parse_mac</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>debug</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(22, 290)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>ieee802_11_ofdm_parse_mac_0</value>
-    </param>
-    <param>
-      <key>log</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>ieee802_11_ofdm_parse_mac</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>debug</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(48, 675)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>ieee802_11_ofdm_parse_mac_0_0</value>
-    </param>
-    <param>
-      <key>log</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>wifi_phy_hier</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(334, 360)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>wifi_phy_hier_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>chan_est</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>encoding</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>wifi_phy_hier</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(512, 881)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>180</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>wifi_phy_hier_0_0</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>chan_est</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>encoding</key>
-      <value>0</value>
-    </param>
-  </block>
-  <block>
-    <key>wxgui_scopesink2</key>
-    <param>
-      <key>ac_couple</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(696, 411)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>wxgui_scopesink2_0</value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>5000</value>
-    </param>
-    <param>
-      <key>t_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>Scope Plot</value>
-    </param>
-    <param>
-      <key>trig_mode</key>
-      <value>wxgui.TRIG_MODE_AUTO</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>v_offset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>v_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>win_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>xy_mode</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>y_axis_label</key>
-      <value>Counts</value>
-    </param>
-  </block>
-  <block>
-    <key>wxgui_scopesink2</key>
-    <param>
-      <key>ac_couple</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(736, 939)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid_pos</key>
-      <value></value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>wxgui_scopesink2_0_0</value>
-    </param>
-    <param>
-      <key>notebook</key>
-      <value></value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>samp_rate</key>
-      <value>5000</value>
-    </param>
-    <param>
-      <key>t_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>title</key>
-      <value>Scope Plot</value>
-    </param>
-    <param>
-      <key>trig_mode</key>
-      <value>wxgui.TRIG_MODE_AUTO</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>v_offset</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>v_scale</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>win_size</key>
-      <value></value>
-    </param>
-    <param>
-      <key>xy_mode</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>y_axis_label</key>
-      <value>Counts</value>
-    </param>
-  </block>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
-    <sink_block_id>foo_packet_pad2_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_multiply_const_vxx_0_0</source_block_id>
-    <sink_block_id>foo_packet_pad2_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_throttle_0</source_block_id>
-    <sink_block_id>wifi_phy_hier_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_throttle_0_0</source_block_id>
-    <sink_block_id>wifi_phy_hier_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
   <connection>
     <source_block_id>blocks_tuntap_pdu_0</source_block_id>
     <sink_block_id>ieee802_11_ether_encap_0</sink_block_id>
@@ -1489,14 +871,8 @@
     <sink_key>from tap</sink_key>
   </connection>
   <connection>
-    <source_block_id>foo_packet_pad2_0</source_block_id>
-    <sink_block_id>blocks_throttle_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>foo_packet_pad2_0_0</source_block_id>
-    <sink_block_id>blocks_throttle_0_0</sink_block_id>
+    <source_block_id>foo_wireshark_connector_0</source_block_id>
+    <sink_block_id>blocks_file_sink_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -1526,74 +902,20 @@
   </connection>
   <connection>
     <source_block_id>ieee802_11_ofdm_mac_0</source_block_id>
-    <sink_block_id>wifi_phy_hier_0</sink_block_id>
+    <sink_block_id>foo_wireshark_connector_0</sink_block_id>
     <source_key>phy out</source_key>
-    <sink_key>mac_in</sink_key>
+    <sink_key>in</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>ieee802_11_ofdm_mac_0</source_block_id>
+    <sink_block_id>ieee802_11_ofdm_mac_0_0</sink_block_id>
+    <source_key>phy out</source_key>
+    <sink_key>phy in</sink_key>
   </connection>
   <connection>
     <source_block_id>ieee802_11_ofdm_mac_0_0</source_block_id>
-    <sink_block_id>wifi_phy_hier_0_0</sink_block_id>
-    <source_key>phy out</source_key>
-    <sink_key>mac_in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0</source_block_id>
-    <sink_block_id>wxgui_scopesink2_0</sink_block_id>
-    <source_key>1</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0</source_block_id>
-    <sink_block_id>ieee802_11_ether_encap_0</sink_block_id>
-    <source_key>mac_out</source_key>
-    <sink_key>from wifi</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0</source_block_id>
     <sink_block_id>ieee802_11_ofdm_mac_0</sink_block_id>
-    <source_key>mac_out</source_key>
+    <source_key>phy out</source_key>
     <sink_key>phy in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0</source_block_id>
-    <sink_block_id>ieee802_11_ofdm_parse_mac_0</sink_block_id>
-    <source_key>mac_out</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0_0</source_block_id>
-    <sink_block_id>wxgui_scopesink2_0_0</sink_block_id>
-    <source_key>1</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0_0</source_block_id>
-    <sink_block_id>ieee802_11_ether_encap_0_0</sink_block_id>
-    <source_key>mac_out</source_key>
-    <sink_key>from wifi</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0_0</source_block_id>
-    <sink_block_id>ieee802_11_ofdm_mac_0_0</sink_block_id>
-    <source_key>mac_out</source_key>
-    <sink_key>phy in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0_0</source_block_id>
-    <sink_block_id>ieee802_11_ofdm_parse_mac_0_0</sink_block_id>
-    <source_key>mac_out</source_key>
-    <sink_key>in</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>wifi_phy_hier_0_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
   </connection>
 </flow_graph>

@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Wifi Transceiver
-# Generated: Wed Jan  6 18:06:19 2016
+# Generated: Mon Jan 11 20:59:33 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -192,10 +192,10 @@ class wifi_transceiver(grc_wxgui.top_block_gui):
         self.Add(self._lo_offset_chooser)
         self.ieee802_11_ofdm_parse_mac_0_0 = ieee802_11.ofdm_parse_mac(False, True)
         self.ieee802_11_ofdm_parse_mac_0 = ieee802_11.ofdm_parse_mac(False, True)
-        self.ieee802_11_ofdm_mac_0_0 = ieee802_11.ofdm_mac(([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]))
-        self.ieee802_11_ofdm_mac_0 = ieee802_11.ofdm_mac(([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]))
+        self.ieee802_11_ofdm_mac_0_0 = ieee802_11.ofdm_mac(([0x12, 0x34, 0x56, 0x78, 0x90, 0xad]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]))
+        self.ieee802_11_ofdm_mac_0 = ieee802_11.ofdm_mac(([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xad]), ([0x12, 0x34, 0x56, 0x78, 0x90, 0xab]))
         self.ieee802_11_ether_encap_0_0 = ieee802_11.ether_encap(False)
-        self.ieee802_11_ether_encap_0 = ieee802_11.ether_encap(False)
+        self.ieee802_11_ether_encap_0 = ieee802_11.ether_encap(True)
         self._freq_chooser = forms.drop_down(
         	parent=self.GetWin(),
         	value=self.freq,
@@ -209,8 +209,8 @@ class wifi_transceiver(grc_wxgui.top_block_gui):
         (self.foo_packet_pad2_0_0).set_min_output_buffer(100000)
         self.foo_packet_pad2_0 = foo.packet_pad2(False, False, 0.001, 10000, 10000)
         (self.foo_packet_pad2_0).set_min_output_buffer(100000)
-        self.blocks_tuntap_pdu_0_0 = blocks.tuntap_pdu("tap1", 1532, False)
-        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu("tap0", 1532, False)
+        self.blocks_tuntap_pdu_0_0 = blocks.tuntap_pdu("tap1", 1500, False)
+        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu("tap0", 1500, False)
         self.blocks_throttle_0_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_multiply_const_vxx_0_0 = blocks.multiply_const_vcc((mult, ))
