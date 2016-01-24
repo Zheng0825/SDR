@@ -1,15 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.8'?>
+<?grc format='1' created='3.7.10'?>
 <flow_graph>
   <timestamp>Tue Sep 15 14:54:41 2015</timestamp>
   <block>
     <key>options</key>
     <param>
       <key>author</key>
-      <value></value>
-    </param>
-    <param>
-      <key>alias</key>
       <value></value>
     </param>
     <param>
@@ -45,6 +41,10 @@
       <value>wx_gui</value>
     </param>
     <param>
+      <key>hier_block_src_path</key>
+      <value>.:</value>
+    </param>
+    <param>
       <key>id</key>
       <value>top_block</value>
     </param>
@@ -53,8 +53,16 @@
       <value>0</value>
     </param>
     <param>
+      <key>qt_qss_theme</key>
+      <value></value>
+    </param>
+    <param>
       <key>realtime_scheduling</key>
       <value></value>
+    </param>
+    <param>
+      <key>run_command</key>
+      <value>{python} -u {filename}</value>
     </param>
     <param>
       <key>run_options</key>
@@ -339,7 +347,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/john/Downloads/documents-export-2015-09-15/Inspired But Too Tired Acoustic.wav</value>
+      <value>/home/vtclab/IRG/SDR/USRP_B200/John_Prine.wav</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -1116,10 +1124,6 @@
       <value>fc32</value>
     </param>
     <param>
-      <key>len_tag_name</key>
-      <value></value>
-    </param>
-    <param>
       <key>clock_source0</key>
       <value></value>
     </param>
@@ -1228,6 +1232,10 @@
       <value>samp_rate</value>
     </param>
     <param>
+      <key>hide_cmd_port</key>
+      <value>False</value>
+    </param>
+    <param>
       <key>stream_args</key>
       <value></value>
     </param>
@@ -1237,6 +1245,10 @@
     </param>
     <param>
       <key>sync</key>
+      <value></value>
+    </param>
+    <param>
+      <key>len_tag_name</key>
       <value></value>
     </param>
     <param>
