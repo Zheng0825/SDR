@@ -741,6 +741,7 @@ After it ran I was still having issues. I tried re-running it to just install
 	have to use the adapters with them so this is very possible. I'm going to keep working to confirm this. It still works on the first two we used so if anything I will just make an image and copy
 	that to the new computers.
 
+<<<<<<< HEAD
 	\section{01-23-16}
 
 	Ok so here is the state of affairs. We have successfully send batman-adv packets over SDR, as was noted before. However, after changing things to be "broadcast" under dest-addr in the virtual 
@@ -752,6 +753,16 @@ After it ran I was still having issues. I tried re-running it to just install
 	I will need to make a quick start guide or something soon for automating the process of setuping up each node. We are planning to expand to 16 nodes and this could become quite difficult.
 	I believe learning one of the terminal multiplexers such as screen or tmux would be beneficial for the future.
 
+=======
+
+	Important progress/updates this morning:
+
+	1. The board I thought was broken was just an error, I was using a USB 2.0 cable not a 3.0 cable which meant it couldn't get enough board power to broadcast, but could get enough to turn on which explains the weird error. 
+	2. So far it appears the 3 computers weren't working because the boards were too far apart from one another. I realized in the original setup they were under 1 ft from one another. This is probably an issue with transmit frequency as it was operating at 980 MHz and the antennas are rated for 2.5 GHz. I will run some more tests throughout the day to confirm.
+	3. I was able to successfully send packets between 3 radios today. I made three changes and now will figure out which of the changes mattered. The first change was that I noticed you could replace "dest-addr" (Destination address) with broadcast in the gnuradio blocks in question (virtual-channel-encoder/decoder). I also noticed that in the "Channel Multiplexer" it is possible to increase the "Channel count" number higher and it will allow for more outputs. I snaked these outputs to the same locations as the originals and this allowed for the transmission. Finally, I ensured all the boards were within a few inches of one another. I realized in the original setup we were seeing the middle board able to talk to the 2 edge boards, so wasn't sure if it was a proximity problem. Regardless, one of these should allow up to continue forward.
+
+	If I can't get the 3 new computers working by around 4-5 today, I will work with Pat/Cody tonight to image them off of the first computer. 
+>>>>>>> 67be4436a12759fae8c5bd44468e095f0b6ac871
 
 \end{document}
 
