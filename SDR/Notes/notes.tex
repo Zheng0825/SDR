@@ -741,6 +741,18 @@ After it ran I was still having issues. I tried re-running it to just install
 	have to use the adapters with them so this is very possible. I'm going to keep working to confirm this. It still works on the first two we used so if anything I will just make an image and copy
 	that to the new computers.
 
+	\section{01-23-16}
+
+	Ok so here is the state of affairs. We have successfully send batman-adv packets over SDR, as was noted before. However, after changing things to be "broadcast" under dest-addr in the virtual 
+	encoder and virtual decoder I was able to successfully ping bidirectionally through 3 devices with no problems whatsoever. We are currently seeing extreme range limiting issues for some reasons
+	that are currently unclear to me. I tried adjusting the frequencies through the init part of the automatically generated python scripts but that does not seem to be working. I'm not 100%
+	sure why but would guess it has something to do with the fact that these files are automatically generated and are not created by a true programmer. I also think this may be the reason why
+	we were having issues with the three new computers in the center of the lab. I'm hoping to run more tests before I go home today. Joe is currently running bat-vis to show me how to map topologies.
+
+	I will need to make a quick start guide or something soon for automating the process of setuping up each node. We are planning to expand to 16 nodes and this could become quite difficult.
+	I believe learning one of the terminal multiplexers such as screen or tmux would be beneficial for the future.
+
+
 \end{document}
 
 	
