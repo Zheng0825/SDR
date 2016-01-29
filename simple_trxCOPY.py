@@ -3,6 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Simple Trx
+<<<<<<< HEAD:simple_trxCOPY.py
 <<<<<<< HEAD
 # Generated: Fri Jan 29 13:52:19 2016
 =======
@@ -12,6 +13,9 @@
 # Generated: Fri Jan 29 11:42:41 2016
 >>>>>>> 798300666265092d799df202a18f2f86432bbd50
 >>>>>>> 78aca7ef78e03c5312dcc0a3669fb073ef7c9e55
+=======
+# Generated: Fri Jan 29 11:42:41 2016
+>>>>>>> parent of 97c063e... I'm not convinced this protocol hopping will work as built but need to confirm:SDR/simple_trx.py
 ##################################################
 
 if __name__ == '__main__':
