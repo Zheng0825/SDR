@@ -3,7 +3,11 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Simple Trx
+<<<<<<< HEAD
 # Generated: Thu Jan 28 15:23:09 2016
+=======
+# Generated: Fri Jan 29 11:42:41 2016
+>>>>>>> 798300666265092d799df202a18f2f86432bbd50
 ##################################################
 
 if __name__ == '__main__':
@@ -23,9 +27,11 @@ sys.path.append(os.environ.get('GRC_HIER_PATH', os.path.expanduser('~/.grc_gnura
 from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import gr
+from gnuradio import wxgui
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from gnuradio.wxgui import forms
+from gnuradio.wxgui import scopesink2
 from grc_gnuradio import wxgui as grc_wxgui
 from optparse import OptionParser
 from protocolhopping import protocolhopping  # grc-generated hier_block
@@ -36,7 +42,7 @@ import wx
 
 class simple_trx(grc_wxgui.top_block_gui):
 
-    def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, ogradio_addr=0, port="12345", rate=1e6, rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0):
+    def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, ogradio_addr=0, ogrx_freq=915e6, ogtx_freq=915e6, port="12345", rate=1e6, rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0):
         grc_wxgui.top_block_gui.__init__(self, title="Simple Trx")
 
         ##################################################
@@ -50,6 +56,8 @@ class simple_trx(grc_wxgui.top_block_gui):
         self.max_arq_attempts = max_arq_attempts
         self.mtu = mtu
         self.ogradio_addr = ogradio_addr
+        self.ogrx_freq = ogrx_freq
+        self.ogtx_freq = ogtx_freq
         self.port = port
         self.rate = rate
         self.rx_antenna = rx_antenna
@@ -68,7 +76,8 @@ class simple_trx(grc_wxgui.top_block_gui):
         self.samp_rate = samp_rate = rate
         self.rx_freq = rx_freq = 915e6
         self.radio_addr = radio_addr = 86
-        self.enable = enable = 0
+        self.enabletx = enabletx = 0
+        self.enablerx = enablerx = 0
 
         ##################################################
         # Blocks
@@ -144,16 +153,40 @@ class simple_trx(grc_wxgui.top_block_gui):
         )
         self.Add(self._radio_addr_text_box)
         self.mac_802_3_tracker = mac.tracker_802_3(verbose=False)
-        self._enable_chooser = forms.radio_buttons(
+        self._enabletx_chooser = forms.radio_buttons(
         	parent=self.GetWin(),
-        	value=self.enable,
-        	callback=self.set_enable,
-        	label="Enable",
+        	value=self.enabletx,
+        	callback=self.set_enabletx,
+        	label="Enable TX",
         	choices=[0,1],
         	labels=["GMSK", "QAM"],
         	style=wx.RA_HORIZONTAL,
         )
-        self.Add(self._enable_chooser)
+        self.Add(self._enabletx_chooser)
+        self._enablerx_chooser = forms.radio_buttons(
+        	parent=self.GetWin(),
+        	value=self.enablerx,
+        	callback=self.set_enablerx,
+        	label="Enable RX",
+        	choices=[0,1],
+        	labels=["GMSK", "QAM"],
+        	style=wx.RA_HORIZONTAL,
+        )
+        self.Add(self._enablerx_chooser)
+        self.wxgui_scopesink2_0_0 = scopesink2.scope_sink_c(
+        	self.GetWin(),
+        	title="RX",
+        	sample_rate=samp_rate,
+        	v_scale=0.02,
+        	v_offset=0,
+        	t_scale=0.0001,
+        	ac_couple=False,
+        	xy_mode=False,
+        	num_inputs=2,
+        	trig_mode=wxgui.TRIG_MODE_NORM,
+        	y_axis_label="Counts",
+        )
+        self.GridAdd(self.wxgui_scopesink2_0_0.win, 0, 0, 1, 1)
         self.simple_mac_1 = mac.simple_mac(
         radio_addr,
         arq_timeout,
@@ -170,7 +203,8 @@ class simple_trx(grc_wxgui.top_block_gui):
             access_code_threshold=0 + 12 + 4*0,
             ampl=ampl,
             args=args,
-            enable=enable,
+            enablerx=enablerx,
+            enabletx=enabletx,
             rate=samp_rate,
             rx_ant=rx_antenna,
             rx_freq=rx_freq,
@@ -193,8 +227,12 @@ class simple_trx(grc_wxgui.top_block_gui):
         self.mac_virtual_channel_decoder_0 = mac.virtual_channel_decoder(3, [0, 1])
         self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu(iface, mtu*0 + 1514, False)
         self.blocks_socket_pdu_0 = blocks.socket_pdu("TCP_SERVER", "", port, mtu, False)
+        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((1, ))
+        self.blocks_moving_average_xx_0 = blocks.moving_average_ff(10000, 1./10000, 40000/4)
         self.blocks_message_strobe_0 = blocks.message_strobe(pmt.intern("T"), 1)
         self.blocks_message_debug_0_0_1 = blocks.message_debug()
+        self.blocks_float_to_complex_0 = blocks.float_to_complex(1)
+        self.blocks_complex_to_mag_0 = blocks.complex_to_mag(1)
 
         ##################################################
         # Connections
@@ -211,6 +249,13 @@ class simple_trx(grc_wxgui.top_block_gui):
         self.msg_connect((self.protocolhopping_0, 'msg_out'), (self.simple_mac_1, 'from_radio'))    
         self.msg_connect((self.simple_mac_1, 'to_app'), (self.mac_virtual_channel_decoder_0, 'in'))    
         self.msg_connect((self.simple_mac_1, 'to_radio'), (self.protocolhopping_0, 'msg_in'))    
+        self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_float_to_complex_0, 0))    
+        self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_moving_average_xx_0, 0))    
+        self.connect((self.blocks_float_to_complex_0, 0), (self.wxgui_scopesink2_0_0, 1))    
+        self.connect((self.blocks_moving_average_xx_0, 0), (self.blocks_multiply_const_vxx_0, 0))    
+        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.blocks_float_to_complex_0, 1))    
+        self.connect((self.protocolhopping_0, 0), (self.blocks_complex_to_mag_0, 0))    
+        self.connect((self.protocolhopping_0, 0), (self.wxgui_scopesink2_0_0, 0))    
 
     def get_ampl(self):
         return self.ampl
@@ -261,6 +306,18 @@ class simple_trx(grc_wxgui.top_block_gui):
 
     def set_ogradio_addr(self, ogradio_addr):
         self.ogradio_addr = ogradio_addr
+
+    def get_ogrx_freq(self):
+        return self.ogrx_freq
+
+    def set_ogrx_freq(self, ogrx_freq):
+        self.ogrx_freq = ogrx_freq
+
+    def get_ogtx_freq(self):
+        return self.ogtx_freq
+
+    def set_ogtx_freq(self, ogtx_freq):
+        self.ogtx_freq = ogtx_freq
 
     def get_port(self):
         return self.port
@@ -349,6 +406,7 @@ class simple_trx(grc_wxgui.top_block_gui):
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
         self.protocolhopping_0.set_rate(self.samp_rate)
+        self.wxgui_scopesink2_0_0.set_sample_rate(self.samp_rate)
 
     def get_rx_freq(self):
         return self.rx_freq
@@ -365,13 +423,21 @@ class simple_trx(grc_wxgui.top_block_gui):
         self.radio_addr = radio_addr
         self._radio_addr_text_box.set_value(self.radio_addr)
 
-    def get_enable(self):
-        return self.enable
+    def get_enabletx(self):
+        return self.enabletx
 
-    def set_enable(self, enable):
-        self.enable = enable
-        self._enable_chooser.set_value(self.enable)
-        self.protocolhopping_0.set_enable(self.enable)
+    def set_enabletx(self, enabletx):
+        self.enabletx = enabletx
+        self._enabletx_chooser.set_value(self.enabletx)
+        self.protocolhopping_0.set_enabletx(self.enabletx)
+
+    def get_enablerx(self):
+        return self.enablerx
+
+    def set_enablerx(self, enablerx):
+        self.enablerx = enablerx
+        self._enablerx_chooser.set_value(self.enablerx)
+        self.protocolhopping_0.set_enablerx(self.enablerx)
 
 
 def argument_parser():
@@ -400,8 +466,16 @@ def argument_parser():
     parser.add_option(
         "-l", "--ogradio-addr", dest="ogradio_addr", type="intx", default=0,
         help="Set Local address [default=%default]")
+<<<<<<< HEAD
     parser.add_option(
         "", "--port", dest="port", type="string", default="12345",
+=======
+    parser.add_option("", "--ogrx-freq", dest="ogrx_freq", type="eng_float", default=eng_notation.num_to_str(915e6),
+        help="Set RX freq [default=%default]")
+    parser.add_option("", "--ogtx-freq", dest="ogtx_freq", type="eng_float", default=eng_notation.num_to_str(915e6),
+        help="Set TX freq [default=%default]")
+    parser.add_option("", "--port", dest="port", type="string", default="12345",
+>>>>>>> 798300666265092d799df202a18f2f86432bbd50
         help="Set TCP port [default=%default]")
     parser.add_option(
         "-r", "--rate", dest="rate", type="eng_float", default=eng_notation.num_to_str(1e6),
@@ -424,6 +498,7 @@ def argument_parser():
     parser.add_option(
         "", "--tx-lo-offset", dest="tx_lo_offset", type="eng_float", default=eng_notation.num_to_str(0),
         help="Set TX LO offset [default=%default]")
+<<<<<<< HEAD
     return parser
 
 
@@ -432,6 +507,10 @@ def main(top_block_cls=simple_trx, options=None):
         options, _ = argument_parser().parse_args()
 
     tb = top_block_cls(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+=======
+    (options, args) = parser.parse_args()
+    tb = simple_trx(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+>>>>>>> 798300666265092d799df202a18f2f86432bbd50
     tb.Start(True)
     tb.Wait()
 
