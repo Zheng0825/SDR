@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Fri Jan 29 12:00:47 2016
+# Generated: Fri Jan 29 11:34:18 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -117,9 +117,9 @@ class top_block(grc_wxgui.top_block_gui):
         	tau=75e-6,
         	max_dev=5e3,
         )
-        self.analog_nbfm_tx_0 = analog.nbfm_tx(
-        	audio_rate=44100,
-        	quad_rate=176400,
+        self.analog_wfm_tx_0 = analog.wfm_tx(
+        	audio_rate=audio_rate,
+        	quad_rate=audio_rate * audio_interp,
         	tau=75e-6,
         	max_dev=5e3,
         )
@@ -127,11 +127,11 @@ class top_block(grc_wxgui.top_block_gui):
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_nbfm_tx_0, 0), (self.blks2_selector_0, 1))    
+        self.connect((self.analog_wfm_tx_0, 0), (self.blks2_selector_0, 1))    
         self.connect((self.analog_wfm_tx_0_0, 0), (self.blks2_selector_0, 0))    
         self.connect((self.blks2_selector_0, 0), (self.rational_resampler_xxx_0, 0))    
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.analog_wfm_tx_0_0, 0))    
-        self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.analog_nbfm_tx_0, 0))    
+        self.connect((self.blocks_multiply_const_vxx_0_0, 0), (self.analog_wfm_tx_0, 0))    
         self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_multiply_const_vxx_0, 0))    
         self.connect((self.blocks_wavfile_source_1, 0), (self.blocks_multiply_const_vxx_0_0, 0))    
         self.connect((self.rational_resampler_xxx_0, 0), (self.uhd_usrp_sink_0, 0))    
