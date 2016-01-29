@@ -633,7 +633,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1000, 171)</value>
+      <value>(1000, 203)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -704,7 +704,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1072, 651)</value>
+      <value>(1088, 619)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -807,73 +807,6 @@
     </param>
   </block>
   <block>
-    <key>digital_gmsk_demod</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>freq_error</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1000, 211)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>gain_mu</key>
-      <value>0.175</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>digital_gmsk_demod_0_0</value>
-    </param>
-    <param>
-      <key>log</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>mu</key>
-      <value>0.5</value>
-    </param>
-    <param>
-      <key>omega_relative_limit</key>
-      <value>0.005</value>
-    </param>
-    <param>
-      <key>samples_per_symbol</key>
-      <value>samps_per_sym</value>
-    </param>
-    <param>
-      <key>verbose</key>
-      <value>True</value>
-    </param>
-  </block>
-  <block>
     <key>digital_gmsk_mod</key>
     <param>
       <key>bt</key>
@@ -906,61 +839,6 @@
     <param>
       <key>id</key>
       <value>digital_gmsk_mod_0</value>
-    </param>
-    <param>
-      <key>log</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>maxoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>minoutbuf</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>samples_per_symbol</key>
-      <value>samps_per_sym</value>
-    </param>
-    <param>
-      <key>verbose</key>
-      <value>False</value>
-    </param>
-  </block>
-  <block>
-    <key>digital_gmsk_mod</key>
-    <param>
-      <key>bt</key>
-      <value>0.35</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1096, 547)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>digital_gmsk_mod_0_0</value>
     </param>
     <param>
       <key>log</key>
@@ -1156,7 +1034,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1352, 123)</value>
+      <value>(1440, 91)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1203,7 +1081,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1352, 235)</value>
+      <value>(1440, 171)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1313,7 +1191,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1608, 91)</value>
+      <value>(1656, 83)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1364,7 +1242,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1608, 171)</value>
+      <value>(1656, 163)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1477,7 +1355,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1832, 315)</value>
+      <value>(1912, 475)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1520,7 +1398,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1840, 115)</value>
+      <value>(1896, 115)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2653,7 +2531,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1592, 267)</value>
+      <value>(1728, 307)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3652,12 +3530,6 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_multiply_const_vxx_3</source_block_id>
-    <sink_block_id>digital_gmsk_demod_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>blocks_pdu_to_tagged_stream_0_0</source_block_id>
     <sink_block_id>digital_gfsk_mod_0</sink_block_id>
     <source_key>0</source_key>
@@ -3666,12 +3538,6 @@
   <connection>
     <source_block_id>blocks_pdu_to_tagged_stream_0_0</source_block_id>
     <sink_block_id>digital_gmsk_mod_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>blocks_pdu_to_tagged_stream_0_0</source_block_id>
-    <sink_block_id>digital_gmsk_mod_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3694,20 +3560,8 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>digital_gmsk_demod_0_0</source_block_id>
-    <sink_block_id>mac_packet_deframer_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>digital_gmsk_mod_0</source_block_id>
     <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_gmsk_mod_0_0</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_1</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
