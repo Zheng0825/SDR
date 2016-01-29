@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Simple Trx
-# Generated: Fri Jan 29 14:10:58 2016
+# Generated: Fri Jan 29 15:42:57 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -156,7 +156,7 @@ class simple_trx(grc_wxgui.top_block_gui):
         	callback=self.set_enabletx,
         	label="Enable TX",
         	choices=[0,1],
-        	labels=["GMSK", "QAM"],
+        	labels=["GMSK", "GFSK"],
         	style=wx.RA_HORIZONTAL,
         )
         self.Add(self._enabletx_chooser)
@@ -166,7 +166,7 @@ class simple_trx(grc_wxgui.top_block_gui):
         	callback=self.set_enablerx,
         	label="Enable RX",
         	choices=[0,1],
-        	labels=["GMSK", "QAM"],
+        	labels=["GMSK", "GFSK"],
         	style=wx.RA_HORIZONTAL,
         )
         self.Add(self._enablerx_chooser)

@@ -113,7 +113,7 @@
     </param>
     <param>
       <key>labels</key>
-      <value>["GMSK", "QAM"]</value>
+      <value>["GMSK", "GFSK"]</value>
     </param>
     <param>
       <key>notebook</key>
@@ -168,7 +168,7 @@
     </param>
     <param>
       <key>labels</key>
-      <value>["GMSK", "QAM"]</value>
+      <value>["GMSK", "GFSK"]</value>
     </param>
     <param>
       <key>notebook</key>
