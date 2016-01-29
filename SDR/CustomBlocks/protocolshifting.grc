@@ -257,7 +257,7 @@
     </param>
   </block>
   <block>
-    <key>blks2_selector</key>
+    <key>blocks_add_xx</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -276,7 +276,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(976, 145)</value>
+      <value>(1488, 577)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -284,11 +284,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>blks2_selector_1</value>
+      <value>blocks_add_xx_0</value>
     </param>
     <param>
-      <key>input_index</key>
-      <value>enablerx</value>
+      <key>type</key>
+      <value>complex</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -301,18 +301,6 @@
     <param>
       <key>num_inputs</key>
       <value>2</value>
-    </param>
-    <param>
-      <key>num_outputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>output_index</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>byte</value>
     </param>
     <param>
       <key>vlen</key>
@@ -320,7 +308,7 @@
     </param>
   </block>
   <block>
-    <key>blks2_selector</key>
+    <key>blocks_multiply_const_vxx</key>
     <param>
       <key>alias</key>
       <value></value>
@@ -328,6 +316,10 @@
     <param>
       <key>comment</key>
       <value></value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>enabletx</value>
     </param>
     <param>
       <key>affinity</key>
@@ -339,7 +331,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1424, 465)</value>
+      <value>(1320, 459)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -347,11 +339,11 @@
     </param>
     <param>
       <key>id</key>
-      <value>blks2_selector_3</value>
+      <value>blocks_multiply_const_vxx_0</value>
     </param>
     <param>
-      <key>input_index</key>
-      <value>enabletx</value>
+      <key>type</key>
+      <value>complex</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -360,22 +352,6 @@
     <param>
       <key>minoutbuf</key>
       <value>0</value>
-    </param>
-    <param>
-      <key>num_inputs</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>num_outputs</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>output_index</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
     </param>
     <param>
       <key>vlen</key>
@@ -406,7 +382,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1576, 475)</value>
+      <value>(1568, 587)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -415,6 +391,159 @@
     <param>
       <key>id</key>
       <value>blocks_multiply_const_vxx_0_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_multiply_const_vxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>0 if enabletx else 1</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1312, 635)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_multiply_const_vxx_1</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_multiply_const_vxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>enablerx</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(744, 27)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_multiply_const_vxx_2</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>complex</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>vlen</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_multiply_const_vxx</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>const</key>
+      <value>0 if enablerx else 1</value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(744, 243)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_multiply_const_vxx_3</value>
     </param>
     <param>
       <key>type</key>
@@ -453,7 +582,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(720, 499)</value>
+      <value>(800, 459)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -504,7 +633,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(712, 11)</value>
+      <value>(992, 51)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -571,7 +700,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1152, 363)</value>
+      <value>(1152, 451)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -634,7 +763,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(688, 203)</value>
+      <value>(968, 187)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -709,7 +838,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1112, 515)</value>
+      <value>(1016, 603)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -921,7 +1050,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1136, 147)</value>
+      <value>(1352, 123)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -930,6 +1059,53 @@
     <param>
       <key>id</key>
       <value>mac_packet_deframer_0</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>threshold</key>
+      <value>access_code_threshold</value>
+    </param>
+  </block>
+  <block>
+    <key>mac_packet_deframer</key>
+    <param>
+      <key>access_code</key>
+      <value></value>
+    </param>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1352, 235)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>mac_packet_deframer_0_0</value>
     </param>
     <param>
       <key>maxoutbuf</key>
@@ -968,7 +1144,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 459)</value>
+      <value>(600, 419)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1031,7 +1207,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1328, 139)</value>
+      <value>(1608, 91)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1040,6 +1216,57 @@
     <param>
       <key>id</key>
       <value>mac_packet_to_pdu_0</value>
+    </param>
+    <param>
+      <key>log_invalid</key>
+      <value>False</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>output_invalid</key>
+      <value>False</value>
+    </param>
+  </block>
+  <block>
+    <key>mac_packet_to_pdu</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>dewhiten</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1608, 171)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>mac_packet_to_pdu_0_0</value>
     </param>
     <param>
       <key>log_invalid</key>
@@ -1187,7 +1414,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1528, 139)</value>
+      <value>(1840, 115)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1230,7 +1457,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(368, 379)</value>
+      <value>(400, 459)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3283,20 +3510,38 @@
     </param>
   </block>
   <connection>
-    <source_block_id>blks2_selector_1</source_block_id>
-    <sink_block_id>mac_packet_deframer_0</sink_block_id>
+    <source_block_id>blocks_add_xx_0</source_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_0_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blks2_selector_3</source_block_id>
-    <sink_block_id>blocks_multiply_const_vxx_0_0</sink_block_id>
+    <source_block_id>blocks_multiply_const_vxx_0</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_multiply_const_vxx_0_0</source_block_id>
     <sink_block_id>mac_burst_tagger_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_multiply_const_vxx_1</source_block_id>
+    <sink_block_id>blocks_add_xx_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>1</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_multiply_const_vxx_2</source_block_id>
+    <sink_block_id>digital_gmsk_demod_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_multiply_const_vxx_3</source_block_id>
+    <sink_block_id>digital_qam_demod_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
@@ -3314,27 +3559,27 @@
   </connection>
   <connection>
     <source_block_id>digital_gmsk_demod_0</source_block_id>
-    <sink_block_id>blks2_selector_1</sink_block_id>
+    <sink_block_id>mac_packet_deframer_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>digital_gmsk_mod_0</source_block_id>
-    <sink_block_id>blks2_selector_3</sink_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>digital_qam_demod_0</source_block_id>
-    <sink_block_id>blks2_selector_1</sink_block_id>
+    <sink_block_id>mac_packet_deframer_0_0</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>digital_qam_mod_0</source_block_id>
-    <sink_block_id>blks2_selector_3</sink_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_1</sink_block_id>
     <source_key>0</source_key>
-    <sink_key>1</sink_key>
+    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>mac_burst_tagger_0_0</source_block_id>
@@ -3355,6 +3600,12 @@
     <sink_key>msg</sink_key>
   </connection>
   <connection>
+    <source_block_id>mac_packet_deframer_0_0</source_block_id>
+    <sink_block_id>mac_packet_to_pdu_0_0</sink_block_id>
+    <source_key>msg</source_key>
+    <sink_key>msg</sink_key>
+  </connection>
+  <connection>
     <source_block_id>mac_packet_framer_0</source_block_id>
     <sink_block_id>blocks_pdu_to_tagged_stream_0_0</sink_block_id>
     <source_key>out</source_key>
@@ -3367,6 +3618,12 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
+    <source_block_id>mac_packet_to_pdu_0_0</source_block_id>
+    <sink_block_id>pad_sink_3_0</sink_block_id>
+    <source_key>pdu</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
     <source_block_id>pad_source_0</source_block_id>
     <sink_block_id>mac_packet_framer_0</sink_block_id>
     <source_key>0</source_key>
@@ -3374,13 +3631,13 @@
   </connection>
   <connection>
     <source_block_id>uhd_usrp_source_0</source_block_id>
-    <sink_block_id>digital_gmsk_demod_0</sink_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_2</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>uhd_usrp_source_0</source_block_id>
-    <sink_block_id>digital_qam_demod_0</sink_block_id>
+    <sink_block_id>blocks_multiply_const_vxx_3</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>
