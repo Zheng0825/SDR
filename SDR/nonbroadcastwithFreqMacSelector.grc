@@ -1550,11 +1550,11 @@
     </param>
     <param>
       <key>enablerx</key>
-      <value>enablerx</value>
+      <value>1</value>
     </param>
     <param>
       <key>enabletx</key>
-      <value>enabletx</value>
+      <value>1</value>
     </param>
     <param>
       <key>_enabled</key>
