@@ -1,7 +1,16 @@
 \section{Using GNU Radio for Cognitive Radio Application}
 
+Reaserachers have identified that the primary methods of creating a roboust CRAHN is by ensuring
+that nodes optimize their use of physical space and allocated spectrum \cite{6846075}. A testbed is
+needed in order to fully experiment with different algorithms to maximise these conditions. 
 GNU Radio has been used by many different research groups to test various cognitive radio
 standards. The researchers in \cite{7141228} created a simple multihop test bed using
 three USRP radios to relay data from one computer to another. A forth USRP acts as a primary
 user and attempts to block the signal. Their work focuses on using Reinforcement learning to allow
-for the hopping and does not discuss the routing protocol used in much depth. 
+for the hopping and does not discuss the routing protocol used in much depth. Much of the 
+existing work done using USRPs and GNU Radio for Cognitive MANETs revolves around implementing
+different parts of the protocol from the ground up. In some papers the authors focus on
+the physical or mac layer \cite{5508221}. There has also been work in developing new higher 
+layer protocols for cognitive radio mesh networks such as work done to replace 
+TCP with a more robust protocol \cite{6686523}. These systems will usually react to frequency
+changes but some also change their topology based on power use \cite{6983150}. 
