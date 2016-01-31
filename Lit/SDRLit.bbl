@@ -94,6 +94,22 @@ P.~Nagaraju, L.~Ding, T.~Melodia, S.~Batalama, D.~Pados, and J.~Matyjas,
   Communications and Networks (SECON), 2010 7th Annual IEEE Communications
   Society Conference on}, June 2010, pp. 1--2.
 
+\bibitem{5984947}
+V.~Pejovic and E.~Belding, ``A context-aware approach to wireless transmission
+  adaptation,'' in \emph{Sensor, Mesh and Ad Hoc Communications and Networks
+  (SECON), 2011 8th Annual IEEE Communications Society Conference on}, June
+  2011, pp. 592--600.
+
+\bibitem{5462039}
+E.~Chai and K.~Shin, ``M-polar: Channel allocation for throughput maximization
+  in sdr mesh networks,'' in \emph{INFOCOM, 2010 Proceedings IEEE}, March 2010,
+  pp. 1--9.
+
+\bibitem{0001}
+\BIBentryALTinterwordspacing
+(2015) Confine project. [Online]. Available: \url{http://confine-project.eu/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{6684374}
 A.~Arcia-Moret, E.~Pietrosemoli, and M.~Zennaro, ``Whisppi: White space
   monitoring with raspberry pi,'' in \emph{Global Information Infrastructure
@@ -173,6 +189,28 @@ A.~Mate, K.-H. Lee, and I.-T. Lu, ``Spectrum sensing based on time covariance
   matrix using gnu radio and usrp for cognitive radio,'' in \emph{Systems,
   Applications and Technology Conference (LISAT), 2011 IEEE Long Island}, May
   2011, pp. 1--6.
+
+\bibitem{6730802}
+L.~Sun, W.~Zheng, N.~Rawat, V.~Sawant, and D.~Koutsonikolas, ``Performance
+  comparison of routing protocols for cognitive radio networks,'' in
+  \emph{Modeling, Analysis Simulation of Computer and Telecommunication Systems
+  (MASCOTS), 2013 IEEE 21st International Symposium on}, Aug 2013, pp.
+  454--464.
+
+\bibitem{5062176}
+K.~Chowdhury, M.~Di~Felice, and I.~Akyildiz, ``Tp-crahn: a transport protocol
+  for cognitive radio ad-hoc networks,'' in \emph{INFOCOM 2009, IEEE}, April
+  2009, pp. 2482--2490.
+
+\bibitem{6504070}
+A.~Al-Ali and K.~Chowdhury, ``Tfrc-cr: An equation-based transport protocol for
+  cognitive radio networks,'' in \emph{Computing, Networking and Communications
+  (ICNC), 2013 International Conference on}, Jan 2013, pp. 143--148.
+
+\bibitem{5738222}
+K.~Chowdhury and I.~Akyildiz, ``Crp: A routing protocol for cognitive radio ad
+  hoc networks,'' \emph{Selected Areas in Communications, IEEE Journal on},
+  vol.~29, no.~4, pp. 794--804, April 2011.
 
 \bibitem{5700251}
 H.~Kung, C.-K. Lin, T.-H. Lin, S.~Tarsa, and D.~Vlah, ``Measuring diversity on
