@@ -144,11 +144,11 @@ class top_block(grc_wxgui.top_block_gui):
         self.audio_interp = audio_interp
 
     def sweep(self):
-   	while True:
+       	while True:
             start_freq = self.get_freq()
-	    self.set_freq(start_freq + 100000)
-	    print start_freq
-	    time.sleep(0.6)
+            self.set_freq(start_freq + 100000)
+            print start_freq
+            time.sleep(0.6)
 
 if __name__ == '__main__':
     parser = OptionParser(option_class=eng_option, usage="%prog: [options]")

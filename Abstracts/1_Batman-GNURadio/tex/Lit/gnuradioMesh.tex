@@ -1,0 +1,30 @@
+\subsection{GNU Radio and Mesh Networks}
+
+In \cite{4509617} and \cite{5062250} the authors use GNU Radio as a way to verify the succesful use of algorithms for mesh 
+networking.However, they do not specify that they are using SDR's and it seems like they use GNU Radio for simulation. GNU Radio has
+also been used with the USRP to create a device capable of communicating with both Bluetooth and WiFi devices. However, this does not
+create a mesh network or attempt to bridge communication between the two protocols. However, a significant amount of information about
+communicating with each type of network is presented \cite{4292880}. This also presents the concept of Police Nodes which monitor
+traffic in an attempt to block out improper use of the spectrum. 
+
+Research has been done in using the GNURadio toolset along with the USRP to test Mesh Network routing protocols. One test 
+used varied data transmission rates to exploit opportunities in physically close proximity Nodes \cite{5462112}. The GNU Radio 
+toolset was also used to test using cognitive radio within a mesh network. USRPs were used as nodes trying to communicate on a
+"shared" frequency. A separate USRP was used to replicate a primary user, or one that had a license to operate in that spectrum. 
+Whenever the primary user began to transmit in the spectrum, the other nodes would use reinforcement learning to move to an 
+unoccupied channel automatically and continue transmitting \cite{7141228}. A similar test bed is also presented in \cite{5508221}.
+
+In \cite{5984947} researchers at UCSB investigated using an SDR with GNURadio to
+improve upon the needs of rural networks. The topic was found while search for mesh
+networks but seems to be mostly focused on non-mesh applications. They created
+the solution WhiteRate which allows for the changing of the PHY layer without 
+changing any other components. 
+
+In \cite{5462039} the authors utilize GNU Radio to implemenet a PHY layer that is 
+able to broadcast and recieve on several channels simultaneously. The paper
+tests using 2 USRP boards and also simulates a larger scale.  
+
+The CONFINE platform uses Batman-adv as the routing protocol for their mesh network testbed. However,
+this testbed does not utilize GNU Radio or any cognitive radio tool sets. \cite{0001} Batman-adv 
+was also a key component of WiBed, a project to create a COTS mesh test bed using low cost wireless
+routers. \cite{6686492} \cite{6962154}

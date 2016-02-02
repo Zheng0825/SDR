@@ -110,6 +110,18 @@ E.~Chai and K.~Shin, ``M-polar: Channel allocation for throughput maximization
 (2015) Confine project. [Online]. Available: \url{http://confine-project.eu/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{6686492}
+P.~Escrich, R.~Baig, A.~Neumann, A.~Fonseca, F.~Freitag, and L.~Navarro,
+  ``Wibed, a platform for commodity wireless testbeds,'' in \emph{Wireless Days
+  (WD), 2013 IFIP}, Nov 2013, pp. 1--3.
+
+\bibitem{6962154}
+P.~Escrich, R.~Baig, E.~Dimogerontakis, E.~Carbo, A.~Neumann, A.~Fonseca,
+  F.~Freitag, and L.~Navarro, ``Wibed, a platform for commodity wireless
+  testbeds,'' in \emph{Wireless and Mobile Computing, Networking and
+  Communications (WiMob), 2014 IEEE 10th International Conference on}, Oct
+  2014, pp. 85--91.
+
 \bibitem{6684374}
 A.~Arcia-Moret, E.~Pietrosemoli, and M.~Zennaro, ``Whisppi: White space
   monitoring with raspberry pi,'' in \emph{Global Information Infrastructure
@@ -242,5 +254,80 @@ H.~Kung and S.~Tarsa, ``Partitioned compressive sensing with neighbor-weighted
 C.~Heller and C.~Blumm, ``A cognitive radio enabled wireless aircraft cabin
   management system,'' in \emph{Digital Avionics Systems Conference (DASC),
   2013 IEEE/AIAA 32nd}, Oct 2013, pp. 3A4--1--3A4--13.
+
+\bibitem{1400381}
+D.~Denning, J.~Irvine, N.~Harold, P.~Dunn, and M.~Devlin, ``An implementation
+  of a gigabit ethernet aes encryption engine for application processing in
+  sdr,'' in \emph{Vehicular Technology Conference, 2004. VTC2004-Fall. 2004
+  IEEE 60th}, vol.~3, Sept 2004, pp. 1963--1967 Vol. 3.
+
+\bibitem{1285401}
+C.~F. Lam, K.~Sakaguchi, J.-i. Takada, and K.~Araki, ``Radio security module
+  that enables global roaming of sdr terminal while complying with local radio
+  regulation,'' in \emph{Vehicular Technology Conference, 2003. VTC 2003-Fall.
+  2003 IEEE 58th}, vol.~3, Oct 2003, pp. 2132--2136 Vol.3.
+
+\bibitem{6694489}
+P.~Hillmann and B.~Stelte, ``A flexible cryptographic infrastructure for
+  high-security sdr-based systems,'' in \emph{Military Communications and
+  Information Systems Conference (MilCIS), 2013}, Nov 2013, pp. 1--6.
+
+\bibitem{6880179}
+R.~Yao, K.~He, Y.~Sun, and Y.~Wang, ``Learning engine for cognitive radio based
+  on the immune principle,'' in \emph{Adaptive Hardware and Systems (AHS), 2014
+  NASA/ESA Conference on}, July 2014, pp. 210--217.
+
+\bibitem{6846075}
+L.~T. Dung and B.~An, ``On the analysis of network connectivity in cognitive
+  radio ad-hoc networks,'' in \emph{Computer, Consumer and Control (IS3C), 2014
+  International Symposium on}, June 2014, pp. 1087--1090.
+
+\bibitem{6686523}
+H.~Khalife, J.~Seddar, V.~Conan, and J.~Leguay, ``Validation of a point to
+  multipoint cognitive radio transport protocol over gnu radio testbed,'' in
+  \emph{Wireless Days (WD), 2013 IFIP}, Nov 2013, pp. 1--6.
+
+\bibitem{6983150}
+S.~Kamruzzaman, A.~Alghamdi, and S.~Mizanur~Rahman, ``Spectrum and energy aware
+  multipath routing for cognitive radio ad hoc networks,'' in \emph{Information
+  and Communication Technology Convergence (ICTC), 2014 International
+  Conference on}, Oct 2014, pp. 341--346.
+
+\bibitem{7071706}
+P.~Murphy, A.~Sabharwal, and B.~Aazhang, ``Design of warp: A wireless
+  open-access research platform,'' in \emph{Signal Processing Conference, 2006
+  14th European}, Sept 2006, pp. 1--5.
+
+\bibitem{4212821}
+K.~Mandke, S.-H. Choi, G.~Kim, R.~Grant, R.~Daniels, W.~Kim, R.~Heath, and
+  S.~Nettles, ``Early results on hydra: A flexible mac/phy multihop testbed,''
+  in \emph{Vehicular Technology Conference, 2007. VTC2007-Spring. IEEE 65th},
+  April 2007, pp. 1896--1900.
+
+\bibitem{0002}
+V.~C. Jawad~Seddar, Hicham~Khalife and J.~Leguay, ``A dtn stack for cognitive
+  radio ad hoc networks,'' in \emph{8th Karlsruhe Workshop on Software Radios}.
+
+\bibitem{4753441}
+X.~Li, W.~Hu, H.~Yousefi'zadeh, and A.~Qureshi, ``A case study of a mimo sdr
+  implementation,'' in \emph{Military Communications Conference, 2008. MILCOM
+  2008. IEEE}, Nov 2008, pp. 1--7.
+
+\bibitem{4286321}
+G.~Troxel, E.~Blossom, S.~Boswell, A.~Caro, I.~Castineyra, A.~Colvin,
+  T.~Dreier, J.~B. Evans, N.~Goffee, K.~Haigh, T.~Hussain, V.~Kawadia,
+  D.~Lapsley, C.~Livadas, A.~Medina, J.~Mikkelson, G.~J. Minden, R.~Morris,
+  C.~Partridge, V.~Raghunathan, R.~Ramanathan, C.~Santivanez, T.~Schmid,
+  D.~Sumorok, M.~Srivastava, R.~S. Vincent, D.~Wiggins, A.~M. Wyglinski, and
+  S.~Zahedi, ``Adaptive dynamic radio open-source intelligent team (adroit):
+  Cognitively-controlled collaboration among sdr nodes,'' in \emph{Networking
+  Technologies for Software Defined Radio Networks, 2006. SDR '06.1st IEEE
+  Workshop on}, Sept 2006, pp. 8--17.
+
+\bibitem{6115569}
+D.~Seither, A.~Konig, and M.~Hollick, ``Routing performance of wireless mesh
+  networks: A practical evaluation of batman advanced,'' in \emph{Local
+  Computer Networks (LCN), 2011 IEEE 36th Conference on}, Oct 2011, pp.
+  897--904.
 
 \end{thebibliography}
