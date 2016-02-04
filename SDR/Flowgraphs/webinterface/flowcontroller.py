@@ -31,12 +31,23 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('radiostats.html')
+    try:
+        tb = nonbroadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+
+        thread = threading.Thread(target=start_flowgraph, args=())
+        print(tb.get_tx_freq())
+        tb.set_tx_freq(100000000.0)
+        print(tb.get_tx_freq())
+    except:
+        print "pass"
+
+    return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txAmp="22 db", rxAmp="33 db")
 
 # http://www.secdev.org/projects/scapy/
 # Saving that link for later
 
 def start_flowgraph(flowgraph):
+
     tb.start(True)
     tb.wait()
 
@@ -81,15 +92,18 @@ if __name__ == '__main__':
     parser.add_option("", "--tx-lo-offset", dest="tx_lo_offset", type="eng_float", default=eng_notation.num_to_str(0),
         help="Set TX LO offset [default=%default]")
     (options, args) = parser.parse_args()
-    tb = nonbroadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+    
+    #thread = threading.Thread(app.run, (host="0.0.0.0",port=int("80"),debug=True))
 
-    thread = threading.Thread(target=start_flowgraph, args=())
-    print(tb.get_tx_freq())
-    tb.set_tx_freq(100000000.0)
-    print(tb.get_tx_freq())
 
     app.run(
         host="0.0.0.0",
         port=int("80"),
-        debug=True
+        #debug=True
     )
+    
+
+
+
+
+
