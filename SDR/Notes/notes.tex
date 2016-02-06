@@ -809,6 +809,54 @@ As always, a more indepth literature review will need to continue.
 	the paper but I don't think that will be feasible as we probably need more than the 4 nodes
 	we currently have. 
 
+	\subsection{Test Plan Alpha}
+
+	This is the initial draft of how we are hoping to test the system:
+	\begin{itemize}
+		\item The test plan we are basing this from mentions testing from one floor to
+			another. I'm not sure this will be feasible as the layout of the school is
+			not conducive to this. We will most likely have two-three setups
+			where we can utilize the VTC Alone, and then several rooms
+			adjacent. I like the floor plan included in their paper and would
+			like to replicate that to show how the networks form. This is based
+			on us being able to get more distance then we are currently seeing from
+			the USRP Radios. 
+		\item Radio Conditions: Here we will profile the radio with and without Batman-adv
+			running to measure the RSS using a tektronix spectrum analyzer. We can
+			get distance measurements to quantitatively measure the RSS level when
+			we lose the radio connectivity. 
+		\item Reachability and Packet Loss: From here we will ping from one node to
+			all the other nodes and measure how many packets are dropped. We
+			can set a number of "n" pings and count how many packets were dropped.
+		\item Delay: Here we will use a test with "n" pings, but this time will measure the
+			response time and find an average/std deviation to determine how slow the
+			network is. 
+		\item Throughput: We will have to find a tool for properly measuring a throughput
+			test. We could set one node up as a gateway and use a traditional internet
+			speed test but I belive that would be creating unecessary overhead. 
+		\item Route Changes and Convergence: The paper is a little sparse on the description
+			of how they benchmarked this. It looks like we would turn a node off and
+			view how the network reacts, possibly one in the center.
+		\item Frequency Based changes: I think it would be good to run all of these tests
+			at several frequencies and examine the changes. This will obviously
+			be dependent on the antenna used so we may need to either use
+			a small band, mention this limiting factor, or switch antennas. I
+			believe our antennas are also rated at 5 GHz but would have to check.
+		\item Joe mentioned Using Alfred to make many of these graphs and I believe it would
+			help strengthen the paper and provide useful visual aids.
+		\item Link Decays: Possibly another way to organize the information and run a test
+			would be to link more and more nodes and measure how the network
+			degrades as more hops are added. We could measure up to 4 hops right now,
+			and hopefully 7 once we recieve the next 3 radios. We could then
+			test this at 3-4 frequency levels and view the results. 
+		\item Frequency Hopping: We still do not have an AI based frequency hopping algorithm
+			in place. I'm not confident in my ability to have one in place by March 1st
+			but can do my best. It may be better to write a first draft of the paper
+			not involving frequency hopping and then re-evaluate closer to the deadline.
+			We can then hope to have this in place for the next two papers
+
+	\end{itemize}
+	
 
 \end{document}
 
