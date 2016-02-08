@@ -16,35 +16,86 @@
 # as we add features.
 #
 ##################################################
-import threading
+from __future__ import print_function
+
+async_mode = None
+
+if async_mode is None:
+    try:
+        import eventlet
+        async_mode = 'eventlet'
+    except ImportError:
+        pass
+
+    if async_mode is None:
+        try:
+            from gevent import monkey
+            async_mode = 'gevent'
+        except ImportError:
+            pass
+
+    if async_mode is None:
+        async_mode = 'threading'
+
+    print('async_mode is ' + async_mode)
+
+# monkey patching is necessary because this application uses a background
+# thread
+if async_mode == 'eventlet':
+    import eventlet
+    eventlet.monkey_patch()
+elif async_mode == 'gevent':
+    from gevent import monkey
+    monkey.patch_all()
+
+from threading import Thread
 from optparse import OptionParser
 from gnuradio.eng_option import eng_option
 from gnuradio import eng_notation
+
 from nonbroadcastwithFreqandMacWithThreads import nonbroadcastwithFreqandMac
 import mac
 import pmt
 import wx
+import sys
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify,session
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret!'
+socketio = SocketIO(app, async_mode=async_mode)
+thread = None
+
+
 
 @app.route('/')
 def index():
+    print("Starting")
     try:
+        global tb
         tb = nonbroadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
 
-        thread = threading.Thread(target=start_flowgraph, args=())
+        thread = Thread(target=start_flowgraph, args=())
         print(tb.get_tx_freq())
         tb.set_tx_freq(100000000.0)
         print(tb.get_tx_freq())
     except:
-        print "pass"
+        pass
+
 
     return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txAmp="22 db", rxAmp="33 db")
 
 # http://www.secdev.org/projects/scapy/
 # Saving that link for later
+
+@socketio.on('inc freq', namespace='/test')
+def inc_freq():
+    tb.set_tx_freq(150000000.0)
+    print(tb.get_tx_freq(), file=sys.stderr)
+    emit('confirm inc freq', {'txfreq':tb.get_tx_freq()})
+
+
 
 def start_flowgraph(flowgraph):
 
@@ -95,13 +146,14 @@ if __name__ == '__main__':
     
     #thread = threading.Thread(app.run, (host="0.0.0.0",port=int("80"),debug=True))
 
-
+    socketio.run(app,debug=True)
+'''
     app.run(
         host="0.0.0.0",
         port=int("80"),
         #debug=True
     )
-    
+''' 
 
 
 
