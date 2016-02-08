@@ -29,31 +29,31 @@
               <div class="card blue-grey darken-1">
                 <div class="card-content white-text center-align">
                 <span class="card-title "> Recieve Settings</span>
-                  <p id="rxfreq"> Recieve Frequency: {{rxFreq}} </p></br>
-                  <p id="rxampl"> Recieve Amplitude: {{rxAmp}} </p></br>
+                  <p> Recieve Frequency: <div id="rxfreq"> {{rxFreq}} </div></p></br>
+                  <p> Recieve Gain: <div id="rxgain"> {{rxGain}} </div></p></br>
                 </div>
               </div>
               <div class="row center-align">
                 <div class="col s12 m6 l6">
                   <div class="row">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    <a id="rxfrequp" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
                   </div>
                   <div class="row">
                     RX Freq
                   </div>
                   <div class="row">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
+                    <a id="rxfreqdown" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
                   </div>
                 </div>
                 <div class="col s12 m6 l6">
                   <div class="row">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    <a id="rxgainup" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
                   </div>
                   <div class="row">
-                    RX Amp
+                    RX Gain
                   </div>
                   <div class="row">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
+                    <a id="rxgaindown" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
                   </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                 <div class="card-content white-text center-align">
                   <div class="card-title"> Transmit Settings </div>
                     <p> Transmit Frequency:<div id="txfreq"> {{txFreq}} </div> </p></br>
-                    <p id="txampl"> Transmit Amplitude: {{txAmp}} </p></br>
+                    <p> Transmit Gain: <div id="txgain"> {{txGain}} </div></p></br>
                 </div>
               </div>
               <div class="row center-align">
@@ -75,18 +75,18 @@
                     TX Freq
                   </div>
                   <div class="row">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
+                    <a id="txfreqdown" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
                   </div>
                 </div>
                 <div class="col s12 m6 l6">
                   <div class="row">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    <a id="txgainup" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
                   </div>
                   <div class="row">
-                    TX Amp
+                    TX Gain
                   </div>
                   <div class="row">
-                    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
+                    <a id="txgaindown" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">remove</i></a>
                   </div>
                 </div>
             </div>

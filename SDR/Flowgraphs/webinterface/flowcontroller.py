@@ -16,7 +16,7 @@
 # as we add features.
 #
 ##################################################
-from __future__ import print_function
+#from __future__ import print_function
 
 async_mode = None
 
@@ -84,16 +84,57 @@ def index():
         pass
 
 
-    return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txAmp="22 db", rxAmp="33 db")
+    return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txGain=tb.get_tx_gain(), rxGain=tb.get_rx_gain())
 
 # http://www.secdev.org/projects/scapy/
 # Saving that link for later
 
-@socketio.on('inc freq', namespace='/test')
+# TX Freq
+@socketio.on('inc tx freq', namespace='/test')
 def inc_freq():
     tb.set_tx_freq(150000000.0)
-    print(tb.get_tx_freq(), file=sys.stderr)
-    emit('confirm inc freq', {'txfreq':tb.get_tx_freq()})
+    emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
+
+@socketio.on('dec tx freq', namespace='/test')
+def dec_freq():
+    tb.set_tx_freq(100000000.0)
+    emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
+
+#RX Freq
+@socketio.on('inc rx freq', namespace='/test')
+def inc_freq():
+    tb.set_rx_freq(150000000.0)
+    emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
+
+@socketio.on('dec rx freq', namespace='/test')
+def dec_freq():
+    tb.set_rx_freq(100000000.0)
+    emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
+
+#TX Gain
+@socketio.on('inc tx gain', namespace='/test')
+def inc_freq():
+    tb.set_tx_gain(tb.get_tx_gain() + 1)
+    emit('confirm tx gain', {'txgain':tb.get_tx_gain()})
+
+@socketio.on('dec tx gain', namespace='/test')
+def dec_freq():
+    tb.set_tx_gain(tb.get_tx_gain() - 1)
+    emit('confirm tx gain', {'txgain':tb.get_tx_gain()})
+
+#RX AMP
+@socketio.on('inc rx gain', namespace='/test')
+def inc_freq():
+    tb.set_rx_gain(tb.get_rx_gain() + 1)
+    emit('confirm rx gain', {'rxgain':tb.get_rx_gain()})
+
+@socketio.on('dec rx gain', namespace='/test')
+def dec_gain():
+    tb.set_rx_gain(tb.get_rx_gain() - 1)
+    emit('confirm rx gain', {'rxgain':tb.get_rx_gain()})
+
+
+    
 
 
 
