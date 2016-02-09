@@ -1590,7 +1590,7 @@
     </param>
     <param>
       <key>dest_addr</key>
-      <value>dest_addr</value>
+      <value>-1</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -1653,7 +1653,7 @@
     </param>
     <param>
       <key>dest_addr</key>
-      <value>dest_addr</value>
+      <value>-1</value>
     </param>
     <param>
       <key>_enabled</key>
