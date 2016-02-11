@@ -62,6 +62,8 @@ import sys
 from flask import Flask, render_template, request, jsonify,session
 from flask_socketio import SocketIO, emit
 
+from frequencytable import FrequencyTable
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, async_mode=async_mode)
@@ -77,12 +79,14 @@ def index():
         tb = nonbroadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
 
         thread = Thread(target=start_flowgraph, args=())
-        print(tb.get_tx_freq())
-        tb.set_tx_freq(100000000.0)
-        print(tb.get_tx_freq())
     except:
         pass
 
+    global txfreqtable
+    txfreqtable = FrequencyTable()
+    
+    global rxfreqtable
+    rxfreqtable = FrequencyTable()
 
     return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txGain=tb.get_tx_gain(), rxGain=tb.get_rx_gain())
 
@@ -92,23 +96,23 @@ def index():
 # TX Freq
 @socketio.on('inc tx freq', namespace='/test')
 def inc_freq():
-    tb.set_tx_freq(150000000.0)
+    tb.set_tx_freq(txfreqtable.increase_freq())
     emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
 
 @socketio.on('dec tx freq', namespace='/test')
 def dec_freq():
-    tb.set_tx_freq(100000000.0)
+    tb.set_tx_freq(txfreqtable.decrease_freq())
     emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
 
 #RX Freq
 @socketio.on('inc rx freq', namespace='/test')
 def inc_freq():
-    tb.set_rx_freq(150000000.0)
+    tb.set_rx_freq(rxfreqtable.increase_freq())
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
 @socketio.on('dec rx freq', namespace='/test')
 def dec_freq():
-    tb.set_rx_freq(100000000.0)
+    tb.set_rx_freq(rxfreqtable.decrease_freq())
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
 #TX Gain
