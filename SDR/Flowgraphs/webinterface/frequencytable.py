@@ -16,6 +16,7 @@ class FrequencyTable:
             self.current_freq = self.freqs[self.current_index]
         else:
             pass
+        return self.current_freq
 
 
     def decrease_freq(self):
@@ -24,6 +25,7 @@ class FrequencyTable:
             self.current_freq = self.freqs[self.current_index]
         else:
             pass
+        return self.current_freq
 
 if __name__ == "__main__":
     ftable = FrequencyTable()
