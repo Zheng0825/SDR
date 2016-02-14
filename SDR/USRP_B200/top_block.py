@@ -2,7 +2,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Top Block
-# Generated: Thu Jan 28 17:02:35 2016
+# Generated: Tue Feb  9 18:18:19 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -27,7 +27,7 @@ from gnuradio.fft import window
 from gnuradio.filter import firdes
 from gnuradio.wxgui import fftsink2
 from gnuradio.wxgui import forms
-from gnuradio.wxgui import scopesink2
+from gnuradio.wxgui import waterfallsink2
 from grc_gnuradio import wxgui as grc_wxgui
 from optparse import OptionParser
 import time
@@ -44,59 +44,60 @@ class top_block(grc_wxgui.top_block_gui):
         ##################################################
         # Variables
         ##################################################
-        self.samp_rate = samp_rate = 250e3
-        self.freq = freq = 88.5e6
+        self.samp_rate_send = samp_rate_send = 250e3
+        self.samp_rate_rec = samp_rate_rec = 5000000
         self.audio_rate = audio_rate = 44100
         self.audio_interp = audio_interp = 4
+        self.Freq = Freq = 88.5e6
 
         ##################################################
         # Blocks
         ##################################################
-        _freq_sizer = wx.BoxSizer(wx.VERTICAL)
-        self._freq_text_box = forms.text_box(
+        _Freq_sizer = wx.BoxSizer(wx.VERTICAL)
+        self._Freq_text_box = forms.text_box(
         	parent=self.GetWin(),
-        	sizer=_freq_sizer,
-        	value=self.freq,
-        	callback=self.set_freq,
-        	label='freq',
+        	sizer=_Freq_sizer,
+        	value=self.Freq,
+        	callback=self.set_Freq,
+        	label='Freq',
         	converter=forms.float_converter(),
         	proportion=0,
         )
-        self._freq_slider = forms.slider(
+        self._Freq_slider = forms.slider(
         	parent=self.GetWin(),
-        	sizer=_freq_sizer,
-        	value=self.freq,
-        	callback=self.set_freq,
-        	minimum=88.0e6,
-        	maximum=107.9e6,
+        	sizer=_Freq_sizer,
+        	value=self.Freq,
+        	callback=self.set_Freq,
+        	minimum=80e6,
+        	maximum=115e6,
         	num_steps=1000,
         	style=wx.SL_HORIZONTAL,
         	cast=float,
         	proportion=1,
         )
-        self.Add(_freq_sizer)
-        self.wxgui_scopesink2_0 = scopesink2.scope_sink_c(
-        	self.GetWin(),
-        	title="Scope Plot",
-        	sample_rate=samp_rate,
-        	v_scale=0,
-        	v_offset=0,
-        	t_scale=0,
-        	ac_couple=False,
-        	xy_mode=False,
-        	num_inputs=1,
-        	trig_mode=wxgui.TRIG_MODE_AUTO,
-        	y_axis_label="Counts",
-        )
-        self.Add(self.wxgui_scopesink2_0.win)
-        self.wxgui_fftsink2_0 = fftsink2.fft_sink_c(
+        self.Add(_Freq_sizer)
+        self.wxgui_waterfallsink2_0 = waterfallsink2.waterfall_sink_c(
         	self.GetWin(),
         	baseband_freq=0,
+        	dynamic_range=100,
+        	ref_level=0,
+        	ref_scale=2.0,
+        	sample_rate=samp_rate_rec,
+        	fft_size=512,
+        	fft_rate=15,
+        	average=False,
+        	avg_alpha=None,
+        	title="Waterfall Plot",
+        )
+        self.Add(self.wxgui_waterfallsink2_0.win)
+        self.wxgui_fftsink2_0 = fftsink2.fft_sink_c(
+        	self.GetWin(),
+        	baseband_freq=Freq,
         	y_per_div=10,
         	y_divs=10,
         	ref_level=0,
         	ref_scale=2.0,
-        	sample_rate=samp_rate,
+        	sample_rate=samp_rate_rec / 25,
         	fft_size=1024,
         	fft_rate=15,
         	average=False,
@@ -105,6 +106,17 @@ class top_block(grc_wxgui.top_block_gui):
         	peak_hold=False,
         )
         self.Add(self.wxgui_fftsink2_0.win)
+        self.uhd_usrp_source_0 = uhd.usrp_source(
+        	",".join(("", "")),
+        	uhd.stream_args(
+        		cpu_format="fc32",
+        		channels=range(1),
+        	),
+        )
+        self.uhd_usrp_source_0.set_samp_rate(samp_rate_rec)
+        self.uhd_usrp_source_0.set_center_freq(Freq, 0)
+        self.uhd_usrp_source_0.set_gain(20, 0)
+        self.uhd_usrp_source_0.set_antenna("RX2", 0)
         self.uhd_usrp_sink_0 = uhd.usrp_sink(
         	",".join(("", "")),
         	uhd.stream_args(
@@ -112,17 +124,19 @@ class top_block(grc_wxgui.top_block_gui):
         		channels=range(1),
         	),
         )
-        self.uhd_usrp_sink_0.set_samp_rate(samp_rate)
-        self.uhd_usrp_sink_0.set_center_freq(freq, 0)
+        self.uhd_usrp_sink_0.set_samp_rate(samp_rate_send)
+        self.uhd_usrp_sink_0.set_center_freq(Freq, 0)
         self.uhd_usrp_sink_0.set_normalized_gain(0.5, 0)
         self.uhd_usrp_sink_0.set_antenna("TX/RX", 0)
         self.rational_resampler_xxx_0 = filter.rational_resampler_ccc(
-                interpolation=int(samp_rate * 1.0),
+                interpolation=int(samp_rate_send * 1.0),
                 decimation=audio_rate * audio_interp,
                 taps=None,
                 fractional_bw=None,
         )
-        self.blocks_wavfile_source_0 = blocks.wavfile_source("/home/john/IRG/Music/Inspired But Too Tired Acoustic.wav", True)
+        self.low_pass_filter_0 = filter.fir_filter_ccf(20, firdes.low_pass(
+        	1, samp_rate_rec, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
+        self.blocks_wavfile_source_0 = blocks.wavfile_source("/home/john/Downloads/Inspired But Too Tired Acoustic.wav", True)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((25, ))
         self.analog_wfm_tx_0 = analog.wfm_tx(
         	audio_rate=audio_rate,
@@ -137,28 +151,28 @@ class top_block(grc_wxgui.top_block_gui):
         self.connect((self.analog_wfm_tx_0, 0), (self.rational_resampler_xxx_0, 0))    
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.analog_wfm_tx_0, 0))    
         self.connect((self.blocks_wavfile_source_0, 0), (self.blocks_multiply_const_vxx_0, 0))    
+        self.connect((self.low_pass_filter_0, 0), (self.wxgui_fftsink2_0, 0))    
+        self.connect((self.low_pass_filter_0, 0), (self.wxgui_waterfallsink2_0, 0))    
         self.connect((self.rational_resampler_xxx_0, 0), (self.uhd_usrp_sink_0, 0))    
-        self.connect((self.rational_resampler_xxx_0, 0), (self.wxgui_fftsink2_0, 0))    
-        self.connect((self.rational_resampler_xxx_0, 0), (self.wxgui_scopesink2_0, 0))    
+        self.connect((self.uhd_usrp_source_0, 0), (self.low_pass_filter_0, 0))    
 
 
-    def get_samp_rate(self):
-        return self.samp_rate
+    def get_samp_rate_send(self):
+        return self.samp_rate_send
 
-    def set_samp_rate(self, samp_rate):
-        self.samp_rate = samp_rate
-        self.uhd_usrp_sink_0.set_samp_rate(self.samp_rate)
-        self.wxgui_fftsink2_0.set_sample_rate(self.samp_rate)
-        self.wxgui_scopesink2_0.set_sample_rate(self.samp_rate)
+    def set_samp_rate_send(self, samp_rate_send):
+        self.samp_rate_send = samp_rate_send
+        self.uhd_usrp_sink_0.set_samp_rate(self.samp_rate_send)
 
-    def get_freq(self):
-        return self.freq
+    def get_samp_rate_rec(self):
+        return self.samp_rate_rec
 
-    def set_freq(self, freq):
-        self.freq = freq
-        self._freq_slider.set_value(self.freq)
-        self._freq_text_box.set_value(self.freq)
-        self.uhd_usrp_sink_0.set_center_freq(self.freq, 0)
+    def set_samp_rate_rec(self, samp_rate_rec):
+        self.samp_rate_rec = samp_rate_rec
+        self.low_pass_filter_0.set_taps(firdes.low_pass(1, self.samp_rate_rec, 100e3, 10e3, firdes.WIN_HAMMING, 6.76))
+        self.uhd_usrp_source_0.set_samp_rate(self.samp_rate_rec)
+        self.wxgui_fftsink2_0.set_sample_rate(self.samp_rate_rec / 25)
+        self.wxgui_waterfallsink2_0.set_sample_rate(self.samp_rate_rec)
 
     def get_audio_rate(self):
         return self.audio_rate
@@ -171,6 +185,17 @@ class top_block(grc_wxgui.top_block_gui):
 
     def set_audio_interp(self, audio_interp):
         self.audio_interp = audio_interp
+
+    def get_Freq(self):
+        return self.Freq
+
+    def set_Freq(self, Freq):
+        self.Freq = Freq
+        self._Freq_slider.set_value(self.Freq)
+        self._Freq_text_box.set_value(self.Freq)
+        self.uhd_usrp_sink_0.set_center_freq(self.Freq, 0)
+        self.uhd_usrp_source_0.set_center_freq(self.Freq, 0)
+        self.wxgui_fftsink2_0.set_baseband_freq(self.Freq)
 
 
 if __name__ == '__main__':
