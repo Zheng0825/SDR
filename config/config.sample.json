@@ -1,6 +1,0 @@
-{
-	"debug": true,
-	"url": "mongodb://localhost:27017/sensornetwork",
-	"collection": "sensordata",
-	"request_interval": 60
-}
