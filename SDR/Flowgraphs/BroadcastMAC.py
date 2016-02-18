@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: BroadcastMAC
-# Generated: Tue Feb  9 14:04:34 2016
+# Generated: Tue Feb  9 14:05:59 2016
 ##################################################
 
 if __name__ == '__main__':
@@ -36,7 +36,7 @@ import pmt
 import wx
 
 
-class simple_trx(grc_wxgui.top_block_gui):
+class BroadcastMAC(grc_wxgui.top_block_gui):
 
     def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, port="12345", radio_addr=0, rate=1e6, rx_antenna="TX/RX", rx_freq=915e6, rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_freq=915e6, tx_gain=45, tx_lo_offset=0):
         grc_wxgui.top_block_gui.__init__(self, title="BroadcastMAC")
@@ -408,7 +408,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=simple_trx, options=None):
+def main(top_block_cls=BroadcastMAC, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 
