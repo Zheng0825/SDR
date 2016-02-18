@@ -74,8 +74,8 @@ thread = None
 
 
 
-@app.route('/')
-def index():
+@app.before_request
+def setupRadio():
     print("Starting")
     try:
         global tb
@@ -98,6 +98,8 @@ def index():
     # Setup alfred
     os.system('sudo alfred -i bat0 -m &')
 
+@app.route('/')
+def index():
     return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txGain=tb.get_tx_gain(), rxGain=tb.get_rx_gain())
 
 # http://www.secdev.org/projects/scapy/
