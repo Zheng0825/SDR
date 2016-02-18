@@ -64,6 +64,9 @@ from flask_socketio import SocketIO, emit
 
 from frequencytable import FrequencyTable
 
+import os
+from time import sleep
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, async_mode=async_mode)
@@ -88,6 +91,13 @@ def index():
     global rxfreqtable
     rxfreqtable = FrequencyTable()
 
+    # Setup the batman-adv interface
+    os.system('sudo sh static/shell/raiseBatSignal.sh')
+
+    sleep(5)
+    # Setup alfred
+    os.system('sudo alfred -i bat0 -m &')
+
     return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txGain=tb.get_tx_gain(), rxGain=tb.get_rx_gain())
 
 # http://www.secdev.org/projects/scapy/
@@ -97,22 +107,26 @@ def index():
 @socketio.on('inc tx freq', namespace='/test')
 def inc_freq():
     tb.set_tx_freq(txfreqtable.increase_freq())
+    os.system("echo " + str(tb.get_tx_freq()) + " | sudo alfred -s 65")    
     emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
 
 @socketio.on('dec tx freq', namespace='/test')
 def dec_freq():
     tb.set_tx_freq(txfreqtable.decrease_freq())
+    os.system("echo " + str(tb.get_tx_freq()) + " | sudo alfred -s 65")
     emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
 
 #RX Freq
 @socketio.on('inc rx freq', namespace='/test')
 def inc_freq():
     tb.set_rx_freq(rxfreqtable.increase_freq())
+    os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 65")
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
 @socketio.on('dec rx freq', namespace='/test')
 def dec_freq():
     tb.set_rx_freq(rxfreqtable.decrease_freq())
+    os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 65")
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
 #TX Gain
@@ -126,7 +140,7 @@ def dec_freq():
     tb.set_tx_gain(tb.get_tx_gain() - 1)
     emit('confirm tx gain', {'txgain':tb.get_tx_gain()})
 
-#RX AMP
+#RX Gain
 @socketio.on('inc rx gain', namespace='/test')
 def inc_freq():
     tb.set_rx_gain(tb.get_rx_gain() + 1)

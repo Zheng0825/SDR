@@ -3,7 +3,11 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Broadcastwithfreqandmac
+<<<<<<< HEAD
 # Generated: Tue Feb  9 15:42:49 2016
+=======
+# Generated: Tue Feb  9 15:44:54 2016
+>>>>>>> c0ca7730af5629f70d1fafb64944adb21e86d67e
 ##################################################
 import threading
 
@@ -74,7 +78,11 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
         self.tx_freq = tx_freq = 915e6
         self.samp_rate = samp_rate = rate
         self.rx_freq = rx_freq = 915e6
+<<<<<<< HEAD
         self.radio_addr = radio_addr = 88
+=======
+        self.radio_addr = radio_addr = 89
+>>>>>>> c0ca7730af5629f70d1fafb64944adb21e86d67e
 
         ##################################################
         # Blocks
