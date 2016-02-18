@@ -84,27 +84,33 @@ def index():
 # TX Freq
 @socketio.on('inc tx freq', namespace='/test')
 def inc_freq():
-    tb.set_tx_freq(txfreqtable.increase_freq())
-    os.system("echo " + str(tb.get_tx_freq()) + " | sudo alfred -s 65")    
-    emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
+    newFreq = txfreqtable.increase_freq()
+    os.system("echo " + str(newFreq) + " | sudo alfred -s 65")    
+    emit('confirm tx freq', {'txfreq':newFreq})
 
 @socketio.on('dec tx freq', namespace='/test')
 def dec_freq():
-    tb.set_tx_freq(txfreqtable.decrease_freq())
-    os.system("echo " + str(tb.get_tx_freq()) + " | sudo alfred -s 65")
-    emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})
+    newFreq = txfreqtable.decrease_freq()
+    os.system("echo " + str(newFreq) + " | sudo alfred -s 65")
+    emit('confirm tx freq', {'txfreq':newFreq})
 
+@socketio.on('alfred set freq', namespace='/test')
+def set_freq(freq):
+  
+    tb.set_tx_freq(freq[0])
+    emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})	
+ 
 #RX Freq
 @socketio.on('inc rx freq', namespace='/test')
 def inc_freq():
     tb.set_rx_freq(rxfreqtable.increase_freq())
-    os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 65")
+    os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 66")
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
 @socketio.on('dec rx freq', namespace='/test')
 def dec_freq():
     tb.set_rx_freq(rxfreqtable.decrease_freq())
-    os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 65")
+    os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 66")
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
 #TX Gain
@@ -140,7 +146,6 @@ def setupRadio(options, args):
     except:
 	print("ERROR: gnuradio failed to initialize")
 	sys.exit()
-
     global txfreqtable
     txfreqtable = FrequencyTable()
 
@@ -157,6 +162,7 @@ def setupRadio(options, args):
     #os.system('sudo alfred -i bat0 -m &> /dev/null')
     args = ['sudo', 'alfred', '-i', 'bat0', '-m']
     subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    #os.system('sudo alfred -c "sudo alfred -r 65 | python program"')
     print("alfred is up")
 
     print("Starting rest of the server")
