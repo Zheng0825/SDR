@@ -1,6 +1,6 @@
 #!/usr/bin/env python2
 ##################################################
-# GNU Radio Python Flow Graph
+# ''GNU Radio Python Flow Graph
 # Title: Nonbroadcastwithfreqandmac
 # Generated: Mon Feb  1 16:46:29 2016
 #
@@ -66,41 +66,17 @@ from frequencytable import FrequencyTable
 
 import os
 from time import sleep
+import subprocess
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 
-
-
-@app.before_request
-def setupRadio():
-    print("Starting")
-    try:
-        global tb
-        tb = nonbroadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
-
-        thread = Thread(target=start_flowgraph, args=())
-    except:
-        pass
-
-    global txfreqtable
-    txfreqtable = FrequencyTable()
-    
-    global rxfreqtable
-    rxfreqtable = FrequencyTable()
-
-    # Setup the batman-adv interface
-    os.system('sudo sh static/shell/raiseBatSignal.sh')
-
-    sleep(5)
-    # Setup alfred
-    os.system('sudo alfred -i bat0 -m &')
-
 @app.route('/')
 def index():
     return render_template('radiostats.html', rxFreq=tb.get_rx_freq(), txFreq=tb.get_tx_freq(), txGain=tb.get_tx_gain(), rxGain=tb.get_rx_gain())
+
 
 # http://www.secdev.org/projects/scapy/
 # Saving that link for later
@@ -155,7 +131,35 @@ def dec_gain():
 
 
     
+def setupRadio(options, args):
+    print("Initializing GNU Radio")
+    global tb
+    try:
+        tb = nonbroadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+        thread = Thread(target=start_flowgraph, args=())
+    except:
+	print("ERROR: gnuradio failed to initialize")
+	sys.exit()
 
+    global txfreqtable
+    txfreqtable = FrequencyTable()
+
+    global rxfreqtable
+    rxfreqtable = FrequencyTable()
+
+    # Setup the batman-adv interface
+    print("setting up bat0")
+    os.system('sudo sh static/shell/raiseBatSignal.sh')
+    print("setup bat0")
+    sleep(5)
+    # Setup alfred
+    print("setting up alfred")
+    #os.system('sudo alfred -i bat0 -m &> /dev/null')
+    args = ['sudo', 'alfred', '-i', 'bat0', '-m']
+    subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("alfred is up")
+
+    print("Starting rest of the server")
 
 
 def start_flowgraph(flowgraph):
@@ -165,6 +169,7 @@ def start_flowgraph(flowgraph):
 
 
 if __name__ == '__main__':
+
 
     parser = OptionParser(option_class=eng_option, usage="%prog: [options]")
     parser.add_option("", "--ampl", dest="ampl", type="eng_float", default=eng_notation.num_to_str(0.7),
@@ -204,10 +209,12 @@ if __name__ == '__main__':
     parser.add_option("", "--tx-lo-offset", dest="tx_lo_offset", type="eng_float", default=eng_notation.num_to_str(0),
         help="Set TX LO offset [default=%default]")
     (options, args) = parser.parse_args()
+
+    setupRadio(options, args)
     
     #thread = threading.Thread(app.run, (host="0.0.0.0",port=int("80"),debug=True))
 
-    socketio.run(app,debug=True)
+    socketio.run(app,debug=True, use_reloader=False)
 '''
     app.run(
         host="0.0.0.0",
