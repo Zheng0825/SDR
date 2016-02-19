@@ -195,7 +195,7 @@ if __name__ == '__main__':
         help="Set Max ARQ attempts [default=%default]")
     parser.add_option("", "--mtu", dest="mtu", type="intx", default=128,
         help="Set MTU [default=%default]")
-    parser.add_option("-l", "--ogradio-addr", dest="ogradio_addr", type="intx", default=0,
+    parser.add_option("-l", "--ogradio-addr", dest="ogradio_addr", type="intx", default=80,
         help="Set Local address [default=%default]")
     parser.add_option("", "--ogrx-freq", dest="ogrx_freq", type="eng_float", default=eng_notation.num_to_str(915e6),
         help="Set RX freq [default=%default]")
