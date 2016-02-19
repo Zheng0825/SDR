@@ -5,14 +5,18 @@ import json
 import sys
 
 
-def main ():
+def main (line):
 	
 	
 	#"{"Macaddr" : "freq\x01"}"
-	jdoc = json.loads(args[0])
-	print("Frequency change arrived from" + jdoc.keys()[0])
-	freq = jdoc[jdoc.keys()[0]]
-	freq = freq.split('\')[0]
+	print (line)
+
+	data = line.strip()[2:-3].split(', ')
+	freq = data[1].split('\\')[0]
+	mac = data[0]
+
+	print("Frequency change to " + freq +  " arrived from " + mac)
+	 
 
 	socketIO = SocketIO('localhost', 5000, '/test')	
 	socketIO.emit('alfred set freq', freq)
