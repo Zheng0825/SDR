@@ -1,31 +1,29 @@
 # Software Defined Radio Projects
 
-This repository is to hold my progress on working with SDR. 
-Currently the school has access to the following. 
+The root folder has 4 subfolders for different aspects of the project.
+If you are just trying to get going with the mesh, you probably want to be in the 
+SDR Folder. 
 
-+ RTL-SDR
-+ BladeRF
-+ Ettus Research SDR
 
-I will be trying to evalute all three for useability and 
-featureset. The RTL-SDR is weaker than the other two in all 
-areas except cost. It costs less than a tenth of what the 
-others do. We are hoping to use these as a tool to teach 
-students to use the other two. 
+## Documents
 
-## RTL-SDR
+The document section contains mostly Latex documents. These are drafts of Papers, and First efforts on Thesis related documents. Where possible, a pdf version should already be compiled so you can see the current state of that document without knowing about how to use latex. To open from the command line use: 
 
-This folder holds the progress on the RTL-SDR. This will be
-the first focus area of the project so that we can create
-a teaching platform for other students to get caught up on.
+gnome-open <nameoffile.pdf>
 
-## BladeRF
-
-This will follow the RTL-SDR. It may be empty for a few weeks.
 
 ## Notes
 
-I will try to keep a detailed log of notes here so that I can
-more easily create a teaching tool for students.
+Notes is a journal of all of our attempts at making this work. It is again written in latex, and there is an additional pdf version attached. I recommend opening the tex version as I often forget to keep the pdf version up to date. Scroll to the bottom to see the latest event from that date. 
+
+
+## SDR
+
+This is where all the actual flowgraphs and related materials will be located. Use this folder as a starting point for setting up the mesh network. 
+
+## Tools
+
+These are helpful but not necessary components for using the flowgraphs. Examples include a Python UDP Tx/Rx, and "raiseTheBatSignal.sh" which is a shell script for automating the Batman-adv initialization process. 
+
 
   
