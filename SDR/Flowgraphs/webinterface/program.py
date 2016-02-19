@@ -1,13 +1,12 @@
 
 
-from socketIO_client import SocketIO
-import json
+from socketIO_client import SocketIO, BaseNamespace
+#import json
 import sys
+#import os
 
-
-def main (line):
-	
-	
+def send (line):
+		
 	#"{"Macaddr" : "freq\x01"}"
 	print (line)
 
@@ -15,15 +14,15 @@ def main (line):
 	freq = data[1].split('\\')[0]
 	mac = data[0]
 
-	print("Frequency change to " + freq +  " arrived from " + mac)
+	print("Frequency change to " + freq[1:] +  " arrived from " + mac)
 	 
 
-	socketIO = SocketIO('localhost', 5000, '/test')	
-	socketIO.emit('alfred set freq', freq)
+	socketIO = SocketIO('localhost', 5000)
+	socketIO.emit('alfred set freq', freq[1:])
 	socketIO.close()
 
 
-if __name__ == '__main__':
-	for line in sys.stdin:
+if __name__ == '__main__':	
+	for line in sys.stdin:	
 		main(line)
 	

@@ -94,7 +94,7 @@ def dec_freq():
     os.system("echo " + str(newFreq) + " | sudo alfred -s 65")
     emit('confirm tx freq', {'txfreq':newFreq})
 
-@socketio.on('alfred set freq', namespace='/test')
+@socketio.on('alfred set freq')
 def set_freq(freq):
     print("PRINT")  
     tb.set_tx_freq(freq[0])
@@ -160,10 +160,12 @@ def setupRadio(options, args):
     # Setup alfred
     print("setting up alfred")
     #os.system('sudo alfred -i bat0 -m &> /dev/null')
-    args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'sudo alfred -r 65 | python program']
-    subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    #args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'sudo alfred -r 65 | python program.py']
+    args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'echo "HI!"']
+    #subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.Popen(args)
     print("Prepping Alfred Call Back Function")
-    #os.system('sudo alfred -i bat0 -m -c "sudo alfred -r 65 | python program"')
+    #os.system('sudo alfred -i bat0 -m -c echo')
     print("alfred is up")
 
     print("Starting rest of the server")
