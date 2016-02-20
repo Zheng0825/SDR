@@ -217,12 +217,12 @@ def setupEverythingElse():
     rxfreqtable = FrequencyTable()
 
     print("Setting IP Address")
-    os.system('sudo ifconfig tun0 192.168.200.1')
-    print("Ip Address of tun0 is now 192.168.200.1")
+    os.system('sudo ifconfig tun0 192.168.200.2')
+    print("Ip Address of tun0 is now 192.168.200.2")
 
-    print("setting up bat0")
-    os.system('sudo sh static/shell/raiseBatSignal.sh')
-    print("setup bat0")
+    #print("setting up bat0")
+    #os.system('sudo sh static/shell/raiseBatSignal.sh')
+    #print("setup bat0")
     '''
     print("Setting up Alfred")
     sleep(1)

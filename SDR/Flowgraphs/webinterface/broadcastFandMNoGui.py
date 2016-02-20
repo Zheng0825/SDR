@@ -24,7 +24,7 @@ import pmt
 
 class broadcastFandMNoGui(gr.top_block):
 
-    def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, port="12345", rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0, radio_addr=71, rx_freq=915e6, tx_freq=915e6, rate=1e6):
+    def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, port="12345", rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0, radio_addr=63, rx_freq=915e6, tx_freq=915e6, rate=1e6):
         gr.top_block.__init__(self, "Broadcastfandmnogui")
 
         self._lock = threading.RLock()
