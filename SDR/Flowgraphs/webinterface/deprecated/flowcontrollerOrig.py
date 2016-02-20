@@ -169,6 +169,7 @@ def setupRadio(options, args):
     #subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     #subprocess.Popen(args)
     #print("Prepping Alfred Call Back Function")
+    #os.system('sudo alfred -i bat0 -m -c 'sudo alfred -r 65 | python alfredCallBack.py')
     #os.system('sudo alfred -i bat0 -m -c echo')
     #print("alfred is up")
 

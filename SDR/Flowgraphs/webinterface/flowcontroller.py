@@ -69,7 +69,7 @@ from time import sleep
 import subprocess
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret!'
+#app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 
@@ -82,13 +82,13 @@ def index():
 # Saving that link for later
 
 # TX Freq
-@socketio.on('inc tx freq', namespace='/test')
+@socketio.on('inc tx freq')
 def inc_freq():
     newFreq = txfreqtable.increase_freq()
     os.system("echo " + str(newFreq) + " | sudo alfred -s 65")    
     #emit('confirm tx freq', {'txfreq':newFreq})
 
-@socketio.on('dec tx freq', namespace='/test')
+@socketio.on('dec tx freq')
 def dec_freq():
     newFreq = txfreqtable.decrease_freq()
     os.system("echo " + str(newFreq) + " | sudo alfred -s 65")
@@ -97,40 +97,41 @@ def dec_freq():
 @socketio.on('alfred set freq')
 def set_freq(freq):
     print("PRINT")  
-    tb.set_tx_freq(freq[0])
-    emit('confirm tx freq', {'txfreq':tb.get_tx_freq()})	
+    tb.set_tx_freq(int(freq))
+    print(tb.get_tx_freq())
+    emit('confirm tx freq', {'txfreq':tb.get_tx_freq()}, broadcast=True)	
  
 #RX Freq
-@socketio.on('inc rx freq', namespace='/test')
+@socketio.on('inc rx freq')
 def inc_freq():
     tb.set_rx_freq(rxfreqtable.increase_freq())
     os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 66")
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
-@socketio.on('dec rx freq', namespace='/test')
+@socketio.on('dec rx freq')
 def dec_freq():
     tb.set_rx_freq(rxfreqtable.decrease_freq())
     os.system("echo " + str(tb.get_rx_freq()) + " | sudo alfred -s 66")
     emit('confirm rx freq', {'rxfreq':tb.get_rx_freq()})
 
 #TX Gain
-@socketio.on('inc tx gain', namespace='/test')
+@socketio.on('inc tx gain')
 def inc_freq():
     tb.set_tx_gain(tb.get_tx_gain() + 1)
     emit('confirm tx gain', {'txgain':tb.get_tx_gain()})
 
-@socketio.on('dec tx gain', namespace='/test')
+@socketio.on('dec tx gain')
 def dec_freq():
     tb.set_tx_gain(tb.get_tx_gain() - 1)
     emit('confirm tx gain', {'txgain':tb.get_tx_gain()})
 
 #RX Gain
-@socketio.on('inc rx gain', namespace='/test')
+@socketio.on('inc rx gain')
 def inc_freq():
     tb.set_rx_gain(tb.get_rx_gain() + 1)
     emit('confirm rx gain', {'rxgain':tb.get_rx_gain()})
 
-@socketio.on('dec rx gain', namespace='/test')
+@socketio.on('dec rx gain')
 def dec_gain():
     tb.set_rx_gain(tb.get_rx_gain() - 1)
     emit('confirm rx gain', {'rxgain':tb.get_rx_gain()})
@@ -180,7 +181,7 @@ def argument_parser():
         "", "--tx-lo-offset", dest="tx_lo_offset", type="eng_float", default=eng_notation.num_to_str(0),
         help="Set TX LO offset [default=%default]")
     parser.add_option(
-        "-l", "--radio-addr", dest="radio_addr", type="intx", default=63,
+        "-l", "--radio-addr", dest="radio_addr", type="intx", default=79,
         help="Set Local address [default=%default]")
     parser.add_option(
         "", "--rx-freq", dest="rx_freq", type="eng_float", default=eng_notation.num_to_str(915e6),
