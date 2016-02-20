@@ -140,12 +140,13 @@ def dec_gain():
 def setupRadio(options, args):
     print("Initializing GNU Radio")
     global tb
-    try:
-        tb = broadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
-        thread = Thread(target=start_flowgraph, args=())
-    except:
-	print("ERROR: gnuradio failed to initialize")
-	sys.exit()
+#    try:
+    tb = broadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+    thread = Thread(target=start_flowgraph, args=())
+
+ #   except:
+#	print("ERROR: gnuradio failed to initialize")
+#	sys.exit()
     global txfreqtable
     txfreqtable = FrequencyTable()
 
@@ -174,10 +175,10 @@ def setupRadio(options, args):
     print("Starting rest of the server")
 
 
-def start_flowgraph(flowgraph):
+def start_flowgraph():
 
     tb.start(True)
-#    tb.wait()
+    #tb.wait()
 
 
 if __name__ == '__main__':
