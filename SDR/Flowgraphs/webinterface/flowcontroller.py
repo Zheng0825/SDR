@@ -53,7 +53,7 @@ from optparse import OptionParser
 from gnuradio.eng_option import eng_option
 from gnuradio import eng_notation
 
-from nonbroadcastwithFreqandMacWithThreads import nonbroadcastwithFreqandMac
+from broadcastwithFreqandMac import broadcastwithFreqandMac
 import mac
 import pmt
 import wx
@@ -141,7 +141,7 @@ def setupRadio(options, args):
     print("Initializing GNU Radio")
     global tb
     try:
-        tb = nonbroadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+        tb = broadcastwithFreqandMac(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
         thread = Thread(target=start_flowgraph, args=())
     except:
 	print("ERROR: gnuradio failed to initialize")
@@ -152,21 +152,24 @@ def setupRadio(options, args):
     global rxfreqtable
     rxfreqtable = FrequencyTable()
 
+    print("Setting IP Address")
+    os.system('sudo ifconfig tun0 192.168.200.33')
+    print("Ip Address of tun0 is now 192.168.200.33")
     # Setup the batman-adv interface
-    print("setting up bat0")
-    os.system('sudo sh static/shell/raiseBatSignal.sh')
-    print("setup bat0")
-    sleep(5)
+    #print("setting up bat0")
+    #os.system('sudo sh static/shell/raiseBatSignal.sh')
+    #print("setup bat0")
+    #sleep(5)
     # Setup alfred
-    print("setting up alfred")
+    #print("setting up alfred")
     #os.system('sudo alfred -i bat0 -m &> /dev/null')
     #args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'sudo alfred -r 65 | python program.py']
-    args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'echo "HI!"']
+    ##args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'echo "HI!"']
     #subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    subprocess.Popen(args)
-    print("Prepping Alfred Call Back Function")
+    #subprocess.Popen(args)
+    #print("Prepping Alfred Call Back Function")
     #os.system('sudo alfred -i bat0 -m -c echo')
-    print("alfred is up")
+    #print("alfred is up")
 
     print("Starting rest of the server")
 
