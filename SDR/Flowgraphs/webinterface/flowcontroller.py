@@ -86,13 +86,17 @@ def index():
 def inc_freq():
     newFreq = txfreqtable.increase_freq()
     os.system("echo " + str(newFreq) + " | sudo alfred -s 65")    
-    #emit('confirm tx freq', {'txfreq':newFreq})
+    sleep(5)
+    tb.set_tx_freq(int(newFreq))
+    emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
 
 @socketio.on('dec tx freq')
 def dec_freq():
     newFreq = txfreqtable.decrease_freq()
     os.system("echo " + str(newFreq) + " | sudo alfred -s 65")
-    #emit('confirm tx freq', {'txfreq':newFreq})
+    sleep(5)
+    tb.set_tx_freq(int(newFreq))
+    emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
 
 @socketio.on('alfred set freq')
 def set_freq(freq):
@@ -136,7 +140,7 @@ def dec_gain():
     tb.set_rx_gain(tb.get_rx_gain() - 1)
     emit('confirm rx gain', {'rxgain':tb.get_rx_gain()})
 
-def argument_parser():
+def argument_parser(macIP):
     parser = OptionParser(option_class=eng_option, usage="%prog: [options]")
     parser.add_option(
         "", "--ampl", dest="ampl", type="eng_float", default=eng_notation.num_to_str(0.7),
@@ -181,7 +185,7 @@ def argument_parser():
         "", "--tx-lo-offset", dest="tx_lo_offset", type="eng_float", default=eng_notation.num_to_str(0),
         help="Set TX LO offset [default=%default]")
     parser.add_option(
-        "-l", "--radio-addr", dest="radio_addr", type="intx", default=79,
+        "-l", "--radio-addr", dest="radio_addr", type="intx", default=int(macIP),
         help="Set Local address [default=%default]")
     parser.add_option(
         "", "--rx-freq", dest="rx_freq", type="eng_float", default=eng_notation.num_to_str(915e6),
@@ -196,13 +200,15 @@ def argument_parser():
 
 def main(top_block_cls=broadcastFandMNoGui, options=None):
     print("Initializing GNU Radio")
+    macIP = input('Enter a number from 1 - 250 to be used for the mac and IP: ')
+
     if options is None:
-        options, _ = argument_parser().parse_args()
+        options, _ = argument_parser(macIP).parse_args()
     global tb
     tb = top_block_cls(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, port=options.port, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset, radio_addr=options.radio_addr, rx_freq=options.rx_freq, tx_freq=options.tx_freq, rate=options.rate)
     print("Starting GNU Radio")
     tb.start()
-    setupEverythingElse()
+    setupEverythingElse(macIP)
     try:
         raw_input('Press Enter to quit: ')
     except EOFError:
@@ -210,7 +216,7 @@ def main(top_block_cls=broadcastFandMNoGui, options=None):
     tb.stop()
     tb.wait()
 
-def setupEverythingElse():
+def setupEverythingElse(macIP):
     global txfreqtable
     txfreqtable = FrequencyTable()
 
@@ -218,13 +224,16 @@ def setupEverythingElse():
     rxfreqtable = FrequencyTable()
 
     print("Setting IP Address")
-    os.system('sudo ifconfig tun0 192.168.200.2')
-    print("Ip Address of tun0 is now 192.168.200.2")
+    ip = '192.168.200.' + str(macIP)
+    cmd = 'sudo ifconfig tun0 ' + ip
+    os.system(cmd)
+    print("Ip Address of tun0 is now " + ip)
 
-    #print("setting up bat0")
-    #os.system('sudo sh static/shell/raiseBatSignal.sh')
-    #print("setup bat0")
-    '''
+    print("setting up bat0")
+    os.system('sudo sh static/shell/raiseBatSignal.sh')
+    print("setup bat0")
+    
+
     print("Setting up Alfred")
     sleep(1)
     print("...")
@@ -232,13 +241,15 @@ def setupEverythingElse():
     print("...")
     sleep(1)
     print("...")
-    os.system('sudo alfred -i bat0 -m -c echo "Master Wayne says Hello"' &)
-    '''
+    #os.system('sudo alfred -i bat0 -m -c echo "Master Wayne says Hello"' &)
+    args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'sudo alfred -r 65 | python alfredCallBack.py']
+    #args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'espeak "Message Recieved"']
+    subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print("Starting rest of the server")
 
 
 if __name__ == '__main__':
-
+    print("Start")
     thread = Thread(target=main, args=())
     #thread.daemon = True
     thread.start()

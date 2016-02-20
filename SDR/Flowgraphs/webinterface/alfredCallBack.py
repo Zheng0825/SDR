@@ -27,9 +27,10 @@ def send (line):
 
 if __name__ == '__main__':
 
-	#for line in sys.stdin:	
-	#	send(line)
+	
+	for line in sys.stdin:	
+		send(line)
 	
 	# Left a piece of dummy data here in case
 	# its needed for debugging
-	send('{ "ca:26:ff:04:42:e4", "922000000\x0a" }')
+	#send('{ "ca:26:ff:04:42:e4", "922000000\x0a" }')
