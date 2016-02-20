@@ -223,7 +223,7 @@ def setupEverythingElse():
     print("setting up bat0")
     os.system('sudo sh static/shell/raiseBatSignal.sh')
     print("setup bat0")
-
+    '''
     print("Setting up Alfred")
     sleep(1)
     print("...")
@@ -231,8 +231,8 @@ def setupEverythingElse():
     print("...")
     sleep(1)
     print("...")
-    os.system('sudo alfred -i bat0 -m -c echo "Master Wayne says Hello"')
-
+    os.system('sudo alfred -i bat0 -m -c echo "Master Wayne says Hello"' &)
+    '''
     print("Starting rest of the server")
 
 
