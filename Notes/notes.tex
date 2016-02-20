@@ -900,6 +900,20 @@ As always, a more indepth literature review will need to continue.
 
 	Espeak is hilarious 
 
+	\section{2-20-16}
+
+	After struggling for awhile trying to figure out what was going on it turned out that I did not
+	actually have a functioning flowgraph until today. The problem was that though GNU Radio
+	is happy to work in a thread, the GUI is not. I'm not sure why I didnt think of this before
+	as Unity3D should have taught me that visuals and threads don't get along. 
+
+	Anyway, now im going to keep working on adding the Alfred implementation. Hopefully
+	tomorrow Brad will be in and I can work on the Fedora builds while he is helping to clean 
+	up the rest of this code. I'm still not against abandoning flask in favor of a MQ system
+	which with the right MQ system may make for a more robust system. But, with the deadline
+	approaching I'm not 100 percent sure I want to start porting to a new platform. 
+
+
 \end{document}
 
 
