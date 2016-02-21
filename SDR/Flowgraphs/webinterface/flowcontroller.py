@@ -65,7 +65,7 @@ from flask_socketio import SocketIO, emit
 from frequencytable import FrequencyTable
 
 import os
-from time import sleep
+from time import sleep, time
 import subprocess
 
 app = Flask(__name__)
@@ -85,7 +85,7 @@ def index():
 @socketio.on('inc tx freq')
 def inc_freq():
     newFreq = txfreqtable.increase_freq()
-    os.system("echo " + str(newFreq) + " | sudo alfred -s 65")    
+    os.system("echo " + str(newFreq) + "%" + str(time) " | sudo alfred -s 65")    
     sleep(5)
     tb.set_tx_freq(int(newFreq))
     emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
@@ -244,7 +244,8 @@ def setupEverythingElse(macIP):
     #os.system('sudo alfred -i bat0 -m -c echo "Master Wayne says Hello"' &)
     args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'sudo alfred -r 65 | python alfredCallBack.py']
     #args = ['sudo', 'alfred', '-i', 'bat0', '-m', 'master', '-c', 'espeak "Message Recieved"']
-    subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    #subprocess.Popen(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.Popen(args)
     print("Starting rest of the server")
 
 
