@@ -88,6 +88,7 @@ def inc_freq():
     os.system("echo " + "'" + str(newFreq) + "%" + str(time()) + "'" + " | sudo alfred -s 65")    
     sleep(7)
     tb.set_tx_freq(int(newFreq))
+    tb.set_rx_freq(int(newFreq))
     emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
 
 @socketio.on('dec tx freq')
@@ -96,6 +97,7 @@ def dec_freq():
     os.system("echo " + "'" + str(newFreq) + "%" + str(time()) + "'" + " | sudo alfred -s 65")
     sleep(7)
     tb.set_tx_freq(int(newFreq))
+    tb.set_rx_freq(int(newFreq))
     emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
 
 @socketio.on('alfred set freq')
@@ -107,6 +109,8 @@ def set_freq(freq):
     print(tb.get_tx_freq())
     emit('confirm tx freq', {'txfreq':tb.get_tx_freq()}, broadcast=True)	
  
+# For this paper I think we should remove the separate tx/rx functionality
+
 #RX Freq
 @socketio.on('inc rx freq')
 def inc_freq():
