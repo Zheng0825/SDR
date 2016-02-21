@@ -18,37 +18,20 @@ def send (lines):
 		print (line)
 
 		frame = line.strip()[2:-3].split(', ')
-		freq = frame[1].split('\\')[0]
-		freq = freq[1:]
+		freqandtime = frame[1].split('\\')[0]
+		freq,time = freqandtime[1:].split('%')
+		time = time[:-2]
 		mac = frame[0]
-		data.append([mac,freq])
 
-	if len(data) == 1:
-		socketIO = SocketIO('127.0.0.1', 5000)
-		socketIO.emit('alfred set freq', str(data[1]))
-		socketIO.wait(1)
+		if not data:
+			data = [mac,freq,time]
+		elif data[2] <= time:
+			data = [mac,freq,time]
 
-		print("Frequency change to " + data[1] +  " arrived from " + data[0])
-		return
-
-	freqlist = {}
-
-	for chunk in data:
-		if chunk[1] not in freqlist:
-			freqlist[chunk[1]] = 1
-		else:
-			freqlist[chunk[1]] += 1
-
-	print freqlist 
-
-
-	print("Frequency change to " + data[0][1] +  " arrived from " + data[0][0])
-	 
 
 	socketIO = SocketIO('127.0.0.1', 5000)
-	socketIO.emit('alfred set freq', str(freq[1:]))
+	socketIO.emit('alfred set freq', str(data[1]))
 	socketIO.wait(1)
-
 
 if __name__ == '__main__':
 
@@ -57,7 +40,12 @@ if __name__ == '__main__':
 	for line in sys.stdin:	
 		lines.append(line)
 	send(lines)
-	
-	# Left a piece of dummy data here in case
-	# its needed for debugging
-	#send('{ "ca:f3:d4:01:f3:04", "915000000\x0a" }, { "2e:9c:6a:a8:54:96", "900000000\x0a" },')
+
+	'''
+	Some dummy data if you need to do testing
+	line = '{ "c2:4c:e0:9f:80:07", "918000000%1456077160.77\x0a" },'
+	lines = []
+	lines.append(line)
+	send(lines)
+	'''
+
