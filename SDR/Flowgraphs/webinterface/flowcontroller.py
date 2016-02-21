@@ -85,7 +85,7 @@ def index():
 @socketio.on('inc tx freq')
 def inc_freq():
     newFreq = txfreqtable.increase_freq()
-    os.system("echo " + "'" + str(newFreq) + "%" + str(time) + "'" + " | sudo alfred -s 65")    
+    os.system("echo " + "'" + str(newFreq) + "%" + str(time()) + "'" + " | sudo alfred -s 65")    
     sleep(5)
     tb.set_tx_freq(int(newFreq))
     emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
