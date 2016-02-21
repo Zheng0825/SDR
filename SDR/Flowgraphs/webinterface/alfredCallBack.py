@@ -25,7 +25,7 @@ def send (lines):
 
 		if not data:
 			data = [mac,freq,time]
-		elif data[2] <= time:
+		elif data[2] >= time:
 			data = [mac,freq,time]
 
 
