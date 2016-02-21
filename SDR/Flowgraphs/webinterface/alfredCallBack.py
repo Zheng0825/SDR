@@ -37,7 +37,7 @@ def send (lines):
 	socketIO.wait(1)
 
 #use this function for testing
-def test()
+def test():
 	#Some dummy data if you need to do testing
 	#line = '{ "c2:4c:e0:9f:80:07", "918000000%1456077160.77\x0a" },'
 	lines = ['{ "6e:28:26:a3:71:dd", "915000000%1456083136.18\\x0a" },\n', '{ "f6:84:ae:73:38:0c", "920000000%1456083275.63\\x0a" },\n']
@@ -49,6 +49,7 @@ if __name__ == '__main__':
 
 	for line in sys.stdin:	
 		lines.append(line)
+	
 	send(lines)
 	
 	#test()
