@@ -15,6 +15,12 @@
 # be made without requiring massive code rewrites
 # as we add features.
 #
+# TODO:
+#   1) Sync Freq table with the changes from Alfred
+#   2) Reduce to just have one frequency for now, not
+#      one for RX and one for TX. 
+#
+#
 ##################################################
 #from __future__ import print_function
 
