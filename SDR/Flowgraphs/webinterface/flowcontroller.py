@@ -86,7 +86,7 @@ def index():
 def inc_freq():
     newFreq = txfreqtable.increase_freq()
     os.system("echo " + "'" + str(newFreq) + "%" + str(time()) + "'" + " | sudo alfred -s 65")    
-    sleep(5)
+    sleep(7)
     tb.set_tx_freq(int(newFreq))
     emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
 
@@ -94,14 +94,16 @@ def inc_freq():
 def dec_freq():
     newFreq = txfreqtable.decrease_freq()
     os.system("echo " + "'" + str(newFreq) + "%" + str(time()) + "'" + " | sudo alfred -s 65")
-    sleep(5)
+    sleep(7)
     tb.set_tx_freq(int(newFreq))
     emit('confirm tx freq', {'txfreq':newFreq}, broadcast=True)
 
 @socketio.on('alfred set freq')
 def set_freq(freq):
-    print("PRINT")  
+    print("PRINT")
+    print(str(int(freq)))
     tb.set_tx_freq(int(freq))
+    tb.set_rx_freq(int(freq))
     print(tb.get_tx_freq())
     emit('confirm tx freq', {'txfreq':tb.get_tx_freq()}, broadcast=True)	
  

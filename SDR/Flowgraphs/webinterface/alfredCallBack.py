@@ -10,7 +10,8 @@ class Namespace(BaseNamespace):
         print('Connected')
 
 def send (lines):
-
+	print(lines)
+	
 	data = []
 	
 	for line in lines:
