@@ -44,11 +44,11 @@ def send (lines):
 
 	print("Frequency change to " + data[0][1] +  " arrived from " + data[0][0])
 	 
-'''
+
 	socketIO = SocketIO('127.0.0.1', 5000)
 	socketIO.emit('alfred set freq', str(freq[1:]))
 	socketIO.wait(1)
-'''
+
 
 if __name__ == '__main__':
 
