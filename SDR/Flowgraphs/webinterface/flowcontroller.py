@@ -235,14 +235,20 @@ def setupEverythingElse(macIP):
     global rxfreqtable
     rxfreqtable = FrequencyTable()
 
+    '''
     print("Setting IP Address")
     ip = '192.168.200.' + str(macIP)
     cmd = 'sudo ifconfig tun0 ' + ip
     os.system(cmd)
     print("Ip Address of tun0 is now " + ip)
+    '''
 
     print("setting up bat0")
     os.system('sudo sh static/shell/raiseBatSignal.sh')
+    ip = '192.168.200.' + str(macIP)
+    cmd = 'sudo ifconfig bat0 ' + ip
+    os.system(cmd)
+    print("IP Address of bat0 is now " + ip)
     print("setup bat0")
     
 

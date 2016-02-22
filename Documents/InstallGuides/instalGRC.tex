@@ -1,0 +1,25 @@
+\section{Install Ubuntu}
+
+Hopefully in the future we will have a port of this ready to go for Fedora, but for now you MUST have Ubuntu.
+
+This was tested with 14.04 LTS, I'm not sure how compatible it will be with other versions. 
+
+I don't want to fill this up with an install guide for Ubuntu, so check with a friend who has done this before
+or search around online and come back once you have it.
+
+\section{Install GNU Radio and The Libraries we need}
+
+Before beginning, make sure you will have plenty of time to leave your computer alone (around 4 hours). 
+
+Then clone the below repo and run the install script.
+
+git clone https://github.com/jmccormack200/GnuRadio-Vagrant-Script.git
+cd GnuRadio-Vagrant-Script
+sudo sh bootstrap.sh
+
+
+If you're wondering why the word "vagrant" is included, that's because this can also be used to build
+an entirely self contained vm on your computer. All you need is vagrant and virtual box. Using Vagrant Up in
+this folder instead of sh bootstrap.sh will install and configure a virtual machine with all the files you need included. 
+
+
