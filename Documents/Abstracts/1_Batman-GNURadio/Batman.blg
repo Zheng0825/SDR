@@ -1,9 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Batman.aux
-A level-1 auxiliary file: tex/Lit/cogmesh.aux
-A level-1 auxiliary file: tex/Lit/gnuradiocog.aux
-A level-1 auxiliary file: tex/Lit/gnuradioMesh.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -19,45 +16,45 @@ while executing---line 2419 of file IEEEtran.bst
 Warning--empty year in 0002
 
 Done.
-You've used 24 entries,
+You've used 20 entries,
             4039 wiz_defined-function locations,
-            942 strings with 12664 characters,
-and the built_in function-call counts, 20306 in all, are:
-= -- 1436
-> -- 612
-< -- 142
-+ -- 331
-- -- 118
-* -- 994
-:= -- 2768
-add.period$ -- 47
-call.type$ -- 24
-change.case$ -- 24
-chr.to.int$ -- 348
-cite$ -- 25
-duplicate$ -- 1472
-empty$ -- 1833
-format.name$ -- 141
-if$ -- 4812
+            916 strings with 11870 characters,
+and the built_in function-call counts, 16780 in all, are:
+= -- 1153
+> -- 533
+< -- 107
++ -- 284
+- -- 106
+* -- 822
+:= -- 2270
+add.period$ -- 39
+call.type$ -- 20
+change.case$ -- 20
+chr.to.int$ -- 267
+cite$ -- 21
+duplicate$ -- 1221
+empty$ -- 1546
+format.name$ -- 125
+if$ -- 3978
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 302
-newline$ -- 97
-num.names$ -- 23
-pop$ -- 806
+int.to.str$ -- 20
+missing$ -- 260
+newline$ -- 85
+num.names$ -- 19
+pop$ -- 714
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1524
+skip$ -- 1251
 stack$ -- 0
-substring$ -- 833
-swap$ -- 1156
-text.length$ -- 26
+substring$ -- 641
+swap$ -- 936
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 24
+type$ -- 20
 warning$ -- 1
-while$ -- 89
-width$ -- 26
-write$ -- 240
+while$ -- 73
+width$ -- 22
+write$ -- 200
 (There was 1 error message)

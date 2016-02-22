@@ -21,27 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{5457862}
-H.~M. Almasaeid and A.~Kamal, ``Receiver-based channel allocation for wireless
-  cognitive radio mesh networks,'' in \emph{New Frontiers in Dynamic Spectrum,
-  2010 IEEE Symposium on}, April 2010, pp. 1--10.
-
-\bibitem{6392009}
-Y.~Guo, T.~Zhao, J.~Zhou, Y.~Ge, and Y.~Sun, ``Research on multi-channel mac
-  protocol in cognitive mesh network,'' in \emph{Computer and Information
-  Technology (CIT), 2012 IEEE 12th International Conference on}, Oct 2012, pp.
-  833--837.
-
-\bibitem{6112757}
-Y.~Ding and L.~Xiao, ``Video on-demand streaming in cognitive wireless mesh
-  networks,'' \emph{Mobile Computing, IEEE Transactions on}, vol.~12, no.~3,
-  pp. 412--423, March 2013.
-
-\bibitem{6778761}
-Y.~Xu, D.~Hu, and S.~Mao, ``Relay-assisted multiuser video streaming in
-  cognitive radio networks,'' \emph{Circuits and Systems for Video Technology,
-  IEEE Transactions on}, vol.~24, no.~10, pp. 1758--1770, Oct 2014.
-
 \bibitem{6846075}
 L.~T. Dung and B.~An, ``On the analysis of network connectivity in cognitive
   radio ad-hoc networks,'' in \emph{Computer, Consumer and Control (IS3C), 2014

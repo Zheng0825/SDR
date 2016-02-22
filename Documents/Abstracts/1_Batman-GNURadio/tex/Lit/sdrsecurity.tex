@@ -1,0 +1,16 @@
+\section{Security in SDR and CR Networks}
+
+A major portion of our work revolves around what we believe is a new concept in SDR security. SDR and 
+cognitive radio devices suffer from traditional security flaws of wireless transmission in addition to
+many of their own. The authors in \cite{1400381} present their idea of securing an SDR transmission
+using a Gigabit Ethernet AES (Advanced Encryption Standard) Encryption Engine.  This is implemented on 
+an FPGA. AES is a standard means of encryption that uses cipher keys to hide data. In \cite{1285401} the 
+author's discuss concerns in validating whether an SDR system is secure or not. They discuss separating the 
+certification into two separate blocks so the hardware and software can be evaluated separately. Peter Hillmann and Bjorn Stelte have presented a unique way to share cryptographic keys over SDR systems \cite{6694489}. Their system uses the Secure Communications Interoperability Protocols (SCIP). In NATO's current
+configuration, each user has a public and private cryptographic key component. In the proposed system, each SDR has a minimum of two available channels, "x" and "y", where one is used for local operations such as 
+voice and data and the other is used to relay communications data to and from other units. A secure 
+communication channel is established by borrowing time and bandwidth on channel "y" for a certificate
+based asymmetric key negotiation with a lead radio. Once the secure link is established, the symmetric net
+key is transmitted to the new users. This will then allow for the new radios to communicate fully on "x" and
+"y". The paper continues to discuss numerous methods employed for ensuring the secure transfer 
+of keys. 
