@@ -65,6 +65,8 @@ import pmt
 import wx
 import sys
 
+
+
 from flask import Flask, render_template, request, jsonify,session
 from flask_socketio import SocketIO, emit
 
@@ -271,6 +273,10 @@ if __name__ == '__main__':
     print("Start")
     thread = Thread(target=main, args=())
     #thread.daemon = True
-    thread.start()
-    
+    try:
+        thread.start()
+    except(KeyboardInterrupt, SystemExit):
+	tb.stop()
+	thread.stop()
+	sys.exit()
     socketio.run(app,debug=True, use_reloader=False)
