@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Broadcastwithfreqandmac
-# Generated: Fri Feb 19 13:34:09 2016
+# Generated: Tue Feb 23 11:55:09 2016
 ##################################################
 import threading
 
@@ -74,10 +74,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
         self.tx_freq = tx_freq = 915e6
         self.samp_rate = samp_rate = rate
         self.rx_freq = rx_freq = 915e6
-	# This line is the major line that needs to be changed to
-	# use a new radio addr
-        self.radio_addr = radio_addr = 85
-
+        self.radio_addr = radio_addr = 84
 
         ##################################################
         # Blocks
@@ -386,9 +383,9 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_user_rx_gain(self, user_rx_gain):
         with self._lock:
             self.user_rx_gain = user_rx_gain
-            self.gmsk_radio_0.set_rx_gain(self.user_rx_gain)
             self._user_rx_gain_slider.set_value(self.user_rx_gain)
             self._user_rx_gain_text_box.set_value(self.user_rx_gain)
+            self.gmsk_radio_0.set_rx_gain(self.user_rx_gain)
 
     def get_tx_freq(self):
         return self.tx_freq
@@ -396,8 +393,8 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_tx_freq(self, tx_freq):
         with self._lock:
             self.tx_freq = tx_freq
-            self._tx_freq_text_box.set_value(self.tx_freq)
             self.gmsk_radio_0.set_tx_freq(self.tx_freq)
+            self._tx_freq_text_box.set_value(self.tx_freq)
 
     def get_samp_rate(self):
         return self.samp_rate

@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Broadcastwithfreqandmac2
-# Generated: Tue Feb 23 11:56:06 2016
+# Title: Broadcastwithfreqandmac3
+# Generated: Tue Feb 23 11:56:27 2016
 ##################################################
 import threading
 
@@ -37,10 +37,10 @@ import pmt
 import wx
 
 
-class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
+class broadcastwithFreqandMac3(grc_wxgui.top_block_gui):
 
     def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, ogradio_addr=0, ogrx_freq=915e6, ogtx_freq=915e6, port="12345", rate=1e6, rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0):
-        grc_wxgui.top_block_gui.__init__(self, title="Broadcastwithfreqandmac2")
+        grc_wxgui.top_block_gui.__init__(self, title="Broadcastwithfreqandmac3")
 
         self._lock = threading.RLock()
 
@@ -74,7 +74,7 @@ class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
         self.tx_freq = tx_freq = 915e6
         self.samp_rate = samp_rate = rate
         self.rx_freq = rx_freq = 915e6
-        self.radio_addr = radio_addr = 2
+        self.radio_addr = radio_addr = 3
 
         ##################################################
         # Blocks
@@ -482,7 +482,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=broadcastwithFreqandMac2, options=None):
+def main(top_block_cls=broadcastwithFreqandMac3, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 

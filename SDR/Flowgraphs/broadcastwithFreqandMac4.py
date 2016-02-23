@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Broadcastwithfreqandmac2
-# Generated: Tue Feb 23 11:56:06 2016
+# Title: Broadcastwithfreqandmac4
+# Generated: Tue Feb 23 11:56:49 2016
 ##################################################
 import threading
 
@@ -37,10 +37,10 @@ import pmt
 import wx
 
 
-class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
+class broadcastwithFreqandMac4(grc_wxgui.top_block_gui):
 
-    def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, ogradio_addr=0, ogrx_freq=915e6, ogtx_freq=915e6, port="12345", rate=1e6, rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0):
-        grc_wxgui.top_block_gui.__init__(self, title="Broadcastwithfreqandmac2")
+    def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, ogradio_addr=0, ogrx_freq=915e6, ogtx_freq=915e6, rate=1e6, rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0, port="12345"):
+        grc_wxgui.top_block_gui.__init__(self, title="Broadcastwithfreqandmac4")
 
         self._lock = threading.RLock()
 
@@ -57,7 +57,6 @@ class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
         self.ogradio_addr = ogradio_addr
         self.ogrx_freq = ogrx_freq
         self.ogtx_freq = ogtx_freq
-        self.port = port
         self.rate = rate
         self.rx_antenna = rx_antenna
         self.rx_gain = rx_gain
@@ -65,6 +64,7 @@ class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
         self.samps_per_sym = samps_per_sym
         self.tx_gain = tx_gain
         self.tx_lo_offset = tx_lo_offset
+        self.port = port
 
         ##################################################
         # Variables
@@ -74,7 +74,7 @@ class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
         self.tx_freq = tx_freq = 915e6
         self.samp_rate = samp_rate = rate
         self.rx_freq = rx_freq = 915e6
-        self.radio_addr = radio_addr = 2
+        self.radio_addr = radio_addr = 4
 
         ##################################################
         # Blocks
@@ -304,13 +304,6 @@ class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
         with self._lock:
             self.ogtx_freq = ogtx_freq
 
-    def get_port(self):
-        return self.port
-
-    def set_port(self, port):
-        with self._lock:
-            self.port = port
-
     def get_rate(self):
         return self.rate
 
@@ -366,6 +359,13 @@ class broadcastwithFreqandMac2(grc_wxgui.top_block_gui):
         with self._lock:
             self.tx_lo_offset = tx_lo_offset
             self.gmsk_radio_0.set_tx_lo_offset(self.tx_lo_offset)
+
+    def get_port(self):
+        return self.port
+
+    def set_port(self, port):
+        with self._lock:
+            self.port = port
 
     def get_user_tx_gain(self):
         return self.user_tx_gain
@@ -456,9 +456,6 @@ def argument_parser():
         "", "--ogtx-freq", dest="ogtx_freq", type="eng_float", default=eng_notation.num_to_str(915e6),
         help="Set TX freq [default=%default]")
     parser.add_option(
-        "", "--port", dest="port", type="string", default="12345",
-        help="Set TCP port [default=%default]")
-    parser.add_option(
         "-r", "--rate", dest="rate", type="eng_float", default=eng_notation.num_to_str(1e6),
         help="Set Sample rate [default=%default]")
     parser.add_option(
@@ -479,14 +476,17 @@ def argument_parser():
     parser.add_option(
         "", "--tx-lo-offset", dest="tx_lo_offset", type="eng_float", default=eng_notation.num_to_str(0),
         help="Set TX LO offset [default=%default]")
+    parser.add_option(
+        "", "--port", dest="port", type="string", default="12345",
+        help="Set TCP port [default=%default]")
     return parser
 
 
-def main(top_block_cls=broadcastwithFreqandMac2, options=None):
+def main(top_block_cls=broadcastwithFreqandMac4, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 
-    tb = top_block_cls(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset)
+    tb = top_block_cls(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, max_arq_attempts=options.max_arq_attempts, mtu=options.mtu, ogradio_addr=options.ogradio_addr, ogrx_freq=options.ogrx_freq, ogtx_freq=options.ogtx_freq, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset, port=options.port)
     tb.Start(True)
     tb.Wait()
 
