@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Broadcastwithfreqandmac1
-# Generated: Tue Feb 23 11:55:45 2016
+# Generated: Tue Feb 23 13:53:56 2016
 ##################################################
 import threading
 
@@ -187,20 +187,20 @@ class broadcastwithFreqandMac1(grc_wxgui.top_block_gui):
         )
         self.mac_virtual_channel_decoder_0 = mac.virtual_channel_decoder(3, [0, 1])
         self.gmsk_radio_0 = gmsk_radio(
-            access_code_threshold=0 + 12 + 4*0,
-            samps_per_sym=samps_per_sym,
-            tx_lo_offset=tx_lo_offset,
-            rx_lo_offset=rx_lo_offset,
-            ampl=ampl,
-            rx_gain=user_rx_gain,
-            rx_freq=rx_freq,
-            rx_ant=rx_antenna,
-            tx_freq=tx_freq,
-            tx_gain=user_tx_gain,
-            args=args,
             rate=samp_rate,
+            args=args,
+            tx_gain=user_tx_gain,
+            tx_freq=tx_freq,
+            rx_ant=rx_antenna,
+            rx_freq=rx_freq,
+            rx_gain=user_rx_gain,
+            ampl=ampl,
+            rx_lo_offset=rx_lo_offset,
+            tx_lo_offset=tx_lo_offset,
+            samps_per_sym=samps_per_sym,
+            access_code_threshold=0 + 12 + 4*0,
         )
-        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu(iface, mtu*0 + 1514, False)
+        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu(iface, mtu*0 + 1532, False)
         self.blocks_socket_pdu_0 = blocks.socket_pdu("TCP_SERVER", "", port, mtu, False)
         self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((1, ))
         self.blocks_moving_average_xx_0 = blocks.moving_average_ff(10000, 1./10000, 40000/4)
@@ -393,8 +393,8 @@ class broadcastwithFreqandMac1(grc_wxgui.top_block_gui):
     def set_tx_freq(self, tx_freq):
         with self._lock:
             self.tx_freq = tx_freq
-            self.gmsk_radio_0.set_tx_freq(self.tx_freq)
             self._tx_freq_text_box.set_value(self.tx_freq)
+            self.gmsk_radio_0.set_tx_freq(self.tx_freq)
 
     def get_samp_rate(self):
         return self.samp_rate
