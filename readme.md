@@ -23,7 +23,7 @@ This is where all the actual flowgraphs and related materials will be located. U
 
 ## Tools
 
-These are helpful but not necessary components for using the flowgraphs. Examples include a Python UDP Tx/Rx, and "raiseTheBatSignal.sh" which is a shell script for automating the Batman-adv initialization process. 
+These are helpful but not necessary components for using the flowgraphs. Examples include a Python UDP Tx/Rx, and "raiseTheBatSignal.sh" which is a shell script for automating the Batman-adv initialization process. This also contains the script for configuring tmux the way I tend to use it. In its current form this is very specific to working with our system and if I have time I will attempt to make it more dynamic.  
 
 
   
