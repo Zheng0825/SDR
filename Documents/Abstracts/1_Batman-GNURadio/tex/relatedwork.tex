@@ -1,4 +1,23 @@
 \section{Related Work}
 
-\input{tex/Lit/gnuradiocog}
-\input{tex/Lit/gnuradioMesh}
+\subsection{Software Defined Radio Testbeds}
+
+There are several well known Software Defined Radio testbeds in use at different Universities. One major platform is the WARP platform from Rice University. This platform is made up of many custom components including the radio hardware itself \cite{7071706}. This makes the platform very expensive and limits its adaptability for use in other research groups. 
+
+Another platform is the Hydra platform developed at UT Austin. This platform uses GNU Radio to define PHY Layer parameters and the Click Modular Router to implement Layer 2 protocols \cite{4212821}. The Hydra platform also uses USRP radios as the hardware frontend. However, Click is an older software which, according to their website, has not had an updated release since 2011 \cite{citationNeeded}. GNU Radio has since added the Polymorphic Tree (PMT) and Message types to allow for more Layer 2 development to be done right inside GNU Radio \cite{citationneeded}. 
+
+The ADROIT project was another platform developed in conjunction with DARPA. This project relied heavily on Click and GNU Radio for much of its functionality. \cite{4286321}  Similarly, the University of California, Irvine and Boeing Corporation developed a testbed based off of USRP Radios and GNU Radio, but they implement custom MAC layers \cite{4753441}. 
+
+The platform that most closely resembles ours is presented in \cite{0002}. However, this platform uses OLSR which has been shown to perform poorly when compared to Batman-adv. OLSR is also not truly decentralized as only certain nodes relay network information \cite{5375690}. 
+
+\subsection{GNU Radio and Mesh Networks}
+
+There has been work done in the past on establishing Mesh Networks using GNU Radio, however most of the research has had a different focus than ours. In \cite{4509617} and \cite{5062250} the authors use GNU Radio as a way to verify the succesful use of algorithms for mesh networking. However, they do not use SDRs,instead choosing to use GNU Radio for simulation. 
+
+The researchers in \cite{7141228} created a simple multihop test bed using three USRP radios to relay data from one computer to another. A forth USRP acts as a primary user and attempts to block the signal. However, their work focuses on using reinforcement learning to allow for frequency hopping instead of focusing on a mesh routing protocol that can scale to more radios. 
+
+Much of the existing work done using USRPs and GNU Radio for SDR Mesh Networks revolves around implementing different parts of the OSI protocol stack from the ground up. In some papers the authors focus on the physical or mac layer \cite{5508221}. There has also been work in developing new higher layer protocols for cognitive radio mesh networks such as work done to replace TCP with a more robust protocol \cite{6686523}. These systems will usually react to frequency changes but some also change their topology based on power use \cite{6983150}. All of this research is extremely important, does not create a complete platform to serve as the backbone for future work. 
+
+\subsection{Mesh Network Testbeds}
+
+The CONFINE platform uses Batman-adv as the routing protocol for their mesh network testbed. However,this testbed does not utilize GNU Radio or SDRS. \cite{0001} Batman-adv was also a key component of WiBed, a project to create a COTS mesh test bed using low cost wirelessrouters \cite{6686492} \cite{6962154}. Though they are not specific to SDR platforms, these still show the usefulness of Batman-adv as a component of a testbed. 
