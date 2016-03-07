@@ -9,9 +9,18 @@ SESSION=$USER
 # format should be:
 #		connect user pass ip
 
+# To turn on network type:
+#	sudo bash tmux_start.sh
+
+# To Stop type:
+# 	tmux ls
+# Then:
+#	sudo tmux kill-session -t <name from above command>
+
 connect(){
 
-	tmux new-window
+	tmux new-window 
+	tmux rename-window $3
 	tmux split-window -v
 
 	tmux select-pane -t 0
