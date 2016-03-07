@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Broadcastwithfreqnomac
-# Generated: Mon Mar  7 14:33:35 2016
+# Generated: Mon Mar  7 14:35:01 2016
 ##################################################
 import threading
 
@@ -72,7 +72,6 @@ class broadcastwithFreqNoMac(grc_wxgui.top_block_gui):
         self.tx_freq = tx_freq = 915e6
         self.samp_rate = samp_rate = rate
         self.rx_freq = rx_freq = 915e6
-        self.radio_addr = radio_addr = 1
 
         ##################################################
         # Blocks
@@ -153,14 +152,6 @@ class broadcastwithFreqNoMac(grc_wxgui.top_block_gui):
         	y_axis_label="Counts",
         )
         self.GridAdd(self.wxgui_scopesink2_0_0.win, 0, 0, 1, 1)
-        self._radio_addr_text_box = forms.text_box(
-        	parent=self.GetWin(),
-        	value=self.radio_addr,
-        	callback=self.set_radio_addr,
-        	label="Local address",
-        	converter=forms.int_converter(),
-        )
-        self.Add(self._radio_addr_text_box)
         self.gmsk_radio_0 = gmsk_radio(
             access_code_threshold=0 + 12 + 4*0,
             samps_per_sym=samps_per_sym,
@@ -375,14 +366,6 @@ class broadcastwithFreqNoMac(grc_wxgui.top_block_gui):
             self.rx_freq = rx_freq
             self._rx_freq_text_box.set_value(self.rx_freq)
             self.gmsk_radio_0.set_rx_freq(self.rx_freq)
-
-    def get_radio_addr(self):
-        return self.radio_addr
-
-    def set_radio_addr(self, radio_addr):
-        with self._lock:
-            self.radio_addr = radio_addr
-            self._radio_addr_text_box.set_value(self.radio_addr)
 
 
 def argument_parser():
