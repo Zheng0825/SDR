@@ -35,7 +35,13 @@ connect(){
 	tmux send-keys "$ssh" C-m
 	tmux send-keys "sleep 10s" C-m
 	tmux send-keys "echo $2 | sudo -S sh ~/SDR/SDR/Flowgraphs/webinterface/static/shell/raiseBatSignal.sh" C-m
-	tmux send-keys "echo $2 | sudo ifconfig bat0 192.168.200.$3" C-m
+	tmux send-keys "echo $2 | sudo -S ifconfig bat0 192.168.200.$3" C-m
+
+	tmux send-keys "sleep 10s" C-m
+
+	tmux send-keys "echo $2 | sudo -S alfred -i bat0 -m &" C-m
+
+	tmux send-keys "echo $2 | sudo -S batctl o -w" C-m
 
 }
 
