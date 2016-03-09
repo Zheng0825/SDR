@@ -29,7 +29,7 @@ connect(){
 	tmux send-keys "$ssh" C-m
 	
 	tmux send-keys "cd SDR/SDR/Flowgraphs" C-m
-	tmux send-keys "echo $2 | sudo -S python broadcastwithFreqNoMac.py" C-m
+	tmux send-keys "echo $2 | sudo -S python broadcastwithFreqNoMac.py --tx-gain 70 --rx-gain 70" C-m
 
 	tmux select-pane -t 1
 	tmux send-keys "$ssh" C-m
