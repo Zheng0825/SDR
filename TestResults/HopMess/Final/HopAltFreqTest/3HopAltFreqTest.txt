@@ -1,0 +1,11 @@
+Three Hops Alternating RX/TX 915/928 AVG Gain 47 
+PING 192.168.200.102 (192.168.200.102) 56(84) bytes of data.
+64 bytes from 192.168.200.102: icmp_seq=1 ttl=64 time=53.2 ms
+64 bytes from 192.168.200.102: icmp_seq=2 ttl=64 time=54.5 ms
+64 bytes from 192.168.200.102: icmp_seq=3 ttl=64 time=45.8 ms
+64 bytes from 192.168.200.102: icmp_seq=4 ttl=64 time=55.8 ms
+64 bytes from 192.168.200.102: icmp_seq=5 ttl=64 time=51.8 ms
+
+--- 192.168.200.102 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 45.800/52.249/55.804/3.497 ms
