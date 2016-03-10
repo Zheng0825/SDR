@@ -23,6 +23,8 @@
 	be updated to create a manual or tutorial for future students to learn from. It is not recommended
 	that the document be used for self study until a newer version is created. Many of the steps 
 	that are outlined will be dead ends or poor practices while the disocvery process takes place. 
+	
+	Starting from the bottom and working up may be useful. 
 
 	\newpage
 
@@ -912,8 +914,8 @@ As always, a more indepth literature review will need to continue.
 	up the rest of this code. I'm still not against abandoning flask in favor of a MQ system
 	which with the right MQ system may make for a more robust system. But, with the deadline
 	approaching I'm not 100 percent sure I want to start porting to a new platform. 
+	\section{2-22-16}
 
-<<<<<<< HEAD
 	\subsection{batctl source build}
 
 	We are trying to upgrade batctl and will track the needed changes here:
@@ -921,14 +923,30 @@ As always, a more indepth literature review will need to continue.
 	\begin{itemize}
 		\item{sudo apt-get install libnl-3-dev}
 	\end{itemize}
-=======
-	\section{2-22-16}
+
+
 
 	Trying to test today. Still having trouble. We can see from nodes to their next hops but not beyond that. 
 
 	Will continue to test and report back here as we learn more
->>>>>>> 06ae241b77ada92c8178be042c2ec7af603910d1
 
+	\section{2-23-16}
+
+	Today we are going to continue testing. To begin, we are building batman-adv 2016.0 from sources. 
+	The file can be downloaded from batman's website and is installed by:
+	
+	\shellcmd{sudo make}
+	\shellcmd{sudo make install}
+	\shellcmd{sudo depmod -a}
+	\shellcmd{modprobe batman-adv}
+
+	\section{3-7-16}
+
+	Helpful website for changing the hostnames of computerS:
+
+	\url{hostnames}{http://askubuntu.com/questions/9540/how-do-i-change-the-computer-name}
+
+	
 
 \end{document}
 
