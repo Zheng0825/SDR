@@ -219,6 +219,8 @@ def main(top_block_cls=batmanNoGui, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 
+    global tb
+
     tb = top_block_cls(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, mtu=options.mtu, ogradio_addr=options.ogradio_addr, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset, max_arq_attempts=options.max_arq_attempts, tx_freq=options.tx_freq, rx_freq=options.rx_freq)
     tb.start()
 
