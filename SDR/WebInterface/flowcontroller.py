@@ -78,7 +78,7 @@ import subprocess
 
 app = Flask(__name__)
 #app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, async_mode=async_mode)
+socketio = SocketIO(app, host='0.0.0.0', async_mode=async_mode)
 thread = None
 
 @app.route('/')
@@ -216,7 +216,7 @@ def main(top_block_cls=batmanNoGui, options=None):
     print("Initializing GNU Radio")
     macIP = input('Enter a number from 1 - 250 to be used for the mac and IP: ')
 
-  if options is None:
+    if options is None:
         options, _ = argument_parser().parse_args()
 
     tb = top_block_cls(ampl=options.ampl, args=options.args, arq_timeout=options.arq_timeout, dest_addr=options.dest_addr, iface=options.iface, mtu=options.mtu, ogradio_addr=options.ogradio_addr, port=options.port, rate=options.rate, rx_antenna=options.rx_antenna, rx_gain=options.rx_gain, rx_lo_offset=options.rx_lo_offset, samps_per_sym=options.samps_per_sym, tx_gain=options.tx_gain, tx_lo_offset=options.tx_lo_offset, max_arq_attempts=options.max_arq_attempts, tx_freq=options.tx_freq, rx_freq=options.rx_freq)
@@ -278,4 +278,4 @@ if __name__ == '__main__':
 	tb.stop()
 	thread.stop()
 	sys.exit()
-    socketio.run(app,debug=True, use_reloader=False)
+    socketio.run(app, host='0.0.0.0', debug=True, use_reloader=False)
