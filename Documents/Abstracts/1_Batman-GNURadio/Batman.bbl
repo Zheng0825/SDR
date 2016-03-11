@@ -21,6 +21,41 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{0003}
+\BIBentryALTinterwordspacing
+(2016) Welcome to gnu radio. [Online]. Available:
+  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0004}
+\BIBentryALTinterwordspacing
+(2016) A quick guide to hardware and gnu radio. [Online]. Available:
+  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki/Hardware}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0005}
+\BIBentryALTinterwordspacing
+(2016) The comprehensive gnu radio archive network. [Online]. Available:
+  \url{http://cgran.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0006}
+\BIBentryALTinterwordspacing
+(2016) Ettus research. [Online]. Available: \url{https://www.ettus.com/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0007}
+\BIBentryALTinterwordspacing
+(2016) Uhd (usrp hardware driver). [Online]. Available:
+  \url{https://www.ettus.com/sdr-software/detail/usrp-hardware-driver}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0008}
+\BIBentryALTinterwordspacing
+(2016) Open-mesh. [Online]. Available:
+  \url{https://www.open-mesh.org/projects/open-mesh/wiki}
+\BIBentrySTDinterwordspacing
+
 \bibitem{7071706}
 P.~Murphy, A.~Sabharwal, and B.~Aazhang, ``Design of warp: A wireless
   open-access research platform,'' in \emph{Signal Processing Conference, 2006
@@ -31,6 +66,18 @@ K.~Mandke, S.-H. Choi, G.~Kim, R.~Grant, R.~Daniels, W.~Kim, R.~Heath, and
   S.~Nettles, ``Early results on hydra: A flexible mac/phy multihop testbed,''
   in \emph{Vehicular Technology Conference, 2007. VTC2007-Spring. IEEE 65th},
   April 2007, pp. 1896--1900.
+
+\bibitem{0009}
+\BIBentryALTinterwordspacing
+(2011) Click modular router. [Online]. Available:
+  \url{http://read.cs.ucla.edu/click/click}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0010}
+\BIBentryALTinterwordspacing
+(2016) Polymorphic types. [Online]. Available:
+  \url{https://gnuradio.org/doc/doxygen/page_pmt.html}
+\BIBentrySTDinterwordspacing
 
 \bibitem{4286321}
 G.~Troxel, E.~Blossom, S.~Boswell, A.~Caro, I.~Castineyra, A.~Colvin,
@@ -109,5 +156,34 @@ P.~Escrich, R.~Baig, E.~Dimogerontakis, E.~Carbo, A.~Neumann, A.~Fonseca,
   testbeds,'' in \emph{Wireless and Mobile Computing, Networking and
   Communications (WiMob), 2014 IEEE 10th International Conference on}, Oct
   2014, pp. 85--91.
+
+\bibitem{0015}
+\BIBentryALTinterwordspacing
+(2014) A.l.f.r.e.d - almighty lightweight fact remote exchange daemon.
+  [Online]. Available: \url{https://www.open-mesh.org/projects/alfred/wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0011}
+\BIBentryALTinterwordspacing
+(2016) Flask (a micro framework). [Online]. Available:
+  \url{http://flask.pocoo.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0012}
+\BIBentryALTinterwordspacing
+(2016) Socket.io. [Online]. Available: \url{http://socket.io/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0013}
+\BIBentryALTinterwordspacing
+(2016) Flask-socket.io. [Online]. Available:
+  \url{https://flask-socketio.readthedocs.org/en/latest/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0014}
+\BIBentryALTinterwordspacing
+(2015) socketio-client. [Online]. Available:
+  \url{https://pypi.python.org/pypi/socketIO-client}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}
