@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 ##################################################
 # GNU Radio Python Flow Graph
-# Title: Broadcastwithfreqandmac
-# Generated: Fri Feb 19 13:34:09 2016
+# Title: Ofdmgui
+# Generated: Thu Mar 10 19:18:25 2016
 ##################################################
 import threading
 
@@ -21,26 +21,22 @@ import os
 import sys
 sys.path.append(os.environ.get('GRC_HIER_PATH', os.path.expanduser('~/.grc_gnuradio')))
 
-from gmsk_radio import gmsk_radio  # grc-generated hier_block
 from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import gr
-from gnuradio import wxgui
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from gnuradio.wxgui import forms
-from gnuradio.wxgui import scopesink2
 from grc_gnuradio import wxgui as grc_wxgui
+from ofdm_radio import ofdm_radio  # grc-generated hier_block
 from optparse import OptionParser
-import mac
-import pmt
 import wx
 
 
-class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
+class OFDMGui(grc_wxgui.top_block_gui):
 
     def __init__(self, ampl=0.7, args='', arq_timeout=.1*0 + 0.04, dest_addr=-1, iface='tun0', max_arq_attempts=5 * 2, mtu=128, ogradio_addr=0, ogrx_freq=915e6, ogtx_freq=915e6, port="12345", rate=1e6, rx_antenna="TX/RX", rx_gain=65-20, rx_lo_offset=0, samps_per_sym=4, tx_gain=45, tx_lo_offset=0):
-        grc_wxgui.top_block_gui.__init__(self, title="Broadcastwithfreqandmac")
+        grc_wxgui.top_block_gui.__init__(self, title="Ofdmgui")
 
         self._lock = threading.RLock()
 
@@ -74,7 +70,6 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
         self.tx_freq = tx_freq = 915e6
         self.samp_rate = samp_rate = rate
         self.rx_freq = rx_freq = 915e6
-        self.radio_addr = radio_addr = 85
 
         ##################################################
         # Blocks
@@ -141,96 +136,24 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
         	converter=forms.float_converter(),
         )
         self.Add(self._rx_freq_text_box)
-        self._radio_addr_text_box = forms.text_box(
-        	parent=self.GetWin(),
-        	value=self.radio_addr,
-        	callback=self.set_radio_addr,
-        	label="Local address",
-        	converter=forms.int_converter(),
-        )
-        self.Add(self._radio_addr_text_box)
-        self.mac_802_3_tracker = mac.tracker_802_3(verbose=False)
-        self.wxgui_scopesink2_0_0 = scopesink2.scope_sink_c(
-        	self.GetWin(),
-        	title="RX",
-        	sample_rate=samp_rate,
-        	v_scale=0.02,
-        	v_offset=0,
-        	t_scale=0.0001,
-        	ac_couple=False,
-        	xy_mode=False,
-        	num_inputs=2,
-        	trig_mode=wxgui.TRIG_MODE_NORM,
-        	y_axis_label="Counts",
-        )
-        self.GridAdd(self.wxgui_scopesink2_0_0.win, 0, 0, 1, 1)
-        self.simple_mac_1 = mac.simple_mac(
-        radio_addr,
-        arq_timeout,
-        max_arq_attempts,
-        2.0,
-        False,
-        0.05,
-        node_expiry_delay=10.0,
-        expire_on_arq_failure=False,
-        only_send_if_alive=False,
-        prepend_dummy=False,
-        )
-        self.mac_virtual_channel_encoder_0_0 = mac.virtual_channel_encoder(-1, True,mtu=mtu,
-        chan_id=1,
-        prepend_dummy=False,
-        chan_tracker=self.mac_802_3_tracker,
-        )
-        self.mac_virtual_channel_encoder_0 = mac.virtual_channel_encoder(-1, True,mtu=mtu,
-        chan_id=0,
-        prepend_dummy=False,
-        )
-        self.mac_virtual_channel_decoder_0 = mac.virtual_channel_decoder(3, [0, 1])
-        self.gmsk_radio_0 = gmsk_radio(
-            access_code_threshold=0 + 12 + 4*0,
-            samps_per_sym=samps_per_sym,
-            tx_lo_offset=tx_lo_offset,
-            rx_lo_offset=rx_lo_offset,
-            ampl=ampl,
-            rx_gain=user_rx_gain,
+        self.ofdm_radio_0 = ofdm_radio(
             rx_freq=rx_freq,
-            rx_ant=rx_antenna,
+            rx_gain=user_rx_gain,
+            rate=samp_rate,
+            args=args,
             tx_freq=tx_freq,
             tx_gain=user_tx_gain,
-            args=args,
-            rate=samp_rate,
+            tx_lo_offset=tx_lo_offset,
+            rx_lo_offset=rx_lo_offset,
+            rx_ant=rx_antenna,
         )
-        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu(iface, mtu*0 + 1514, False)
-        self.blocks_socket_pdu_0 = blocks.socket_pdu("TCP_SERVER", "", port, mtu, False)
-        self.blocks_multiply_const_vxx_0 = blocks.multiply_const_vff((1, ))
-        self.blocks_moving_average_xx_0 = blocks.moving_average_ff(10000, 1./10000, 40000/4)
-        self.blocks_message_strobe_0 = blocks.message_strobe(pmt.intern("T"), 1)
-        self.blocks_message_debug_0_0_1 = blocks.message_debug()
-        self.blocks_float_to_complex_0 = blocks.float_to_complex(1)
-        self.blocks_complex_to_mag_0 = blocks.complex_to_mag(1)
+        self.blocks_tuntap_pdu_0 = blocks.tuntap_pdu(iface, mtu*0 + 1532, False)
 
         ##################################################
         # Connections
         ##################################################
-        self.msg_connect((self.blocks_message_strobe_0, 'strobe'), (self.simple_mac_1, 'ctrl_in'))    
-        self.msg_connect((self.blocks_socket_pdu_0, 'pdus'), (self.mac_virtual_channel_encoder_0, 'in'))    
-        self.msg_connect((self.blocks_tuntap_pdu_0, 'pdus'), (self.mac_virtual_channel_encoder_0_0, 'in'))    
-        self.msg_connect((self.gmsk_radio_0, 'msg_out'), (self.simple_mac_1, 'from_radio'))    
-        self.msg_connect((self.mac_virtual_channel_decoder_0, 'out2'), (self.blocks_message_debug_0_0_1, 'print'))    
-        self.msg_connect((self.mac_virtual_channel_decoder_0, 'out0'), (self.blocks_socket_pdu_0, 'pdus'))    
-        self.msg_connect((self.mac_virtual_channel_decoder_0, 'out1'), (self.blocks_tuntap_pdu_0, 'pdus'))    
-        self.msg_connect((self.mac_virtual_channel_decoder_0, 'out1'), (self.mac_802_3_tracker, 'in'))    
-        self.msg_connect((self.mac_virtual_channel_encoder_0, 'out'), (self.simple_mac_1, 'from_app_arq'))    
-        self.msg_connect((self.mac_virtual_channel_encoder_0_0, 'out'), (self.simple_mac_1, 'from_app_arq'))    
-        self.msg_connect((self.simple_mac_1, 'to_radio'), (self.gmsk_radio_0, 'msg_in'))    
-        self.msg_connect((self.simple_mac_1, 'to_app'), (self.mac_virtual_channel_decoder_0, 'in'))    
-        self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_float_to_complex_0, 0))    
-        self.connect((self.blocks_complex_to_mag_0, 0), (self.blocks_moving_average_xx_0, 0))    
-        self.connect((self.blocks_float_to_complex_0, 0), (self.wxgui_scopesink2_0_0, 1))    
-        self.connect((self.blocks_moving_average_xx_0, 0), (self.blocks_multiply_const_vxx_0, 0))    
-        self.connect((self.blocks_multiply_const_vxx_0, 0), (self.blocks_float_to_complex_0, 1))    
-        self.connect((self.gmsk_radio_0, 0), (self.blocks_complex_to_mag_0, 0))    
-        self.connect((self.gmsk_radio_0, 0), (self.wxgui_scopesink2_0_0, 0))    
+        self.msg_connect((self.blocks_tuntap_pdu_0, 'pdus'), (self.ofdm_radio_0, 'msg_in'))    
+        self.msg_connect((self.ofdm_radio_0, 'msg_out'), (self.blocks_tuntap_pdu_0, 'pdus'))    
 
     def get_ampl(self):
         return self.ampl
@@ -238,7 +161,6 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_ampl(self, ampl):
         with self._lock:
             self.ampl = ampl
-            self.gmsk_radio_0.set_ampl(self.ampl)
 
     def get_args(self):
         return self.args
@@ -246,7 +168,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_args(self, args):
         with self._lock:
             self.args = args
-            self.gmsk_radio_0.set_args(self.args)
+            self.ofdm_radio_0.set_args(self.args)
 
     def get_arq_timeout(self):
         return self.arq_timeout
@@ -325,7 +247,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_rx_antenna(self, rx_antenna):
         with self._lock:
             self.rx_antenna = rx_antenna
-            self.gmsk_radio_0.set_rx_ant(self.rx_antenna)
+            self.ofdm_radio_0.set_rx_ant(self.rx_antenna)
 
     def get_rx_gain(self):
         return self.rx_gain
@@ -341,7 +263,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_rx_lo_offset(self, rx_lo_offset):
         with self._lock:
             self.rx_lo_offset = rx_lo_offset
-            self.gmsk_radio_0.set_rx_lo_offset(self.rx_lo_offset)
+            self.ofdm_radio_0.set_rx_lo_offset(self.rx_lo_offset)
 
     def get_samps_per_sym(self):
         return self.samps_per_sym
@@ -349,7 +271,6 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_samps_per_sym(self, samps_per_sym):
         with self._lock:
             self.samps_per_sym = samps_per_sym
-            self.gmsk_radio_0.set_samps_per_sym(self.samps_per_sym)
 
     def get_tx_gain(self):
         return self.tx_gain
@@ -365,7 +286,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_tx_lo_offset(self, tx_lo_offset):
         with self._lock:
             self.tx_lo_offset = tx_lo_offset
-            self.gmsk_radio_0.set_tx_lo_offset(self.tx_lo_offset)
+            self.ofdm_radio_0.set_tx_lo_offset(self.tx_lo_offset)
 
     def get_user_tx_gain(self):
         return self.user_tx_gain
@@ -375,7 +296,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
             self.user_tx_gain = user_tx_gain
             self._user_tx_gain_slider.set_value(self.user_tx_gain)
             self._user_tx_gain_text_box.set_value(self.user_tx_gain)
-            self.gmsk_radio_0.set_tx_gain(self.user_tx_gain)
+            self.ofdm_radio_0.set_tx_gain(self.user_tx_gain)
 
     def get_user_rx_gain(self):
         return self.user_rx_gain
@@ -383,9 +304,9 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_user_rx_gain(self, user_rx_gain):
         with self._lock:
             self.user_rx_gain = user_rx_gain
-            self.gmsk_radio_0.set_rx_gain(self.user_rx_gain)
             self._user_rx_gain_slider.set_value(self.user_rx_gain)
             self._user_rx_gain_text_box.set_value(self.user_rx_gain)
+            self.ofdm_radio_0.set_rx_gain(self.user_rx_gain)
 
     def get_tx_freq(self):
         return self.tx_freq
@@ -394,7 +315,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
         with self._lock:
             self.tx_freq = tx_freq
             self._tx_freq_text_box.set_value(self.tx_freq)
-            self.gmsk_radio_0.set_tx_freq(self.tx_freq)
+            self.ofdm_radio_0.set_tx_freq(self.tx_freq)
 
     def get_samp_rate(self):
         return self.samp_rate
@@ -402,8 +323,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
     def set_samp_rate(self, samp_rate):
         with self._lock:
             self.samp_rate = samp_rate
-            self.gmsk_radio_0.set_rate(self.samp_rate)
-            self.wxgui_scopesink2_0_0.set_sample_rate(self.samp_rate)
+            self.ofdm_radio_0.set_rate(self.samp_rate)
 
     def get_rx_freq(self):
         return self.rx_freq
@@ -412,15 +332,7 @@ class broadcastwithFreqandMac(grc_wxgui.top_block_gui):
         with self._lock:
             self.rx_freq = rx_freq
             self._rx_freq_text_box.set_value(self.rx_freq)
-            self.gmsk_radio_0.set_rx_freq(self.rx_freq)
-
-    def get_radio_addr(self):
-        return self.radio_addr
-
-    def set_radio_addr(self, radio_addr):
-        with self._lock:
-            self.radio_addr = radio_addr
-            self._radio_addr_text_box.set_value(self.radio_addr)
+            self.ofdm_radio_0.set_rx_freq(self.rx_freq)
 
 
 def argument_parser():
@@ -482,7 +394,7 @@ def argument_parser():
     return parser
 
 
-def main(top_block_cls=broadcastwithFreqandMac, options=None):
+def main(top_block_cls=OFDMGui, options=None):
     if options is None:
         options, _ = argument_parser().parse_args()
 
