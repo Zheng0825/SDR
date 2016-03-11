@@ -3,6 +3,7 @@
 from socketIO_client import SocketIO, BaseNamespace
 #import json
 import sys
+from time import sleep
 #import os
 
 class Namespace(BaseNamespace):
@@ -32,6 +33,7 @@ def send (lines):
 				data = [mac,freq,time]
 
 	print ("Outputting: " + str(data[1]))
+	sleep(4)
 	socketIO = SocketIO('127.0.0.1', 5000)
 	socketIO.emit('alfred set freq', str(data[1]))
 	socketIO.wait(1)
