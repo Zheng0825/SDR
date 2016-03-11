@@ -1,11 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Batman.aux
-Case mismatch error between cite keys citationneeded and citationNeeded
----line 22 of file Batman.aux
- : \citation{citationneeded
- :                         }
-I'm skipping whatever remains of this command
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -13,7 +8,6 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Batman.bib
-Warning--I didn't find a database entry for "citationNeeded"
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -22,45 +16,45 @@ while executing---line 2419 of file IEEEtran.bst
 Warning--empty year in 0002
 
 Done.
-You've used 15 entries,
+You've used 28 entries,
             4039 wiz_defined-function locations,
-            893 strings with 10916 characters,
-and the built_in function-call counts, 12531 in all, are:
-= -- 837
-> -- 437
+            932 strings with 11781 characters,
+and the built_in function-call counts, 16264 in all, are:
+= -- 1111
+> -- 450
 < -- 71
-+ -- 228
++ -- 241
 - -- 91
-* -- 623
-:= -- 1699
-add.period$ -- 29
-call.type$ -- 15
-change.case$ -- 15
+* -- 727
+:= -- 2349
+add.period$ -- 42
+call.type$ -- 28
+change.case$ -- 28
 chr.to.int$ -- 174
-cite$ -- 16
-duplicate$ -- 914
-empty$ -- 1151
+cite$ -- 29
+duplicate$ -- 1239
+empty$ -- 1567
 format.name$ -- 105
-if$ -- 2957
+if$ -- 3764
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 205
-newline$ -- 70
+int.to.str$ -- 28
+missing$ -- 283
+newline$ -- 135
 num.names$ -- 14
-pop$ -- 569
+pop$ -- 855
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 922
+skip$ -- 1234
 stack$ -- 0
 substring$ -- 419
-swap$ -- 693
+swap$ -- 875
 text.length$ -- 13
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 15
+type$ -- 28
 warning$ -- 1
 while$ -- 53
-width$ -- 17
-write$ -- 155
-(There were 2 error messages)
+width$ -- 30
+write$ -- 272
+(There was 1 error message)
