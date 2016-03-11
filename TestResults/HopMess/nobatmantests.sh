@@ -6,26 +6,30 @@ cd NoBatman
 
 mkdir Standard
 
-echo "No Batman TTL 128 Packet RX/TX 915/928 Gain 47 " > NoBatTTL128Test1000_1.txt && ping -c 1000 -t 128 192.168.200.109 >> NoBatTTL128Test1000_1.txt
+cd Standard
+
+echo "No Batman TTL 128 Packet RX/TX 915/928 Gain 47 " > NoBatTTL128Test1000_1.txt && ping -c 1000 192.168.200.109 >> NoBat1000_1.txt
 
 espeak "First Packet Test Complete"
 
-echo "No Batman TTL 128 Packet RX/TX 915/928 Gain 47 " > NoBatTTL128Test1000_2.txt && ping -c 1000 -t 128 192.168.200.109 >> NoBatTTL128Test1000_2.txt
+echo "No Batman TTL 128 Packet RX/TX 915/928 Gain 47 " > NoBatTTL128Test1000_2.txt && ping -c 1000 192.168.200.109 >> NoBat1000_2.txt
 
 espeak "Second Packet Test Complete"
 
-echo "No Batman TTL 128 Packet RX/TX 915/928 Gain 47 " > NoBatTTL128Test1000_3.txt && ping -c 1000 -t 128 192.168.200.109 >> NoBatTTL128Test1000_3.txt
+echo "No Batman TTL 128 Packet RX/TX 915/928 Gain 47 " > NoBatTTL128Test1000_3.txt && ping -c 1000 192.168.200.109 >> NoBat1000_3.txt
 
 espeak "Third Packet Test Complete"
 espeak "Changing Tests"
 
 
 
-cd Standard
+
 
 cd ..
 
 mkdir TTLChange
+
+cd TTLChange
 
 echo "No Batman TTL 128 Packet RX/TX 915/928 Gain 47 " > NoBatTTL128Test1000.txt && ping -c 1000 -t 128 192.168.200.109 >> NoBatTTL128Test1000.txt
 
@@ -38,7 +42,7 @@ espeak "TTYL 255 Packet Complete"
 espeak "Changing Tests"
 
 
-cd TTLChange
+
 
 cd ..
 
