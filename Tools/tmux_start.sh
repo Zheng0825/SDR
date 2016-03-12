@@ -29,12 +29,12 @@ connect(){
 	tmux send-keys "$ssh" C-m
 	
 	tmux send-keys "cd SDR/SDR/Flowgraphs" C-m
-	tmux send-keys "echo $2 | sudo -S python broadcastwithFreqNoMac.py --tx-gain 70 --rx-gain 70" C-m
+	tmux send-keys "echo $2 | sudo -S python broadcastwithFreqNoMac.py --tx-gain 45 --rx-gain 45" C-m
 
 	tmux select-pane -t 1
 	tmux send-keys "$ssh" C-m
 	tmux send-keys "sleep 10s" C-m
-	tmux send-keys "echo $2 | sudo -S sh ~/SDR/SDR/Flowgraphs/webinterface/static/shell/raiseBatSignal.sh" C-m
+	tmux send-keys "echo $2 | sudo -S sh ~/SDR/SDR/WebInterface/static/shell/raiseBatSignal.sh" C-m
 	tmux send-keys "echo $2 | sudo -S ifconfig bat0 192.168.200.$3" C-m
 
 	tmux send-keys "sleep 10s" C-m
