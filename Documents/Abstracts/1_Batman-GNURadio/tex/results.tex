@@ -2,23 +2,23 @@
 
 \subsection{Network Benchmarks}
 
-\begin{figure*}
+\begin{figure}
 	\centering
-	\includegraphics[scale=0.4]{902sheet}
+	\includegraphics[scale=0.3]{902sheet}
 	\caption{The data received from operating at 902/915 MHz.}
 	\label{fig:902}
-\end{figure*}
-
-\begin{figure*}
-	\centering
-	\includegraphics[scale=0.4]{2400}
-	\caption{The data received from operating at 2.4/2.5 GHz.}
-	\label{fig:2400}
-\end{figure*}
+\end{figure}
 
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.4]{alldata}
+	\includegraphics[scale=0.3]{2400}
+	\caption{The data received from operating at 2.4/2.5 GHz.}
+	\label{fig:2400}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.3]{alldata}
 	\caption{The Averages from all three tests.}
 	\label{fig:alldata}
 \end{figure}
@@ -48,11 +48,5 @@ The route changing feature of Batman-adv worked very well with out test setup. A
 
 Using A.F.R.E.D. for frequency hopping showed mixed results. We were able to get the Nodes to change frequency in unison, but not reliably. A.F.R.E.D. itself is designed for a traditional Wi-Fi environment, and therefore does not have an expectation that the other nodes will become completely unreachable. We were finding that often times the nodes would switch well before A.F.R.E.D. had propagated the datatable to the other nodes. This would leave one node with an out of date table, meaning it would not make the frequency change. In the current iteration of the project, there was no way for these orphaned nodes to find the rest of the network again. Figure \ref{fig:freqshift} shows a situation in which four out of five nodes were able to make the jump, with one node remaining at the original frequency.
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.4]{FrequencyShift922-920}
-	\caption{The result of using ALFRED to shift frequencies. One Node is left behind as the others move to the new channel.}
-	\label{fig:freqshift}
-\end{figure}
 
 

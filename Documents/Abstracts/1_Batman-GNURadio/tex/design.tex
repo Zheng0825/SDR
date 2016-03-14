@@ -5,7 +5,7 @@ The Design of the test bed can be broken down into the following parts:
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.25]{ProtocolStack}
-	\caption{An overview of the components of the system, including the OSI Layers they interact with. \cite{0003} \cite{0008} \cite{0015} \cite{0012} \cite{0011}}
+	\caption{An overview of the components of the system, including the OSI Layers they interact with. \cite{0003} \cite{0007} \cite{0008} \cite{0015} \cite{0012} \cite{0011}}
 	\label{fig:ProtocolStack}
 \end{figure}
 
@@ -22,7 +22,7 @@ This configuration is shown in Figure \ref{fig:ProtocolStack}
 
 \subsection{USRP Software Defined Radio}
 
-For our project, we utilized a combination of Ettus Research USRP B200 and USRP B210 SDRs. These radios are able to communicate from 70 Mhz to 6 Ghz and are well supported in GNU Radio using the open-source USRP Hardware Driver (UHD) provided by Ettus. Their relatively low cost makes them ideal for building out larger testbeds. These serve as the radio transcievers for the current version of our platform. However, thanks to the UHD support in GNU Radio, any other USRP device will be compatible with the rest of the system, with little to no changes made to the development environment. 
+For our project, we utilized a combination of Ettus Research USRP B200 and USRP B210 SDRs. These radios are able to communicate from 70 Mhz to 6 Ghz and are well supported in GNU Radio using the open-source USRP Hardware Driver (UHD) provided by Ettus \cite{0007}. Their relatively low cost makes them ideal for building out larger testbeds. These serve as the radio transcievers for the current version of our platform. However, thanks to the UHD support in GNU Radio, any other USRP device will be compatible with the rest of the system, with little to no changes made to the development environment. 
 
 \subsection{GNU Radio Flowgraph}
 
