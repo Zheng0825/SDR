@@ -163,15 +163,15 @@ P.~Escrich, R.~Baig, E.~Dimogerontakis, E.~Carbo, A.~Neumann, A.~Fonseca,
   [Online]. Available: \url{https://www.open-mesh.org/projects/alfred/wiki}
 \BIBentrySTDinterwordspacing
 
+\bibitem{0012}
+\BIBentryALTinterwordspacing
+(2016) Socket.io. [Online]. Available: \url{http://socket.io/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{0011}
 \BIBentryALTinterwordspacing
 (2016) Flask (a micro framework). [Online]. Available:
   \url{http://flask.pocoo.org/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0012}
-\BIBentryALTinterwordspacing
-(2016) Socket.io. [Online]. Available: \url{http://socket.io/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{0013}
