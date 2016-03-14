@@ -1,12 +1,5 @@
 \section{Test Procedures}
 
-In order to characterize the platform we run three sets of tests presented below. The first test characterizes data hopping from one node to the next. The second test demonstrates batman-adv ability to switch routes based on the quality of each node. The final tests were used to examine A.L.F.R.E.D.'s ability to be used for exchanging frequency information from node to node. 
-
-\subsection{Network Benchmarks}
-
-
-
-For the first test we wanted to investigate the overhead each node adds to to the network. To test this, we arranged the USRPs in a line so that each node only had one route to the following nodes. This setup is shown in Figure \ref{fig:HopMess}. To ensure that nodes could only talk to their immediate neighbors, we staggered the transmit and recieve frequencies in order to force the network into the configure we wanted. We then tested the setup at three different sets of frequenies, all within the ISM Band. We used different sets of ping tests in order to determine the number of dropped packets and the time it took to send the packets. We used a total of 5 nodes. To get a baseline for the test, we setup two usrps and did not configure batman-adv on these nodes. This would help to get a clearer understanding of what the hardware limitations are of the USRPs. 
 
 \begin{figure*}
 	\centering
@@ -21,6 +14,15 @@ For the first test we wanted to investigate the overhead each node adds to to th
 	\caption{The configuration used for the second set of tests.}
 	\label{fig:NodeDrop}
 \end{figure*}
+
+In order to characterize the platform we run three sets of tests presented below. The first test characterizes data hopping from one node to the next. The second test demonstrates batman-adv ability to switch routes based on the quality of each node. The final tests were used to examine A.L.F.R.E.D.'s ability to be used for exchanging frequency information from node to node. 
+
+\subsection{Network Benchmarks}
+
+
+
+For the first test we wanted to investigate the overhead each node adds to to the network. To test this, we arranged the USRPs in a line so that each node only had one route to the following nodes. This setup is shown in Figure \ref{fig:HopMess}. To ensure that nodes could only talk to their immediate neighbors, we staggered the transmit and recieve frequencies in order to force the network into the configure we wanted. We then tested the setup at three different sets of frequenies, all within the ISM Band. We used different sets of ping tests in order to determine the number of dropped packets and the time it took to send the packets. We used a total of 5 nodes. To get a baseline for the test, we setup two usrps and did not configure batman-adv on these nodes. This would help to get a clearer understanding of what the hardware limitations are of the USRPs. 
+
 
 \subsection{Route Changes}
 
