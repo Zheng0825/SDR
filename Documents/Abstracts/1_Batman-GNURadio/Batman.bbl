@@ -50,6 +50,14 @@
   \url{https://www.ettus.com/sdr-software/detail/usrp-hardware-driver}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Akyildiz2009810}
+\BIBentryALTinterwordspacing
+I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
+  hoc networks,'' \emph{Ad Hoc Networks}, vol.~7, no.~5, pp. 810 -- 836, 2009.
+  [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
+\BIBentrySTDinterwordspacing
+
 \bibitem{0008}
 \BIBentryALTinterwordspacing
 (2016) Open-mesh. [Online]. Available:
