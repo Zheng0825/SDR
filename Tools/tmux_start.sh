@@ -61,10 +61,10 @@ pass='vtclab'
 
 IP[0]="100"
 IP[1]="101"
-IP[2]="102"
-IP[3]="106"
-IP[4]="107"
-IP[5]="109"
+IP[2]="103"
+IP[3]="104"
+IP[4]="105"
+IP[5]="106"
 
 # Start Session
 tmux -2 new-session -d -s $SESSION
