@@ -41,11 +41,14 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{palatino} % Use the Palatino font by default
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{{img/}}
 
-\addbibresource{example.bib} % The filename of the bibliography
+%\addbibresource{example.bib} % The filename of the bibliography
 
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+%\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -134,7 +137,7 @@ headsepline, % Uncomment to get a line under the header
 \begin{declaration}
 \addchaptertocentry{\authorshipname}
 
-\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+\noindent I, \authorname, declare that this thesis titled,  ``\ttitle'' and the work presented in it are my own. I confirm that:
 
 \begin{itemize} 
 \item This work was done wholly or mainly while in candidature for a research degree at this University.
@@ -214,9 +217,9 @@ I would like to thank Dr. Ryan Integlia for all of his support throughout this p
 \textbf{WAN} & \textbf{W}ide \textbf{A}rea \textbf{N}etwork \\
 \textbf{LAN} & \textbf{L}ocal \textbf{A}rea \textbf{N}etwork \\
 \textbf{ISP} & \textbf{I}neternet \textbf{S}ervice \textbf{P}rovider \\
-\textbf{FCC}
-\textbf{OSI}
-\textbf{ISM}
+\textbf{FCC} & \textbf{F}ederal \textbf{C}ommunications \textbf{C}ommission \\
+\textbf{OSI} & \textbf{O}pen \textbf{Systems} \textbf{Interconnection} \\
+\textbf{ISM} & \textbf{I}ndustrial \textbf{S}cientific \textbf{M}edical \\
 
 
 \end{abbreviations}
@@ -294,5 +297,7 @@ I would like to thank Dr. Ryan Integlia for all of his support throughout this p
 %\printbibliography[heading=bibintoc]
 
 %----------------------------------------------------------------------------------------
+\bibliographystyle{IEEEtran}
+\bibliography{example}
 
 \end{document}  

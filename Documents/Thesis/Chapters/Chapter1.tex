@@ -39,7 +39,7 @@ As the name suggests, a Software Defined Radio Network (SDRN) is a network made 
 
 Cognitive Radio Networks (CRNs) are systems of SDRs that are capable of utilizing artifical intelligence and machine learning to dynamically alter transmission patterns in real time. These decisions can be made by a central server that oversees all nodes on the network, but modern systems strive to make each node capable of independent decisions. 
 
-Cognitive Radio Adhoc Networks (CRAHNS) combine software defined radios to form mesh networks. Cognitive features of the radios can allow them to change transmission parameters in accordance with link quality to ensure packets are routed properly in the mesh network. The CRs could make small changes, like increasing or decreasing their gains, in order to continue to transmit to moving nodes. They could also make larger changes, like switching entire protocols, to adapt to the needs of the network in near real time. 
+Cognitive Radio Adhoc Networks (CRAHNs) combine software defined radios to form mesh networks. Cognitive features of the radios can allow them to change transmission parameters in accordance with link quality to ensure packets are routed properly in the mesh network. The CRs could make small changes, like increasing or decreasing their gains, in order to continue to transmit to moving nodes. They could also make larger changes, like switching entire protocols, to adapt to the needs of the network in near real time. 
 
 Beyond ensuring good throughput in a network, CRNs also solve a major issue facing the wireless world. Frequency spectrum is a finite resource, and the available bandwidth is being quickly used up. CRNs can utilize frequency hopping to share frequency resources with traditional wireless communication systems. A CRN can begin its operation on a specified band. If a traditional transmitter, usually called the primary user (PU), begins to operate on that frequency then the CRN will ``hop'' by switching to a different frequency and continuing operation. 
 
@@ -47,7 +47,11 @@ Beyond ensuring good throughput in a network, CRNs also solve a major issue faci
 
 \section{ARCAM-Net}
 
-The 
+In order to begin work on SDRNs and CRAHNs, a testbed and research platform needed to be established. This thesis serves to describe the Advanced Radio Communication Ad-hoc Mesh Network, or ARCAM-Net, test bed and platform. The goal of this project is to create a open source, low cost, research platform that can serve as the basis for future work at Florida Polytechnic University. By combining well established open source tools, ARCAM-Net could become a great tool for other research groups to break into SDR and CR and get up and running in minimal time. All software used by ARCAM-Net is freely available. The only costs come from the hardware. 
+
+ARCAM-Net's architecture will be throughly discussed in this document, but the two major components are GNU Radio and Batman-adv. GNU Radio is an open source toolchain for creating digital signal processing tools to be used with SDRs. Batman-adv is a layer 2 mesh networking protocol. Both projects are community driven, but exist as separate entities. I hope that with ARCAM-Net the two projects can begin collaborating to help create next generation wireless network resources. 
+
+ARCAM-Net is designed to be a platform. Therefore all of the code will be released on github. I encourage interested users to fork the repository and begin experimenting on their own. I will also be releasing and documenting code I used to become familar with SDRs on github and in the Appendix of this document.  
 
 %----------------------------------------------------------------------------------------
 

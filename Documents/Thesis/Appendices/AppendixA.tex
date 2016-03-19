@@ -1,7 +1,52 @@
 % Appendix A
 
-\chapter{Appendix Title Here} % Main appendix title
+\chapter{Running ARCAM-Net} % Main appendix title
 
 \label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
-Write your Appendix content here.
+This appendix will serve as a ``How-to'' manual for getting started with ARCAM-Net. 
+
+\section{Configuring the Computer}
+
+First, Ubuntu 14.04 LTS will need to be installed on each node computer. Installing Ubuntu is beyond the scope of this document. However, there are plenty of easy to follow tutorials available online. 
+
+Once installed, the remaining steps can be done manually, or you can use a shell script I created to automate most of the process. This shell script is available \href{https://github.com/jmccormack200/GnuRadio-Vagrant-Script}{on Github}. As the name of the repository suggests, you can also use this to setup and configure a virtual machine to run the SDR software using Vagrant and Virtual Box. If you are unable to install an OS on the computers you are using, this is a good alternative. Please be aware that both options involve a lot of downloading and compiling of software. This process can take up to 8 hours so be sure to have plenty of time to let this run. An internet connection is required. 
+
+\subsection{Installing Natively}
+
+\code{git clone https://github.com/jmccormack200/GnuRadio-Vagrant-Script.git}
+\code{cd GnuRadio-Vagrant-Script}
+\code{sudo sh bootstrap.sh}
+
+
+\subsection{Installing Through Vagrant}
+
+Download and install Vagrant and Virtualbox to your computer. Then run:
+
+\code{vagrant up}
+
+The rest should be configured automatically.
+
+\subsection{Manual Install}
+
+If you prefer to do things yourself just be sure to follow along with the ``bootstrap.sh'' file below:
+
+\lstinputlisting[language=bash,caption={Installer Shell Script}]{bootstrap.sh}
+
+\section{Getting The Flowgraphs}
+
+TODO once the flowgraphs are in their own repo. 
+
+\section{Running The Flowgraphs}
+
+TODO
+
+\subsection{Just the Mesh Network}
+
+\subsection{Raising the Bat Signal}
+
+\subsection{TMux Script}
+
+\subsection{Full Web Server}
+
+

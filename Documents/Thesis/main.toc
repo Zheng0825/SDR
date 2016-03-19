@@ -1,131 +1,86 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\defcounter {refsection}{0}\relax 
 \select@language {english}
 \contentsline {chapter}{Declaration of Authorship}{iii}{section*.1}
 \contentsline {chapter}{Abstract}{v}{section*.2}
 \contentsline {chapter}{Acknowledgements}{vii}{section*.3}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.9}
-\contentsline {section}{\numberline {1.1}Mesh Networks}{1}{section.10}
-\contentsline {section}{\numberline {1.2}Software Defined Radio Networks}{1}{section.11}
-\contentsline {section}{\numberline {1.3}Trends Towards Cognitive Radio Environments}{2}{section.12}
-\contentsline {section}{\numberline {1.4}ARCAM-Net}{2}{section.13}
-\contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.14}
-\contentsline {section}{\numberline {2.1}SDR Fundamentals}{4}{section.15}
-\contentsline {section}{\numberline {2.2}GNU Radio and MATLAB}{4}{section.16}
-\contentsline {subsection}{\numberline {2.2.1}GNU Radio}{4}{subsection.17}
-\contentsline {subsection}{\numberline {2.2.2}MATLAB}{4}{subsection.18}
-\contentsline {subsection}{\numberline {2.2.3}Hardware in the Loop Simulation}{4}{subsection.19}
-\contentsline {subsection}{\numberline {2.2.4}RFNoc}{4}{subsection.20}
-\contentsline {section}{\numberline {2.3}SDN Fundamentals}{4}{section.21}
-\contentsline {section}{\numberline {2.4}Network Concepts}{4}{section.22}
-\contentsline {subsection}{\numberline {2.4.1}What is a Networ}{4}{subsection.23}
-\contentsline {subsection}{\numberline {2.4.2}Mesh Network}{4}{subsection.24}
-\contentsline {subsection}{\numberline {2.4.3}WSNs}{4}{subsection.25}
-\contentsline {subsubsection}{Origin in Dust Networks}{4}{section*.26}
-\contentsline {subsubsection}{Fog Computing}{4}{section*.27}
-\contentsline {subsection}{\numberline {2.4.4}Mesh Extension into SDR}{4}{subsection.28}
-\contentsline {subsection}{\numberline {2.4.5}SDR Mesh Extension into AR/HMI}{4}{subsection.29}
-\contentsline {subsection}{\numberline {2.4.6}What is a network protocol}{4}{subsection.30}
-\contentsline {subsubsection}{OSI Model}{4}{section*.31}
-\contentsline {subsubsection}{Common Protocols}{4}{section*.32}
-\contentsline {subsubsection}{Batman}{4}{section*.33}
-\contentsline {subsubsection}{OLSRD}{4}{section*.34}
-\contentsline {section}{\numberline {2.5}Gaming Development Engines}{4}{section.35}
-\contentsline {subsection}{\numberline {2.5.1}Unity 3D}{4}{subsection.36}
-\contentsline {subsection}{\numberline {2.5.2}Unreal}{4}{subsection.37}
-\contentsline {subsection}{\numberline {2.5.3}Open Source Alternatives}{4}{subsection.38}
-\contentsline {section}{\numberline {2.6}Gamification and Serious Games}{4}{section.39}
-\contentsline {section}{\numberline {2.7}SDR and Cognitive Radios}{4}{section.40}
-\contentsline {section}{\numberline {2.8}SDN and Cognitive Networks}{4}{section.41}
-\contentsline {section}{\numberline {2.9}Human Machine Interfaces and Haptic-Feedback in AR}{4}{section.42}
-\contentsline {section}{\numberline {2.10}Augmented Reality}{4}{section.43}
-\contentsline {section}{\numberline {2.11}Application: Security}{4}{section.44}
-\contentsline {section}{\numberline {2.12}Application: Gaming}{4}{section.45}
-\contentsline {section}{\numberline {2.13}State of the Practice}{4}{section.46}
-\contentsline {section}{\numberline {2.14}State of the Art}{4}{section.47}
-\contentsline {chapter}{\numberline {3}Methodology}{5}{chapter.48}
-\contentsline {section}{\numberline {3.1}Design}{6}{section.49}
-\contentsline {subsection}{\numberline {3.1.1}SDR}{6}{subsection.50}
-\contentsline {subsection}{\numberline {3.1.2}SDR Network/SDN}{6}{subsection.51}
-\contentsline {subsection}{\numberline {3.1.3}Intelligence and Automatic Decision Making Components}{6}{subsection.52}
-\contentsline {subsubsection}{Sensors}{6}{section*.53}
-\contentsline {subsubsection}{HMI}{6}{section*.54}
-\contentsline {subsubsection}{Network}{6}{section*.55}
-\contentsline {subsubsection}{Application: Security}{6}{section*.56}
-\contentsline {subsection}{\numberline {3.1.4}Sensor Integration}{6}{subsection.57}
-\contentsline {subsubsection}{Groups of Sensors}{6}{section*.58}
-\contentsline {subsubsection}{Imagers}{6}{section*.59}
-\contentsline {subsubsection}{Audio}{6}{section*.60}
-\contentsline {subsubsection}{LIDAR}{6}{section*.61}
-\contentsline {subsection}{\numberline {3.1.5}Human Machine Interfaces}{6}{subsection.62}
-\contentsline {subsubsection}{User Data}{6}{section*.63}
-\contentsline {subsection}{\numberline {3.1.6}Augmented Reality}{6}{subsection.64}
-\contentsline {section}{\numberline {3.2}Fabrication and Build Process}{6}{section.65}
-\contentsline {subsection}{\numberline {3.2.1}SDR}{6}{subsection.66}
-\contentsline {subsection}{\numberline {3.2.2}SDR Networks and SDN}{6}{subsection.67}
-\contentsline {subsection}{\numberline {3.2.3}Intelligence}{6}{subsection.68}
-\contentsline {subsubsection}{Sensors}{6}{section*.69}
-\contentsline {subsubsection}{HMI}{6}{section*.70}
-\contentsline {subsubsection}{Network}{6}{section*.71}
-\contentsline {subsubsection}{Application:Security}{6}{section*.72}
-\contentsline {subsection}{\numberline {3.2.4}Sensor Integration}{6}{subsection.73}
-\contentsline {subsubsection}{Groups of Sensors}{6}{section*.74}
-\contentsline {subsubsection}{Imagers}{6}{section*.75}
-\contentsline {subsubsection}{Audio}{6}{section*.76}
-\contentsline {subsubsection}{LIDAR}{6}{section*.77}
-\contentsline {subsection}{\numberline {3.2.5}HMI}{6}{subsection.78}
-\contentsline {subsection}{\numberline {3.2.6}AR}{6}{subsection.79}
-\contentsline {section}{\numberline {3.3}Test - SDR (Environment/Setup)}{6}{section.80}
-\contentsline {subsection}{\numberline {3.3.1}Signal Strength}{6}{subsection.81}
-\contentsline {subsection}{\numberline {3.3.2}Range}{6}{subsection.82}
-\contentsline {subsection}{\numberline {3.3.3}Noise}{6}{subsection.83}
-\contentsline {subsection}{\numberline {3.3.4}Loss}{6}{subsection.84}
-\contentsline {subsection}{\numberline {3.3.5}Error (inaccuracy)}{6}{subsection.85}
-\contentsline {subsection}{\numberline {3.3.6}Energy Use}{6}{subsection.86}
-\contentsline {subsection}{\numberline {3.3.7}Spectrum}{6}{subsection.87}
-\contentsline {subsection}{\numberline {3.3.8}Protocol}{6}{subsection.88}
-\contentsline {section}{\numberline {3.4}Test - Network}{6}{section.89}
-\contentsline {subsection}{\numberline {3.4.1}Signal Strength}{6}{subsection.90}
-\contentsline {subsection}{\numberline {3.4.2}Range}{6}{subsection.91}
-\contentsline {subsection}{\numberline {3.4.3}Noise}{6}{subsection.92}
-\contentsline {subsection}{\numberline {3.4.4}Loss}{6}{subsection.93}
-\contentsline {subsection}{\numberline {3.4.5}Error}{6}{subsection.94}
-\contentsline {subsection}{\numberline {3.4.6}Energy Efficiency}{6}{subsection.95}
-\contentsline {subsection}{\numberline {3.4.7}Latency}{6}{subsection.96}
-\contentsline {subsection}{\numberline {3.4.8}Throughput}{6}{subsection.97}
-\contentsline {subsection}{\numberline {3.4.9}Topology Effects}{6}{subsection.98}
-\contentsline {subsection}{\numberline {3.4.10}Protocol}{6}{subsection.99}
-\contentsline {subsection}{\numberline {3.4.11}Interference}{6}{subsection.100}
-\contentsline {subsection}{\numberline {3.4.12}Crowding}{6}{subsection.101}
-\contentsline {subsection}{\numberline {3.4.13}Crosstalk}{6}{subsection.102}
-\contentsline {section}{\numberline {3.5}Test - AR}{6}{section.103}
-\contentsline {subsection}{\numberline {3.5.1}Signal Strength}{6}{subsection.104}
-\contentsline {subsection}{\numberline {3.5.2}Noise}{6}{subsection.105}
-\contentsline {subsection}{\numberline {3.5.3}Loss}{6}{subsection.106}
-\contentsline {subsection}{\numberline {3.5.4}Error}{6}{subsection.107}
-\contentsline {subsection}{\numberline {3.5.5}Topology Effects}{6}{subsection.108}
-\contentsline {subsection}{\numberline {3.5.6}Life Cycle}{6}{subsection.109}
-\contentsline {chapter}{\numberline {4}Findings}{7}{chapter.110}
-\contentsline {section}{\numberline {4.1}Results}{7}{section.111}
-\contentsline {section}{\numberline {4.2}Data Analysis}{7}{section.112}
-\contentsline {section}{\numberline {4.3}Hardware in the Loop Simulation}{7}{section.113}
-\contentsline {section}{\numberline {4.4}Assumptions}{7}{section.114}
-\contentsline {section}{\numberline {4.5}Discussion of Error}{7}{section.115}
-\contentsline {chapter}{\numberline {5}Discussion}{9}{chapter.116}
-\contentsline {section}{\numberline {5.1}Constraints and Limitations}{9}{section.117}
-\contentsline {section}{\numberline {5.2}SDR/SDN In Unity}{9}{section.118}
-\contentsline {section}{\numberline {5.3}SDR/SDN Controllability and Feedback}{9}{section.119}
-\contentsline {section}{\numberline {5.4}SDR Network}{9}{section.120}
-\contentsline {section}{\numberline {5.5}Cognitive Networks}{9}{section.121}
-\contentsline {section}{\numberline {5.6}Software Defined Environment}{9}{section.122}
-\contentsline {section}{\numberline {5.7}Human Machine Interaction}{9}{section.123}
-\contentsline {section}{\numberline {5.8}Applications}{9}{section.124}
-\contentsline {subsection}{\numberline {5.8.1}SDR Network AR}{9}{subsection.125}
-\contentsline {subsection}{\numberline {5.8.2}Security}{9}{subsection.126}
-\contentsline {subsection}{\numberline {5.8.3}Gaming and Crowdsourcing}{9}{subsection.127}
-\contentsline {chapter}{\numberline {6}Conclusion}{11}{chapter.128}
-\contentsline {section}{\numberline {6.1}Summary}{11}{section.129}
-\contentsline {section}{\numberline {6.2}Conclusion}{11}{section.130}
-\contentsline {section}{\numberline {6.3}Recommendation}{11}{section.131}
-\contentsline {section}{\numberline {6.4}Future Work}{11}{section.132}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{13}{appendix.133}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Mesh Networks}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Software Defined Radio Networks}{1}{section.1.2}
+\contentsline {section}{\numberline {1.3}Trends Towards Cognitive Radio Environments}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}ARCAM-Net}{2}{section.1.4}
+\contentsline {chapter}{\numberline {2}Literature Review}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}SDR Fundamentals}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}GNU Radio and MATLAB}{5}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}GNU Radio}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}MATLAB}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}RFNoc}{5}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Network Concepts}{5}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}What is a Network}{5}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Mesh Network}{5}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}GNU Radio Mesh Networks}{5}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Mesh Extension into SDR}{5}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}What is a network protocol}{5}{subsection.2.3.5}
+\contentsline {subsubsection}{OSI Model}{5}{section*.8}
+\contentsline {subsubsection}{Common Protocols}{5}{section*.9}
+\contentsline {subsubsection}{Batman}{5}{section*.10}
+\contentsline {subsubsection}{OLSRD}{5}{section*.11}
+\contentsline {section}{\numberline {2.4}SDR and Cognitive Radios}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}State of the Practice}{5}{section.2.5}
+\contentsline {section}{\numberline {2.6}State of the Art}{5}{section.2.6}
+\contentsline {chapter}{\numberline {3}Methodology}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Design}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}SDR}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}GNU Radio Flowgraph}{7}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Batman-adv}{9}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Flask Web Server and Socket.IO}{9}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}A.L.F.R.E.D.}{10}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Fabrication and Build Process}{11}{section.3.2}
+\contentsline {section}{\numberline {3.3}Test - SDR (Environment/Setup)}{11}{section.3.3}
+\contentsline {section}{\numberline {3.4}Test Procedures}{11}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Network Benchmarks}{12}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Route Changes}{12}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Frequency Distribution}{12}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}Error (inaccuracy)}{13}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}Energy Use}{13}{subsection.3.4.5}
+\contentsline {section}{\numberline {3.5}Test - Network}{13}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Signal Strength}{13}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Range}{13}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Noise}{13}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Loss}{13}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Error}{13}{subsection.3.5.5}
+\contentsline {subsection}{\numberline {3.5.6}Energy Efficiency}{13}{subsection.3.5.6}
+\contentsline {subsection}{\numberline {3.5.7}Latency}{13}{subsection.3.5.7}
+\contentsline {subsection}{\numberline {3.5.8}Throughput}{13}{subsection.3.5.8}
+\contentsline {subsection}{\numberline {3.5.9}Topology Effects}{13}{subsection.3.5.9}
+\contentsline {subsection}{\numberline {3.5.10}Protocol}{13}{subsection.3.5.10}
+\contentsline {subsection}{\numberline {3.5.11}Interference}{13}{subsection.3.5.11}
+\contentsline {subsection}{\numberline {3.5.12}Crowding}{13}{subsection.3.5.12}
+\contentsline {subsection}{\numberline {3.5.13}Crosstalk}{13}{subsection.3.5.13}
+\contentsline {chapter}{\numberline {4}Findings}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}Results}{15}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Network Benchmarks}{15}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Route Changes}{15}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Frequency Changes}{15}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Data Analysis}{18}{section.4.2}
+\contentsline {section}{\numberline {4.3}Assumptions}{18}{section.4.3}
+\contentsline {section}{\numberline {4.4}Discussion of Error}{18}{section.4.4}
+\contentsline {section}{\numberline {4.5}Error Bars}{18}{section.4.5}
+\contentsline {chapter}{\numberline {5}Discussion}{19}{chapter.5}
+\contentsline {section}{\numberline {5.1}Constraints and Limitations}{19}{section.5.1}
+\contentsline {section}{\numberline {5.2}SDR Network}{19}{section.5.2}
+\contentsline {section}{\numberline {5.3}Cognitive Networks}{19}{section.5.3}
+\contentsline {chapter}{\numberline {6}Conclusion}{21}{chapter.6}
+\contentsline {section}{\numberline {6.1}Summary}{21}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conclusion}{21}{section.6.2}
+\contentsline {section}{\numberline {6.3}Recommendation}{21}{section.6.3}
+\contentsline {section}{\numberline {6.4}Future Work}{21}{section.6.4}
+\contentsline {chapter}{\numberline {A}Running ARCAM-Net}{23}{appendix.A}
+\contentsline {section}{\numberline {A.1}Configuring the Computer}{23}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Installing Natively}{23}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Installing Through Vagrant}{23}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Manual Install}{23}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}Getting The Flowgraphs}{26}{section.A.2}
+\contentsline {section}{\numberline {A.3}Running The Flowgraphs}{27}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Just the Mesh Network}{27}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Raising the Bat Signal}{27}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}TMux Script}{27}{subsection.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}Full Web Server}{27}{subsection.A.3.4}
