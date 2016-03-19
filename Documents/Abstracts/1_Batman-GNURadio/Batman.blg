@@ -16,45 +16,45 @@ while executing---line 2419 of file IEEEtran.bst
 Warning--empty year in 0002
 
 Done.
-You've used 29 entries,
+You've used 31 entries,
             4039 wiz_defined-function locations,
-            939 strings with 11997 characters,
-and the built_in function-call counts, 17291 in all, are:
-= -- 1202
-> -- 472
-< -- 83
-+ -- 253
-- -- 94
-* -- 781
-:= -- 2506
-add.period$ -- 44
-call.type$ -- 29
-change.case$ -- 29
-chr.to.int$ -- 201
-cite$ -- 30
-duplicate$ -- 1306
-empty$ -- 1635
-format.name$ -- 109
-if$ -- 4002
+            950 strings with 12357 characters,
+and the built_in function-call counts, 18605 in all, are:
+= -- 1314
+> -- 495
+< -- 95
++ -- 266
+- -- 97
+* -- 843
+:= -- 2713
+add.period$ -- 47
+call.type$ -- 31
+change.case$ -- 31
+chr.to.int$ -- 228
+cite$ -- 32
+duplicate$ -- 1398
+empty$ -- 1735
+format.name$ -- 113
+if$ -- 4302
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 293
-newline$ -- 140
-num.names$ -- 15
-pop$ -- 872
+int.to.str$ -- 31
+missing$ -- 309
+newline$ -- 150
+num.names$ -- 16
+pop$ -- 911
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1315
+skip$ -- 1420
 stack$ -- 0
-substring$ -- 483
-swap$ -- 940
-text.length$ -- 16
+substring$ -- 547
+swap$ -- 1019
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 29
+type$ -- 31
 warning$ -- 1
-while$ -- 57
-width$ -- 31
-write$ -- 286
+while$ -- 61
+width$ -- 33
+write$ -- 309
 (There was 1 error message)

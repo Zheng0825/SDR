@@ -8,11 +8,11 @@ Another platform is the Hydra platform developed at UT Austin. This platform use
 
 The ADROIT project was another platform developed in conjunction with DARPA. This project relied heavily on Click and GNU Radio for much of its functionality. \cite{4286321}  Similarly, the University of California, Irvine and Boeing Corporation developed a testbed based on USRP Radios and GNU Radio, but they implement custom MAC layers \cite{4753441}. 
 
-A platform similar to ARCAM-Net is presented in \cite{0002}. However, this platform uses the Optimized Link State Routing Protocol (OLSR) which has been shown to perform poorly when compared to Batman-adv. OLSR is also not truly decentralized as only certain nodes relay network information \cite{5375690}. 
+A platform similar to ARCAM-Net is presented in \cite{0002}. However, this platform uses the Optimized Link State Routing Protocol (OLSR) which has been shown to perform poorly when compared to batman-adv. OLSR is also not truly decentralized as only certain nodes relay network information \cite{5375690}. 
 
 \subsection{GNU Radio and Mesh Networks}
 
-There has been work done in the past on establishing Mesh Networks using GNU Radio, however most of the research has had a different focus than ours. In \cite{4509617} and \cite{5062250} the authors use GNU Radio as a way to verify the successful use of algorithms for mesh networking. However, they do not use SDRs, instead choosing to use GNU Radio for simulation. 
+There has been work done in the past on establishing mesh networks using GNU Radio, however most of the research has had a different focus than ours. In \cite{4509617} and \cite{5062250} the authors use GNU Radio as a way to verify the successful use of algorithms for mesh networking. However, they do not use SDRs, instead choosing to use GNU Radio for simulation. 
 
 The researchers in \cite{7141228} created a simple multihop test bed using three USRP radios to relay data from one computer to another. A fourth USRP acts as a primary user and attempts to block the signal. However, their work focuses on using reinforcement learning to allow for frequency hopping instead of focusing on a mesh routing protocol that would be able to scale to more radios. 
 
@@ -20,4 +20,4 @@ Much of the existing work done using USRPs and GNU Radio for SDR Mesh Networks r
 
 \subsection{Mesh Network Testbeds}
 
-The CONFINE platform uses Batman-adv as the routing protocol for their mesh network testbed. However, their testbed does not utilize GNU Radio or SDRs. \cite{0001} Batman-adv was also a key component of WiBed, a project to create a Commercial off-the-shelf (COTS) mesh test bed using low cost wireless routers \cite{6686492} \cite{6962154}. Though they are not specific to SDR platforms, these still show the usefulness of Batman-adv as a component of a testbed. 
+The CONFINE platform uses batman-adv as the routing protocol for their mesh network testbed. However, their testbed does not utilize GNU Radio or SDRs. \cite{0001} batman-adv was also a key component of WiBed, a project to create a Commercial off-the-shelf (COTS) mesh test bed using low cost wireless routers \cite{6686492} \cite{6962154}. Though they are not specific to SDR platforms, these still show the usefulness of batman-adv as a component of a testbed. 
