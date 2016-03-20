@@ -70,10 +70,23 @@ Using A.L.F.R.E.D. to distribute frequency hopping showed mixed results. Using t
 
 \section{Data Analysis}
 
+In an ideal situation, we would see minimal packet loss despite introducing batman-adv and multihopping into the network. Additional tests will need to be run to discover what causes the 1 hop with batman-adv to drop many more packets than 1 hop without batman-adv. It is possible the packets are dropped as routing table information is shared, but this has not been confirmed yet. 
+
+It is important to notice that packet loss and round trip time of packets increases lineraly with each hop. This is good, as it means each hop adds a finite amount of delay and packet loss. It would be unlikely that the delay would be constant when adding more hops, so a linear time increase is good. 
+
+Another interesting issue with this test was that we had to stagger the operating frequencies to force the straight line topology we were looking for. Batman-adv worked very well at finding alternative paths to each node in the network. However, if the tests were left running for long periods of time it was possible the network would have been able to reconfigure into a topology other than a straight line chain. Therefore, it was necessary to manually ensure that the network would stay in the desired configuration in order to maintain a valid test. 
+
+The route changing feature of batman-adv worked fine with the SDR hardware. Initially, there was uncertantity if batman-adv would be able to compute a proper metric for the link quality of each node. This link quality metric is what batman-adv uses to determine the best ``next hop'' to reach a different node. However, our tests showed the routing table could be properly built and updated as link quality decreased.
+
+Our tests on A.L.F.R.E.D. showed that even though it was possible to exchange frequency information using A.L.F.R.E.D., it was not an ideal system. There was no way to ensure A.L.F.R.E.D. would pass the data to every node in the network. Therefore, the only possible way to improve upon this system would be to wait longer periods of time before shifting frequencies. If this was being used to avoid a primary user, a long delay would not be acceptable as it would interfere with the PU's use of the spectrum. Therefore, a new implementation of this feature will need to be produced. 
+
+
+
 %----------------------------------------------------------------------------------------
 
 \section{Assumptions}
 
+One assumption is that the straight line configuration shown in Figure \ref{fig:Hopmess}
 %----------------------------------------------------------------------------------------
 
 \section{Discussion of Error}

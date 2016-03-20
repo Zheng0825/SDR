@@ -17,18 +17,30 @@
 
 \section{Summary}
 
+ARCAM-Net allows for researchers to create a fully functioning SDRN in a short period of time. In it's current form, ARCAM-Net's auotmated processes could scale to up to 255 simultaneous nodes. More nodes could be added with only a few changes to the start scripts. ARCAM-Net is designed to bridge the Open-Mesh and GNU Radio projects while providing researchers with the tools they need to design, experiment, and test. 
+
 %----------------------------------------------------------------------------------------
 
 \section{Conclusion}
 
-This work represents a first step in a longer term project to create a fully functioning SDRN. The work demonstrates the potential for using GNU Radio in conjunction with batman-adv and other Open-Mesh solutions. As the work continues forward, we hope the testbed can serve as a collaboration point between GNU Radio and Open-Mesh. Both represent next generation, open source, wireless solutions and could likely benefit from collaboration between the two projects. Our work can be used as an excellent starting point for anyone looking to get an SDRN up and running quickly to begin prototyping other sections of the tool chain. We plan on releasing the code as well as a handful of tools to help other researchers get started. We hope that this will serve as the first step in creating an equivalent Cognitive Radio Network platform and testbed. 
+This work represents a first step in a longer term project to create a fully functioning SDRN. The work demonstrates the potential for using GNU Radio in conjunction with batman-adv and other Open-Mesh solutions. As the work continues forward, we hope the testbed can serve as a collaboration point between GNU Radio and Open-Mesh.
+
+Both represent next generation, open source, wireless solutions and could likely benefit from collaboration between the two projects. Our work can be used as an excellent starting point for anyone looking to get an SDRN up and running quickly to begin prototyping other sections of the tool chain. We plan on releasing the code as well as a handful of tools to help other researchers get started. We hope that this will serve as the first step in creating an equivalent Cognitive Radio Network platform and testbed. 
 
 %----------------------------------------------------------------------------------------
 
 \section{Recommendation}
 
+The focus of this document is on ensuring that the platform is well described. ARCAM-Net should be built upon, not rebuilt again and again. The main chapters serve as a description of the project while the appendecies can be treated as a manual of operation. It is important to continue to document and project and ensure easy access to the documentation to outside parties. As with any platform, the value is in numerous groups working together on a standard set of tools. If the documentation lags behind the project, then it becomes too difficult for new users to join. 
+
 %----------------------------------------------------------------------------------------
 
 \section{Future Work}
+
+There are many areas of this project that can serve as starting points for new projects. First, A.L.F.R.E.D. needs to be replaced by something more robust. A.L.F.R.E.D. could continue to be used to store distributed data that will not change often, but should not be used to store frequency data. Instead, a new tool will need to be create that can safely propagate data to other nodes, and wait for an acknolwedgement of the received information. This tool will be useful in creating the next major revision to ARCAM-Net. 
+
+As stated previously, ARCAM-Net is a SDRN, not a CRN or CRAHN. In order to move from an SDRN to a cognitive radio environment, it will be necessary to begin to implement artifical intelligence and decision making in some form. The decision making could be split Layer 1 and Layer 3 decision making. On Layer 1, DSP would be employed to look for PU's, noise and distortion on incoming packets, overcrowded networks, and other issues. Once these problems are deteced the system will then switch to a new frequency. On Layer 3 the nodes will look for excessive dropped packets, poor batman-adv link quality, orphaned nodes, and other factors. The system will then adjust gains and frequencies until this layer has been optimized. 
+
+While running experiments, batctl was used to monitor the quality of each node. Though batctl works fine for a few nodes, as the network scales it would make finding issues and bottle necks more difficult. Another great way to improve upon the current project would be to implement a more interactive environment for monitoring the network. A central ``control'' server could be created to monitor all of the nodes on the network and display information in a 2D or 3D environment. This would be much easier to use than batctl, as batctl produces different data on each node and therefore must be monitored on many computers simultaneously. 
 
 %----------------------------------------------------------------------------------------

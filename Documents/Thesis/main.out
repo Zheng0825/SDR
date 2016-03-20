@@ -33,53 +33,36 @@
 \BOOKMARK [2][-]{subsection.3.1.4}{Flask Web Server and Socket.IO}{section.3.1}% 33
 \BOOKMARK [2][-]{subsection.3.1.5}{A.L.F.R.E.D.}{section.3.1}% 34
 \BOOKMARK [1][-]{section.3.2}{Fabrication and Build Process}{chapter.3}% 35
-\BOOKMARK [1][-]{section.3.3}{Test - SDR \(Environment/Setup\)}{chapter.3}% 36
-\BOOKMARK [1][-]{section.3.4}{Test Procedures}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.4.1}{Network Benchmarks}{section.3.4}% 38
-\BOOKMARK [2][-]{subsection.3.4.2}{Route Changes}{section.3.4}% 39
-\BOOKMARK [2][-]{subsection.3.4.3}{Frequency Distribution}{section.3.4}% 40
-\BOOKMARK [2][-]{subsection.3.4.4}{Error \(inaccuracy\)}{section.3.4}% 41
-\BOOKMARK [2][-]{subsection.3.4.5}{Energy Use}{section.3.4}% 42
-\BOOKMARK [1][-]{section.3.5}{Test - Network}{chapter.3}% 43
-\BOOKMARK [2][-]{subsection.3.5.1}{Signal Strength}{section.3.5}% 44
-\BOOKMARK [2][-]{subsection.3.5.2}{Range}{section.3.5}% 45
-\BOOKMARK [2][-]{subsection.3.5.3}{Noise}{section.3.5}% 46
-\BOOKMARK [2][-]{subsection.3.5.4}{Loss}{section.3.5}% 47
-\BOOKMARK [2][-]{subsection.3.5.5}{Error}{section.3.5}% 48
-\BOOKMARK [2][-]{subsection.3.5.6}{Energy Efficiency}{section.3.5}% 49
-\BOOKMARK [2][-]{subsection.3.5.7}{Latency}{section.3.5}% 50
-\BOOKMARK [2][-]{subsection.3.5.8}{Throughput}{section.3.5}% 51
-\BOOKMARK [2][-]{subsection.3.5.9}{Topology Effects}{section.3.5}% 52
-\BOOKMARK [2][-]{subsection.3.5.10}{Protocol}{section.3.5}% 53
-\BOOKMARK [2][-]{subsection.3.5.11}{Interference}{section.3.5}% 54
-\BOOKMARK [2][-]{subsection.3.5.12}{Crowding}{section.3.5}% 55
-\BOOKMARK [2][-]{subsection.3.5.13}{Crosstalk}{section.3.5}% 56
-\BOOKMARK [0][-]{chapter.4}{Findings}{}% 57
-\BOOKMARK [1][-]{section.4.1}{Results}{chapter.4}% 58
-\BOOKMARK [2][-]{subsection.4.1.1}{Network Benchmarks}{section.4.1}% 59
-\BOOKMARK [2][-]{subsection.4.1.2}{Route Changes}{section.4.1}% 60
-\BOOKMARK [2][-]{subsection.4.1.3}{Frequency Changes}{section.4.1}% 61
-\BOOKMARK [1][-]{section.4.2}{Data Analysis}{chapter.4}% 62
-\BOOKMARK [1][-]{section.4.3}{Assumptions}{chapter.4}% 63
-\BOOKMARK [1][-]{section.4.4}{Discussion of Error}{chapter.4}% 64
-\BOOKMARK [1][-]{section.4.5}{Error Bars}{chapter.4}% 65
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 66
-\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 67
-\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 68
-\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 69
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 70
-\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 71
-\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 72
-\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 73
-\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 74
-\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 75
-\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 76
-\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 77
-\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 78
-\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 79
-\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 80
-\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 81
-\BOOKMARK [2][-]{subsection.A.3.1}{Just the Mesh Network}{section.A.3}% 82
-\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 83
-\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 84
-\BOOKMARK [2][-]{subsection.A.3.4}{Full Web Server}{section.A.3}% 85
+\BOOKMARK [1][-]{section.3.3}{Test Procedures}{chapter.3}% 36
+\BOOKMARK [2][-]{subsection.3.3.1}{Network Benchmarks}{section.3.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.2}{Route Changes}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.3}{Frequency Distribution}{section.3.3}% 39
+\BOOKMARK [0][-]{chapter.4}{Findings}{}% 40
+\BOOKMARK [1][-]{section.4.1}{Results}{chapter.4}% 41
+\BOOKMARK [2][-]{subsection.4.1.1}{Network Benchmarks}{section.4.1}% 42
+\BOOKMARK [2][-]{subsection.4.1.2}{Route Changes}{section.4.1}% 43
+\BOOKMARK [2][-]{subsection.4.1.3}{Frequency Changes}{section.4.1}% 44
+\BOOKMARK [1][-]{section.4.2}{Data Analysis}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.3}{Assumptions}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.4}{Discussion of Error}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.5}{Error Bars}{chapter.4}% 48
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 49
+\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 52
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 53
+\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 55
+\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 57
+\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 58
+\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 59
+\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 60
+\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 61
+\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 62
+\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 63
+\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 64
+\BOOKMARK [2][-]{subsection.A.3.1}{Just the Mesh Network}{section.A.3}% 65
+\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 66
+\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 67
+\BOOKMARK [2][-]{subsection.A.3.4}{Full Web Server}{section.A.3}% 68
