@@ -43,26 +43,25 @@
 \BOOKMARK [2][-]{subsection.4.1.2}{Route Changes}{section.4.1}% 43
 \BOOKMARK [2][-]{subsection.4.1.3}{Frequency Changes}{section.4.1}% 44
 \BOOKMARK [1][-]{section.4.2}{Data Analysis}{chapter.4}% 45
-\BOOKMARK [1][-]{section.4.3}{Assumptions}{chapter.4}% 46
-\BOOKMARK [1][-]{section.4.4}{Discussion of Error}{chapter.4}% 47
-\BOOKMARK [1][-]{section.4.5}{Error Bars}{chapter.4}% 48
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 49
-\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 50
-\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 51
-\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 52
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 53
-\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 54
-\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 55
-\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 57
-\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 58
-\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 59
-\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 60
-\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 61
-\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 62
-\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 63
-\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 64
-\BOOKMARK [2][-]{subsection.A.3.1}{Just the Mesh Network}{section.A.3}% 65
-\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 66
-\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 67
-\BOOKMARK [2][-]{subsection.A.3.4}{Full Web Server}{section.A.3}% 68
+\BOOKMARK [1][-]{section.4.3}{Assumptions and Discussion of Error}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.4}{Error Bars}{chapter.4}% 47
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 48
+\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 49
+\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 50
+\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 51
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 52
+\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 55
+\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 56
+\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 57
+\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 58
+\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 59
+\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 60
+\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 61
+\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 62
+\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 63
+\BOOKMARK [2][-]{subsection.A.3.1}{Flow Graph to Mesh Network}{section.A.3}% 64
+\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 65
+\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 66
+\BOOKMARK [1][-]{section.A.4}{Full Web Server}{appendix.A}% 67

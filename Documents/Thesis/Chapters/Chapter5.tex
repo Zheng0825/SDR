@@ -17,12 +17,6 @@
 
 \section{Constraints and Limitations}
 
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.4]{FrequencyShift922-920}
-	\caption{The result of using ALFRED to shift frequencies. One node is left behind as the others move to the new channel. Image collected using the Tektronix RSA306 Spectrum Analyzer}
-	\label{fig:freqshift}
-\end{figure}
 
 
 The results from our experiments show that the network is functioning as a multi hop SDRN. In addition to the experiments performed, we were also able to use Secure Shell (SSH) and Secure Copy (SCP) over multiple hops of the SDRN. However, it is clear that more work needs to be done. In a deployed network, packet loss as high as is seen in this network is not optimal. Therefore, it is important to examine ways to mitigate packet loss and increase throughput. 
@@ -38,8 +32,13 @@ Batctl is able to report the immediate next hop neighbors, so the program could 
 
 \section{SDR Network}
 
+Our tests show that ARCAM-Net is a fully functioning SDR Network. We have succesfully rung ping tests, sent UDP packets, used SSH, used SCP, and even ran distributed Erlang programs over the SDRN. Thanks to the way the OSI model abstracts each layer, all programs that are designed to operate on Layer 3 or higher should see ARCAM-Net as a normal network. Though in its current state it is slower than a traditional WiFi network, there is nothing preventing any normal program from using the SDRN in the way it would use a Wi-Fi or LAN. 
+
 %----------------------------------------------------------------------------------------
 
 \section{Cognitive Networks}
 
+ARCAM-Net is not a cognitive network. However, it is certainly adaptable to be used for cognitive network testing. The web interface is meant to be used as a tool for simulating cognitive events. When the user clicks a button to increase or decrease the frequency of operation, this is akin to a decision that the node itself can later make. Using SocketIO, the node can make a decision to change frequency and then send the new frequency to the Flask server. The Flask server will then update GNU Radio with the new frequency. This way, the logical decision making can be abstracted from the standard operation of the SDR. 
+
+In our testing we determined A.L.F.R.E.D. is not a good fit for transmitting frequency data. But we can use whatever system eventually replaces A.L.F.R.E.D. as part of the cognitive network toolchain. When a node makes a decision that it wishes to change frequency, it can use this tool to distribute the information to the rest of the network. 
 
