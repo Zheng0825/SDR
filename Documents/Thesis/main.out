@@ -54,3 +54,14 @@
 \BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 54
 \BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 55
 \BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 56
+\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 57
+\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 58
+\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 59
+\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 60
+\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 61
+\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 62
+\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 63
+\BOOKMARK [2][-]{subsection.A.3.1}{Flow Graph to Mesh Network}{section.A.3}% 64
+\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 65
+\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 66
+\BOOKMARK [1][-]{section.A.4}{Full Web Server}{appendix.A}% 67
