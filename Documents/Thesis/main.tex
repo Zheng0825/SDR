@@ -41,11 +41,14 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage{palatino} % Use the Palatino font by default
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % User the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{{img/}}
 
-\addbibresource{example.bib} % The filename of the bibliography
+%\addbibresource{example.bib} % The filename of the bibliography
 
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+%\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -65,7 +68,7 @@ headsepline, % Uncomment to get a line under the header
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Security, Control, and Visualization of a Cognitive Radio Mesh Network} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\thesistitle{ARCAM-NET: A Software Defined Radio Network Testbed} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
 \supervisor{Dr. Ryan \textsc{Integlia}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
 \examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
 \degree{Masters of Engineering} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
@@ -111,7 +114,7 @@ headsepline, % Uncomment to get a line under the header
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
 \begin{flushright} \large
-\emph{Supervisor:} \\
+\emph{Committee Chair:} \\
 \href{https://floridapolytechnic.org/staff/integlia/}{\supname} % Supervisor name - remove the \href bracket to remove the link  
 \end{flushright}
 \end{minipage}\\[3cm]
@@ -134,7 +137,7 @@ headsepline, % Uncomment to get a line under the header
 \begin{declaration}
 \addchaptertocentry{\authorshipname}
 
-\noindent I, \authorname, declare that this thesis titled, \enquote{\ttitle} and the work presented in it are my own. I confirm that:
+\noindent I, \authorname, declare that this thesis titled,  ``\ttitle'' and the work presented in it are my own. I confirm that:
 
 \begin{itemize} 
 \item This work was done wholly or mainly while in candidature for a research degree at this University.
@@ -158,11 +161,11 @@ headsepline, % Uncomment to get a line under the header
 %	QUOTATION PAGE
 %----------------------------------------------------------------------------------------
 
-\vspace*{0.2\textheight}
+%\vspace*{0.2\textheight}
 
-\noindent\enquote{\itshape Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism.}\bigbreak
+%\noindent\enquote{\itshape Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism.}\bigbreak
 
-\hfill Dave Barry
+%\hfill Dave Barry
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE
@@ -171,10 +174,7 @@ headsepline, % Uncomment to get a line under the header
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 
-The system presented is that of a cognitive radio mesh network testbed. The testbed is made up of Ettus Research USRP Software Defined Radios. The mesh network is created using the
-batman-adv mesh network protocol. The system is capable of running tests on various cognitive radio functions including frequency hoping. Also presented is a visualization and control
-system implemented in Unity3D. This tool allows for unique visualization of the network in addition to providing means for human in the loop cyber physical systems. Finally, a novel security scheme
-is presented that serves as a first step towards cryptographic wireless transmission protocols over the cognitive radio mesh network.
+ARCAM-Net is a Software Defined Radio Network (SDRN) testbed and platform. Nearly every component of ARCAM-Net, except the Software Defined Radios (SDRs) themselves, is released using an open source license. The goal of ARCAM-Net is to establish a low cost platform that can be quickly implemented by anyone interested in experimenting with SDRNs. This document presents the network itself and also acts as a manual for working with ARCAM's first implementation. 
 
 \end{abstract}
 
@@ -205,8 +205,22 @@ I would like to thank Dr. Ryan Integlia for all of his support throughout this p
 
 \begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
 
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere\\
-\textbf{WSF} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or\\
+\textbf{SDR} & \textbf{S}oftware \textbf{D}efined \textbf{R}adio\\
+\textbf{SDRN} & \textbf{S}oftware \textbf{D}efined \textbf{R}adio \textbf{N}etwork\\
+\textbf{CR} & \textbf{C}ognitive \textbf{R}adio\\
+\textbf{CRN} & \textbf{C}ognitive \textbf{R}adio \textbf{N}etwork\\ 
+\textbf{CRAHN} & \textbf{C}ognitive \textbf{R}adio \textbf{A}d-\textbf{H}oc \textbf{N}etwork\\
+\textbf{BATMAN} & \textbf{B}etter \textbf{A}pproach \textbf{T}o \textbf{Mobile} \textbf{A}d-hoc \textbf{N}etworking\\
+\textbf{ALFRED} & \textbf{A}lmighty \textbf{L}ightweight \textbf{F}act \textbf{R}emote \textbf{E}xchange \textbf{D}aemon\\
+\textbf{GMSK} & \textbf{G}aussian \textbf{M}inimum-\textbf{Shift} \textbf{K}eying \\
+\textbf{OFDM} & \textbf{O}rthoganal \textbf{F}requency \textbf{D}ivision \textbf{M}ultiplexing \\
+\textbf{WAN} & \textbf{W}ide \textbf{A}rea \textbf{N}etwork \\
+\textbf{LAN} & \textbf{L}ocal \textbf{A}rea \textbf{N}etwork \\
+\textbf{ISP} & \textbf{I}neternet \textbf{S}ervice \textbf{P}rovider \\
+\textbf{FCC} & \textbf{F}ederal \textbf{C}ommunications \textbf{C}ommission \\
+\textbf{OSI} & \textbf{O}pen \textbf{S}ystems \textbf{I}nterconnection \\
+\textbf{ISM} & \textbf{I}ndustrial \textbf{S}cientific \textbf{M}edical \\
+
 
 \end{abbreviations}
 
@@ -214,30 +228,30 @@ I would like to thank Dr. Ryan Integlia for all of his support throughout this p
 %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
 %----------------------------------------------------------------------------------------
 
-\begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
+%\begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
 
 % The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
 
-	Speed of Light & $c_{0}$ & \SI{2.99792458e8}{\meter\per\second} (exact)\\
+%	Speed of Light & $c_{0}$ & \SI{2.99792458e8}{\meter\per\second} (exact)\\
 %Constant Name & $Symbol$ & $Constant Value$ with units\\
 
-\end{constants}
+%\end{constants}
 
 %----------------------------------------------------------------------------------------
 %	SYMBOLS
 %----------------------------------------------------------------------------------------
 
-\begin{symbols}{lll} % Include a list of Symbols (a three column table)
+%\begin{symbols}{lll} % Include a list of Symbols (a three column table)
 
-$a$ & distance & \si{\meter} \\
-$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
+%$a$ & distance & \si{\meter} \\
+%$P$ & power & \si{\watt} (\si{\joule\per\second}) \\
 %Symbol & Name & Unit \\
 
-\addlinespace % Gap to separate the Roman symbols from the Greek
+%\addlinespace % Gap to separate the Roman symbols from the Greek
 
-$\omega$ & angular frequency & \si{\radian} \\
+%$\omega$ & angular frequency & \si{\radian} \\
 
-\end{symbols}
+%\end{symbols}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION
@@ -280,8 +294,10 @@ $\omega$ & angular frequency & \si{\radian} \\
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\printbibliography[heading=bibintoc]
+%\printbibliography[heading=bibintoc]
 
 %----------------------------------------------------------------------------------------
+\bibliographystyle{IEEEtran}
+\bibliography{example}
 
 \end{document}  

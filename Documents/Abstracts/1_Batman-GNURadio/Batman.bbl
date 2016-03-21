@@ -50,6 +50,14 @@
   \url{https://www.ettus.com/sdr-software/detail/usrp-hardware-driver}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Akyildiz2007921}
+\BIBentryALTinterwordspacing
+I.~F. Akyildiz, T.~Melodia, and K.~R. Chowdhury, ``A survey on wireless
+  multimedia sensor networks,'' \emph{Computer Networks}, vol.~51, no.~4, pp.
+  921 -- 960, 2007. [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S1389128606002751}
+\BIBentrySTDinterwordspacing
+
 \bibitem{Akyildiz2009810}
 \BIBentryALTinterwordspacing
 I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
@@ -180,6 +188,13 @@ P.~Escrich, R.~Baig, E.~Dimogerontakis, E.~Carbo, A.~Neumann, A.~Fonseca,
 \BIBentryALTinterwordspacing
 (2016) Flask (a micro framework). [Online]. Available:
   \url{http://flask.pocoo.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0017}
+\BIBentryALTinterwordspacing
+(2015) Using openwrt as an openvpn server with a tap device (with bridging).
+  [Online]. Available:
+  \url{https://wiki.openwrt.org/doc/howto/vpn.server.openvpn.tap}
 \BIBentrySTDinterwordspacing
 
 \bibitem{0013}

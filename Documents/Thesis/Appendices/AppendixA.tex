@@ -1,7 +1,101 @@
 % Appendix A
 
-\chapter{Appendix Title Here} % Main appendix title
+\chapter{Running ARCAM-Net} % Main appendix title
 
 \label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
-Write your Appendix content here.
+This appendix will serve as a ``How-to'' manual for getting started with ARCAM-Net. 
+
+\section{Configuring the Computer}
+
+First, Ubuntu 14.04 LTS will need to be installed on each node computer. Installing Ubuntu is beyond the scope of this document. However, there are plenty of easy to follow tutorials available online. 
+
+Once installed, the remaining steps can be done manually, or you can use a shell script I created to automate most of the process. This shell script is available \href{https://github.com/jmccormack200/GnuRadio-Vagrant-Script}{on Github}. As the name of the repository suggests, you can also use this to setup and configure a virtual machine to run the SDR software using Vagrant and Virtual Box. If you are unable to install an OS on the computers you are using, this is a good alternative. Please be aware that both options involve a lot of downloading and compiling of software. This process can take up to 8 hours so be sure to have plenty of time to let this run. An internet connection is required. 
+
+\subsection{Installing Natively}
+
+\code{git clone https://github.com/jmccormack200/GnuRadio-Vagrant-Script.git}
+\code{cd GnuRadio-Vagrant-Script}
+\code{sudo sh bootstrap.sh}
+
+
+\subsection{Installing Through Vagrant}
+
+Download and install Vagrant and Virtualbox to your computer. Then run:
+
+\code{vagrant up}
+
+The rest should be configured automatically.
+
+\subsection{Manual Install}
+
+If you prefer to do things yourself just be sure to follow along with the ``bootstrap.sh'' file below:
+
+\lstinputlisting[language=bash, breaklines=true, caption={Installer Shell Script}]{bootstrap.sh}
+
+\section{Getting The Flowgraphs}
+
+The plubic version of ARCAM-Net can be found \href{https://github.com/jmccormack200/ARCAM-Net-Public.git}{on Github}. The public version will be the most stable release of the network, and will be updated each time the private repository is used to publish a new paper. To get the flowgraphs use: \\
+
+\code{git clone https://github.com/jmccormack200/ARCAM-Net-Public.git}
+\code{cd ARCAM-Net-Public}
+\code{cd Flowgraphs}
+
+\section{Running The Flowgraphs}
+
+At the time of this writing, there are four files in the Flowgraph folder of the repository. The four files are actually two sets of files. The files ending in ``.grc'' are the GNU Radio Companion implementations and the files ending in ``.py'' are the same files but written in python. The Python files are automatically generated from the GRC blocks. The files ``batNoGui.grc'' and ``batmanNoGui.py'' represent the files used by ARCAM-Net which do not contain a GUI. This is needed to run the flowgraph in a background thread while using the Flask web server. If you just plan on running the flowgraphs I recommend using ``broadcastwithFreqNoMac.grc'' or ``broadcastwithFreqNoMac.py'' as this will also include a helpful GUI for interacting with the flowgraph.
+
+These flowgraphs are used by ARCAM-Net but are not the entire network. They are just the scripts used to control the SDR. 
+
+To run a GNU Radio script open it using: \\
+
+\code{sudo gnuradio-companion Name\_of\_Script} \\
+
+Then at the top of the flowgraph click ``build'' and then ``Run''. Alternatively, they can be run straight from the command line using: \\
+
+\code{sudo python Name\_of\_Script} \\
+
+Please note that admin privileges are needed in order to create the TUN/TAP device. If running the python file from the command line, it is possible to use command line arguments to adjust certain parameters prior to running. We found this to be useful as we could start the network a specific gain instead of having to go through and manually change the gains at each node. 
+
+\subsection{Flow Graph to Mesh Network}
+
+Running just the flowgraph will not start the system with batman-adv running. The user must manually assign an IP address to the TUN/TAP by running: \\
+
+\code{sudo ifconfig tun0 192.168.200.XXX} \\
+
+Where the X's can be replaced with an IP Address of your choice. Make sure to keep the IP's unique on each node. Then, batman-adv must be started on each node. To do this, a helpful script called ``raiseBatSignal.sh'' can be run to automatically configure batman-adv. This is described below. 
+
+\subsection{Raising the Bat Signal}
+
+``raiseBatSignal.sh'' can be found in: \\ 
+
+\code{ARCAM-Net-Public/WebInterface/static/shell/} \\
+
+It can be run by typing: \\
+
+\code{sudo sh raiseBatSignal.sh} \\
+
+Alternatively, you can run the commands individually from the command line. This shell script ensures the batman-adv module is loaded into the kernel then configures tun0 to be the interface used by batman. If this does not match your setup, adjust tun0 to be whatever interface the SDR is named. The contents of the shell script are below:
+
+\lstinputlisting[language=bash, breaklines=true, caption={Shell Script to Start Batman-adv}]{/home/john/ARCAM/WebInterface/static/shell/raiseBatSignal.sh}
+
+\subsection{TMux Script}
+
+TMux is a terminal multiplexer that makes it easy to work with numerous ssh instances across multiple machines. A script is provided that sets up the entire network by running just a single command. TMux needs a bit of adjustment to work with different setups. Luckily, the only changes that need to be made are to open the file and edit the IP addresses, usernames, and passwords of the systems you want to control. This script assumes each node will have the same username and password. If network policies restrict you from doing this, then the script will need heavier modification. This script cant be found in: \\
+
+\code{ARCAM\-Net\-Public/Tools/tmux\_start.sh} \\
+
+The contents of the file are shown below. To run the command use: \\
+
+\code{sudo bash tmux\_start.sh} \\
+
+Please note that this script must be run with bash in order to work. 
+
+\lstinputlisting[language=bash,breaklines=true,caption={Bash Script to start the entire network}]{/home/john/ARCAM/Tools/tmux_start.sh}
+
+
+
+
+\section{Full Web Server}
+
+

@@ -1,5 +1,7 @@
 # Software Defined Radio Projects
 
+This work serves as the early forms of ARCAM-Net. It also contains the documents used to work on my thesis as well as some really early flowgraphs I used to learn GNU Radio. I have finally made this public so that other students at Florida Polytechnic can learn from my work. If you are looking to get started with ARCAM-Net, please see the ARCAM-Net-Public repository. 
+
 The root folder has 4 subfolders for different aspects of the project.
 If you are just trying to get going with the mesh, you probably want to be in the 
 SDR Folder. 
