@@ -6,15 +6,37 @@ import argparse
 import os
 from threading import Thread
 
-from netifaces import interfaces, ifaddresses, AF_INET # dependency, not in stdlib
+from netifaces import interfaces, ifaddresses, AF_INET, AF_LINK # dependency, not in stdlib
 
 import zmq
 
-class Node:
-    def __init__(IP,tun0,bat0):
+class Node():
+    def __init__(self,IP,tun0,bat0):
         self.IP = IP
         self.tun0 = tun0
         self.bat0 = bat0
+        self.name = str(self.IP) + "/" + str(self.tun0) + "/" + str(self.bat0) 
+
+class LocalNode(Node):
+
+    def __init__(self):
+        self.parseIP()
+        self.parseTun0()
+        self.parseBat0()
+        self.name = str(self.IP) + "/" + str(self.tun0) + "/" + str(self.bat0) 
+
+    def parseIP(self):
+        addr = ifaddresses('bat0')
+        self.IP = addr[AF_INET][0]['addr']
+
+    def parseTun0(self):
+        addr = ifaddresses('tun0')
+        self.tun0 = addr[AF_LINK][0]['addr']
+
+    def parseBat0(self):
+        addr = ifaddresses('bat0')
+        self.bat0 = addr[AF_LINK][0]['addr']
+
 
 def listen(masked):
     """listen for messages
@@ -28,7 +50,7 @@ def listen(masked):
     ctx = zmq.Context.instance()
     listener = ctx.socket(zmq.SUB)
     for last in range(99, 110):
-        listener.connect("tcp://{0}.{1}:9001".format(masked, last))
+        listener.connect("tcp://{0}.{1}:9004".format(masked, last))
     
     listener.setsockopt(zmq.SUBSCRIBE, b'')
     while True:
@@ -77,9 +99,6 @@ def UpdateNodes(IP,tun0,bat0):
     pass
 
 
-
-
-
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("interface", type=str, help="the network interface",
@@ -100,19 +119,21 @@ def main():
     listen_thread.start()
     
     bcast = ctx.socket(zmq.PUB)
-    bcast.bind("tcp://%s:9001" % args.interface)
-    print("starting chat on %s:9001 (%s.*)" % (args.interface, masked))
+    bcast.bind("tcp://%s:9004" % args.interface)
+    print("starting chat on %s:9004 (%s.*)" % (args.interface, masked))
+    localnode = LocalNode()
     while True:
         try:
             msg = raw_input()
             #IP/tun0/bat0: freqChange rx/tx
-            message = "192.168.200.104/FF:FF:FF:FF:FF:FF/00:00:00:00:00:00 freqChange 915000"
+            message = localnode.name + " freqChange 915000"
             bcast.send_string(message)
             #bcast.send_string("%s: %s" % (args.user, msg))
         except KeyboardInterrupt:
             break
     bcast.close(linger=0)
     ctx.term()
+    listen_thread.stop()
 
 if __name__ == '__main__':
     main()
