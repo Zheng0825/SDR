@@ -1,21 +1,8 @@
-\documentclass{article}
+\chapter{Notes}
 
 \newcommand{\shellcmd}[1]{\\\indent\indent\texttt{\footnotesize\# #1}\\}
-\usepackage{hyperref}
-\usepackage{listings}
-\usepackage[margin=0.5in]{geometry}
 
-\title{Notes on SDR}
-\date{2015-07-01}
-\author{J.D. McCormack}
-
-\begin{document}
-	\pagenumbering{gobble}
-	\maketitle
-	\newpage
-	\pagenumbering{arabic}
-	
-	\section{Introduction}
+\section{Introduction}
 
 	The following document will contain information related to my efforts in software defined radio.
 	From time to time, the document may include information on other topics as well. It will initially
@@ -47,7 +34,7 @@
 	sensor network at some point. We could still use it to relay information
 	over a large distance. 
 
-	There are "Cubelites" being sent out that are basically funcube dongle
+	There are ``ubelite'' being sent out that are basically funcube dongle
 	based satellites. These sound pretty cool. 
 
 	I want to start taking notes in Latex so they will be more readable than
@@ -100,7 +87,7 @@
 
 	I will be following the tutorial found \href{http://gnuradio.org/redmine/projects/gnuradio/wiki/TutorialsWritePythonApplications}{here}. I will begin with the dial tone generator.
 	\lstset{tabsize=2, caption=dial\_tone.py,}
-	\lstinputlisting[language=Python]{../RTL-SDR/dial_tone.py}
+	%%%%%\lstinputlisting[language=Python]{../RTL-SDR/dial_tone.py}
 
 	\paragraph{Static}
 	I'm still only getting static when I run the RTL-SDR. I was able to use the GNURadio toolchain from just python
@@ -138,7 +125,7 @@
 	packages. The command for that is: \shellcmd{sudo aptitude install <packagename>}
 	Still trying to get everything installed and working. The repository made GNURadio work again, but I lost the Osmocom
 	packages. Still trying. I have been following the instructions direct from osmocom but I'm getting errors related to
-	"Gruel" when I try to use cmake. 
+	``Gruel'' when I try to use cmake. 
 	\paragraph{Success}
 	Finally remembered that the instructables I was using previously had the commands listed (although for arch). The three
 	necessary components can be installed by using:\shellcmd{sudo apt-get install gnuradio}\shellcmd{sudo apt-get install rtl-sdr}\shellcmd{sudo apt-get install gr-osmosdr}
@@ -188,7 +175,7 @@
 	\shellcmd{sudo apt-get update}
 	\shellcmd{sudo apt-get install bladerf}
 
-	Of course I immediately get an error saying "you have held broken packages." I should probably do more research into how
+	Of course I immediately get an error saying ``you have held broken packages.'' I should probably do more research into how
 	to avoid this scenario, as it seems to come up quite a lot in working with GNURadio. This could be related to using the
 	other PPA from before. I'm going to try to use aptitude to install this and see if that helps. Aptitude seems to be able
 	to solve the problem, however it will be removing:
@@ -395,13 +382,13 @@
 	\subsection{09-14-15}
 	Finally back at it. Today I will be focusing on the Ettus Research USRP B200 board. I'm going to try to follow
 	the tutorial found at \href{http://www.ettus.com/kb/detail/software-defined-radio-usrp-and-gnu-radio-tutorial-set}{Ettus Research}.
-	I was able to use pybombs to install the first set of software. This was simply called "UHD" under the hardware tag in pybombs. 
-	As last time, make sure you start pybombs with sudo. There was another set of drivers called "Ettus" that would not install. 
+	I was able to use pybombs to install the first set of software. This was simply called ``UHD'' under the hardware tag in pybombs. 
+	As last time, make sure you start pybombs with sudo. There was another set of drivers called ``Ettus'' that would not install. 
 	I later saw this comand \shellcmd{sudo apt-get install libuhd-dev libuhd003 uhd-host}
 	It said the last two were already installed, but then installed libuhd-dev. I'm still getting errors that the device is not
-	found in GNURadio. Typing in "lsusb" shows that Linux doesnt seem to recognize the device. I'm going to reboot and see if that helps. 		
+	found in GNURadio. Typing in ``lsusb'' shows that Linux doesnt seem to recognize the device. I'm going to reboot and see if that helps. 		
 
-	That did not fix the issue. Next, I double checked that "apt-get" covered everything. As some part of the install may be from pybombs,
+	That did not fix the issue. Next, I double checked that ``apt-get'' covered everything. As some part of the install may be from pybombs,
 	which creates a virtual environment, I'm hoping that this does not cause a mismatch. Ok, so that had no effect. I'm going to google
 	a bit more and see if I can figure out what I'm missing. \shellcmd{uhd\_find\_devices} Can be used to locate the device. Originally, it was 
 	throwing an error message. Similar to the below: 
@@ -411,7 +398,7 @@
 	Which brought me \href{http://lists.ettus.com/pipermail/usrp-users\_lists.ettus.com/2014-November/011546.html}{here}. Eventually,
 	I discovered that the main issue was I had used the repositores to download the 3 files shown above (libuhd-dev, libuhd003, uhd-host) and then
 	also done the commands shown below:
-	\shellcmd{sudo bash -c 'echo "deb http://files.ettus.com/binaries/uhd/repo/uhd/ubuntu/`lsb\_release -cs` `lsb\_release -cs` main" > /etc/apt/sources.list.d/ettus.list'}
+	\shellcmd{sudo bash -c `echo ``deb http://files.ettus.com/binaries/uhd/repo/uhd/ubuntu/`lsb\_release -cs` `lsb\_release -cs` main'' > /etc/apt/sources.list.d/ettus.list'}
 	\shellcmd{sudo apt-get update}
 	\shellcmd{sudo apt-get install -t `lsb\_release -cs` uhd}
 	When I went back and used \shellcmd{sudo apt-get remove libuhd-dev libuhd003 uhd-host} and then ran \shellcmd{sudo uhd\_find\_devices} I got the below message
@@ -427,7 +414,7 @@
 	    serial: 3087692
 	    product: B200
 		
-	However I'm still getting an "Empty device address" error in GNURadio. I did recently read that with out using USB 3.0 (my computer only has 2.0) It may
+	However I'm still getting an ``Empty device address'' error in GNURadio. I did recently read that with out using USB 3.0 (my computer only has 2.0) It may
 	be necessary to use either an external power adapter rated at 6 V, 3A or to use one of the 2 A to 1 B type connectors. I saw a brief document
 	saying it may be an issue with not having root access, but running in a shell with root access via \shellcmd{sudo -i} did not change anything. 
 
@@ -452,7 +439,7 @@
 	\shellcmd{sudo cp uhd-usrp.rules /etc/udev/rules.d/}
 	\shellcmd{sudo udevadm control --reload-rules}
 	\shellcmd{sudo udevadm trigger}
-	For my case, <install-path> was simply "usr". 
+	For my case, <install-path> was simply ``usr''. 
 
 	I was hoping to just use apt-get to install gnuradio but that installs otherfiles not compatible with the UHD drivers installed earlier. 
 	Using the same remove command we used the last time we got the error message worked (apt-get remove gnuradio was all that was really needed though). 
@@ -466,7 +453,7 @@ After it ran I was still having issues. I tried re-running it to just install
 	When I got in today I ran \shellcmd{sudo apt-get remove gnuradio} again to see if that would remove the build script install. It clearly stated it was removing
 	something, but when I got back to the terminal and ran the USRP Probe command and then gnuradio suddenly everything was working. I'm assuming the one from
 	sources never uninstalled and was actually the one that ended up running. Its likely I forgot to uninstall the one from the repositories and that that was
-	the one that was causing issues. Either way, there is now "appropriate sounding static" on the audio from the FM block. I'll have to run further testing
+	the one that was causing issues. Either way, there is now ``appropriate sounding static'' on the audio from the FM block. I'll have to run further testing
 	once I finish with TA stuff for the day to make sure its working. I should be able to broadcast FM and pick it up on the spectrum analyzers. I assume
 	I will be unable to get FM in the VTC due to the nature of the building. I could always bring it outside to test though. 
 
@@ -489,10 +476,10 @@ After it ran I was still having issues. I tried re-running it to just install
 	I have success creating a python program that slowly ramps up the frequency it is outputting. Using my trusty Tivoli Audio PAL radio I was able to keep
 	turning the dial to keep the signal in tune. The key was to put a separate thread to handle this task. I realized this when I saw that the gui function
 	used a callback. This prevents the function that changes the frequency from blocking the flow of data through the other filter blocks. 
-	This file is saved as FMThread.py and will be shown below. 
+	This file is saved as FMThread.py.
 	
-	\lstset{tabsize=2, caption=dial\_tone.py,}
-        \lstinputlisting[language=Python]{../USRP_B200/FMThread.py}
+	%\lstset{tabsize=2, caption=dial\_tone.py,}
+    %    \lstinputlisting[language=Python]{../USRP_B200/FMThread.py}
 
 	I also found this helpful website \href{http://www.cgran.org/index.html}{HERE} which organizes many of the various out-of-tree modules for GNU Radio.
 	
@@ -505,7 +492,7 @@ After it ran I was still having issues. I tried re-running it to just install
 	
 	I'm going to try to take a deeper dive into some literature today, and hopefully identify some conferences/publications in the process. 
 	
-	first search term used is "mesh network gnu-radio", it returned 1 result
+	first search term used is ``mesh network gnu-radio'', it returned 1 result
 
 	Next I searched for examples of Batman-adv with GNUradio, but recieved no results over the course of several command variants.
 	
@@ -524,7 +511,7 @@ After it ran I was still having issues. I tried re-running it to just install
 		\section{10-23-2015}
 		Today I started playing around with the Ettus Research E310. Im so excited to get to work with this
 		piece of cutting edge technology. I was able to start by connecting to the device over 
-		UART with the USB connector plugged into the "console" port. For Linux, this would probably work
+		UART with the USB connector plugged into the ``console'' port. For Linux, this would probably work
 		out of the box. For windows you'll need \href{www.ftdichip.com/Products/ICs/FT230X.html}{The FT230X driver from FTDI}
 		We'll be using our noble terminal emulator Putty to help too. We need to get an x-server setup
 		on our computer so that we can view the GNU Radio GUI. To do that we'll use XMING. This can be
@@ -604,17 +591,17 @@ After it ran I was still having issues. I tried re-running it to just install
 
 	\section{11-20-15}
 	Found a link to a washington state course. It has details about several lab exercises done out in both
-	matlab and gnuradio \href{http://courses.washington.edu/ee420/assignments.html}{http://courses.washington.edu/ee420/assignments.html}
+	matlab and gnuradio \href{http://courses.washington.edu/ee420/assignments.html}{HERE}
 
 	\section{11-22-15}
 	Almost forgot to save this webtie:
-	\href{http://aaronscher.com/GNU_Radio_Companion_Collection/Packet_encode_decode.html}{http://aaronscher.com/GNU_Radio_Companion_Collection/Packet_encode_decode.html}
+	\href{http://aaronscher.com/GNU\_Radio\_Companion\_Collection/Packet\_encode\_decode.html}{Here}
 	It has a lot of useful information. I was able to use it to transmit an image through a flow graph, but so far I have been unabe
 	to transmit over the air. 
 
 	Some more useful links are below:
-	\href{http://www.trondeau.com/grcon15-presentations/}{http://www.trondeau.com/grcon15-presentations/}
-	\href{http://static1.1.sqspcdn.com/static/f/679473/23657925/1381271009800/grcon13_malsbury_phy_mac_primer.pdf?token=lfzQT7OcTknN%2F6iH3YbnHjePsug%3D}{http://static1.1.sqspcdn.com/static/f/679473/23657925/1381271009800/grcon13_malsbury_phy_mac_primer.pdf?token=lfzQT7OcTknN%2F6iH3YbnHjePsug%3D}
+	\href{http://www.trondeau.com/grcon15-presentations/}{Here}
+	\href{http://static1.1.sqspcdn.com/static/f/679473/23657925/1381271009800/grcon13\_malsbury\_phy\_mac\_primer.pdf?token=lfzQT7OcTknN\%2F6iH3YbnHjePsug\%3D}{Here}
 
 
 	\section{12-22-15}
@@ -625,7 +612,7 @@ After it ran I was still having issues. I tried re-running it to just install
 
 	\section{12-23-15}
 
-	Ran some more tests today. I was unable to get batman-adv working over zigbee following "the easy way" I had initially hoped. However, there are a LOT of variables and different settings that I have to confirm are all in sync before continuing on. I also am working off of just the TX/RX antennas and I am unsure if they automatically function in full duplex mode or if that needs to be managed. I ordered two additional antennas on amazon so that I can use separate TX and RX channels instead of one single channel for each. 
+	Ran some more tests today. I was unable to get batman-adv working over zigbee following ``the easy way'' I had initially hoped. However, there are a LOT of variables and different settings that I have to confirm are all in sync before continuing on. I also am working off of just the TX/RX antennas and I am unsure if they automatically function in full duplex mode or if that needs to be managed. I ordered two additional antennas on amazon so that I can use separate TX and RX channels instead of one single channel for each. 
 
 	\section{12-29-15}
 	Met with Mathworks yesterday to discuss options from available for working with SDR. I'm excited to begin working with Houman and the rest of the team on this part of the project. Hopefully things will go smoother using a full featured piece of software versus the open source software we have been using. I would like to continue working with GNURadio while I still have a chance however as I believe some things, such as interfacing into Unity, will be significantly easier being able to use python than having to use MATLAB. 
@@ -672,10 +659,9 @@ After it ran I was still having issues. I tried re-running it to just install
 	\subsection{SUCCESS}
 
 	Batman-adv was attached to two USRPs running on separate computers utilizing the gr-mac library fork made by Baliant Seeber. The fork can be found below:
-	\href{Link to Github Repo}{https://github.com/balint256/gr-mac.git}
+	\href{https://github.com/balint256/gr-mac.git}{Link to Github Repo}
 
 	This will need to be setup on two different computers using the following process:
-
 	\shellcmd{git clone htt[s://github.com/balin256/gr-mac.git}
 	\shellcmd{cd gr-mac}
 	\shellcmd{mkdir build}
@@ -686,8 +672,7 @@ After it ran I was still having issues. I tried re-running it to just install
 	\shellcmd{sudo ldconfig}
 
 	Balint's fork doesn't have a very good readme as of the time of this writing, but following the original jmalsbury repo the next steps are below. His fork can be found
-	\href{here}{https://github.com/jmalsbury/gr-mac}
-
+	\href{https://github.com/jmalsbury/gr-mac}{here}
 	\shellcmd{cd ..}
 	\shellcmd{cd example} 
 	\shellcmd{sudo gnuradio-companion gmsk\_radio.grc}
@@ -745,7 +730,7 @@ After it ran I was still having issues. I tried re-running it to just install
 
 	\section{01-23-16}
 
-	Ok so here is the state of affairs. We have successfully send batman-adv packets over SDR, as was noted before. However, after changing things to be "broadcast" under dest-addr in the virtual 
+	Ok so here is the state of affairs. We have successfully send batman-adv packets over SDR, as was noted before. However, after changing things to be ``broadcast'' under dest-addr in the virtual 
 	encoder and virtual decoder I was able to successfully ping bidirectionally through 3 devices with no problems whatsoever. We are currently seeing extreme range limiting issues for some reasons
 	that are currently unclear to me. I tried adjusting the frequencies through the init part of the automatically generated python scripts but that does not seem to be working. I'm not 100%
 	sure why but would guess it has something to do with the fact that these files are automatically generated and are not created by a true programmer. I also think this may be the reason why
@@ -758,17 +743,17 @@ After it ran I was still having issues. I tried re-running it to just install
 
 	1. The board I thought was broken was just an error, I was using a USB 2.0 cable not a 3.0 cable which meant it couldn't get enough board power to broadcast, but could get enough to turn on which explains the weird error. 
 	2. So far it appears the 3 computers weren't working because the boards were too far apart from one another. I realized in the original setup they were under 1 ft from one another. This is probably an issue with transmit frequency as it was operating at 980 MHz and the antennas are rated for 2.5 GHz. I will run some more tests throughout the day to confirm.
-	3. I was able to successfully send packets between 3 radios today. I made three changes and now will figure out which of the changes mattered. The first change was that I noticed you could replace "dest-addr" (Destination address) with broadcast in the gnuradio blocks in question (virtual-channel-encoder/decoder). I also noticed that in the "Channel Multiplexer" it is possible to increase the "Channel count" number higher and it will allow for more outputs. I snaked these outputs to the same locations as the originals and this allowed for the transmission. Finally, I ensured all the boards were within a few inches of one another. I realized in the original setup we were seeing the middle board able to talk to the 2 edge boards, so wasn't sure if it was a proximity problem. Regardless, one of these should allow up to continue forward.
+	3. I was able to successfully send packets between 3 radios today. I made three changes and now will figure out which of the changes mattered. The first change was that I noticed you could replace ``dest-addr'' (Destination address) with broadcast in the gnuradio blocks in question (virtual-channel-encoder/decoder). I also noticed that in the ``Channel Multiplexer'' it is possible to increase the ``Channel count'' number higher and it will allow for more outputs. I snaked these outputs to the same locations as the originals and this allowed for the transmission. Finally, I ensured all the boards were within a few inches of one another. I realized in the original setup we were seeing the middle board able to talk to the 2 edge boards, so wasn't sure if it was a proximity problem. Regardless, one of these should allow up to continue forward.
 
 	If I can't get the 3 new computers working by around 4-5 today, I will work with Pat/Cody tonight to image them off of the first computer. 
 
 	\section{01-26-16}
 
 	Successfully switched frequencies around and managed to continue transmitting packets. I have generated two new radio flow graphs that may eventually get merged into one. The first is called:
-"BroadcastMAC.grc". This allows for the changing of TX/RX freq and gain. This also has the virtual 
+``BroadcastMAC.grc''. This allows for the changing of TX/RX freq and gain. This also has the virtual 
 channel encoder/decoder set to broadcast. I believe this needs to be running on at least one of the
 radios in the mesh to work. The second block has a much larger name unfortunately and is called:
-"nonbroadcastwithGreqAndMac.grc". The difference between this and the other block is that I did not
+``nonbroadcastwithGreqAndMac.grc''. The difference between this and the other block is that I did not
 change the virtual encoder/decoder to broadcast mode and added the additon of a spot to change
 the mac address on the fly. This is useful in cases where you forget to change the mac address
 before running. 
@@ -780,7 +765,7 @@ As always, a more indepth literature review will need to continue.
 	
 	\section{01-27-16}
 
-	So after playing around with GNU Radio for a few hours I found a block called "selector" 
+	So after playing around with GNU Radio for a few hours I found a block called ``selector'' 
 	within the gr-misc category. This is essentially a multiplexer that can map n inputs to 
 	m outputs. A simple change of variables decides which input and which output are active. 
 	This should help us with our search for PHY layer changes we had discussed. 
@@ -829,8 +814,8 @@ As always, a more indepth literature review will need to continue.
 			we lose the radio connectivity. 
 		\item Reachability and Packet Loss: From here we will ping from one node to
 			all the other nodes and measure how many packets are dropped. We
-			can set a number of "n" pings and count how many packets were dropped.
-		\item Delay: Here we will use a test with "n" pings, but this time will measure the
+			can set a number of ``n'' pings and count how many packets were dropped.
+		\item Delay: Here we will use a test with ``n'' pings, but this time will measure the
 			response time and find an average/std deviation to determine how slow the
 			network is. 
 		\item Throughput: We will have to find a tool for properly measuring a throughput
@@ -862,7 +847,7 @@ As always, a more indepth literature review will need to continue.
 	\section{2-8-16}
 
 	Still havent got to the testing phase. So much to do,so little time before the paper deadline. Anyway, finished the webhook stuff. Tried to see if we could
-	use two channels on the B210 as part of the network, but the initial test was not promising. It said "node alive" for both nodes, but was filled with "D"'s which
+	use two channels on the B210 as part of the network, but the initial test was not promising. It said ``node alive'' for both nodes, but was filled with ``D''s which
 	usually means theres errors in the stream and I wasn completely unable to ping back and forth. 
 	\section{2-10-16}
 
@@ -934,7 +919,6 @@ As always, a more indepth literature review will need to continue.
 
 	Today we are going to continue testing. To begin, we are building batman-adv 2016.0 from sources. 
 	The file can be downloaded from batman's website and is installed by:
-	
 	\shellcmd{sudo make}
 	\shellcmd{sudo make install}
 	\shellcmd{sudo depmod -a}
@@ -958,10 +942,3 @@ As always, a more indepth literature review will need to continue.
  
  	Another github to be aware of for spectrum sensing can be found \href{https://github.com/m0mik/scanoo}{here}
 
-
-\end{document}
-
-
-
-
-	
