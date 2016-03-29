@@ -7,6 +7,8 @@ A level-1 auxiliary file: Chapters/Chapter3.aux
 A level-1 auxiliary file: Chapters/Chapter4.aux
 A level-1 auxiliary file: Chapters/Chapter5.aux
 A level-1 auxiliary file: Chapters/Chapter6.aux
+A level-1 auxiliary file: Appendices/AppendixA.aux
+A level-1 auxiliary file: Appendices/AppendixB.aux
 The style file: IEEEtran.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -17,46 +19,50 @@ Database file #1: example.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Name 2 in "Jawad Seddar and Hicham Khalife, Vania Conan, and Jeremie Leguay" has a comma at the end for entry 0002
+while executing---line 2419 of file IEEEtran.bst
+Warning--empty year in 0002
 
 Done.
-You've used 11 entries,
+You've used 40 entries,
             4039 wiz_defined-function locations,
-            860 strings with 8449 characters,
-and the built_in function-call counts, 4512 in all, are:
-= -- 338
-> -- 49
-< -- 18
-+ -- 31
-- -- 6
-* -- 183
-:= -- 747
-add.period$ -- 13
-call.type$ -- 11
-change.case$ -- 11
-chr.to.int$ -- 42
-cite$ -- 11
-duplicate$ -- 351
-empty$ -- 433
-format.name$ -- 8
-if$ -- 989
+            988 strings with 13400 characters,
+and the built_in function-call counts, 21619 in all, are:
+= -- 1532
+> -- 542
+< -- 91
++ -- 289
+- -- 110
+* -- 903
+:= -- 3286
+add.period$ -- 68
+call.type$ -- 40
+change.case$ -- 40
+chr.to.int$ -- 222
+cite$ -- 41
+duplicate$ -- 1645
+empty$ -- 2062
+format.name$ -- 126
+if$ -- 4948
 int.to.chr$ -- 0
-int.to.str$ -- 11
-missing$ -- 75
-newline$ -- 76
-num.names$ -- 2
-pop$ -- 244
+int.to.str$ -- 40
+missing$ -- 377
+newline$ -- 193
+num.names$ -- 28
+pop$ -- 1129
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 357
+skip$ -- 1647
 stack$ -- 0
-substring$ -- 100
-swap$ -- 236
-text.length$ -- 4
+substring$ -- 533
+swap$ -- 1154
+text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 11
-warning$ -- 0
-while$ -- 8
-width$ -- 13
-write$ -- 126
+type$ -- 40
+warning$ -- 1
+while$ -- 73
+width$ -- 42
+write$ -- 392
+(There was 1 error message)

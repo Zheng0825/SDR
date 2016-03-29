@@ -56,17 +56,192 @@
   \url{http://flask.pocoo.org/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{0018}
+\BIBentryALTinterwordspacing
+V.~L. Martin~Braud, Ben~Hilburn. (2014) What is gnu radio and why do i want it.
+  [Online]. Available:
+  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki/WhatIsGR}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0020}
+\BIBentryALTinterwordspacing
+I.~Poole. Software defined radio sdr hardware. [Online]. Available:
+  \url{http://www.radio-electronics.com/info/rf-technology-design/sdr/software-defined-radios-hardware-architecture.php}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0019}
+\BIBentryALTinterwordspacing
+W.~I. Forum. What is software defined radio. [Online]. Available:
+  \url{http://www.wirelessinnovation.org/assets/documents/SoftwareDefinedRadio.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0021}
+\BIBentryALTinterwordspacing
+G.~Radio. (2014) Volk. [Online]. Available:
+  \url{https://gnuradio.org/redmine/projects/gnuradio/wiki/Volk}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0022}
+\BIBentryALTinterwordspacing
+------. (2014) Ubuntu install. [Online]. Available:
+  \url{https://gnuradio.org/redmine/projects/gnuradio/wiki/UbuntuInstall}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0023}
+\BIBentryALTinterwordspacing
+------. (2016) Gnu radio companion. [Online]. Available:
+  \url{https://gnuradio.org/redmine/projects/gnuradio/wiki/UbuntuInstall}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0024}
+\BIBentryALTinterwordspacing
+------. (2016) Out of tree modules. [Online]. Available:
+  \url{https://gnuradio.org/redmine/projects/gnuradio/wiki/OutOfTreeModules}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0025}
+\BIBentryALTinterwordspacing
+CGRAN. (2016) The comprehensive gnu radio archive network. [Online]. Available:
+  \url{http://cgran.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0026}
+\BIBentryALTinterwordspacing
+G.~Radio. (2016) A quick guide to hardware and gnu radio. [Online]. Available:
+  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki/Hardware}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0027}
+\BIBentryALTinterwordspacing
+Mathworks. Software-defined radio (sdr). [Online]. Available:
+  \url{http://www.mathworks.com/discovery/sdr.html?requestedDomain=www.mathworks.com}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0028}
+\BIBentryALTinterwordspacing
+Ettus. Rfnoc (rf network on chip). [Online]. Available:
+  \url{https://www.ettus.com/sdr-software/detail/rf-network-on-chip}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0029}
+\BIBentryALTinterwordspacing
+------. Rfnoc (rf network on chip). [Online]. Available:
+  \url{https://www.ettus.com/sdr-software/detail/rf-network-on-chip}
+\BIBentrySTDinterwordspacing
+
+\bibitem{6908725}
+M.~Eslami, O.~Karimi, and T.~Khodadadi, ``A survey on wireless mesh networks:
+  Architecture, specifications and challenges,'' in \emph{Control and System
+  Graduate Research Colloquium (ICSGRC), 2014 IEEE 5th}, Aug 2014, pp.
+  219--222.
+
+\bibitem{0001}
+\BIBentryALTinterwordspacing
+(2015) Confine project. [Online]. Available: \url{http://confine-project.eu/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{6686492}
+P.~Escrich, R.~Baig, A.~Neumann, A.~Fonseca, F.~Freitag, and L.~Navarro,
+  ``Wibed, a platform for commodity wireless testbeds,'' in \emph{Wireless Days
+  (WD), 2013 IFIP}, Nov 2013, pp. 1--3.
+
+\bibitem{6962154}
+P.~Escrich, R.~Baig, E.~Dimogerontakis, E.~Carbo, A.~Neumann, A.~Fonseca,
+  F.~Freitag, and L.~Navarro, ``Wibed, a platform for commodity wireless
+  testbeds,'' in \emph{Wireless and Mobile Computing, Networking and
+  Communications (WiMob), 2014 IEEE 10th International Conference on}, Oct
+  2014, pp. 85--91.
+
+\bibitem{4509617}
+R.~Alimi, L.~Li, R.~Ramjee, H.~Viswanathan, and Y.~Yang, ``ipack: in-network
+  packet mixing for high throughput wireless mesh networks,'' in \emph{INFOCOM
+  2008. The 27th Conference on Computer Communications. IEEE}, April 2008,
+  pp.~--.
+
+\bibitem{5062250}
+L.~Li, R.~Alimi, R.~Ramjee, H.~Viswanathan, and Y.~Yang, ``munet: Harnessing
+  multiuser capacity in wireless mesh networks,'' in \emph{INFOCOM 2009, IEEE},
+  April 2009, pp. 2876--2880.
+
+\bibitem{7141228}
+A.~Syed, K.~Yau, H.~Mohamad, N.~Ramli, and W.~Hashim, ``Channel selection in
+  multi-hop cognitive radio network using reinforcement learning: An
+  experimental study,'' in \emph{Frontiers of Communications, Networks and
+  Applications (ICFCNA 2014 - Malaysia), International Conference on}, Nov
+  2014, pp. 1--6.
+
+\bibitem{5508221}
+P.~Nagaraju, L.~Ding, T.~Melodia, S.~Batalama, D.~Pados, and J.~Matyjas,
+  ``Implementation of a distributed joint routing and dynamic spectrum
+  allocation algorithm on usrp2 radios,'' in \emph{Sensor Mesh and Ad Hoc
+  Communications and Networks (SECON), 2010 7th Annual IEEE Communications
+  Society Conference on}, June 2010, pp. 1--2.
+
+\bibitem{6686523}
+H.~Khalife, J.~Seddar, V.~Conan, and J.~Leguay, ``Validation of a point to
+  multipoint cognitive radio transport protocol over gnu radio testbed,'' in
+  \emph{Wireless Days (WD), 2013 IFIP}, Nov 2013, pp. 1--6.
+
+\bibitem{6983150}
+S.~Kamruzzaman, A.~Alghamdi, and S.~Mizanur~Rahman, ``Spectrum and energy aware
+  multipath routing for cognitive radio ad hoc networks,'' in \emph{Information
+  and Communication Technology Convergence (ICTC), 2014 International
+  Conference on}, Oct 2014, pp. 341--346.
+
+\bibitem{7071706}
+P.~Murphy, A.~Sabharwal, and B.~Aazhang, ``Design of warp: A wireless
+  open-access research platform,'' in \emph{Signal Processing Conference, 2006
+  14th European}, Sept 2006, pp. 1--5.
+
+\bibitem{4212821}
+K.~Mandke, S.-H. Choi, G.~Kim, R.~Grant, R.~Daniels, W.~Kim, R.~Heath, and
+  S.~Nettles, ``Early results on hydra: A flexible mac/phy multihop testbed,''
+  in \emph{Vehicular Technology Conference, 2007. VTC2007-Spring. IEEE 65th},
+  April 2007, pp. 1896--1900.
+
+\bibitem{0009}
+\BIBentryALTinterwordspacing
+(2011) Click modular router. [Online]. Available:
+  \url{http://read.cs.ucla.edu/click/click}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0010}
+\BIBentryALTinterwordspacing
+(2016) Polymorphic types. [Online]. Available:
+  \url{https://gnuradio.org/doc/doxygen/page_pmt.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{4286321}
+G.~Troxel, E.~Blossom, S.~Boswell, A.~Caro, I.~Castineyra, A.~Colvin,
+  T.~Dreier, J.~B. Evans, N.~Goffee, K.~Haigh, T.~Hussain, V.~Kawadia,
+  D.~Lapsley, C.~Livadas, A.~Medina, J.~Mikkelson, G.~J. Minden, R.~Morris,
+  C.~Partridge, V.~Raghunathan, R.~Ramanathan, C.~Santivanez, T.~Schmid,
+  D.~Sumorok, M.~Srivastava, R.~S. Vincent, D.~Wiggins, A.~M. Wyglinski, and
+  S.~Zahedi, ``Adaptive dynamic radio open-source intelligent team (adroit):
+  Cognitively-controlled collaboration among sdr nodes,'' in \emph{Networking
+  Technologies for Software Defined Radio Networks, 2006. SDR '06.1st IEEE
+  Workshop on}, Sept 2006, pp. 8--17.
+
+\bibitem{4753441}
+X.~Li, W.~Hu, H.~Yousefi'zadeh, and A.~Qureshi, ``A case study of a mimo sdr
+  implementation,'' in \emph{Military Communications Conference, 2008. MILCOM
+  2008. IEEE}, Nov 2008, pp. 1--7.
+
+\bibitem{0002}
+J.~Seddar, V.~C. Hicham~Khalife, and J.~Leguay, ``A dtn stack for cognitive
+  radio ad hoc networks,'' in \emph{8th Karlsruhe Workshop on Software Radios}.
+
+\bibitem{5375690}
+M.~Abolhasan, B.~Hagelstein, and J.~C.~P. Wang, ``Real-world performance of
+  current proactive multi-hop mesh protocols,'' in \emph{Communications, 2009.
+  APCC 2009. 15th Asia-Pacific Conference on}, Oct 2009, pp. 44--47.
+
 \bibitem{0017}
 \BIBentryALTinterwordspacing
 (2015) Using openwrt as an openvpn server with a tap device (with bridging).
   [Online]. Available:
   \url{https://wiki.openwrt.org/doc/howto/vpn.server.openvpn.tap}
 \BIBentrySTDinterwordspacing
-
-\bibitem{5375690}
-M.~Abolhasan, B.~Hagelstein, and J.~C.~P. Wang, ``Real-world performance of
-  current proactive multi-hop mesh protocols,'' in \emph{Communications, 2009.
-  APCC 2009. 15th Asia-Pacific Conference on}, Oct 2009, pp. 44--47.
 
 \bibitem{0013}
 \BIBentryALTinterwordspacing

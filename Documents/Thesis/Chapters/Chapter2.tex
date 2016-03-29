@@ -17,46 +17,140 @@
 
 \section{SDR Fundamentals}
 
+A software defined radio, or SDR, is a radio system which performs signal processing in software instead of relying on dedicated hardware components to process signals. In a traditional hardware radio, each component is designed and built to handle a single task. If changes are needed, the hardware components must be replaced. Software defined radios are flexible and can be changed by altering code instead of components. A single SDR can be configured to act as numerous hardware radios. \cite{0018} 
+
+An SDR itself is the hardware component which then offloads the data to a processing unit such as an FPGA, microprocessor, or general purpose computer \cite{0018}. There are many different SDRs available on the market but they share many common components. Every SDR works in slightly different ways, but they share many common components. 
+
+An ``Ideal'' SDR only has a few stages. The first is the RF Amplifcation stage. These stages increase the gain of the signal as it enters and leaves the radio. A Low Noise Amplifier (LNA) is used on the receiver and a Power Amplifier (PA) is used on the output. The PA dramtically extends the range of the SDR and the LNA increases the signal to noise ratio of the reciever \cite{0020}. 
+
+In the ``digital conversion'' stage, an analog to digital (ADC) and digital to analog (DAC) converter are used to change from the analog to digital domain \cite{0020}. The ADC receives the analog signal and converts it to a digital code. The DAC takes digital material and converts it to an analog signal to be transmitted. 
+
+The final stage is the ``processing'' stage. In this stage the digital signal is sent to and from the software processor. This can come in many different forms including microcontrollers, FPGAs, and general purpose computers \cite{0020}.  
+
+In an ideal SDR, the DAC and ADC can receive and transmit any needed signal. In practice, a real SDR requires a ``frequency converson'' stage \cite{0020}. This is an analog preprocessing stage that allows the useable frequency range of an SDR to be increased. Without this stage, the SDR's useable frequency range would be limited by the ADC and DAC to a much smaller range. 
+
+SDR has numerous benefits compared to Traditional Radio. A single SDR can replace a multitude of radios, saving on space and cost. The operating frequency of an SDR is also flexible. This means a radio can be moved from country to country and only the software and antenna needs to be changed to operate on new frequencies \cite{0019}. As new standards, protocols, and technologies are developed, an SDR can download new software to adjust its operating parameters. Compare this to existing Wi-fi routers, where a person needs to purchase a whole new router as new standards are created \cite{0019}. 
+
 %----------------------------------------------------------------------------------------
 
 \section{GNU Radio and MATLAB}
 
+There are several different tools available for creating SDR software. A few different versions are presented below. 
+
 \subsection{GNU Radio}
+
+GNU Radio is a free, open source, digital signal processing toolset aimed at allowing for quick and easy development of software defined radio programs. GNU Radio is licensed under the GNU General Public License (GPL) version 3 \cite{0019}. GNU Radio itself is made up of a combination of python and C++ modules. It relies heavily on the Vector-Optimized Library of Kernels (VOLK) \cite{0021} and the Boost C++ libraries \cite{0022}. 
+
+GNU Radio programs can be developed in python or using the GNU Radio Companion \cite{0023}. GNU Radio Companion (GRC) is a graphical tool for creating signal flow graphs and can also be used to generate python code from the flow graphs. GRC is useful for creating working SDR software with minimal programming experience. It also allows for the development of parallel processing without having to understand the details of keeping everything thread safe \cite{0023}.
+
+Custom GRC blocks can be written in C++. Flowgraphs developed in GRC can also be converted into custom blocks by first converting them to heirarchical blocks. GRC can also create interactive GUIs by leveraging Qt or Wx \cite{0023}. 
+
+GNU Radio and GNU Radio Companion can be extended by using out of tree (OOT) modules \cite{0024}. These are a set of modules that are not part of the core feature set of GNU Radio, but have been identified as important by the community. The official OOT repository is hosted by the Comprehensive GNU Radio Archive Network (CGRAN) \cite{0025}. GNU Radio also provides the PyBOMBS tool to create an ``app store'' style interface for downloading GNU Radio tools \cite{0024}. 
+
+GNU Radio has a large community of active users. A mailing list and internet relay chat (IRC) channel are available for asking questions. Source code is updated often and anyone can contribute to the process \cite{0003}. Though hardware is not specifically part of GNU Radio, numerous vendors such as Ettus Research and Nuand offer support libraries for working with GNU Radio \cite{0026}. 
 
 \subsection{MATLAB}
 
+MATLAB and Simulink are another set of tools used for working wtih software defined radios. MATLAB and Simulink are commerical options developed by Mathworks. They are not free or open soure. The two pieces of software provide similar functionality to GNU Radio, but give you the ability to leverage Mathwork's support staff and knowledge base \cite{0027}. For this project, MATLAB was evaluated but ultimately not used. The decision was made to use as many free and open-source software (FOSS) components as possible. 
+
 \subsection{RFNoc}
+
+Ettus Research recently released the RF Network on Chip (RFNoC) extension to GNU Radio. RFNoc allows for the creation of FPGA code blocks. Unlike normal GRC blocks, these FPGA blocks compile into code that can then be run on the FPGA located on an SDR. This can dramatically increase the speed of the block. Users can create additional RFNoC blocks in VHDL and Verilog. Unfortunately, RFNoC is only compatible with X300 and E300 series SDRs, so the software could not be used for ARCAM-Net \cite{0028}. 
 
 %----------------------------------------------------------------------------------------
 
 \section{Network Concepts}
 
-\subsection{What is a Network}
+A Network consists of two or more computers that are connected together in a way that allows them to share resources, transfer files, and communicate electronically. The connection between them could be physical or wireless. Traditional computer networks include local area networks (LAN) and wireless local area networks (WLAN) \cite{0029}. 
 
 \subsection{Mesh Network}
 
+Mesh networks, sometimes referred to as Mobile Ad-hoc NETworks(MANETs), are a type of network in which routers connect directly to nearby routers and connect indirectly to far away routers by ``hopping'' through the nearby routers until the packets reach their destination. Mesh networks can be created independent of traditional internet service providers (ISPs) as anyone with a router is able to join and create their own node on the network \cite{6908725}. 
+
+Instead of using traditional and expensive network infrastructure, mesh networks rely on sheer number of nodes to create reliable and distributed networks. If a single node fails, the network can reconfigure and use other nodes to route packets to their destination. Expanding the network is as simple as adding more nodes to the edges of the network \cite{6908725}. 
+
+\subsection{Mesh Network Testbeds}
+
+The CONFINE platform uses batman-adv as the routing protocol for their mesh network testbed. However, their testbed does not utilize GNU Radio or SDRs. \cite{0001} batman-adv was also a key component of WiBed, a project to create a Commercial off-the-shelf (COTS) mesh test bed using low cost wireless routers \cite{6686492} \cite{6962154}. Though they are not specific to SDR platforms, these still show the usefulness of batman-adv as a component of a testbed. 
+
 \subsection{GNU Radio Mesh Networks}
 
+There has been work done in the past on establishing mesh networks using GNU Radio, however most of the research has had a different focus than ours. In \cite{4509617} and \cite{5062250} the authors use GNU Radio as a way to verify the successful use of algorithms for mesh networking. However, they do not use SDRs, instead choosing to use GNU Radio for simulation. 
 
-\subsection{Mesh Extension into SDR}
+The researchers in \cite{7141228} created a simple multihop test bed using three USRP radios to relay data from one computer to another. A fourth USRP acts as a primary user and attempts to block the signal. However, their work focuses on using reinforcement learning to allow for frequency hopping instead of focusing on a mesh routing protocol that would be able to scale to more radios. 
+
+Much of the existing work done using USRPs and GNU Radio for SDR Mesh Networks revolves around implementing different parts of the Open Systems Interconnection (OSI) protocol stack from the ground up. In some papers the authors focus on the physical or mac layer \cite{5508221}. There has also been work in developing new higher layer protocols for cognitive radio mesh networks such as work done to replace Transmission Control Protocol (TCP) with a more robust protocol \cite{6686523}. These systems will usually react to frequency changes but some also change their topology based on power use \cite{6983150}.
 
 \subsection{What is a network protocol}
 
+A protocol is essentially a set of rules that govern the communication between two devices. A network protocol is used to define the way multiple computers can electronically send messages to one another. By standardizing protocols, computers and devices from various manufacturers can still communicate effectively \cite{0029}. 
+
 \subsubsection{OSI Model}
 
-\subsubsection{Common Protocols}
+The Open Systems Interconnection (OSI) Model is an abstraction that breaks network communication into seven layers. Each layer has a standardized way of communicating with the layers above and below it. This means that at any given layer, a protocol can be exchanged for another without making any change to the other layers. 
 
-\subsubsection{Batman}
+The first layer is the physical layer. This layers deals with the transmission and reception of unstructured raw bit streams over physical mediums. Common Layer 1 protocols include ethernet and 802.11 \cite{0030}. Layer 2 is the data linke layer. This layer passes structured data to Layer 1, and passes recognized packets on to layer 3 \cite{0031}. A common layer 2 protocol is Medium Access Control (MAC) \cite{0030}. 
+
+Layer 3, or the network layer, deals with routing information through the network. A common layer 3 protocol is Internet Protocol version 4 (IPv4) \cite{0031}. Layer 4 is the transport layer. Layer 4 can be used to ensure that messages are delivered error free and in sequence. Common layer 4 protocols are Universal Datagram Protocol (UDP) and Transportation Controp Protocol (TCP). The next three layers are Session, Presentation, and Application layers \cite{0030}. ARCAM-Net does not make any changes to these layers so they are less pertinent to the discussion. 
+
+Layer 5, or session layer, allows for the establishment of sessions between processes running on different stations. Layer 6, or presentation layer formats the data to be presented to the application layer. The final layer, application layer, passes the data off to the user \cite{0030}. 
+
+\subsubsection{Common Mesh Network Protocols}
+
+% http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/stamp/stamp.jsp?tp=&arnumber=4796928
+
+%http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/stamp/stamp.jsp?tp=&arnumber=7347951
+
+\subsubsection{Common Transmission Protocols}
+
+\subsubsection{Batman-adv}
+
+Batman-adv is a layer 2 mesh routing protocol developed by Open-Mesh. By running on layer 2, batman-adv becomes layer 3 agnostic. This allows most applications to utilize batman-adv without making any changes to the code. Batman-adv has been integrated into the linux kernel and can be found packaged with many popular distributions of linux \cite{0032}. 
+
+Batman-adv is a proactive routing protocol aimed at using minimal resources in order to work with embedded hardward. 
+Batman-adv uses the principle that better links will provide fast, reliable connections. Every node periodically sends out a broadcast message to inform its neighbors of its existence. The neighbors then relay this information along to the rest of the network. The link quality metric is established by detecting where these broadcast packets fail. 
+
 
 \subsubsection{OLSRD}
+%----------------------------------------------------------------------------------------
+
+\section{Software Defined Radio Testbeds}
+
+There are several well-known Software Defined Radio testbeds in use at different Universities. One major platform is the WARP platform from Rice University. This platform is made up of many custom components including the radio hardware itself \cite{7071706}. This makes the platform very expensive and limits its adaptability for use in other research facilities. 
+
+Another platform is the Hydra platform developed at UT Austin. This platform uses GNU Radio to define PHY Layer parameters and the Click Modular Router to implement Layer 2 protocols \cite{4212821}. The Hydra platform also uses USRP radios as the hardware frontend. However, Click is an older software which, according to their website, has not had an updated release since 2011 \cite{0009}. GNU Radio has since added the Polymorphic Tree (PMT) and Message types to allow for more Layer 2 development to be done right inside GNU Radio \cite{0010}. 
+
+The ADROIT project was another platform developed in conjunction with DARPA. This project relied heavily on Click and GNU Radio for much of its functionality. \cite{4286321}  Similarly, the University of California, Irvine and Boeing Corporation developed a testbed based on USRP Radios and GNU Radio, but they implement custom MAC layers \cite{4753441}. 
+
+A platform similar to ARCAM-Net is presented in \cite{0002}. However, this platform uses the Optimized Link State Routing Protocol (OLSR) which has been shown to perform poorly when compared to batman-adv. OLSR is also not truly decentralized as only certain nodes relay network information \cite{5375690}
 
 %----------------------------------------------------------------------------------------
 
 \section{SDR and Cognitive Radios}
 
+%Cognitive Radio Networks (CRNs) are networks made up of SDRs that are capable of sensing their environment, making decisions, and changing transmission parameters \cite{Akyildiz2007921}. 
+
+\subsection{Cognitive Radio Ad-Hoc Networks}
+
+%Many Cognitive Radio scenarios are designed around the concept of ad-hoc or mesh network \cite{Akyildiz2009810}.  
 %----------------------------------------------------------------------------------------
 
 \section{State of the Practice}
+
+\section{RTL-SDR}
+
+	The RTL-SDR is an SDR tool discovered by the DIY and hacking community. Its original purpose is to be used as a digital TV tuner. However, it was discovered that this system could also be used to general SDR purposes. There is now a large community dedicated to using this tiny SDR to recieve various different signals. Prior to the creation of the open source drivers for the RTL-SDR, the most popular devices for SDR came from USRP. The USRP devices are fantastic products, but cost	at least \$1,000 and can cost quite a bit more with additional features. The RTL-SDR is based on rhe Realtek RTL2832U chip. This device can often be purchased for between \$20 and \$30 \cite{6526525}. The range for the RTL-SDR is typically 64 MHz	to 1700 MHz, however this varies depending on which tuner the manufacturer paired with it. The authors in \cite{6526525} paired the RTL-SDR with a mixer in order to lower the range all the way to DC. For this, they used the NE6062AN chip.  
+	
+	Starting with Release 2013b, MATLAB/Simulink now have a support package that targets RTL-SDR devices. In Simulink, the package contains a single block called ``RTL-SDR Receiver.'' This block allows the user to tune the center frequency, change the tuner gain, set the sampling rate, and alter the frequency correction factor. The block can then output the complex envelope (IQ) of the recieved signal in both floating point and integer formats\cite{6893337}.  Due to the open nature and low cost of the RTL-SDR, the authors in \cite{6821718} propose using this as a tool set for teaching DSP and Communications principles to students. 
+	
+	When the cost of the system is far less than that of a
+	textbook, it is easy to see why this could become a valuable learning tool for many students. UC Berkley has already begun to use the RTL-SDR as one of the project assignments in their digital signal processing course. 	There have been efforts to use the RTL-SDR with the popular Raspberry Pi computing platform. However, at least with the B+ model there is not enough power available to process the signal. Instead, it has to be used as a TCP server that is then able to forward the data on to a more powerful computer\cite{6938691}. Currently, it does not appear as though anyone hast tested this with the Raspberry Pi 2 microcomputer. Other work has been done to estimate the cost savings of using a USRP in conjunction with several RTL-SDRs to replace existing DSP lab infrastructure \cite{6726630}. 
+	
+	The most unfortunate downside to using the RTL-SDR is that it is unable to transmist. However, researchers in \cite{6922233} proposed a system in which a USRP SDR is used as a master device that broadcasts out to a series of slave nodes that can only listen for information. In their system they used a tool called GStreamer to pass video data into GNURadio. This information was then broadcast to multiple computers in a room running an RTL-SDR with GNURadio. The nodes were all able to view the video stream in near real time.  
+
+\subsection{USRP}
+
+ARCAM-Net uses the Universal Software Radio Peripheral (USRP) created by Ettus Research, a division of National Instruments\cite{0006}. Ettus also released the Universal Hardware Drivers (UHD) \cite{0007} which allow for the use of the USRP with GNU Radio.
 
 %----------------------------------------------------------------------------------------
 
