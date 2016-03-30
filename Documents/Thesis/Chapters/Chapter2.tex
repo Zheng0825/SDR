@@ -87,7 +87,7 @@ A protocol is essentially a set of rules that govern the communication between t
 
 \subsubsection{OSI Model}
 
-The Open Systems Interconnection (OSI) Model is an abstraction that breaks network communication into seven layers. Each layer has a standardized way of communicating with the layers above and below it. This means that at any given layer, a protocol can be exchanged for another without making any change to the other layers. 
+The Open Systems Interconnection (OSI) Model is an abstraction that breaks network communication into seven layers \cite{0030}. Each layer has a standardized way of communicating with the layers above and below it. This means that at any given layer, a protocol can be exchanged for another without making any change to the other layers \cite{0031}. 
 
 The first layer is the physical layer. This layers deals with the transmission and reception of unstructured raw bit streams over physical mediums. Common Layer 1 protocols include ethernet and 802.11 \cite{0030}. Layer 2 is the data linke layer. This layer passes structured data to Layer 1, and passes recognized packets on to layer 3 \cite{0031}. A common layer 2 protocol is Medium Access Control (MAC) \cite{0030}. 
 
@@ -95,23 +95,27 @@ Layer 3, or the network layer, deals with routing information through the networ
 
 Layer 5, or session layer, allows for the establishment of sessions between processes running on different stations. Layer 6, or presentation layer formats the data to be presented to the application layer. The final layer, application layer, passes the data off to the user \cite{0030}. 
 
-\subsubsection{Common Mesh Network Protocols}
+\subsection{Common Mesh Network Protocols}
 
-% http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/stamp/stamp.jsp?tp=&arnumber=4796928
+There are a varity of network protocols focused on the creation of Mesh Networks. Unicast routing protocols are one family of mesh network protocols. One form of these protocols is the proactice unicast routing protocol \cite{4796928}. In these networks a ``table'' is created by continuously evaluating routes to all reachable nodes. The protocol will try to keep the table as up to date and accurate as possible \cite{4796928}. When a network topology changes, the changes must be propogated throughout the network. OLSR borrows from this concept \cite{0033} \cite{5375690}. 
 
-%http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/stamp/stamp.jsp?tp=&arnumber=7347951
+Another unicast method is called reactive unicast routing.These protocols are sometimes called ``on-demand'' unicast routing protocols \cite{4796928}. This type of routing finds routes only when desired by a source node. Only then does it initiate a routing discovery process. This can sometimes cause disconnect in mobile networks, but reduces the overhead associated with a proactive routing protocol \cite{0033}.
 
-\subsubsection{Common Transmission Protocols}
+Multicast routing protocols improve on unicast methods by making networks more robust to mobile nodes that can change their location in a network. There are three main categories of multicast networks \cite{4796928}. The first is the simplest, in which packets ``flood'' the network. Every node that receives a network passes the data on to every node it is connected to. This causes an exponential growth in the number of packets on a network for every packet sent. The second is a proactive approach which precomputes paths to all nodes and then routinely updates and distributes the routing table \cite{4796928}.
+
+In the final method, paths are created on demand. First, a source searches the mesh for the end destination. Then it computes the shortest path and sends on this path \cite{4796928}. Batman-adv is a hybrid model that borrows ideas from both multicast and unicast protocols. It is decribe as a ``biologically inspired'' network protocol \cite{0033}.  
 
 \subsubsection{Batman-adv}
 
-Batman-adv is a layer 2 mesh routing protocol developed by Open-Mesh. By running on layer 2, batman-adv becomes layer 3 agnostic. This allows most applications to utilize batman-adv without making any changes to the code. Batman-adv has been integrated into the linux kernel and can be found packaged with many popular distributions of linux \cite{0032}. 
+Batman-adv is a layer 2 mesh routing protocol developed by Open-Mesh. By running on layer 2, batman-adv becomes layer 3 agnostic. This allows most applications to utilize batman-adv without making any changes to the code. Batman-adv has been integrated into the linux kernel and can be found packaged with many popular distributions of linux \cite{5375690}. 
 
 Batman-adv is a proactive routing protocol aimed at using minimal resources in order to work with embedded hardward. 
-Batman-adv uses the principle that better links will provide fast, reliable connections. Every node periodically sends out a broadcast message to inform its neighbors of its existence. The neighbors then relay this information along to the rest of the network. The link quality metric is established by detecting where these broadcast packets fail. 
+Batman-adv uses the principle that better links will provide fast, reliable connections. Every node periodically sends out a broadcast message to inform its neighbors of its existence. The neighbors then relay this information along to the rest of the network. The link quality metric is established by detecting where these broadcast packets fail \cite{5375690}. 
 
 
-\subsubsection{OLSRD}
+\subsubsection{OLSR}
+
+The Optimised Link State Routing (OLSR) protocol uses a ``link-state'' algorithm to proactively find efficent paths between nodes. The network works by using Multi-Point Relays (MPRs) that increase network throughput by creating efficient network schemes. OLSR does this by selecting a subset of neighbouring nodes to relay data instead of every node acting as a relay. This minimies the number of packets required to establish a routing table. Network information is shared between MPRs. Every MPR has a complete routing \cite{5375690}. Batman-adv was created by Open Mesh to fix problems they saw with OLSR, namely creating an algorithm better suited to embedded system hardware \cite{0032}. 
 %----------------------------------------------------------------------------------------
 
 \section{Software Defined Radio Testbeds}
@@ -132,14 +136,15 @@ A platform similar to ARCAM-Net is presented in \cite{0002}. However, this platf
 
 \subsection{Cognitive Radio Ad-Hoc Networks}
 
-%Many Cognitive Radio scenarios are designed around the concept of ad-hoc or mesh network \cite{Akyildiz2009810}.  
+%Many Cognitive Radio scenarios are designed around the concept of ad-hoc or mesh network \cite{Akyildiz2009810}.
+  
 %----------------------------------------------------------------------------------------
 
 \section{State of the Practice}
 
 \section{RTL-SDR}
 
-	The RTL-SDR is an SDR tool discovered by the DIY and hacking community. Its original purpose is to be used as a digital TV tuner. However, it was discovered that this system could also be used to general SDR purposes. There is now a large community dedicated to using this tiny SDR to recieve various different signals. Prior to the creation of the open source drivers for the RTL-SDR, the most popular devices for SDR came from USRP. The USRP devices are fantastic products, but cost	at least \$1,000 and can cost quite a bit more with additional features. The RTL-SDR is based on rhe Realtek RTL2832U chip. This device can often be purchased for between \$20 and \$30 \cite{6526525}. The range for the RTL-SDR is typically 64 MHz	to 1700 MHz, however this varies depending on which tuner the manufacturer paired with it. The authors in \cite{6526525} paired the RTL-SDR with a mixer in order to lower the range all the way to DC. For this, they used the NE6062AN chip.  
+	The RTL-SDR is an SDR tool discovered by the DIY and hacking community. Its original purpose is to be used as a digital TV tuner. However, it was discovered that this system could also be used to general SDR purposes. There is now a large community dedicated to using this tiny SDR to recieve various different signals. Prior to the creation of the open source drivers for the RTL-SDR, the most popular devices for SDR came from USRP. The USRP devices are fantastic products, but cost at least \$1,000 and can cost quite a bit more with additional features. The RTL-SDR is based on rhe Realtek RTL2832U chip. This device can often be purchased for between \$20 and \$30 \cite{6526525}. The range for the RTL-SDR is typically 64 MHz	to 1700 MHz, however this varies depending on which tuner the manufacturer paired with it. The authors in \cite{6526525} paired the RTL-SDR with a mixer in order to lower the range all the way to DC. For this, they used the NE6062AN chip.  
 	
 	Starting with Release 2013b, MATLAB/Simulink now have a support package that targets RTL-SDR devices. In Simulink, the package contains a single block called ``RTL-SDR Receiver.'' This block allows the user to tune the center frequency, change the tuner gain, set the sampling rate, and alter the frequency correction factor. The block can then output the complex envelope (IQ) of the recieved signal in both floating point and integer formats\cite{6893337}.  Due to the open nature and low cost of the RTL-SDR, the authors in \cite{6821718} propose using this as a tool set for teaching DSP and Communications principles to students. 
 	

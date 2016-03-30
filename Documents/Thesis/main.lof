@@ -2,17 +2,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces An overview of the components of the system, including the OSI Layers they interact with. \cite {0003} \cite {0007} \cite {0008} \cite {0015} \cite {0012} \cite {0011}\relax }}{12}{figure.caption.13}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces The web interface that lets the user initiate the network to hop to a new frequency.\relax }}{14}{figure.caption.14}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The configuration used for the first set of tests.\relax }}{15}{figure.caption.15}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The configuration used for the second set of tests.\relax }}{15}{figure.caption.16}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces An overview of the components of the system, including the OSI Layers they interact with. \cite {0003} \cite {0007} \cite {0008} \cite {0015} \cite {0012} \cite {0011}\relax }}{14}{figure.caption.11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The web interface that lets the user initiate the network to hop to a new frequency.\relax }}{16}{figure.caption.12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The configuration used for the first set of tests.\relax }}{17}{figure.caption.13}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The configuration used for the second set of tests.\relax }}{17}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The data received from operating at 902/915 MHz.\relax }}{18}{figure.caption.17}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces The data received from operating at 2.4/2.5 GHz.\relax }}{18}{figure.caption.18}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces The Averages from all three tests.\relax }}{19}{figure.caption.19}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces The initial condition from the test presented in Section 4 B, where there are two possible routes the packet can take. The output is from running batctl. The link quality is listed under the column labeld (\#/255). A higher number represents a better quality connection.\relax }}{19}{figure.caption.20}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces After the gain is reduced in the test presented in Section 4 B, the packets are now routing through a different node.\relax }}{19}{figure.caption.21}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces The result of using ALFRED to shift frequencies. One node is left behind as the others move to the new channel. Image collected using the Tektronix RSA306 Spectrum Analyzer\relax }}{20}{figure.caption.22}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The data received from operating at 902/915 MHz.\relax }}{20}{figure.caption.15}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The data received from operating at 2.4/2.5 GHz.\relax }}{20}{figure.caption.16}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces The Averages from all three tests.\relax }}{21}{figure.caption.17}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The initial condition from the test presented in Section 4 B, where there are two possible routes the packet can take. The output is from running batctl. The link quality is listed under the column labeld (\#/255). A higher number represents a better quality connection.\relax }}{21}{figure.caption.18}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces After the gain is reduced in the test presented in Section 4 B, the packets are now routing through a different node.\relax }}{21}{figure.caption.19}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces The result of using ALFRED to shift frequencies. One node is left behind as the others move to the new channel. Image collected using the Tektronix RSA306 Spectrum Analyzer\relax }}{22}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
