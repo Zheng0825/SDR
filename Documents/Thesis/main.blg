@@ -19,50 +19,48 @@ Database file #1: example.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Name 2 in "Jawad Seddar and Hicham Khalife, Vania Conan, and Jeremie Leguay" has a comma at the end for entry 0002
-while executing---line 2419 of file IEEEtran.bst
 Warning--empty year in 0002
 
 Done.
-You've used 40 entries,
+You've used 58 entries,
             4039 wiz_defined-function locations,
-            988 strings with 13400 characters,
-and the built_in function-call counts, 21619 in all, are:
-= -- 1532
-> -- 542
-< -- 91
-+ -- 289
-- -- 110
-* -- 903
-:= -- 3286
-add.period$ -- 68
-call.type$ -- 40
-change.case$ -- 40
-chr.to.int$ -- 222
-cite$ -- 41
-duplicate$ -- 1645
-empty$ -- 2062
-format.name$ -- 126
-if$ -- 4948
+            1079 strings with 16824 characters,
+and the built_in function-call counts, 34617 in all, are:
+= -- 2550
+> -- 818
+< -- 191
++ -- 444
+- -- 156
+* -- 1504
+:= -- 5201
+add.period$ -- 103
+call.type$ -- 58
+change.case$ -- 58
+chr.to.int$ -- 456
+cite$ -- 59
+duplicate$ -- 2597
+empty$ -- 3213
+format.name$ -- 185
+if$ -- 7998
 int.to.chr$ -- 0
-int.to.str$ -- 40
-missing$ -- 377
-newline$ -- 193
-num.names$ -- 28
-pop$ -- 1129
+int.to.str$ -- 58
+missing$ -- 555
+newline$ -- 257
+num.names$ -- 45
+pop$ -- 1576
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1647
+skip$ -- 2660
 stack$ -- 0
-substring$ -- 533
-swap$ -- 1154
-text.length$ -- 17
+substring$ -- 1093
+swap$ -- 1915
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 40
+type$ -- 58
 warning$ -- 1
-while$ -- 73
-width$ -- 42
-write$ -- 392
-(There was 1 error message)
+while$ -- 132
+width$ -- 60
+write$ -- 569
+(There was 1 warning)

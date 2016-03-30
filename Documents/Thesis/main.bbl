@@ -21,41 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{0003}
-\BIBentryALTinterwordspacing
-(2016) Welcome to gnu radio. [Online]. Available:
-  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0007}
-\BIBentryALTinterwordspacing
-(2016) Uhd (usrp hardware driver). [Online]. Available:
-  \url{https://www.ettus.com/sdr-software/detail/usrp-hardware-driver}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0008}
-\BIBentryALTinterwordspacing
-(2016) Open-mesh. [Online]. Available:
-  \url{https://www.open-mesh.org/projects/open-mesh/wiki}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0015}
-\BIBentryALTinterwordspacing
-(2014) A.l.f.r.e.d - almighty lightweight fact remote exchange daemon.
-  [Online]. Available: \url{https://www.open-mesh.org/projects/alfred/wiki}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0012}
-\BIBentryALTinterwordspacing
-(2016) Socket.io. [Online]. Available: \url{http://socket.io/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0011}
-\BIBentryALTinterwordspacing
-(2016) Flask (a micro framework). [Online]. Available:
-  \url{http://flask.pocoo.org/}
-\BIBentrySTDinterwordspacing
-
 \bibitem{0018}
 \BIBentryALTinterwordspacing
 V.~L. Martin~Braud, Ben~Hilburn. (2014) What is gnu radio and why do i want it.
@@ -105,6 +70,12 @@ CGRAN. (2016) The comprehensive gnu radio archive network. [Online]. Available:
   \url{http://cgran.org/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{0003}
+\BIBentryALTinterwordspacing
+(2016) Welcome to gnu radio. [Online]. Available:
+  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki}
+\BIBentrySTDinterwordspacing
+
 \bibitem{0026}
 \BIBentryALTinterwordspacing
 G.~Radio. (2016) A quick guide to hardware and gnu radio. [Online]. Available:
@@ -125,8 +96,8 @@ Ettus. Rfnoc (rf network on chip). [Online]. Available:
 
 \bibitem{0029}
 \BIBentryALTinterwordspacing
-------. Rfnoc (rf network on chip). [Online]. Available:
-  \url{https://www.ettus.com/sdr-software/detail/rf-network-on-chip}
+D.~R. Winkelman. (2013) What is a protocol? [Online]. Available:
+  \url{http://fcit.usf.edu/network/chap2/chap2.htm}
 \BIBentrySTDinterwordspacing
 
 \bibitem{6908725}
@@ -188,6 +159,41 @@ S.~Kamruzzaman, A.~Alghamdi, and S.~Mizanur~Rahman, ``Spectrum and energy aware
   and Communication Technology Convergence (ICTC), 2014 International
   Conference on}, Oct 2014, pp. 341--346.
 
+\bibitem{0030}
+\BIBentryALTinterwordspacing
+Microsoft. (2014) The osi model's seven layers defined and functions explained.
+  [Online]. Available: \url{https://support.microsoft.com/en-us/kb/103884}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0031}
+\BIBentryALTinterwordspacing
+J.~Thomas. (2014) Seven layers of osi model and functions of seven layers of
+  osi model? [Online]. Available:
+  \url{http://www.omnisecu.com/tcpip/osi-model.php}
+\BIBentrySTDinterwordspacing
+
+\bibitem{4796928}
+L.~Junhai, Y.~Danxia, X.~Liu, and F.~Mingyu, ``A survey of multicast routing
+  protocols for mobile ad-hoc networks,'' \emph{IEEE Communications Surveys
+  Tutorials}, vol.~11, no.~1, pp. 78--91, First 2009.
+
+\bibitem{0033}
+A.~Sharma and N.~Rajagopalan, ``A comparative study of b.a.t.m.a.n. and olsr
+  routing protocols for manets,'' \emph{International Journal of Advanced
+  Trends in Computer Sceince and Engineering}, vol.~2, no.~5, pp. 13--17, tenth
+  2013.
+
+\bibitem{5375690}
+M.~Abolhasan, B.~Hagelstein, and J.~C.~P. Wang, ``Real-world performance of
+  current proactive multi-hop mesh protocols,'' in \emph{Communications, 2009.
+  APCC 2009. 15th Asia-Pacific Conference on}, Oct 2009, pp. 44--47.
+
+\bibitem{0032}
+\BIBentryALTinterwordspacing
+O.~Mesh. (2014) B.a.t.m.a.n. advanced. [Online]. Available:
+  \url{https://www.open-mesh.org/projects/batman-adv/wiki/Wiki}
+\BIBentrySTDinterwordspacing
+
 \bibitem{7071706}
 P.~Murphy, A.~Sabharwal, and B.~Aazhang, ``Design of warp: A wireless
   open-access research platform,'' in \emph{Signal Processing Conference, 2006
@@ -228,13 +234,114 @@ X.~Li, W.~Hu, H.~Yousefi'zadeh, and A.~Qureshi, ``A case study of a mimo sdr
   2008. IEEE}, Nov 2008, pp. 1--7.
 
 \bibitem{0002}
-J.~Seddar, V.~C. Hicham~Khalife, and J.~Leguay, ``A dtn stack for cognitive
+J.~Seddar, H.~Khalife, V.~Conan, and J.~Leguay, ``A dtn stack for cognitive
   radio ad hoc networks,'' in \emph{8th Karlsruhe Workshop on Software Radios}.
 
-\bibitem{5375690}
-M.~Abolhasan, B.~Hagelstein, and J.~C.~P. Wang, ``Real-world performance of
-  current proactive multi-hop mesh protocols,'' in \emph{Communications, 2009.
-  APCC 2009. 15th Asia-Pacific Conference on}, Oct 2009, pp. 44--47.
+\bibitem{Akyildiz2007921}
+\BIBentryALTinterwordspacing
+I.~F. Akyildiz, T.~Melodia, and K.~R. Chowdhury, ``A survey on wireless
+  multimedia sensor networks,'' \emph{Computer Networks}, vol.~51, no.~4, pp.
+  921 -- 960, 2007. [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S1389128606002751}
+\BIBentrySTDinterwordspacing
+
+\bibitem{5771952}
+S.~M. Cheng, P.~Y. Chen, and K.~C. Chen, ``Ecology of cognitive radio ad hoc
+  networks,'' \emph{IEEE Communications Letters}, vol.~15, no.~7, pp. 764--766,
+  July 2011.
+
+\bibitem{4562561}
+V.~Kuppusamy and R.~Mahapatra, ``Primary user detection in ofdm based mimo
+  cognitive radio,'' in \emph{Cognitive Radio Oriented Wireless Networks and
+  Communications, 2008. CrownCom 2008. 3rd International Conference on}, May
+  2008, pp. 1--5.
+
+\bibitem{6527405}
+M.~T. Zia, F.~F. Qureshi, and S.~S. Shah, ``Energy efficient cognitive radio
+  mac protocols for adhoc network: A survey,'' in \emph{Computer Modelling and
+  Simulation (UKSim), 2013 UKSim 15th International Conference on}, April 2013,
+  pp. 140--143.
+
+\bibitem{6072038}
+J.~A. Msumba and H.~J. Xu, ``Spectrum sensing for cognitive radio networks: The
+  need for cross-layer design approach for multimedia applications,'' in
+  \emph{AFRICON, 2011}, Sept 2011, pp. 1--6.
+
+\bibitem{5062176}
+K.~Chowdhury, M.~Di~Felice, and I.~Akyildiz, ``Tp-crahn: a transport protocol
+  for cognitive radio ad-hoc networks,'' in \emph{INFOCOM 2009, IEEE}, April
+  2009, pp. 2482--2490.
+
+\bibitem{6526525}
+M.~Sruthi, M.~Abirami, A.~Manikkoth, R.~Gandhiraj, and K.~Soman, ``Low cost
+  digital transceiver design for software defined radio using rtl-sdr,'' in
+  \emph{Automation, Computing, Communication, Control and Compressed Sensing
+  (iMac4s), 2013 International Multi-Conference on}, March 2013, pp. 852--855.
+
+\bibitem{6893337}
+A.~Sergienko, ``Software-defined radio in matlab simulink with rtl-sdr
+  hardware,'' in \emph{Computer Technologies in Physical and Engineering
+  Applications (ICCTPEA), 2014 International Conference on}, June 2014, pp.
+  160--161.
+
+\bibitem{6821718}
+B.~Uengtrakul and D.~Bunnjaweht, ``A cost efficient software defined radio
+  receiver for demonstrating concepts in communication and signal processing
+  using python and rtl-sdr,'' in \emph{Digital Information and Communication
+  Technology and it's Applications (DICTAP), 2014 Fourth International
+  Conference on}, May 2014, pp. 394--399.
+
+\bibitem{6938691}
+R.~Danymol, T.~Ajitha, and R.~Gandhiraj, ``Real-time communication system
+  design using rtl-sdr and raspberry pi,'' in \emph{Advanced Computing and
+  Communication Systems (ICACCS), 2013 International Conference on}, Dec 2013,
+  pp. 1--5.
+
+\bibitem{6726630}
+M.~Abirami, V.~Hariharan, M.~Sruthi, R.~Gandhiraj, and K.~Soman, ``Exploiting
+  gnu radio and usrp: An economical test bed for real time communication
+  systems,'' in \emph{Computing, Communications and Networking Technologies
+  (ICCCNT),2013 Fourth International Conference on}, July 2013, pp. 1--6.
+
+\bibitem{6922233}
+S.~Nimmi, V.~Saranya, G.~Theertha~Das, and R.~Gandhiraj, ``Real-time video
+  streaming using gstreamer in gnu radio platform,'' in \emph{Green Computing
+  Communication and Electrical Engineering (ICGCCEE), 2014 International
+  Conference on}, March 2014, pp. 1--6.
+
+\bibitem{0006}
+\BIBentryALTinterwordspacing
+(2016) Ettus research. [Online]. Available: \url{https://www.ettus.com/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0007}
+\BIBentryALTinterwordspacing
+(2016) Uhd (usrp hardware driver). [Online]. Available:
+  \url{https://www.ettus.com/sdr-software/detail/usrp-hardware-driver}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0008}
+\BIBentryALTinterwordspacing
+(2016) Open-mesh. [Online]. Available:
+  \url{https://www.open-mesh.org/projects/open-mesh/wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0015}
+\BIBentryALTinterwordspacing
+(2014) A.l.f.r.e.d - almighty lightweight fact remote exchange daemon.
+  [Online]. Available: \url{https://www.open-mesh.org/projects/alfred/wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0012}
+\BIBentryALTinterwordspacing
+(2016) Socket.io. [Online]. Available: \url{http://socket.io/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0011}
+\BIBentryALTinterwordspacing
+(2016) Flask (a micro framework). [Online]. Available:
+  \url{http://flask.pocoo.org/}
+\BIBentrySTDinterwordspacing
 
 \bibitem{0017}
 \BIBentryALTinterwordspacing
