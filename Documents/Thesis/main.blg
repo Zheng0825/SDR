@@ -22,45 +22,45 @@ Database file #1: example.bib
 Warning--empty year in 0002
 
 Done.
-You've used 58 entries,
+You've used 61 entries,
             4039 wiz_defined-function locations,
-            1079 strings with 16824 characters,
-and the built_in function-call counts, 34617 in all, are:
-= -- 2550
-> -- 818
+            1088 strings with 16988 characters,
+and the built_in function-call counts, 35654 in all, are:
+= -- 2635
+> -- 830
 < -- 191
-+ -- 444
-- -- 156
-* -- 1504
-:= -- 5201
-add.period$ -- 103
-call.type$ -- 58
-change.case$ -- 58
++ -- 450
+- -- 159
+* -- 1531
+:= -- 5400
+add.period$ -- 109
+call.type$ -- 61
+change.case$ -- 61
 chr.to.int$ -- 456
-cite$ -- 59
-duplicate$ -- 2597
-empty$ -- 3213
-format.name$ -- 185
-if$ -- 7998
+cite$ -- 62
+duplicate$ -- 2678
+empty$ -- 3315
+format.name$ -- 188
+if$ -- 8220
 int.to.chr$ -- 0
-int.to.str$ -- 58
-missing$ -- 555
-newline$ -- 257
-num.names$ -- 45
-pop$ -- 1576
+int.to.str$ -- 61
+missing$ -- 576
+newline$ -- 272
+num.names$ -- 48
+pop$ -- 1642
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2660
+skip$ -- 2744
 stack$ -- 0
 substring$ -- 1093
-swap$ -- 1915
+swap$ -- 1966
 text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 58
+type$ -- 61
 warning$ -- 1
-while$ -- 132
-width$ -- 60
-write$ -- 569
+while$ -- 135
+width$ -- 63
+write$ -- 599
 (There was 1 warning)

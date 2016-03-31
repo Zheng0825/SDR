@@ -21,6 +21,41 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{0003}
+\BIBentryALTinterwordspacing
+(2016) Welcome to gnu radio. [Online]. Available:
+  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0007}
+\BIBentryALTinterwordspacing
+(2016) Uhd (usrp hardware driver). [Online]. Available:
+  \url{https://www.ettus.com/sdr-software/detail/usrp-hardware-driver}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0008}
+\BIBentryALTinterwordspacing
+(2016) Open-mesh. [Online]. Available:
+  \url{https://www.open-mesh.org/projects/open-mesh/wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0015}
+\BIBentryALTinterwordspacing
+(2014) A.l.f.r.e.d - almighty lightweight fact remote exchange daemon.
+  [Online]. Available: \url{https://www.open-mesh.org/projects/alfred/wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0012}
+\BIBentryALTinterwordspacing
+(2016) Socket.io. [Online]. Available: \url{http://socket.io/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0011}
+\BIBentryALTinterwordspacing
+(2016) Flask (a micro framework). [Online]. Available:
+  \url{http://flask.pocoo.org/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{0018}
 \BIBentryALTinterwordspacing
 V.~L. Martin~Braud, Ben~Hilburn. (2014) What is gnu radio and why do i want it.
@@ -68,12 +103,6 @@ G.~Radio. (2014) Volk. [Online]. Available:
 \BIBentryALTinterwordspacing
 CGRAN. (2016) The comprehensive gnu radio archive network. [Online]. Available:
   \url{http://cgran.org/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0003}
-\BIBentryALTinterwordspacing
-(2016) Welcome to gnu radio. [Online]. Available:
-  \url{http://gnuradio.org/redmine/projects/gnuradio/wiki}
 \BIBentrySTDinterwordspacing
 
 \bibitem{0026}
@@ -314,33 +343,30 @@ S.~Nimmi, V.~Saranya, G.~Theertha~Das, and R.~Gandhiraj, ``Real-time video
 (2016) Ettus research. [Online]. Available: \url{https://www.ettus.com/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{0007}
+\bibitem{0034}
 \BIBentryALTinterwordspacing
-(2016) Uhd (usrp hardware driver). [Online]. Available:
-  \url{https://www.ettus.com/sdr-software/detail/usrp-hardware-driver}
+E.~Research. (2016) B200. [Online]. Available:
+  \url{https://www.ettus.com/product/details/UB200-KIT}
 \BIBentrySTDinterwordspacing
 
-\bibitem{0008}
+\bibitem{0035}
 \BIBentryALTinterwordspacing
-(2016) Open-mesh. [Online]. Available:
-  \url{https://www.open-mesh.org/projects/open-mesh/wiki}
+------. (2016) E310. [Online]. Available:
+  \url{https://www.ettus.com/product/details/E310-KIT}
 \BIBentrySTDinterwordspacing
 
-\bibitem{0015}
+\bibitem{0036}
 \BIBentryALTinterwordspacing
-(2014) A.l.f.r.e.d - almighty lightweight fact remote exchange daemon.
-  [Online]. Available: \url{https://www.open-mesh.org/projects/alfred/wiki}
+------. (2016) E312. [Online]. Available:
+  \url{https://www.ettus.com/product/details/USRP-E312}
 \BIBentrySTDinterwordspacing
 
-\bibitem{0012}
+\bibitem{Akyildiz2009810}
 \BIBentryALTinterwordspacing
-(2016) Socket.io. [Online]. Available: \url{http://socket.io/}
-\BIBentrySTDinterwordspacing
-
-\bibitem{0011}
-\BIBentryALTinterwordspacing
-(2016) Flask (a micro framework). [Online]. Available:
-  \url{http://flask.pocoo.org/}
+I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
+  hoc networks,'' \emph{Ad Hoc Networks}, vol.~7, no.~5, pp. 810 -- 836, 2009.
+  [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
 \BIBentrySTDinterwordspacing
 
 \bibitem{0017}
@@ -360,14 +386,6 @@ S.~Nimmi, V.~Saranya, G.~Theertha~Das, and R.~Gandhiraj, ``Real-time video
 \BIBentryALTinterwordspacing
 (2015) socketio-client. [Online]. Available:
   \url{https://pypi.python.org/pypi/socketIO-client}
-\BIBentrySTDinterwordspacing
-
-\bibitem{Akyildiz2009810}
-\BIBentryALTinterwordspacing
-I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
-  hoc networks,'' \emph{Ad Hoc Networks}, vol.~7, no.~5, pp. 810 -- 836, 2009.
-  [Online]. Available:
-  \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

@@ -23,11 +23,11 @@
 \BOOKMARK [3][-]{section*.10}{OLSR}{subsection.2.3.5}% 23
 \BOOKMARK [1][-]{section.2.4}{Software Defined Radio Testbeds}{chapter.2}% 24
 \BOOKMARK [1][-]{section.2.5}{SDR and Cognitive Radios}{chapter.2}% 25
-\BOOKMARK [2][-]{subsection.2.5.1}{Cognitive Radio Ad-Hoc Networks}{section.2.5}% 26
-\BOOKMARK [1][-]{section.2.6}{State of the Practice}{chapter.2}% 27
-\BOOKMARK [1][-]{section.2.7}{RTL-SDR}{chapter.2}% 28
-\BOOKMARK [2][-]{subsection.2.7.1}{USRP}{section.2.7}% 29
-\BOOKMARK [1][-]{section.2.8}{State of the Art}{chapter.2}% 30
+\BOOKMARK [1][-]{section.2.6}{State of the Practice}{chapter.2}% 26
+\BOOKMARK [2][-]{subsection.2.6.1}{RTL-SDR}{section.2.6}% 27
+\BOOKMARK [2][-]{subsection.2.6.2}{USRP}{section.2.6}% 28
+\BOOKMARK [1][-]{section.2.7}{State of the Art}{chapter.2}% 29
+\BOOKMARK [2][-]{subsection.2.7.1}{Cognitive Radio Ad-Hoc Networks}{section.2.7}% 30
 \BOOKMARK [0][-]{chapter.3}{Methodology}{}% 31
 \BOOKMARK [1][-]{section.3.1}{Design}{chapter.3}% 32
 \BOOKMARK [2][-]{subsection.3.1.1}{SDR}{section.3.1}% 33

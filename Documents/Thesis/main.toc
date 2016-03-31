@@ -24,11 +24,11 @@
 \contentsline {subsubsection}{OLSR}{10}{section*.10}
 \contentsline {section}{\numberline {2.4}Software Defined Radio Testbeds}{10}{section.2.4}
 \contentsline {section}{\numberline {2.5}SDR and Cognitive Radios}{10}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Cognitive Radio Ad-Hoc Networks}{11}{subsection.2.5.1}
 \contentsline {section}{\numberline {2.6}State of the Practice}{11}{section.2.6}
-\contentsline {section}{\numberline {2.7}RTL-SDR}{11}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}USRP}{12}{subsection.2.7.1}
-\contentsline {section}{\numberline {2.8}State of the Art}{12}{section.2.8}
+\contentsline {subsection}{\numberline {2.6.1}RTL-SDR}{11}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}USRP}{12}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}State of the Art}{12}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Cognitive Radio Ad-Hoc Networks}{12}{subsection.2.7.1}
 \contentsline {chapter}{\numberline {3}Methodology}{13}{chapter.3}
 \contentsline {section}{\numberline {3.1}Design}{13}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}SDR}{13}{subsection.3.1.1}
