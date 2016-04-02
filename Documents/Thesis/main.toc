@@ -58,6 +58,7 @@
 \contentsline {section}{\numberline {6.2}Conclusion}{27}{section.6.2}
 \contentsline {section}{\numberline {6.3}Recommendation}{27}{section.6.3}
 \contentsline {section}{\numberline {6.4}Future Work}{28}{section.6.4}
+\contentsline {section}{\numberline {6.5}Applications}{28}{section.6.5}
 \contentsline {chapter}{\numberline {A}Running ARCAM-Net}{29}{appendix.A}
 \contentsline {section}{\numberline {A.1}Configuring the Computer}{29}{section.A.1}
 \contentsline {subsection}{\numberline {A.1.1}Installing Natively}{29}{subsection.A.1.1}

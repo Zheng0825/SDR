@@ -1,0 +1,14 @@
+\subsection{Using GNU Radio for Cognitive Radio Application}
+
+Reaserachers have identified that the primary methods of creating a roboust CRAHN is by ensuring that nodes optimize their use of physical space and allocated spectrum \cite{6846075}. A testbed isneeded in order to fully experiment with different algorithms to maximise these conditions. GNU Radio has been used by many different research groups to test various cognitive radio
+standards. 
+
+The researchers in \cite{7141228} created a simple multihop test bed using three USRP radios to relay data from one computer to another. A forth USRP acts as a primary user and attempts to block the signal. Their work focuses on using Reinforcement learning to allow for the hopping and does not discuss the routing protocol used in much depth. 
+
+Much of the existing work done using USRPs and GNU Radio for Cognitive MANETs revolves around implementing different parts of the protocol from the ground up. In some papers the authors focus on the physical or mac layer \cite{5508221}. There has also been work in developing new higher layer protocols for cognitive radio mesh networks such as work done to replace TCP with a more robust protocol \cite{6686523}. These systems will usually react to frequency changes but some also change their topology based on power use \cite{6983150}. 
+
+There are several well known Cognitive Radio testbeds in use at different Universities. One major platform is the WARP platform from Rice University. This platform is made up of many custom components including the radio hardware itself \cite{7071706}. 
+
+Another platform is the Hydra platform developed at UT Austin. This platform uses GNU Radio to define PHY Layer parameters and the Click Modular Router to implement Layer 2 protocols.\cite{4212821} The platform that most closely resembles ours is presented in \cite{0002}. However, this platform uses OLSR which operates on a layer above Batman-adv. Similarly, the University of California, Irvine and Boeing Corporation developed a testbed based off of USRP Radios and GNU Radio, but they implement custom MAC layers \cite{4753441}. 
+
+The ADROIT project was another platform developed in conjunction with DARPA. This project relied heavily on Click and GNU Radio for much of its functionality. \cite{4286321} Though not deployed in a cognitive radio environment, the research in \cite{6115569} presents metrics on Batman-adv itself and will be useful for seeing what decreases in performance are seen when using an SDR instead of a traditional Wi-Fi Router. 
