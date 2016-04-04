@@ -48,99 +48,101 @@
 \BOOKMARK [1][-]{section.4.2}{Data Analysis}{chapter.4}% 48
 \BOOKMARK [1][-]{section.4.3}{Assumptions and Discussion of Error}{chapter.4}% 49
 \BOOKMARK [1][-]{section.4.4}{Error Bars}{chapter.4}% 50
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 51
-\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 52
-\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 53
-\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 54
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 55
-\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 56
-\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 57
-\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 58
-\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 59
-\BOOKMARK [1][-]{section.6.5}{Applications}{chapter.6}% 60
-\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 61
-\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 62
-\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 63
-\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 64
-\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 65
-\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 66
-\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 67
-\BOOKMARK [2][-]{subsection.A.3.1}{Flow Graph to Mesh Network}{section.A.3}% 68
-\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 69
-\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 70
-\BOOKMARK [1][-]{section.A.4}{Full Web Server}{appendix.A}% 71
-\BOOKMARK [0][-]{appendix.B}{Notes}{}% 72
-\BOOKMARK [1][-]{section.B.1}{Introduction}{appendix.B}% 73
-\BOOKMARK [1][-]{section.B.2}{7-1-2015}{appendix.B}% 74
-\BOOKMARK [1][-]{section.B.3}{7-2-2015}{appendix.B}% 75
-\BOOKMARK [1][-]{section.B.4}{07-03-2015}{appendix.B}% 76
-\BOOKMARK [1][-]{section.B.5}{07-04-2015}{appendix.B}% 77
-\BOOKMARK [1][-]{section.B.6}{07-05-2015}{appendix.B}% 78
-\BOOKMARK [1][-]{section.B.7}{07-06-2015}{appendix.B}% 79
-\BOOKMARK [1][-]{section.B.8}{07-07-2015}{appendix.B}% 80
-\BOOKMARK [2][-]{subsection.B.8.1}{Install BladeRF}{section.B.8}% 81
-\BOOKMARK [2][-]{subsection.B.8.2}{Download new firmware}{section.B.8}% 82
-\BOOKMARK [2][-]{subsection.B.8.3}{Reinstall GNURadio}{section.B.8}% 83
-\BOOKMARK [1][-]{section.B.9}{07-08-15}{appendix.B}% 84
-\BOOKMARK [1][-]{section.B.10}{07-09-15}{appendix.B}% 85
-\BOOKMARK [1][-]{section.B.11}{07-10-15}{appendix.B}% 86
-\BOOKMARK [1][-]{section.B.12}{07-11-15}{appendix.B}% 87
-\BOOKMARK [1][-]{section.B.13}{07-12-15}{appendix.B}% 88
-\BOOKMARK [1][-]{section.B.14}{07-13-15}{appendix.B}% 89
-\BOOKMARK [1][-]{section.B.15}{07-14-15}{appendix.B}% 90
-\BOOKMARK [1][-]{section.B.16}{07-15-15}{appendix.B}% 91
-\BOOKMARK [1][-]{section.B.17}{07-16-15}{appendix.B}% 92
-\BOOKMARK [1][-]{section.B.18}{07-17-15}{appendix.B}% 93
-\BOOKMARK [1][-]{section.B.19}{07-18-15}{appendix.B}% 94
-\BOOKMARK [1][-]{section.B.20}{07-19-15}{appendix.B}% 95
-\BOOKMARK [1][-]{section.B.21}{07-20-15}{appendix.B}% 96
-\BOOKMARK [1][-]{section.B.22}{07-21-15 to 07-24-15}{appendix.B}% 97
-\BOOKMARK [1][-]{section.B.23}{07-25-15}{appendix.B}% 98
-\BOOKMARK [2][-]{subsection.B.23.1}{PyBombs}{section.B.23}% 99
-\BOOKMARK [1][-]{section.B.24}{07-29-15}{appendix.B}% 100
-\BOOKMARK [1][-]{section.B.25}{08-04-15}{appendix.B}% 101
-\BOOKMARK [2][-]{subsection.B.25.1}{09-14-15}{section.B.25}% 102
-\BOOKMARK [1][-]{section.B.26}{09-15-15}{appendix.B}% 103
-\BOOKMARK [1][-]{section.B.27}{09-16-15}{appendix.B}% 104
-\BOOKMARK [1][-]{section.B.28}{09-18-15}{appendix.B}% 105
-\BOOKMARK [1][-]{section.B.29}{09-24-15}{appendix.B}% 106
-\BOOKMARK [1][-]{section.B.30}{09-25-15}{appendix.B}% 107
-\BOOKMARK [1][-]{section.B.31}{10-2-15}{appendix.B}% 108
-\BOOKMARK [1][-]{section.B.32}{10-23-2015}{appendix.B}% 109
-\BOOKMARK [1][-]{section.B.33}{11-1-15}{appendix.B}% 110
-\BOOKMARK [1][-]{section.B.34}{11-3-15}{appendix.B}% 111
-\BOOKMARK [1][-]{section.B.35}{11-7-15}{appendix.B}% 112
-\BOOKMARK [1][-]{section.B.36}{11-14-15}{appendix.B}% 113
-\BOOKMARK [1][-]{section.B.37}{11-15-15}{appendix.B}% 114
-\BOOKMARK [1][-]{section.B.38}{11-17-15}{appendix.B}% 115
-\BOOKMARK [1][-]{section.B.39}{11-19-15}{appendix.B}% 116
-\BOOKMARK [1][-]{section.B.40}{11-20-15}{appendix.B}% 117
-\BOOKMARK [1][-]{section.B.41}{11-22-15}{appendix.B}% 118
-\BOOKMARK [1][-]{section.B.42}{12-22-15}{appendix.B}% 119
-\BOOKMARK [1][-]{section.B.43}{12-23-15}{appendix.B}% 120
-\BOOKMARK [1][-]{section.B.44}{12-29-15}{appendix.B}% 121
-\BOOKMARK [1][-]{section.B.45}{1-5-16}{appendix.B}% 122
-\BOOKMARK [1][-]{section.B.46}{1-7-16}{appendix.B}% 123
-\BOOKMARK [1][-]{section.B.47}{1-11-15}{appendix.B}% 124
-\BOOKMARK [1][-]{section.B.48}{1-12-16}{appendix.B}% 125
-\BOOKMARK [2][-]{subsection.B.48.1}{SUCCESS}{section.B.48}% 126
-\BOOKMARK [1][-]{section.B.49}{01-15-16}{appendix.B}% 127
-\BOOKMARK [1][-]{section.B.50}{01-22-16}{appendix.B}% 128
-\BOOKMARK [1][-]{section.B.51}{01-23-16}{appendix.B}% 129
-\BOOKMARK [1][-]{section.B.52}{01-26-16}{appendix.B}% 130
-\BOOKMARK [1][-]{section.B.53}{01-27-16}{appendix.B}% 131
-\BOOKMARK [1][-]{section.B.54}{01-28-16}{appendix.B}% 132
-\BOOKMARK [1][-]{section.B.55}{02-05-16}{appendix.B}% 133
-\BOOKMARK [2][-]{subsection.B.55.1}{Test Plan Alpha}{section.B.55}% 134
-\BOOKMARK [1][-]{section.B.56}{2-8-16}{appendix.B}% 135
-\BOOKMARK [1][-]{section.B.57}{2-10-16}{appendix.B}% 136
-\BOOKMARK [1][-]{section.B.58}{2-11-16}{appendix.B}% 137
-\BOOKMARK [1][-]{section.B.59}{2-13-16}{appendix.B}% 138
-\BOOKMARK [1][-]{section.B.60}{2-18-16}{appendix.B}% 139
-\BOOKMARK [2][-]{subsection.B.60.1}{ESPEAK}{section.B.60}% 140
-\BOOKMARK [1][-]{section.B.61}{2-20-16}{appendix.B}% 141
-\BOOKMARK [1][-]{section.B.62}{2-22-16}{appendix.B}% 142
-\BOOKMARK [2][-]{subsection.B.62.1}{batctl source build}{section.B.62}% 143
-\BOOKMARK [1][-]{section.B.63}{2-23-16}{appendix.B}% 144
-\BOOKMARK [1][-]{section.B.64}{3-7-16}{appendix.B}% 145
-\BOOKMARK [1][-]{section.B.65}{3-28-2016}{appendix.B}% 146
+\BOOKMARK [1][-]{section.4.5}{Applications}{chapter.4}% 51
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 52
+\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 53
+\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 54
+\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.4}{Applications}{chapter.5}% 56
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 57
+\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 58
+\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 59
+\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 60
+\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 61
+\BOOKMARK [1][-]{section.6.5}{Applications}{chapter.6}% 62
+\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 63
+\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 64
+\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 65
+\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 66
+\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 67
+\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 68
+\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 69
+\BOOKMARK [2][-]{subsection.A.3.1}{Flow Graph to Mesh Network}{section.A.3}% 70
+\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 71
+\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 72
+\BOOKMARK [1][-]{section.A.4}{Full Web Server}{appendix.A}% 73
+\BOOKMARK [0][-]{appendix.B}{Notes}{}% 74
+\BOOKMARK [1][-]{section.B.1}{Introduction}{appendix.B}% 75
+\BOOKMARK [1][-]{section.B.2}{7-1-2015}{appendix.B}% 76
+\BOOKMARK [1][-]{section.B.3}{7-2-2015}{appendix.B}% 77
+\BOOKMARK [1][-]{section.B.4}{07-03-2015}{appendix.B}% 78
+\BOOKMARK [1][-]{section.B.5}{07-04-2015}{appendix.B}% 79
+\BOOKMARK [1][-]{section.B.6}{07-05-2015}{appendix.B}% 80
+\BOOKMARK [1][-]{section.B.7}{07-06-2015}{appendix.B}% 81
+\BOOKMARK [1][-]{section.B.8}{07-07-2015}{appendix.B}% 82
+\BOOKMARK [2][-]{subsection.B.8.1}{Install BladeRF}{section.B.8}% 83
+\BOOKMARK [2][-]{subsection.B.8.2}{Download new firmware}{section.B.8}% 84
+\BOOKMARK [2][-]{subsection.B.8.3}{Reinstall GNURadio}{section.B.8}% 85
+\BOOKMARK [1][-]{section.B.9}{07-08-15}{appendix.B}% 86
+\BOOKMARK [1][-]{section.B.10}{07-09-15}{appendix.B}% 87
+\BOOKMARK [1][-]{section.B.11}{07-10-15}{appendix.B}% 88
+\BOOKMARK [1][-]{section.B.12}{07-11-15}{appendix.B}% 89
+\BOOKMARK [1][-]{section.B.13}{07-12-15}{appendix.B}% 90
+\BOOKMARK [1][-]{section.B.14}{07-13-15}{appendix.B}% 91
+\BOOKMARK [1][-]{section.B.15}{07-14-15}{appendix.B}% 92
+\BOOKMARK [1][-]{section.B.16}{07-15-15}{appendix.B}% 93
+\BOOKMARK [1][-]{section.B.17}{07-16-15}{appendix.B}% 94
+\BOOKMARK [1][-]{section.B.18}{07-17-15}{appendix.B}% 95
+\BOOKMARK [1][-]{section.B.19}{07-18-15}{appendix.B}% 96
+\BOOKMARK [1][-]{section.B.20}{07-19-15}{appendix.B}% 97
+\BOOKMARK [1][-]{section.B.21}{07-20-15}{appendix.B}% 98
+\BOOKMARK [1][-]{section.B.22}{07-21-15 to 07-24-15}{appendix.B}% 99
+\BOOKMARK [1][-]{section.B.23}{07-25-15}{appendix.B}% 100
+\BOOKMARK [2][-]{subsection.B.23.1}{PyBombs}{section.B.23}% 101
+\BOOKMARK [1][-]{section.B.24}{07-29-15}{appendix.B}% 102
+\BOOKMARK [1][-]{section.B.25}{08-04-15}{appendix.B}% 103
+\BOOKMARK [2][-]{subsection.B.25.1}{09-14-15}{section.B.25}% 104
+\BOOKMARK [1][-]{section.B.26}{09-15-15}{appendix.B}% 105
+\BOOKMARK [1][-]{section.B.27}{09-16-15}{appendix.B}% 106
+\BOOKMARK [1][-]{section.B.28}{09-18-15}{appendix.B}% 107
+\BOOKMARK [1][-]{section.B.29}{09-24-15}{appendix.B}% 108
+\BOOKMARK [1][-]{section.B.30}{09-25-15}{appendix.B}% 109
+\BOOKMARK [1][-]{section.B.31}{10-2-15}{appendix.B}% 110
+\BOOKMARK [1][-]{section.B.32}{10-23-2015}{appendix.B}% 111
+\BOOKMARK [1][-]{section.B.33}{11-1-15}{appendix.B}% 112
+\BOOKMARK [1][-]{section.B.34}{11-3-15}{appendix.B}% 113
+\BOOKMARK [1][-]{section.B.35}{11-7-15}{appendix.B}% 114
+\BOOKMARK [1][-]{section.B.36}{11-14-15}{appendix.B}% 115
+\BOOKMARK [1][-]{section.B.37}{11-15-15}{appendix.B}% 116
+\BOOKMARK [1][-]{section.B.38}{11-17-15}{appendix.B}% 117
+\BOOKMARK [1][-]{section.B.39}{11-19-15}{appendix.B}% 118
+\BOOKMARK [1][-]{section.B.40}{11-20-15}{appendix.B}% 119
+\BOOKMARK [1][-]{section.B.41}{11-22-15}{appendix.B}% 120
+\BOOKMARK [1][-]{section.B.42}{12-22-15}{appendix.B}% 121
+\BOOKMARK [1][-]{section.B.43}{12-23-15}{appendix.B}% 122
+\BOOKMARK [1][-]{section.B.44}{12-29-15}{appendix.B}% 123
+\BOOKMARK [1][-]{section.B.45}{1-5-16}{appendix.B}% 124
+\BOOKMARK [1][-]{section.B.46}{1-7-16}{appendix.B}% 125
+\BOOKMARK [1][-]{section.B.47}{1-11-15}{appendix.B}% 126
+\BOOKMARK [1][-]{section.B.48}{1-12-16}{appendix.B}% 127
+\BOOKMARK [2][-]{subsection.B.48.1}{SUCCESS}{section.B.48}% 128
+\BOOKMARK [1][-]{section.B.49}{01-15-16}{appendix.B}% 129
+\BOOKMARK [1][-]{section.B.50}{01-22-16}{appendix.B}% 130
+\BOOKMARK [1][-]{section.B.51}{01-23-16}{appendix.B}% 131
+\BOOKMARK [1][-]{section.B.52}{01-26-16}{appendix.B}% 132
+\BOOKMARK [1][-]{section.B.53}{01-27-16}{appendix.B}% 133
+\BOOKMARK [1][-]{section.B.54}{01-28-16}{appendix.B}% 134
+\BOOKMARK [1][-]{section.B.55}{02-05-16}{appendix.B}% 135
+\BOOKMARK [2][-]{subsection.B.55.1}{Test Plan Alpha}{section.B.55}% 136
+\BOOKMARK [1][-]{section.B.56}{2-8-16}{appendix.B}% 137
+\BOOKMARK [1][-]{section.B.57}{2-10-16}{appendix.B}% 138
+\BOOKMARK [1][-]{section.B.58}{2-11-16}{appendix.B}% 139
+\BOOKMARK [1][-]{section.B.59}{2-13-16}{appendix.B}% 140
+\BOOKMARK [1][-]{section.B.60}{2-18-16}{appendix.B}% 141
+\BOOKMARK [2][-]{subsection.B.60.1}{ESPEAK}{section.B.60}% 142
+\BOOKMARK [1][-]{section.B.61}{2-20-16}{appendix.B}% 143
+\BOOKMARK [1][-]{section.B.62}{2-22-16}{appendix.B}% 144
+\BOOKMARK [2][-]{subsection.B.62.1}{batctl source build}{section.B.62}% 145
+\BOOKMARK [1][-]{section.B.63}{2-23-16}{appendix.B}% 146
+\BOOKMARK [1][-]{section.B.64}{3-7-16}{appendix.B}% 147
+\BOOKMARK [1][-]{section.B.65}{3-28-2016}{appendix.B}% 148
