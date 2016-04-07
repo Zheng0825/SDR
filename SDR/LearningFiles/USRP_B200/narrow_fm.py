@@ -1,19 +1,9 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 ##################################################
-# GNU Radio Python Flow Graph
+# Gnuradio Python Flow Graph
 # Title: Narrow Fm
-# Generated: Wed Jan  6 18:05:13 2016
+# Generated: Thu Apr  7 20:10:07 2016
 ##################################################
-
-if __name__ == '__main__':
-    import ctypes
-    import sys
-    if sys.platform.startswith('linux'):
-        try:
-            x11 = ctypes.cdll.LoadLibrary('libX11.so')
-            x11.XInitThreads()
-        except:
-            print "Warning: failed to XInitThreads()"
 
 from gnuradio import analog
 from gnuradio import audio
@@ -31,7 +21,6 @@ from grc_gnuradio import wxgui as grc_wxgui
 from optparse import OptionParser
 import time
 import wx
-
 
 class narrow_fm(grc_wxgui.top_block_gui):
 
@@ -98,7 +87,7 @@ class narrow_fm(grc_wxgui.top_block_gui):
         )
         self.uhd_usrp_source_0.set_samp_rate(samp_rate)
         self.uhd_usrp_source_0.set_center_freq(Freq, 0)
-        self.uhd_usrp_source_0.set_normalized_gain(0.5, 0)
+        self.uhd_usrp_source_0.set_gain(0.5, 0)
         self.uhd_usrp_source_0.set_antenna("RX2", 0)
         self.rational_resampler_xxx_0 = filter.rational_resampler_fff(
                 interpolation=48,
@@ -140,11 +129,12 @@ class narrow_fm(grc_wxgui.top_block_gui):
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0, 0))    
-        self.connect((self.low_pass_filter_0, 0), (self.analog_wfm_rcv_0, 0))    
-        self.connect((self.low_pass_filter_0, 0), (self.wxgui_fftsink2_0, 0))    
-        self.connect((self.rational_resampler_xxx_0, 0), (self.audio_sink_0, 0))    
-        self.connect((self.uhd_usrp_source_0, 0), (self.low_pass_filter_0, 0))    
+        self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0, 0))
+        self.connect((self.low_pass_filter_0, 0), (self.analog_wfm_rcv_0, 0))
+        self.connect((self.low_pass_filter_0, 0), (self.wxgui_fftsink2_0, 0))
+        self.connect((self.rational_resampler_xxx_0, 0), (self.audio_sink_0, 0))
+        self.connect((self.uhd_usrp_source_0, 0), (self.low_pass_filter_0, 0))
+
 
 
     def get_samp_rate(self):
@@ -174,8 +164,15 @@ class narrow_fm(grc_wxgui.top_block_gui):
         self.uhd_usrp_source_0.set_center_freq(self.Freq, 0)
         self.wxgui_fftsink2_0.set_baseband_freq(self.Freq)
 
-
 if __name__ == '__main__':
+    import ctypes
+    import sys
+    if sys.platform.startswith('linux'):
+        try:
+            x11 = ctypes.cdll.LoadLibrary('libX11.so')
+            x11.XInitThreads()
+        except:
+            print "Warning: failed to XInitThreads()"
     parser = OptionParser(option_class=eng_option, usage="%prog: [options]")
     (options, args) = parser.parse_args()
     tb = narrow_fm()
