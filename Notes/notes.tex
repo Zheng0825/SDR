@@ -968,7 +968,16 @@ As always, a more indepth literature review will need to continue.
 
 	\shellcmd{sudo apt-get install gnuradio-dev}
 	\shellcmd{sudo apt-get install libcppunit-dev}
+	\shellcmd{sudo apt-get install liblog4cpp5-dev}
 
+	Then to get the system to recognize the blocks I had to move the .xml files located in:
+
+	\shellcmd{gr-foo/grc}
+	To 
+	\shellcmd{~/.grc_gnuradio/}
+
+	I simply copied them all by typing the following from the gr-foo/grc directory:
+	\shellcmd{ cp * ~/.grc_gnuradio/}
 
 \end{document}
 
