@@ -2,11 +2,11 @@
 ##################################################
 # Gnuradio Python Flow Graph
 # Title: Narrow Fm
-# Generated: Thu Apr  7 20:10:07 2016
+# Generated: Thu Apr  7 20:17:14 2016
 ##################################################
 
 from gnuradio import analog
-from gnuradio import audio
+from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import filter
 from gnuradio import gr
@@ -120,7 +120,7 @@ class narrow_fm(grc_wxgui.top_block_gui):
         	proportion=1,
         )
         self.Add(_corr_sizer)
-        self.audio_sink_0 = audio.sink(48000, "", True)
+        self.blocks_wavfile_sink_0 = blocks.wavfile_sink("test.wav", 1, 48000, 8)
         self.analog_wfm_rcv_0 = analog.wfm_rcv(
         	quad_rate=250e3,
         	audio_decimation=1,
@@ -132,8 +132,8 @@ class narrow_fm(grc_wxgui.top_block_gui):
         self.connect((self.analog_wfm_rcv_0, 0), (self.rational_resampler_xxx_0, 0))
         self.connect((self.low_pass_filter_0, 0), (self.analog_wfm_rcv_0, 0))
         self.connect((self.low_pass_filter_0, 0), (self.wxgui_fftsink2_0, 0))
-        self.connect((self.rational_resampler_xxx_0, 0), (self.audio_sink_0, 0))
         self.connect((self.uhd_usrp_source_0, 0), (self.low_pass_filter_0, 0))
+        self.connect((self.rational_resampler_xxx_0, 0), (self.blocks_wavfile_sink_0, 0))
 
 
 
