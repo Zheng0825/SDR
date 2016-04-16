@@ -1,12 +1,14 @@
 \select@language {english}
 \contentsline {chapter}{Declaration of Authorship}{iii}{section*.1}
 \contentsline {chapter}{Abstract}{v}{section*.2}
-\contentsline {chapter}{Acknowledgements}{vii}{section*.3}
+\contentsline {chapter}{Acknowledgements}{ix}{section*.3}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Mesh Networks}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Software Defined Radio Networks}{1}{section.1.2}
-\contentsline {section}{\numberline {1.3}Trends Towards Cognitive Radio Environments}{2}{section.1.3}
-\contentsline {section}{\numberline {1.4}ARCAM-Net}{2}{section.1.4}
+\contentsline {section}{\numberline {1.2}Software Defined Radio Networks}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Batman-adv}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}GNU Radio}{2}{section.1.4}
+\contentsline {section}{\numberline {1.5}Trends Towards Cognitive Radio Environments}{2}{section.1.5}
+\contentsline {section}{\numberline {1.6}ARCAM-Net}{3}{section.1.6}
 \contentsline {chapter}{\numberline {2}Literature Review}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}SDR Fundamentals}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}GNU Radio and MATLAB}{6}{section.2.2}
@@ -27,129 +29,59 @@
 \contentsline {section}{\numberline {2.6}State of the Practice}{11}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}RTL-SDR}{11}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}USRP}{12}{subsection.2.6.2}
-\contentsline {section}{\numberline {2.7}State of the Art}{12}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Cognitive Radio Ad-Hoc Networks}{12}{subsection.2.7.1}
-\contentsline {chapter}{\numberline {3}Methodology}{13}{chapter.3}
-\contentsline {section}{\numberline {3.1}Design}{13}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}SDR}{13}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}GNU Radio Flowgraph}{13}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Batman-adv}{15}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Flask Web Server and Socket.IO}{15}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}A.L.F.R.E.D.}{16}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}Fabrication and Build Process}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}Test Procedures}{17}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Network Benchmarks}{18}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Route Changes}{18}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Frequency Distribution}{18}{subsection.3.3.3}
-\contentsline {chapter}{\numberline {4}Findings}{19}{chapter.4}
-\contentsline {section}{\numberline {4.1}Results}{19}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Network Benchmarks}{19}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Route Changes}{19}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Frequency Changes}{19}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Data Analysis}{22}{section.4.2}
-\contentsline {section}{\numberline {4.3}Assumptions and Discussion of Error}{23}{section.4.3}
-\contentsline {section}{\numberline {4.4}Error Bars}{23}{section.4.4}
-\contentsline {section}{\numberline {4.5}Applications}{23}{section.4.5}
-\contentsline {chapter}{\numberline {5}Discussion}{25}{chapter.5}
-\contentsline {section}{\numberline {5.1}Constraints and Limitations}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}SDR Network}{25}{section.5.2}
-\contentsline {section}{\numberline {5.3}Cognitive Networks}{26}{section.5.3}
-\contentsline {section}{\numberline {5.4}Applications}{26}{section.5.4}
-\contentsline {chapter}{\numberline {6}Conclusion}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Summary}{27}{section.6.1}
-\contentsline {section}{\numberline {6.2}Conclusion}{27}{section.6.2}
-\contentsline {section}{\numberline {6.3}Recommendation}{27}{section.6.3}
-\contentsline {section}{\numberline {6.4}Future Work}{28}{section.6.4}
-\contentsline {section}{\numberline {6.5}Applications}{28}{section.6.5}
-\contentsline {chapter}{\numberline {A}Running ARCAM-Net}{29}{appendix.A}
-\contentsline {section}{\numberline {A.1}Configuring the Computer}{29}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Installing Natively}{29}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Installing Through Vagrant}{29}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Manual Install}{29}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}Getting The Flowgraphs}{33}{section.A.2}
-\contentsline {section}{\numberline {A.3}Running The Flowgraphs}{33}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Flow Graph to Mesh Network}{34}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Raising the Bat Signal}{34}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}TMux Script}{34}{subsection.A.3.3}
-\contentsline {section}{\numberline {A.4}Full Web Server}{37}{section.A.4}
-\contentsline {chapter}{\numberline {B}Notes}{39}{appendix.B}
-\contentsline {section}{\numberline {B.1}Introduction}{39}{section.B.1}
-\contentsline {section}{\numberline {B.2}7-1-2015}{40}{section.B.2}
-\contentsline {paragraph}{Success}{40}{section*.21}
-\contentsline {section}{\numberline {B.3}7-2-2015}{41}{section.B.3}
-\contentsline {paragraph}{Static}{41}{section*.22}
-\contentsline {section}{\numberline {B.4}07-03-2015}{41}{section.B.4}
-\contentsline {section}{\numberline {B.5}07-04-2015}{42}{section.B.5}
-\contentsline {section}{\numberline {B.6}07-05-2015}{42}{section.B.6}
-\contentsline {section}{\numberline {B.7}07-06-2015}{43}{section.B.7}
-\contentsline {paragraph}{Success}{43}{section*.23}
-\contentsline {paragraph}{R820T}{43}{section*.24}
-\contentsline {paragraph}{CB Radio}{44}{section*.25}
-\contentsline {section}{\numberline {B.8}07-07-2015}{45}{section.B.8}
-\contentsline {subsection}{\numberline {B.8.1}Install BladeRF}{45}{subsection.B.8.1}
-\contentsline {subsection}{\numberline {B.8.2}Download new firmware}{46}{subsection.B.8.2}
-\contentsline {subsection}{\numberline {B.8.3}Reinstall GNURadio}{46}{subsection.B.8.3}
-\contentsline {paragraph}{Success!}{46}{section*.26}
-\contentsline {section}{\numberline {B.9}07-08-15}{47}{section.B.9}
-\contentsline {section}{\numberline {B.10}07-09-15}{47}{section.B.10}
-\contentsline {section}{\numberline {B.11}07-10-15}{47}{section.B.11}
-\contentsline {section}{\numberline {B.12}07-11-15}{47}{section.B.12}
-\contentsline {section}{\numberline {B.13}07-12-15}{47}{section.B.13}
-\contentsline {section}{\numberline {B.14}07-13-15}{48}{section.B.14}
-\contentsline {section}{\numberline {B.15}07-14-15}{48}{section.B.15}
-\contentsline {section}{\numberline {B.16}07-15-15}{49}{section.B.16}
-\contentsline {section}{\numberline {B.17}07-16-15}{50}{section.B.17}
-\contentsline {section}{\numberline {B.18}07-17-15}{50}{section.B.18}
-\contentsline {section}{\numberline {B.19}07-18-15}{50}{section.B.19}
-\contentsline {section}{\numberline {B.20}07-19-15}{50}{section.B.20}
-\contentsline {section}{\numberline {B.21}07-20-15}{50}{section.B.21}
-\contentsline {section}{\numberline {B.22}07-21-15 to 07-24-15}{50}{section.B.22}
-\contentsline {section}{\numberline {B.23}07-25-15}{50}{section.B.23}
-\contentsline {subsection}{\numberline {B.23.1}PyBombs}{50}{subsection.B.23.1}
-\contentsline {section}{\numberline {B.24}07-29-15}{51}{section.B.24}
-\contentsline {section}{\numberline {B.25}08-04-15}{51}{section.B.25}
-\contentsline {subsection}{\numberline {B.25.1}09-14-15}{51}{subsection.B.25.1}
-\contentsline {section}{\numberline {B.26}09-15-15}{53}{section.B.26}
-\contentsline {section}{\numberline {B.27}09-16-15}{54}{section.B.27}
-\contentsline {section}{\numberline {B.28}09-18-15}{54}{section.B.28}
-\contentsline {section}{\numberline {B.29}09-24-15}{54}{section.B.29}
-\contentsline {section}{\numberline {B.30}09-25-15}{55}{section.B.30}
-\contentsline {section}{\numberline {B.31}10-2-15}{55}{section.B.31}
-\contentsline {section}{\numberline {B.32}10-23-2015}{55}{section.B.32}
-\contentsline {section}{\numberline {B.33}11-1-15}{55}{section.B.33}
-\contentsline {section}{\numberline {B.34}11-3-15}{55}{section.B.34}
-\contentsline {section}{\numberline {B.35}11-7-15}{56}{section.B.35}
-\contentsline {section}{\numberline {B.36}11-14-15}{56}{section.B.36}
-\contentsline {section}{\numberline {B.37}11-15-15}{56}{section.B.37}
-\contentsline {section}{\numberline {B.38}11-17-15}{57}{section.B.38}
-\contentsline {section}{\numberline {B.39}11-19-15}{57}{section.B.39}
-\contentsline {section}{\numberline {B.40}11-20-15}{57}{section.B.40}
-\contentsline {section}{\numberline {B.41}11-22-15}{57}{section.B.41}
-\contentsline {section}{\numberline {B.42}12-22-15}{57}{section.B.42}
-\contentsline {section}{\numberline {B.43}12-23-15}{57}{section.B.43}
-\contentsline {section}{\numberline {B.44}12-29-15}{58}{section.B.44}
-\contentsline {section}{\numberline {B.45}1-5-16}{58}{section.B.45}
-\contentsline {section}{\numberline {B.46}1-7-16}{58}{section.B.46}
-\contentsline {section}{\numberline {B.47}1-11-15}{58}{section.B.47}
-\contentsline {section}{\numberline {B.48}1-12-16}{59}{section.B.48}
-\contentsline {subsection}{\numberline {B.48.1}SUCCESS}{59}{subsection.B.48.1}
-\contentsline {section}{\numberline {B.49}01-15-16}{61}{section.B.49}
-\contentsline {section}{\numberline {B.50}01-22-16}{61}{section.B.50}
-\contentsline {section}{\numberline {B.51}01-23-16}{61}{section.B.51}
-\contentsline {section}{\numberline {B.52}01-26-16}{62}{section.B.52}
-\contentsline {section}{\numberline {B.53}01-27-16}{62}{section.B.53}
-\contentsline {section}{\numberline {B.54}01-28-16}{63}{section.B.54}
-\contentsline {section}{\numberline {B.55}02-05-16}{63}{section.B.55}
-\contentsline {subsection}{\numberline {B.55.1}Test Plan Alpha}{63}{subsection.B.55.1}
-\contentsline {section}{\numberline {B.56}2-8-16}{64}{section.B.56}
-\contentsline {section}{\numberline {B.57}2-10-16}{64}{section.B.57}
-\contentsline {section}{\numberline {B.58}2-11-16}{64}{section.B.58}
-\contentsline {section}{\numberline {B.59}2-13-16}{65}{section.B.59}
-\contentsline {section}{\numberline {B.60}2-18-16}{65}{section.B.60}
-\contentsline {subsection}{\numberline {B.60.1}ESPEAK}{65}{subsection.B.60.1}
-\contentsline {section}{\numberline {B.61}2-20-16}{65}{section.B.61}
-\contentsline {section}{\numberline {B.62}2-22-16}{65}{section.B.62}
-\contentsline {subsection}{\numberline {B.62.1}batctl source build}{65}{subsection.B.62.1}
-\contentsline {section}{\numberline {B.63}2-23-16}{66}{section.B.63}
-\contentsline {section}{\numberline {B.64}3-7-16}{66}{section.B.64}
-\contentsline {section}{\numberline {B.65}3-28-2016}{66}{section.B.65}
+\contentsline {section}{\numberline {2.7}Industry State of the Practice}{12}{section.2.7}
+\contentsline {section}{\numberline {2.8}State of the Art}{13}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Cognitive Radio Networks}{13}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Cognitive Networks}{13}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Cognitive Radio Ad-Hoc Networks}{13}{subsection.2.8.3}
+\contentsline {subsection}{\numberline {2.8.4}State of the Art Protocols}{13}{subsection.2.8.4}
+\contentsline {subsubsection}{Bio-inspired Protocols}{13}{section*.11}
+\contentsline {subsubsection}{Swarm Protocols}{13}{section*.12}
+\contentsline {subsubsection}{Hive Protocols}{13}{section*.13}
+\contentsline {section}{\numberline {2.9}Software Defined Networks}{13}{section.2.9}
+\contentsline {section}{\numberline {2.10}CRN vs CRAHN vs SDRN vs SDN}{13}{section.2.10}
+\contentsline {section}{\numberline {2.11}Cognitive Radio Networks}{13}{section.2.11}
+\contentsline {section}{\numberline {2.12}Cognitive Networls}{13}{section.2.12}
+\contentsline {section}{\numberline {2.13}Decision Making}{13}{section.2.13}
+\contentsline {section}{\numberline {2.14}802.11s}{13}{section.2.14}
+\contentsline {chapter}{\numberline {3}Methodology}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}SDR}{15}{section.3.1}
+\contentsline {section}{\numberline {3.2}GNU Radio Flowgraph}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}Batman-adv}{17}{section.3.3}
+\contentsline {section}{\numberline {3.4}Flask Web Server and Socket.IO}{17}{section.3.4}
+\contentsline {section}{\numberline {3.5}A.L.F.R.E.D.}{18}{section.3.5}
+\contentsline {section}{\numberline {3.6}Fabrication and Build Process}{19}{section.3.6}
+\contentsline {section}{\numberline {3.7}Test Procedures}{19}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Network Benchmarks}{20}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Route Changes}{20}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}Frequency Distribution}{20}{subsection.3.7.3}
+\contentsline {chapter}{\numberline {4}Findings}{21}{chapter.4}
+\contentsline {section}{\numberline {4.1}Results}{21}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Network Benchmarks}{21}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Route Changes}{21}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Frequency Changes}{21}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Applications}{24}{section.4.2}
+\contentsline {section}{\numberline {4.3}Data Analysis}{24}{section.4.3}
+\contentsline {section}{\numberline {4.4}Assumptions and Discussion of Error}{25}{section.4.4}
+\contentsline {chapter}{\numberline {5}Discussion}{27}{chapter.5}
+\contentsline {section}{\numberline {5.1}Constraints and Limitations}{27}{section.5.1}
+\contentsline {section}{\numberline {5.2}SDR Network}{27}{section.5.2}
+\contentsline {section}{\numberline {5.3}Cognitive Networks}{28}{section.5.3}
+\contentsline {section}{\numberline {5.4}Applications}{28}{section.5.4}
+\contentsline {chapter}{\numberline {6}Conclusion}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Summary}{29}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conclusion}{29}{section.6.2}
+\contentsline {section}{\numberline {6.3}Recommendation}{29}{section.6.3}
+\contentsline {section}{\numberline {6.4}Future Work}{30}{section.6.4}
+\contentsline {section}{\numberline {6.5}Applications}{30}{section.6.5}
+\contentsline {chapter}{\numberline {A}Running ARCAM-Net}{37}{appendix.A}
+\contentsline {section}{\numberline {A.1}Configuring the Computer}{37}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}Installing Natively}{37}{subsection.A.1.1}
+\contentsline {subsection}{\numberline {A.1.2}Installing Through Vagrant}{37}{subsection.A.1.2}
+\contentsline {subsection}{\numberline {A.1.3}Manual Install}{37}{subsection.A.1.3}
+\contentsline {section}{\numberline {A.2}Getting The Flowgraphs}{41}{section.A.2}
+\contentsline {section}{\numberline {A.3}Running The Flowgraphs}{41}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}Flow Graph to Mesh Network}{42}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}Raising the Bat Signal}{42}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}TMux Script}{42}{subsection.A.3.3}
+\contentsline {section}{\numberline {A.4}Full Web Server}{45}{section.A.4}

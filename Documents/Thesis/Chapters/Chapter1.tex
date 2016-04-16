@@ -4,6 +4,8 @@
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
+ARCAM-Net is a platform formed through the union of several other projects and concepts. The main concepts embodied within ARCAM-Net are mesh networks and software defined radio networks. The current iteration of ARCAM-Net is developed using GNU Radio and Batman-adv. As work progresses on the platform, the software defined radio network can be transitioned to a cognitive radio network by leveraging the capabilities found within GNU Radio. 
+
 %----------------------------------------------------------------------------------------
 
 % Define some commands to keep the formatting separated from the content 
@@ -17,11 +19,11 @@
 
 \section{Mesh Networks}
 
-In a traditional Wide Area Network (WAN), a user is able to connect to the internet through an Internet Service Provide (ISP). The user will almost always pay the ISP in exchange for the ability to connect to the rest of the internet. This is considered a centralized way to connect to the internet, where the users all connect through a few central points in the ISP's infrastructure. An alternative to this type of networking is multi-hop, ad-hoc, mesh networking. Mesh networks are decentralized networks. This means there is no single point of failure. 
+In a traditional Wide Area Network (WAN), a user is able to connect to the internet through an Internet Service Provide (ISP). The user will almost always pay the ISP in exchange for the ability to connect to the rest of the internet. This is considered a centralized way to connect to the internet, where the users all connect through a few central points in the ISP's infrastructure. An alternative to this type of networking is multi-hop, ad-hoc, mesh networking. Mesh networks are decentralized networks. This indicates there is no single point of failure \cite{4796928}. 
 
-In an ad-hoc network, each radio is able to communicate directly to any other radio within its transmission range. There is no need to connect to a central router. Ad-hoc networks are defined at the physical layer (PHY), or layer 1 in the Open Systems Interconnect (OSI) model. Mesh routing takes place as part of layer 2 or 3 of the OSI model depending on the routing protocol chosen. A mesh network builds upon an adhoc network by allowing radios to retransmit any packets they receive. This allows two radios to communicate over a larger distance by leveraging other radios located inbetween the sender and receiver. 
+In an ad-hoc network, each radio is able to communicate directly to any other radio within its transmission range. There is no need to connect to a central router \cite{4796928}. Ad-hoc networks are defined at the physical layer (PHY), or layer 1 in the Open Systems Interconnect (OSI) model. Mesh routing takes place as part of layer 2 or 3 of the OSI model depending on the routing protocol chosen. A mesh network builds upon an adhoc network by allowing radios to retransmit any packets they receive. This allows two radios to communicate over a larger distance by leveraging other radios located inbetween the sender and receiver\cite{0033}. 
 
-In simple mesh networking protocols, any packet sent may flood through the network to every other radio. However, with more advanced protocols an algorithm is used to ensure that a packet follows a direct path from sender and receiver and only uses a hop if necessary. The distributed nature of a mesh network creates many unique features. The decentralized nature of a mesh network prevents issues related to single points of failure. If a node goes down, the network can reconfigure and find a new path to the target. 
+In simple mesh networking protocols, any packet sent may flood through the network to every other radio. However, with more advanced protocols an algorithm is used to ensure that a packet follows a direct path from sender and receiver and only uses a hop if necessary. The distributed nature of a mesh network creates many unique features. The decentralized nature of a mesh network prevents issues related to single points of failure. If a node goes down, the network can reconfigure and find a new path to the target \cite{0033}. 
 
 %----------------------------------------------------------------------------------------
 
@@ -32,6 +34,10 @@ Software Defined Radios (SDRs) are radio communication systems that utilize soft
 A typical cell phone can have a bluetooth, wifi, gps, and cellular radio all in a very small package. In the future, these systems could be replaced by a single SDR. SDRs are capable of using both digital and analog transmission protocols. They can use general purpose processors, digital signal processors, or FPGAs to process the RF information. Analog to Digital Converters (ADCs) are used to receive data from the antenna while Digital to Analog Converters (DACs) are used to transmit the processed signals. 
 
 As the name suggests, a Software Defined Radio Network (SDRN) is a network made up of SDRs. The networks can operate on a nearly infinite combination of center frequencies, amplitudes, bandwidths, and protocols. The flexibility of an SDRN is limited by the physical hardware capabilities of the SDR, the computation speed of the processing unit, and regulations from governing bodies like the Federal Communications Commission (FCC). Still, the flexibility of recofigurable radios leads to opportunities for advancing communications infrastructure beyond traditional protocols. 
+
+\section{Batman-adv}
+
+\section{GNU Radio}
  
 %----------------------------------------------------------------------------------------
 
@@ -47,14 +53,10 @@ Beyond ensuring good throughput in a network, CRNs also solve a major issue faci
 
 \section{ARCAM-Net}
 
-In order to begin work on SDRNs and CRAHNs, a testbed and research platform needed to be established. This thesis serves to describe the Advanced Radio Communication Ad-hoc Mesh Network, or ARCAM-Net, test bed and platform. The goal of this project is to create a open source, low cost, research platform that can serve as the basis for future work at Florida Polytechnic University. By combining well established open source tools, ARCAM-Net could become a great tool for other research groups to break into SDR and CR and get up and running in minimal time. All software used by ARCAM-Net is freely available. The only costs come from the hardware. 
+In order to begin work on SDRNs and CRAHNs, a testbed and research platform needed to be established. This thesis serves to describe the Advanced Radio Communication Ad-hoc Mesh Network, or ARCAM-Net, test bed and platform. The goal of this project is to create a open source, low cost, research platform that can serve as the basis for future work at Florida Polytechnic University and other organizations due to the open source nature of the project. By combining well established open source tools, ARCAM-Net could become a great tool for other research groups to break into SDR and CR and get up and running in minimal time. All software used by ARCAM-Net is freely available. The only costs come from the hardware. 
 
 ARCAM-Net's architecture will be throughly discussed in this document, but the two major components are GNU Radio and Batman-adv. GNU Radio is an open source toolchain for creating digital signal processing tools to be used with SDRs. Batman-adv is a layer 2 mesh networking protocol. Both projects are community driven, but exist as separate entities. I hope that with ARCAM-Net the two projects can begin collaborating to help create next generation wireless network resources. 
 
 ARCAM-Net is designed to be a platform. Therefore all of the code will be released on github. I encourage interested users to fork the repository and begin experimenting on their own. I will also be releasing and documenting code I used to become familar with SDRs on github and in the Appendix of this document.  
 
 %----------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-
