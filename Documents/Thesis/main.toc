@@ -30,18 +30,18 @@
 \contentsline {subsection}{\numberline {2.6.1}RTL-SDR}{11}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}USRP}{12}{subsection.2.6.2}
 \contentsline {section}{\numberline {2.7}State of the Art}{12}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Cognitive Radio Networks}{12}{subsection.2.7.1}
-\contentsline {subsection}{\numberline {2.7.2}Cognitive Networks}{12}{subsection.2.7.2}
-\contentsline {subsection}{\numberline {2.7.3}Cognitive Radio Ad-Hoc Networks}{12}{subsection.2.7.3}
-\contentsline {subsection}{\numberline {2.7.4}Biologically Inspired Protocols}{13}{subsection.2.7.4}
-\contentsline {subsubsection}{Swarm Protocols}{13}{section*.11}
+\contentsline {subsection}{\numberline {2.7.1}Biologically Inspired Protocols}{12}{subsection.2.7.1}
+\contentsline {subsubsection}{Swarm Protocols}{12}{section*.11}
 \contentsline {subsubsection}{Hive Protocols}{13}{section*.12}
 \contentsline {subsubsection}{Ant Colony Optimization Protocols}{13}{section*.13}
-\contentsline {section}{\numberline {2.8}Software Defined Networks}{14}{section.2.8}
-\contentsline {section}{\numberline {2.9}CRN vs CRAHN vs SDRN vs SDN}{14}{section.2.9}
-\contentsline {section}{\numberline {2.10}Decision Making and Biologically Inspired Decision Making}{14}{section.2.10}
-\contentsline {section}{\numberline {2.11}802.11s}{15}{section.2.11}
-\contentsline {section}{\numberline {2.12}Industry State of the Practice}{15}{section.2.12}
+\contentsline {section}{\numberline {2.8}Decision Making and Biologically Inspired Decision Making}{13}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}Cognitive Radio Networks}{14}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}Cognitive Networks}{15}{subsection.2.8.2}
+\contentsline {subsection}{\numberline {2.8.3}Cognitive Radio Ad-Hoc Networks}{15}{subsection.2.8.3}
+\contentsline {section}{\numberline {2.9}Software Defined Networks}{16}{section.2.9}
+\contentsline {section}{\numberline {2.10}SDRN vs SDN}{16}{section.2.10}
+\contentsline {section}{\numberline {2.11}802.11s}{16}{section.2.11}
+\contentsline {section}{\numberline {2.12}Industry State of the Practice}{16}{section.2.12}
 \contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}SDR}{17}{section.3.1}
 \contentsline {section}{\numberline {3.2}GNU Radio Flowgraph}{17}{section.3.2}

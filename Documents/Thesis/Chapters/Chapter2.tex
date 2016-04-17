@@ -171,6 +171,17 @@ The USRP line of radios are able to transmit and recieve data. The B200 and B210
 
 \section{State of the Art}
 
+\subsection{Cognitive Radio Networks}
+
+Cognitive Radio Networks represent a technological evolution from Software Defined Radio Networks \cite{6599059}. In a traditional Software Defined Radio Network the waveforms and transmission protocols are flexible. However, they are predefined by the software loaded onto the computer or radio. To change operating parameters, a different program is run or the user manually alters transmission patterns. In a Cognitive Radio Network, changes can be made intelligently through the use of machine learning and artificial intelligence. 
+
+A major benefit of Cognitive Radio Networks is that they can use Dynamic Spectrum Allocation (DSA) \cite{6892537}. Current wireless transmission is performed on static, licensed bands. The spectrum must be purchased through the Federal Communications Commission (FCC) and the user can then only operate on that particular frequency. With Dynamic Spectrum Allocation, radios are able to find bands of frequency that are not currently being utilized and perform there transmissions there. Once a licensed user begins transmitting on that frequency, the radios can shift to a new band and continue operation. Dynamic Spectrum Allocation helps to allievate the problems of spectrum sharing and drastically increases the useability of each frequency band \cite{6599059}. 
+
+As with SDRs, Cognitive Radios are able to alter operating parameters such as transmission power, frequency, modulation type. Unlike SDRs, any of these parameters can be changed through the use of Artifical Intelligence and Machine Learning. The general cognitive functions of CRNs occur in what is called a ``cognitive cycle.'' \cite{5639025} This cycle is made up of four componenets: Sensing, Analysis, Reasoning, and Adaptation. In spectrum sensing and analysis, the radios are constantly scanning over a given frequency band, looking for openings. In the reasoning phase, the radio looks at the data for each frequency band and quantifies the ``ideal'' band to begin transmitting on. In the adaptation phase the radio switches to the new operating parameters \cite{5639025}. 
+
+Each radio may be capable of performing these actions on their own, or they may leverage a spectrum broker. The spectrum broker is a centralized cognitive radio that may have wider band sensing capabilities \cite{5639025}. This central broker will then send commands to the other cognitive radios to dictate which frequency they should continue to transmit on. This decentralized approach is less ideal, as it limits the scalability of the network. However, it can often be less computationally complex to deploy \cite{5639025}. 
+
+
 \subsection{Biologically Inspired Protocols}
 
 These protocols are based on algorithms that are designed to mimic naturally occuring phenomenon. This leads to novel and efficient algorithms well suited for the distributed nature of a mesh network.
@@ -194,7 +205,7 @@ At a very simple level, decision making can just be automatic gain correction (A
 
 Genetic Algorithms can be applied to MIMO cognitive radio systems. In these CR environments, a genetic algorithm is used to optimize bandwidth, band efficiency, transmission power, data rate, and bit error rate \cite{7124804}. The genetic algorithm works by using a fitness score to indicate the quality of the established link. Combinations of parameters that generate high fitness scores are allowed to ``breed'' into new generations of parameters. Eventually, an optimal set of parameters is discovered and the Cognitive Radio continues to transmit and receive at these settings \cite{7124804}.
 
-Biologically-inspired algorithms are those that mimic nature in their execution. Biologically-inspired spectrum sharing is a major component of Cognitive Radio Networks. One such algorithm is called ``BIOlocially-Inspired Spectrum Sharing'' or the BIOSS algorithm \cite{4224259} \cite{5686503}. This algorithm uses a task allocation model based on insect colonies. The various parameters that an SDR can monitor are given response thresholds. If this threshold is passed then the radio will react and change to a new parameter. For example, if a large enough primary user began to use the spectrum the cognitive radio is transmitting on then it will switch to a new frequency \cite{4224259} \cite{5686503}. 
+Biologically-inspired algorithms are those that mimic nature in their execution. Biologically-inspired spectrum sharing is a major component of Cognitive Radio Networks. One such algorithm is called ``BIOlogically-Inspired Spectrum Sharing'' or the BIOSS algorithm \cite{4224259} \cite{5686503}. This algorithm uses a task allocation model based on insect colonies. The various parameters that an SDR can monitor are given response thresholds. If this threshold is passed then the radio will react and change to a new parameter. For example, if a large enough primary user began to use the spectrum the cognitive radio is transmitting on then it will switch to a new frequency \cite{4224259} \cite{5686503}. 
 
 Another biologically inspired algorithm is used to form consensus-based spectrum sensing \cite{5464224}. This algorithm is based off of flocks of birds and group decision making of other types of animals. In this scenario, each node senses the spectrum around itself. When a given node begins to sense a primary user, it lets the nodes adjacent to it know \cite{5464224}. These nodes then propagate it further. Overtime, the entire network will ``steer'' towards a new frequency the same way a school of fish may collectively steer away from a predator. 
 
@@ -211,23 +222,37 @@ The Ant Colony Optimization (ACO) algorithm has also been applied to dynamic spe
 
 \subsection{Cognitive Radio Networks}
 
+Cognitive Radio Networks represent a technological evolution from Software Defined Radio Networks \cite{6599059}. In a traditional Software Defined Radio Network the waveforms and transmission protocols are flexible. However, they are predefined by the software loaded onto the computer or radio. To change operating parameters, a different program is run or the user manually alters transmission patterns. In a Cognitive Radio Network, changes can be made intelligently through the use of machine learning and artificial intelligence. 
+
+A major benefit of Cognitive Radio Networks is that they can use Dynamic Spectrum Allocation (DSA) \cite{6892537}. Current wireless transmission is performed on static, licensed bands. The spectrum must be purchased through the Federal Communications Commission (FCC) and the user can then only operate on that particular frequency. With Dynamic Spectrum Allocation, radios are able to find bands of frequency that are not currently being utilized and perform there transmissions there. Once a licensed user begins transmitting on that frequency, the radios can shift to a new band and continue operation. Dynamic Spectrum Allocation helps to allievate the problems of spectrum sharing and drastically increases the useability of each frequency band \cite{6599059}. 
+
+As with SDRs, Cognitive Radios are able to alter operating parameters such as transmission power, frequency, modulation type. Unlike SDRs, any of these parameters can be changed through the use of Artifical Intelligence and Machine Learning. The general cognitive functions of CRNs occur in what is called a ``cognitive cycle.'' \cite{5639025} This cycle is made up of four componenets: Sensing, Analysis, Reasoning, and Adaptation. In spectrum sensing and analysis, the radios are constantly scanning over a given frequency band, looking for openings. In the reasoning phase, the radio looks at the data for each frequency band and quantifies the ``ideal'' band to begin transmitting on. In the adaptation phase the radio switches to the new operating parameters \cite{5639025}. 
+
+Each radio may be capable of performing these actions on their own, or they may leverage a spectrum broker. The spectrum broker is a centralized cognitive radio that may have wider band sensing capabilities \cite{5639025}. This central broker will then send commands to the other cognitive radios to dictate which frequency they should continue to transmit on. This decentralized approach is less ideal, as it limits the scalability of the network. However, it can often be less computationally complex to deploy \cite{5639025}. 
+
+
+
 \subsection{Cognitive Networks}
 
 \subsection{Cognitive Radio Ad-Hoc Networks}
 
-Cognitive Radio Ad-Hoc Networks (CRAHNs) are essentially mesh networks made up of intelligent software defined radios \cite{Akyildiz2009810}. CRAHNs seek to combine the flexibility of Cognitve Radios with the distributed network routing of mesh networks. CRAHNs allow for dynamic route topology due to the ability of ad-hoc networks to connect to any and all peers within their broadcast range. The features of the radio, such as frequency and amplitude, can be adjusted to force the topology of the users choosing. This can also be done dynamically using artifical intelligence and decision making \cite{Akyildiz2009810}. 
+Cognitive Radio Ad-Hoc Networks (CRAHNs) are essentially mesh networks made up of intelligent software defined radios \cite{Akyildiz2009810}. They are a specialized subset of Cognitive Radio Networks \cite{5639025}. CRAHNs seek to combine the flexibility of Cognitve Radios with the distributed network routing of mesh networks. CRAHNs allow for dynamic route topology due to the ability of ad-hoc networks to connect to any and all peers within their broadcast range. The features of the radio, such as frequency and amplitude, can be adjusted to force the topology of the users choosing. This can also be done dynamically using artifical intelligence and decision making \cite{Akyildiz2009810}. 
+
+Routing in multi-hop CRNs or CRAHNs has to deal with a number of challenges. The dynamic changing of the available spectrum can alter the topology of the network as different frequencies react to the environment in different ways. The routing metrics for CRAHNs will need to be able to adjust each time a hop is performed in order to rebuild the topology \cite{6599059}. The routing protocol will also have to be able to handle the transmission delay that will occur as the nodes are changing frequency \cite{6599059}. During the change, the network will be unreachable. The routing protocol will need to be able to begin transmission again just as the network comes back online or risk dropping packets. 
+
 
 \section{Software Defined Networks}
 
-\section{CRN vs CRAHN vs SDRN vs SDN}
+\section{SDRN vs SDN}
 
 \section{802.11s}
 
 \section{Industry State of the Practice}
 
 General Dynamics produces the S-Band software defined radio. This radio is used in the Space Communications and Navigation Testbed on the Internation Space Station. This SDR provides experimenters an opportunity to develop and demonstrate experimental waveforms in space \cite{6497193}. 
-
 Mention the stuff Harris uses here.
+
+SDRN and CRN devices are ideal for emergency response and military operations. Various countries operate using different standards for radio transmission. SDRs and CRs allow for better coordination, as the radios can be configured to operate using a form not commonly used by a given organization. In emergency response, the parameters of the radio can also be changed to provide additional bandwidth and spectrum for the duration of the operation \cite{5639025}. 
 
 %http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/xpl/articleDetails.jsp?arnumber=5747366&newsearch=true&queryText=Harris%20Corporation%20SDR
 

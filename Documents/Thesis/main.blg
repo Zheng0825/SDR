@@ -20,45 +20,45 @@ Database file #1: example.bib
 Warning--empty year in 0002
 
 Done.
-You've used 71 entries,
+You've used 74 entries,
             4039 wiz_defined-function locations,
-            1138 strings with 18798 characters,
-and the built_in function-call counts, 43943 in all, are:
-= -- 3264
-> -- 1016
-< -- 260
-+ -- 556
-- -- 189
-* -- 1924
-:= -- 6547
-add.period$ -- 129
-call.type$ -- 71
-change.case$ -- 71
-chr.to.int$ -- 624
-cite$ -- 72
-duplicate$ -- 3282
-empty$ -- 4073
-format.name$ -- 228
-if$ -- 10202
+            1152 strings with 19258 characters,
+and the built_in function-call counts, 46266 in all, are:
+= -- 3455
+> -- 1068
+< -- 280
++ -- 584
+- -- 198
+* -- 2040
+:= -- 6903
+add.period$ -- 135
+call.type$ -- 74
+change.case$ -- 74
+chr.to.int$ -- 663
+cite$ -- 75
+duplicate$ -- 3455
+empty$ -- 4261
+format.name$ -- 240
+if$ -- 10743
 int.to.chr$ -- 0
-int.to.str$ -- 71
-missing$ -- 685
-newline$ -- 302
-num.names$ -- 58
-pop$ -- 1916
+int.to.str$ -- 74
+missing$ -- 716
+newline$ -- 311
+num.names$ -- 61
+pop$ -- 1979
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 3389
+skip$ -- 3568
 stack$ -- 0
-substring$ -- 1495
-swap$ -- 2447
-text.length$ -- 52
+substring$ -- 1587
+swap$ -- 2594
+text.length$ -- 59
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 71
+type$ -- 74
 warning$ -- 1
-while$ -- 175
-width$ -- 73
-write$ -- 692
+while$ -- 187
+width$ -- 76
+write$ -- 723
 (There was 1 warning)

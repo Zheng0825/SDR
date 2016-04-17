@@ -361,14 +361,6 @@ E.~Research. (2016) B200. [Online]. Available:
   \url{https://www.ettus.com/product/details/USRP-E312}
 \BIBentrySTDinterwordspacing
 
-\bibitem{Akyildiz2009810}
-\BIBentryALTinterwordspacing
-I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
-  hoc networks,'' \emph{Ad Hoc Networks}, vol.~7, no.~5, pp. 810 -- 836, 2009.
-  [Online]. Available:
-  \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
-\BIBentrySTDinterwordspacing
-
 \bibitem{1005496}
 I.~Kassabalidis, M.~A. El-Sharkawi, R.~J. Marks, P.~Arabshahi, and A.~A. Gray,
   ``Adaptive-sdr: adaptive swarm-based distributed routing,'' in \emph{Neural
@@ -421,6 +413,29 @@ X.~Mao and H.~Ji, ``Biologically-inspired distributed spectrum access for
   cognitive radio network,'' in \emph{2010 6th International Conference on
   Wireless Communications Networking and Mobile Computing (WiCOM)}, Sept 2010,
   pp. 1--4.
+
+\bibitem{6599059}
+M.~Youssef, M.~Ibrahim, M.~Abdelatif, L.~Chen, and A.~V. Vasilakos, ``Routing
+  metrics of cognitive radio networks: A survey,'' \emph{IEEE Communications
+  Surveys Tutorials}, vol.~16, no.~1, pp. 92--109, First 2014.
+
+\bibitem{6892537}
+K.~K. Chauhan and A.~K.~S. Sanger, ``Survey of security threats and attacks in
+  cognitive radio networks,'' in \emph{Electronics and Communication Systems
+  (ICECS), 2014 International Conference on}, Feb 2014, pp. 1--5.
+
+\bibitem{5639025}
+B.~Wang and K.~J.~R. Liu, ``Advances in cognitive radio networks: A survey,''
+  \emph{IEEE Journal of Selected Topics in Signal Processing}, vol.~5, no.~1,
+  pp. 5--23, Feb 2011.
+
+\bibitem{Akyildiz2009810}
+\BIBentryALTinterwordspacing
+I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
+  hoc networks,'' \emph{Ad Hoc Networks}, vol.~7, no.~5, pp. 810 -- 836, 2009.
+  [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
+\BIBentrySTDinterwordspacing
 
 \bibitem{0017}
 \BIBentryALTinterwordspacing
