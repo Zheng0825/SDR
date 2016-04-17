@@ -369,6 +369,59 @@ I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
   \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
 \BIBentrySTDinterwordspacing
 
+\bibitem{1005496}
+I.~Kassabalidis, M.~A. El-Sharkawi, R.~J. Marks, P.~Arabshahi, and A.~A. Gray,
+  ``Adaptive-sdr: adaptive swarm-based distributed routing,'' in \emph{Neural
+  Networks, 2002. IJCNN '02. Proceedings of the 2002 International Joint
+  Conference on}, vol.~1, 2002, pp. 351--354.
+
+\bibitem{6863008}
+K.~Kiran, P.~D. Shenoy, K.~R. Venugopal, and L.~M. Patnaik, ``Fault tolerant
+  beehive routing in mobile ad-hoc multi-radio network,'' in \emph{Region 10
+  Symposium, 2014 IEEE}, April 2014, pp. 116--120.
+
+\bibitem{7373160}
+V.~K, K.~K, P.~D. Shenoy, and V.~K. R, ``Iobr: Interoperable bee-hive routing
+  in a heterogeneous multi-radio network,'' in \emph{TENCON 2015 - 2015 IEEE
+  Region 10 Conference}, Nov 2015, pp. 1--5.
+
+\bibitem{7030885}
+R.~A. Mahale and S.~D. Chavan, ``Throughput aware aco based routing protocol
+  for wireless sensor network,'' in \emph{Wireless Computing and Networking
+  (GCWCN), 2014 IEEE Global Conference on}, Dec 2014, pp. 234--238.
+
+\bibitem{6497193}
+J.~C. Briones and J.~M. Nappier, ``Sdr input power estimation algorithms,'' in
+  \emph{Aerospace Conference, 2013 IEEE}, March 2013, pp. 1--9.
+
+\bibitem{7124804}
+P.~V. Kumar and S.~Malarvizhi, ``Experimental study of genetic algorithm based
+  link adaptation for mimo cognitive radio application,'' in \emph{Electronics
+  and Communication Systems (ICECS), 2015 2nd International Conference on}, Feb
+  2015, pp. 1354--1359.
+
+\bibitem{4224259}
+B.~Atakan and O.~B. Akan, ``Biologically-inspired spectrum sharing in cognitive
+  radio networks,'' in \emph{2007 IEEE Wireless Communications and Networking
+  Conference}, March 2007, pp. 43--48.
+
+\bibitem{5686503}
+G.~Li, S.~W. Oh, K.~C. Teh, and K.~H. Li, ``Enhanced biologically-inspired
+  spectrum sharing for cognitive radio networks,'' in \emph{Communication
+  Systems (ICCS), 2010 IEEE International Conference on}, Nov 2010, pp.
+  767--771.
+
+\bibitem{5464224}
+F.~R. Yu, M.~Huang, and H.~Tang, ``Biologically inspired consensus-based
+  spectrum sensing in mobile ad hoc networks with cognitive radios,''
+  \emph{IEEE Network}, vol.~24, no.~3, pp. 26--30, May 2010.
+
+\bibitem{5600815}
+X.~Mao and H.~Ji, ``Biologically-inspired distributed spectrum access for
+  cognitive radio network,'' in \emph{2010 6th International Conference on
+  Wireless Communications Networking and Mobile Computing (WiCOM)}, Sept 2010,
+  pp. 1--4.
+
 \bibitem{0017}
 \BIBentryALTinterwordspacing
 (2015) Using openwrt as an openvpn server with a tap device (with bridging).

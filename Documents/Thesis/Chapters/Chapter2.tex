@@ -165,13 +165,49 @@ ARCAM-Net uses the Universal Software Radio Peripheral (USRP) created by Ettus R
 
 The USRP line of radios are able to transmit and recieve data. The B200 and B210 operate over USB 3.0 \cite{0034}. The E310 radios are standalone systems with their own onboard processor built into the FPGA \cite{0035}. The newer E310's also come with an onboard battery, allowing them to operate in a mobile fashion \cite{0036}. The USRP line of radios is used heavily in academia. The radios form the basis of numerous testbeds  \cite{4753441} \cite{4212821}. They are also used to validate data from simulations \cite{5508221}. 
 
-\section{Industry State of the Practice}
 
-Mention the stuff Harris uses here.
 
 %----------------------------------------------------------------------------------------
 
 \section{State of the Art}
+
+\subsection{Biologically Inspired Protocols}
+
+These protocols are based on algorithms that are designed to mimic naturally occuring phenomenon. This leads to novel and efficient algorithms well suited for the distributed nature of a mesh network.
+
+\subsubsection{Swarm Protocols}
+
+Swarm Intelligence is a class of algorithms that are based around the social behaviors of insects. They are highly applicable to mesh networks as they are designed for distributed and decentralized problem solving. Adaptive Swarm-based Distributed Routing (Adaptive-SDR) is one type of swarm routing protocol that can be used for SDR applications. In this protocol, nodes are divided into colonies. Each node learns how to get to the other colonies, and how to get to nodes within their own colonies. When a packet traverses the network, each node forwards the data on the path to the correct colony first. Then nodes within the colony forward on to the correct node \cite{1005496}. This protocol is similar to the one used by Batman-adv \cite{0033}.
+
+
+\subsubsection{Hive Protocols}
+
+Hive protocols emulate the behavior of bees that forage and return to a central hive \cite{6863008}. In this network structure, the network is divided into several foraging zones. To find a path to a node, a bee (in the form of a packet) will seek out a destination node. Once the packet reaches the destination, another one will be sent back to the source on the same route. When it reaches the source this packet will then communicate the distance, direction, and quality of the path between the two nodes. If multiple bees are sent out, they will then be able to communicate the optimum route to take for future packets \cite{7373160}. 
+
+\subsubsection{Ant Colony Optimization Protocols}
+
+Ant Colony Optimization (ACO) Protocols are modeled off of ants cooperating to find food for their colony \cite{7030885}. In this protocol, a set of ``Ants'' are sent out in the form of discovery packets. The first set try to find the source node within the network. The other set try to find the destination node. As the ants walk, they deposit pheromones within the network to mark the nodes they have traversed. As more ants visit a given node, the quantity of pheromones at that location will begin to increase. After awhile, the optimal path between a source and destination node can be determined by following the path with the largest amount of pheromones \cite{7030885}. 
+
+\section{Decision Making and Biologically Inspired Decision Making}
+
+At a very simple level, decision making can just be automatic gain correction (AGC). A cognitive radio with AGC may adjust its gain to its highest level until it begins to receive data. At the highest gain level, it may detect clipping and begin to lower its gain until an undistorted signal, with a good signal to noise ratio, is acheived. \cite{6497193}
+
+Genetic Algorithms can be applied to MIMO cognitive radio systems. In these CR environments, a genetic algorithm is used to optimize bandwidth, band efficiency, transmission power, data rate, and bit error rate \cite{7124804}. The genetic algorithm works by using a fitness score to indicate the quality of the established link. Combinations of parameters that generate high fitness scores are allowed to ``breed'' into new generations of parameters. Eventually, an optimal set of parameters is discovered and the Cognitive Radio continues to transmit and receive at these settings \cite{7124804}.
+
+Biologically-inspired algorithms are those that mimic nature in their execution. Biologically-inspired spectrum sharing is a major component of Cognitive Radio Networks. One such algorithm is called ``BIOlocially-Inspired Spectrum Sharing'' or the BIOSS algorithm \cite{4224259} \cite{5686503}. This algorithm uses a task allocation model based on insect colonies. The various parameters that an SDR can monitor are given response thresholds. If this threshold is passed then the radio will react and change to a new parameter. For example, if a large enough primary user began to use the spectrum the cognitive radio is transmitting on then it will switch to a new frequency \cite{4224259} \cite{5686503}. 
+
+Another biologically inspired algorithm is used to form consensus-based spectrum sensing \cite{5464224}. This algorithm is based off of flocks of birds and group decision making of other types of animals. In this scenario, each node senses the spectrum around itself. When a given node begins to sense a primary user, it lets the nodes adjacent to it know \cite{5464224}. These nodes then propagate it further. Overtime, the entire network will ``steer'' towards a new frequency the same way a school of fish may collectively steer away from a predator. 
+
+
+The Ant Colony Optimization (ACO) algorithm has also been applied to dynamic spectrum access in cognitive radio networks \cite{5600815} Each node explores possible bands that it can transmit in and then uses a simulated pheromone to indicate good locations to transmit on. These pheromones have a decay time to ensure that they are constantly updated. Once a band has a large number of nodes releasing pheromones on it, then the other nodes will converge on this frequency. This process can be repeated continuously to move away from primary nodes as they appear \cite{5600815}. 
+
+
+%%----------------------------------------------------
+
+% TODO
+
+%%----------------------------------------------------
+
 
 \subsection{Cognitive Radio Networks}
 
@@ -181,26 +217,18 @@ Mention the stuff Harris uses here.
 
 Cognitive Radio Ad-Hoc Networks (CRAHNs) are essentially mesh networks made up of intelligent software defined radios \cite{Akyildiz2009810}. CRAHNs seek to combine the flexibility of Cognitve Radios with the distributed network routing of mesh networks. CRAHNs allow for dynamic route topology due to the ability of ad-hoc networks to connect to any and all peers within their broadcast range. The features of the radio, such as frequency and amplitude, can be adjusted to force the topology of the users choosing. This can also be done dynamically using artifical intelligence and decision making \cite{Akyildiz2009810}. 
 
-\subsection{State of the Art Protocols}
-
-\subsubsection{Bio-inspired Protocols}
-
-\subsubsection{Swarm Protocols}
-
-\subsubsection{Hive Protocols}
-
 \section{Software Defined Networks}
 
 \section{CRN vs CRAHN vs SDRN vs SDN}
 
-\section{Cognitive Radio Networks}
-
-\section{Cognitive Networls}
-
-\section{Decision Making}
-
 \section{802.11s}
 
+\section{Industry State of the Practice}
 
+General Dynamics produces the S-Band software defined radio. This radio is used in the Space Communications and Navigation Testbed on the Internation Space Station. This SDR provides experimenters an opportunity to develop and demonstrate experimental waveforms in space \cite{6497193}. 
+
+Mention the stuff Harris uses here.
+
+%http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/xpl/articleDetails.jsp?arnumber=5747366&newsearch=true&queryText=Harris%20Corporation%20SDR
 
 %----------------------------------------------------------------------------------------

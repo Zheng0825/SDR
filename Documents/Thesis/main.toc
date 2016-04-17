@@ -29,59 +29,46 @@
 \contentsline {section}{\numberline {2.6}State of the Practice}{11}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}RTL-SDR}{11}{subsection.2.6.1}
 \contentsline {subsection}{\numberline {2.6.2}USRP}{12}{subsection.2.6.2}
-\contentsline {section}{\numberline {2.7}Industry State of the Practice}{12}{section.2.7}
-\contentsline {section}{\numberline {2.8}State of the Art}{13}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Cognitive Radio Networks}{13}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Cognitive Networks}{13}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}Cognitive Radio Ad-Hoc Networks}{13}{subsection.2.8.3}
-\contentsline {subsection}{\numberline {2.8.4}State of the Art Protocols}{13}{subsection.2.8.4}
-\contentsline {subsubsection}{Bio-inspired Protocols}{13}{section*.11}
-\contentsline {subsubsection}{Swarm Protocols}{13}{section*.12}
-\contentsline {subsubsection}{Hive Protocols}{13}{section*.13}
-\contentsline {section}{\numberline {2.9}Software Defined Networks}{13}{section.2.9}
-\contentsline {section}{\numberline {2.10}CRN vs CRAHN vs SDRN vs SDN}{13}{section.2.10}
-\contentsline {section}{\numberline {2.11}Cognitive Radio Networks}{13}{section.2.11}
-\contentsline {section}{\numberline {2.12}Cognitive Networls}{13}{section.2.12}
-\contentsline {section}{\numberline {2.13}Decision Making}{13}{section.2.13}
-\contentsline {section}{\numberline {2.14}802.11s}{13}{section.2.14}
-\contentsline {chapter}{\numberline {3}Methodology}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}SDR}{15}{section.3.1}
-\contentsline {section}{\numberline {3.2}GNU Radio Flowgraph}{15}{section.3.2}
-\contentsline {section}{\numberline {3.3}Batman-adv}{17}{section.3.3}
-\contentsline {section}{\numberline {3.4}Flask Web Server and Socket.IO}{17}{section.3.4}
-\contentsline {section}{\numberline {3.5}A.L.F.R.E.D.}{18}{section.3.5}
-\contentsline {section}{\numberline {3.6}Fabrication and Build Process}{19}{section.3.6}
-\contentsline {section}{\numberline {3.7}Test Procedures}{19}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}Network Benchmarks}{20}{subsection.3.7.1}
-\contentsline {subsection}{\numberline {3.7.2}Route Changes}{20}{subsection.3.7.2}
-\contentsline {subsection}{\numberline {3.7.3}Frequency Distribution}{20}{subsection.3.7.3}
-\contentsline {chapter}{\numberline {4}Findings}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Results}{21}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Network Benchmarks}{21}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Route Changes}{21}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Frequency Changes}{21}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Applications}{24}{section.4.2}
-\contentsline {section}{\numberline {4.3}Data Analysis}{24}{section.4.3}
-\contentsline {section}{\numberline {4.4}Assumptions and Discussion of Error}{25}{section.4.4}
-\contentsline {chapter}{\numberline {5}Discussion}{27}{chapter.5}
-\contentsline {section}{\numberline {5.1}Constraints and Limitations}{27}{section.5.1}
-\contentsline {section}{\numberline {5.2}SDR Network}{27}{section.5.2}
-\contentsline {section}{\numberline {5.3}Cognitive Networks}{28}{section.5.3}
-\contentsline {section}{\numberline {5.4}Applications}{28}{section.5.4}
-\contentsline {chapter}{\numberline {6}Conclusion}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Summary}{29}{section.6.1}
-\contentsline {section}{\numberline {6.2}Conclusion}{29}{section.6.2}
-\contentsline {section}{\numberline {6.3}Recommendation}{29}{section.6.3}
-\contentsline {section}{\numberline {6.4}Future Work}{30}{section.6.4}
-\contentsline {section}{\numberline {6.5}Applications}{30}{section.6.5}
-\contentsline {chapter}{\numberline {A}Running ARCAM-Net}{37}{appendix.A}
-\contentsline {section}{\numberline {A.1}Configuring the Computer}{37}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}Installing Natively}{37}{subsection.A.1.1}
-\contentsline {subsection}{\numberline {A.1.2}Installing Through Vagrant}{37}{subsection.A.1.2}
-\contentsline {subsection}{\numberline {A.1.3}Manual Install}{37}{subsection.A.1.3}
-\contentsline {section}{\numberline {A.2}Getting The Flowgraphs}{41}{section.A.2}
-\contentsline {section}{\numberline {A.3}Running The Flowgraphs}{41}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}Flow Graph to Mesh Network}{42}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}Raising the Bat Signal}{42}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}TMux Script}{42}{subsection.A.3.3}
-\contentsline {section}{\numberline {A.4}Full Web Server}{45}{section.A.4}
+\contentsline {section}{\numberline {2.7}State of the Art}{12}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Cognitive Radio Networks}{12}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Cognitive Networks}{12}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Cognitive Radio Ad-Hoc Networks}{12}{subsection.2.7.3}
+\contentsline {subsection}{\numberline {2.7.4}Biologically Inspired Protocols}{13}{subsection.2.7.4}
+\contentsline {subsubsection}{Swarm Protocols}{13}{section*.11}
+\contentsline {subsubsection}{Hive Protocols}{13}{section*.12}
+\contentsline {subsubsection}{Ant Colony Optimization Protocols}{13}{section*.13}
+\contentsline {section}{\numberline {2.8}Software Defined Networks}{14}{section.2.8}
+\contentsline {section}{\numberline {2.9}CRN vs CRAHN vs SDRN vs SDN}{14}{section.2.9}
+\contentsline {section}{\numberline {2.10}Decision Making and Biologically Inspired Decision Making}{14}{section.2.10}
+\contentsline {section}{\numberline {2.11}802.11s}{15}{section.2.11}
+\contentsline {section}{\numberline {2.12}Industry State of the Practice}{15}{section.2.12}
+\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}SDR}{17}{section.3.1}
+\contentsline {section}{\numberline {3.2}GNU Radio Flowgraph}{17}{section.3.2}
+\contentsline {section}{\numberline {3.3}Batman-adv}{19}{section.3.3}
+\contentsline {section}{\numberline {3.4}Flask Web Server and Socket.IO}{19}{section.3.4}
+\contentsline {section}{\numberline {3.5}A.L.F.R.E.D.}{20}{section.3.5}
+\contentsline {section}{\numberline {3.6}Fabrication and Build Process}{21}{section.3.6}
+\contentsline {section}{\numberline {3.7}Test Procedures}{21}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Network Benchmarks}{22}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Route Changes}{22}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}Frequency Distribution}{22}{subsection.3.7.3}
+\contentsline {chapter}{\numberline {4}Findings}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Results}{23}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Network Benchmarks}{23}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Route Changes}{23}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Frequency Changes}{23}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Applications}{26}{section.4.2}
+\contentsline {section}{\numberline {4.3}Data Analysis}{26}{section.4.3}
+\contentsline {section}{\numberline {4.4}Assumptions and Discussion of Error}{27}{section.4.4}
+\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Constraints and Limitations}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}SDR Network}{29}{section.5.2}
+\contentsline {section}{\numberline {5.3}Cognitive Networks}{30}{section.5.3}
+\contentsline {section}{\numberline {5.4}Applications}{30}{section.5.4}
+\contentsline {chapter}{\numberline {6}Conclusion}{31}{chapter.6}
+\contentsline {section}{\numberline {6.1}Summary}{31}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conclusion}{31}{section.6.2}
+\contentsline {section}{\numberline {6.3}Recommendation}{31}{section.6.3}
+\contentsline {section}{\numberline {6.4}Future Work}{32}{section.6.4}
+\contentsline {section}{\numberline {6.5}Applications}{32}{section.6.5}

@@ -8,7 +8,6 @@ A level-1 auxiliary file: Chapters/Chapter4.aux
 A level-1 auxiliary file: Chapters/Chapter5.aux
 A level-1 auxiliary file: Chapters/Chapter6.aux
 The style file: IEEEtran.bst
-A level-1 auxiliary file: Appendices/AppendixA.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -21,45 +20,45 @@ Database file #1: example.bib
 Warning--empty year in 0002
 
 Done.
-You've used 61 entries,
+You've used 71 entries,
             4039 wiz_defined-function locations,
-            1087 strings with 16964 characters,
-and the built_in function-call counts, 35654 in all, are:
-= -- 2635
-> -- 830
-< -- 191
-+ -- 450
-- -- 159
-* -- 1531
-:= -- 5400
-add.period$ -- 109
-call.type$ -- 61
-change.case$ -- 61
-chr.to.int$ -- 456
-cite$ -- 62
-duplicate$ -- 2678
-empty$ -- 3315
-format.name$ -- 188
-if$ -- 8220
+            1138 strings with 18798 characters,
+and the built_in function-call counts, 43943 in all, are:
+= -- 3264
+> -- 1016
+< -- 260
++ -- 556
+- -- 189
+* -- 1924
+:= -- 6547
+add.period$ -- 129
+call.type$ -- 71
+change.case$ -- 71
+chr.to.int$ -- 624
+cite$ -- 72
+duplicate$ -- 3282
+empty$ -- 4073
+format.name$ -- 228
+if$ -- 10202
 int.to.chr$ -- 0
-int.to.str$ -- 61
-missing$ -- 576
-newline$ -- 272
-num.names$ -- 48
-pop$ -- 1642
+int.to.str$ -- 71
+missing$ -- 685
+newline$ -- 302
+num.names$ -- 58
+pop$ -- 1916
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 2744
+skip$ -- 3389
 stack$ -- 0
-substring$ -- 1093
-swap$ -- 1966
-text.length$ -- 39
+substring$ -- 1495
+swap$ -- 2447
+text.length$ -- 52
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 61
+type$ -- 71
 warning$ -- 1
-while$ -- 135
-width$ -- 63
-write$ -- 599
+while$ -- 175
+width$ -- 73
+write$ -- 692
 (There was 1 warning)

@@ -28,59 +28,46 @@
 \BOOKMARK [1][-]{section.2.6}{State of the Practice}{chapter.2}% 28
 \BOOKMARK [2][-]{subsection.2.6.1}{RTL-SDR}{section.2.6}% 29
 \BOOKMARK [2][-]{subsection.2.6.2}{USRP}{section.2.6}% 30
-\BOOKMARK [1][-]{section.2.7}{Industry State of the Practice}{chapter.2}% 31
-\BOOKMARK [1][-]{section.2.8}{State of the Art}{chapter.2}% 32
-\BOOKMARK [2][-]{subsection.2.8.1}{Cognitive Radio Networks}{section.2.8}% 33
-\BOOKMARK [2][-]{subsection.2.8.2}{Cognitive Networks}{section.2.8}% 34
-\BOOKMARK [2][-]{subsection.2.8.3}{Cognitive Radio Ad-Hoc Networks}{section.2.8}% 35
-\BOOKMARK [2][-]{subsection.2.8.4}{State of the Art Protocols}{section.2.8}% 36
-\BOOKMARK [3][-]{section*.11}{Bio-inspired Protocols}{subsection.2.8.4}% 37
-\BOOKMARK [3][-]{section*.12}{Swarm Protocols}{subsection.2.8.4}% 38
-\BOOKMARK [3][-]{section*.13}{Hive Protocols}{subsection.2.8.4}% 39
-\BOOKMARK [1][-]{section.2.9}{Software Defined Networks}{chapter.2}% 40
-\BOOKMARK [1][-]{section.2.10}{CRN vs CRAHN vs SDRN vs SDN}{chapter.2}% 41
-\BOOKMARK [1][-]{section.2.11}{Cognitive Radio Networks}{chapter.2}% 42
-\BOOKMARK [1][-]{section.2.12}{Cognitive Networls}{chapter.2}% 43
-\BOOKMARK [1][-]{section.2.13}{Decision Making}{chapter.2}% 44
-\BOOKMARK [1][-]{section.2.14}{802.11s}{chapter.2}% 45
-\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 46
-\BOOKMARK [1][-]{section.3.1}{SDR}{chapter.3}% 47
-\BOOKMARK [1][-]{section.3.2}{GNU Radio Flowgraph}{chapter.3}% 48
-\BOOKMARK [1][-]{section.3.3}{Batman-adv}{chapter.3}% 49
-\BOOKMARK [1][-]{section.3.4}{Flask Web Server and Socket.IO}{chapter.3}% 50
-\BOOKMARK [1][-]{section.3.5}{A.L.F.R.E.D.}{chapter.3}% 51
-\BOOKMARK [1][-]{section.3.6}{Fabrication and Build Process}{chapter.3}% 52
-\BOOKMARK [1][-]{section.3.7}{Test Procedures}{chapter.3}% 53
-\BOOKMARK [2][-]{subsection.3.7.1}{Network Benchmarks}{section.3.7}% 54
-\BOOKMARK [2][-]{subsection.3.7.2}{Route Changes}{section.3.7}% 55
-\BOOKMARK [2][-]{subsection.3.7.3}{Frequency Distribution}{section.3.7}% 56
-\BOOKMARK [0][-]{chapter.4}{Findings}{}% 57
-\BOOKMARK [1][-]{section.4.1}{Results}{chapter.4}% 58
-\BOOKMARK [2][-]{subsection.4.1.1}{Network Benchmarks}{section.4.1}% 59
-\BOOKMARK [2][-]{subsection.4.1.2}{Route Changes}{section.4.1}% 60
-\BOOKMARK [2][-]{subsection.4.1.3}{Frequency Changes}{section.4.1}% 61
-\BOOKMARK [1][-]{section.4.2}{Applications}{chapter.4}% 62
-\BOOKMARK [1][-]{section.4.3}{Data Analysis}{chapter.4}% 63
-\BOOKMARK [1][-]{section.4.4}{Assumptions and Discussion of Error}{chapter.4}% 64
-\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 65
-\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 66
-\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 67
-\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 68
-\BOOKMARK [1][-]{section.5.4}{Applications}{chapter.5}% 69
-\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 70
-\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 71
-\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 72
-\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 73
-\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 74
-\BOOKMARK [1][-]{section.6.5}{Applications}{chapter.6}% 75
-\BOOKMARK [0][-]{appendix.A}{Running ARCAM-Net}{}% 76
-\BOOKMARK [1][-]{section.A.1}{Configuring the Computer}{appendix.A}% 77
-\BOOKMARK [2][-]{subsection.A.1.1}{Installing Natively}{section.A.1}% 78
-\BOOKMARK [2][-]{subsection.A.1.2}{Installing Through Vagrant}{section.A.1}% 79
-\BOOKMARK [2][-]{subsection.A.1.3}{Manual Install}{section.A.1}% 80
-\BOOKMARK [1][-]{section.A.2}{Getting The Flowgraphs}{appendix.A}% 81
-\BOOKMARK [1][-]{section.A.3}{Running The Flowgraphs}{appendix.A}% 82
-\BOOKMARK [2][-]{subsection.A.3.1}{Flow Graph to Mesh Network}{section.A.3}% 83
-\BOOKMARK [2][-]{subsection.A.3.2}{Raising the Bat Signal}{section.A.3}% 84
-\BOOKMARK [2][-]{subsection.A.3.3}{TMux Script}{section.A.3}% 85
-\BOOKMARK [1][-]{section.A.4}{Full Web Server}{appendix.A}% 86
+\BOOKMARK [1][-]{section.2.7}{State of the Art}{chapter.2}% 31
+\BOOKMARK [2][-]{subsection.2.7.1}{Cognitive Radio Networks}{section.2.7}% 32
+\BOOKMARK [2][-]{subsection.2.7.2}{Cognitive Networks}{section.2.7}% 33
+\BOOKMARK [2][-]{subsection.2.7.3}{Cognitive Radio Ad-Hoc Networks}{section.2.7}% 34
+\BOOKMARK [2][-]{subsection.2.7.4}{Biologically Inspired Protocols}{section.2.7}% 35
+\BOOKMARK [3][-]{section*.11}{Swarm Protocols}{subsection.2.7.4}% 36
+\BOOKMARK [3][-]{section*.12}{Hive Protocols}{subsection.2.7.4}% 37
+\BOOKMARK [3][-]{section*.13}{Ant Colony Optimization Protocols}{subsection.2.7.4}% 38
+\BOOKMARK [1][-]{section.2.8}{Software Defined Networks}{chapter.2}% 39
+\BOOKMARK [1][-]{section.2.9}{CRN vs CRAHN vs SDRN vs SDN}{chapter.2}% 40
+\BOOKMARK [1][-]{section.2.10}{Decision Making and Biologically Inspired Decision Making}{chapter.2}% 41
+\BOOKMARK [1][-]{section.2.11}{802.11s}{chapter.2}% 42
+\BOOKMARK [1][-]{section.2.12}{Industry State of the Practice}{chapter.2}% 43
+\BOOKMARK [0][-]{chapter.3}{Methodology}{}% 44
+\BOOKMARK [1][-]{section.3.1}{SDR}{chapter.3}% 45
+\BOOKMARK [1][-]{section.3.2}{GNU Radio Flowgraph}{chapter.3}% 46
+\BOOKMARK [1][-]{section.3.3}{Batman-adv}{chapter.3}% 47
+\BOOKMARK [1][-]{section.3.4}{Flask Web Server and Socket.IO}{chapter.3}% 48
+\BOOKMARK [1][-]{section.3.5}{A.L.F.R.E.D.}{chapter.3}% 49
+\BOOKMARK [1][-]{section.3.6}{Fabrication and Build Process}{chapter.3}% 50
+\BOOKMARK [1][-]{section.3.7}{Test Procedures}{chapter.3}% 51
+\BOOKMARK [2][-]{subsection.3.7.1}{Network Benchmarks}{section.3.7}% 52
+\BOOKMARK [2][-]{subsection.3.7.2}{Route Changes}{section.3.7}% 53
+\BOOKMARK [2][-]{subsection.3.7.3}{Frequency Distribution}{section.3.7}% 54
+\BOOKMARK [0][-]{chapter.4}{Findings}{}% 55
+\BOOKMARK [1][-]{section.4.1}{Results}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.1.1}{Network Benchmarks}{section.4.1}% 57
+\BOOKMARK [2][-]{subsection.4.1.2}{Route Changes}{section.4.1}% 58
+\BOOKMARK [2][-]{subsection.4.1.3}{Frequency Changes}{section.4.1}% 59
+\BOOKMARK [1][-]{section.4.2}{Applications}{chapter.4}% 60
+\BOOKMARK [1][-]{section.4.3}{Data Analysis}{chapter.4}% 61
+\BOOKMARK [1][-]{section.4.4}{Assumptions and Discussion of Error}{chapter.4}% 62
+\BOOKMARK [0][-]{chapter.5}{Discussion}{}% 63
+\BOOKMARK [1][-]{section.5.1}{Constraints and Limitations}{chapter.5}% 64
+\BOOKMARK [1][-]{section.5.2}{SDR Network}{chapter.5}% 65
+\BOOKMARK [1][-]{section.5.3}{Cognitive Networks}{chapter.5}% 66
+\BOOKMARK [1][-]{section.5.4}{Applications}{chapter.5}% 67
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 68
+\BOOKMARK [1][-]{section.6.1}{Summary}{chapter.6}% 69
+\BOOKMARK [1][-]{section.6.2}{Conclusion}{chapter.6}% 70
+\BOOKMARK [1][-]{section.6.3}{Recommendation}{chapter.6}% 71
+\BOOKMARK [1][-]{section.6.4}{Future Work}{chapter.6}% 72
+\BOOKMARK [1][-]{section.6.5}{Applications}{chapter.6}% 73
