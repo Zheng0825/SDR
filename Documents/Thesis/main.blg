@@ -8,6 +8,7 @@ A level-1 auxiliary file: Chapters/Chapter4.aux
 A level-1 auxiliary file: Chapters/Chapter5.aux
 A level-1 auxiliary file: Chapters/Chapter6.aux
 The style file: IEEEtran.bst
+A level-1 auxiliary file: Appendices/AppendixA.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -22,7 +23,7 @@ Warning--empty year in 0002
 Done.
 You've used 98 entries,
             4039 wiz_defined-function locations,
-            1274 strings with 23871 characters,
+            1275 strings with 23895 characters,
 and the built_in function-call counts, 65713 in all, are:
 = -- 4947
 > -- 1529
