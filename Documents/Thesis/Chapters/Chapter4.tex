@@ -50,7 +50,7 @@ The results of the Network Benchmark tests from section 4 part A are summarized 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{2PotentialHops}
-	\caption{The initial condition from the test presented in Section 4 B, where there are two possible routes the packet can take. The output is from running batctl. The link quality is listed under the column labeld (\#/255). A higher number represents a better quality connection.}
+	\caption{The initial condition from the test presented in Section 4 B, where there are two possible routes the packet can take. The output is from running batctl. The transmit quality (TQ) is listed under the column labeld (\#/255). A higher number represents a better quality connection.}
 	\label{fig:2Hops}
 \end{figure}
 
@@ -61,7 +61,11 @@ The results of the Network Benchmark tests from section 4 part A are summarized 
 	\label{fig:NewHop}
 \end{figure}
 
-The route changing feature of batman-adv showed success with our test setup from section 4 part B. Initially, batctl reported two possible links, one with a link quality of 55, and the other with a link quality of 18. As we decreased the gain of the intermediate node, the link quality reported by batctl also decreased. Eventually, batman-adv switched and began using the other node. At this point, it no longer saw the original node, and reported a link quality of 75 on the alternate one. The initial setup can be seen in Figure \ref{fig:2Hops}. After the change, the routing table appeared as it does in Figure \ref{fig:NewHop}. This feature works in the SDR system, and can continue to be used without significant changes.  
+The route changing feature of batman-adv showed success with our test setup from section 4 part B. Initially, batctl reported two possible links, one with a transmit quality of 55, and the other with a transmit quality of 18. As we decreased the gain of the intermediate node, the transmit quality reported by batctl also decreased. Eventually, batman-adv switched and began using the other node. At this point, it no longer saw the original node, and reported a transmit quality of 75 on the alternate one. The initial setup can be seen in Figure \ref{fig:2Hops}. After the change, the routing table appeared as it does in Figure \ref{fig:NewHop}. This feature works in the SDR system, and can continue to be used without significant changes.
+
+The transmit quality (TQ) metric is used by batman-adv to choose which route it will take next \cite{0037}. This is an integer number from 0 to 255 where 0 represents a dead node. As a packet traverses a batman-adv network, these numbers are updated to continuously find the best path for each future packet to take \cite{0037}.
+
+
 
 \subsection{Frequency Changes}
 

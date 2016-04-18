@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{selfpaper}
+J.~McCormack, B.~Trowbridge, J.~Prine, R.~C. Maden, and R.~Integlia,
+  ``Arcam-net: A software defined radio mesh network testbed implemented in gnu
+  radio with batman-adv,'' in \emph{IFIP Wireless and Mobile Networking
+  Conference}, July 2016, p. PENDING REVIEW.
+
 \bibitem{0003}
 \BIBentryALTinterwordspacing
 (2016) Welcome to gnu radio. [Online]. Available:
@@ -66,6 +72,77 @@ A.~Sharma and N.~Rajagopalan, ``A comparative study of b.a.t.m.a.n. and olsr
   routing protocols for manets,'' \emph{International Journal of Advanced
   Trends in Computer Sceince and Engineering}, vol.~2, no.~5, pp. 13--17, tenth
   2013.
+
+\bibitem{761033}
+J.~Mitola, ``Software radio architecture: a mathematical perspective,''
+  \emph{IEEE Journal on Selected Areas in Communications}, vol.~17, no.~4, pp.
+  514--538, Apr 1999.
+
+\bibitem{393001}
+------, ``The software radio architecture,'' \emph{IEEE Communications
+  Magazine}, vol.~33, no.~5, pp. 26--38, May 1995.
+
+\bibitem{5747366}
+A.~W. Mast, ``Reconfigurable software defined payload architecture that reduces
+  cost and risk for various missions,'' in \emph{Aerospace Conference, 2011
+  IEEE}, March 2011, pp. 1--5.
+
+\bibitem{7039225}
+D.~F. Macedo, D.~Guedes, L.~F.~M. Vieira, M.~A.~M. Vieira, and M.~Nogueira,
+  ``Programmable networks from software-defined radio to software-defined
+  networking,'' \emph{IEEE Communications Surveys Tutorials}, vol.~17, no.~2,
+  pp. 1102--1125, Secondquarter 2015.
+
+\bibitem{0032}
+\BIBentryALTinterwordspacing
+O.~Mesh. (2014) B.a.t.m.a.n. advanced. [Online]. Available:
+  \url{https://www.open-mesh.org/projects/batman-adv/wiki/Wiki}
+\BIBentrySTDinterwordspacing
+
+\bibitem{6115569}
+D.~Seither, A.~Konig, and M.~Hollick, ``Routing performance of wireless mesh
+  networks: A practical evaluation of batman advanced,'' in \emph{Local
+  Computer Networks (LCN), 2011 IEEE 36th Conference on}, Oct 2011, pp.
+  897--904.
+
+\bibitem{7043470}
+L.~C. Tran, D.~T. Nguyen, F.~Safaei, and P.~J. Vial, ``An experimental study of
+  ofdm in software defined radio systems using gnu platform and usrp2
+  devices,'' in \emph{2014 International Conference on Advanced Technologies
+  for Communications (ATC 2014)}, Oct 2014, pp. 657--662.
+
+\bibitem{7430125}
+E.~G. Sierra and G.~A.~R. Arroyave, ``Low cost sdr spectrum analyzer and analog
+  radio receiver using gnu radio, raspberry pi2 and sdr-rtl dongle,'' in
+  \emph{2015 7th IEEE Latin-American Conference on Communications (LATINCOM)},
+  Nov 2015, pp. 1--6.
+
+\bibitem{6081528}
+P.~Alvarez, N.~Pratas, A.~Rodrigues, N.~R. Prasad, and R.~Prasad, ``Energy
+  detection and eigenvalue based detection: An experimental study using gnu
+  radio,'' in \emph{Wireless Personal Multimedia Communications (WPMC), 2011
+  14th International Symposium on}, Oct 2011, pp. 1--5.
+
+\bibitem{Akyildiz2007921}
+\BIBentryALTinterwordspacing
+I.~F. Akyildiz, T.~Melodia, and K.~R. Chowdhury, ``A survey on wireless
+  multimedia sensor networks,'' \emph{Computer Networks}, vol.~51, no.~4, pp.
+  921 -- 960, 2007. [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S1389128606002751}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Akyildiz2009810}
+\BIBentryALTinterwordspacing
+I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
+  hoc networks,'' \emph{Ad Hoc Networks}, vol.~7, no.~5, pp. 810 -- 836, 2009.
+  [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
+\BIBentrySTDinterwordspacing
+
+\bibitem{6892537}
+K.~K. Chauhan and A.~K.~S. Sanger, ``Survey of security threats and attacks in
+  cognitive radio networks,'' in \emph{Electronics and Communication Systems
+  (ICECS), 2014 International Conference on}, Feb 2014, pp. 1--5.
 
 \bibitem{0018}
 \BIBentryALTinterwordspacing
@@ -134,6 +211,12 @@ Ettus. Rfnoc (rf network on chip). [Online]. Available:
   \url{https://www.ettus.com/sdr-software/detail/rf-network-on-chip}
 \BIBentrySTDinterwordspacing
 
+\bibitem{529072}
+O.~Spaniol, ``The evolution of wireless networking: conformance or conflict
+  with the osi reference model?'' in \emph{Personal, Indoor and Mobile Radio
+  Communications, 1994. Wireless Networks - Catching the Mobile Future., 5th
+  IEEE International Symposium on}, vol.~3, Sep 1994, pp. 786--793 vol.3.
+
 \bibitem{0029}
 \BIBentryALTinterwordspacing
 D.~R. Winkelman. (2013) What is a protocol? [Online]. Available:
@@ -199,11 +282,22 @@ S.~Kamruzzaman, A.~Alghamdi, and S.~Mizanur~Rahman, ``Spectrum and energy aware
   and Communication Technology Convergence (ICTC), 2014 International
   Conference on}, Oct 2014, pp. 341--346.
 
+\bibitem{6840086}
+S.~N. Orzen, ``Interaction understanding in the osi model functionality of
+  networks with case studies,'' in \emph{Applied Computational Intelligence and
+  Informatics (SACI), 2014 IEEE 9th International Symposium on}, May 2014, pp.
+  327--330.
+
 \bibitem{0030}
 \BIBentryALTinterwordspacing
 Microsoft. (2014) The osi model's seven layers defined and functions explained.
   [Online]. Available: \url{https://support.microsoft.com/en-us/kb/103884}
 \BIBentrySTDinterwordspacing
+
+\bibitem{6014631}
+Y.~Li, D.~Li, W.~Cui, and R.~Zhang, ``Research based on osi model,'' in
+  \emph{Communication Software and Networks (ICCSN), 2011 IEEE 3rd
+  International Conference on}, May 2011, pp. 554--557.
 
 \bibitem{0031}
 \BIBentryALTinterwordspacing
@@ -217,11 +311,22 @@ M.~Abolhasan, B.~Hagelstein, and J.~C.~P. Wang, ``Real-world performance of
   current proactive multi-hop mesh protocols,'' in \emph{Communications, 2009.
   APCC 2009. 15th Asia-Pacific Conference on}, Oct 2009, pp. 44--47.
 
-\bibitem{0032}
-\BIBentryALTinterwordspacing
-O.~Mesh. (2014) B.a.t.m.a.n. advanced. [Online]. Available:
-  \url{https://www.open-mesh.org/projects/batman-adv/wiki/Wiki}
-\BIBentrySTDinterwordspacing
+\bibitem{5483777}
+R.~G. Garroppo, S.~Giordano, and L.~Tavanti, ``Experimental evaluation of two
+  open source solutions for wireless mesh routing at layer two,'' in
+  \emph{Wireless Pervasive Computing (ISWPC), 2010 5th IEEE International
+  Symposium on}, May 2010, pp. 232--237.
+
+\bibitem{6379142}
+J.~Chung, G.~González, I.~Armuelles, T.~Robles, R.~Alcarria, and A.~Morales,
+  ``Characterizing the multimedia service capacity of wireless mesh networks
+  for rural communities,'' in \emph{2012 IEEE 8th International Conference on
+  Wireless and Mobile Computing, Networking and Communications (WiMob)}, Oct
+  2012, pp. 628--635.
+
+\bibitem{ieee802tut}
+S.~Conner, J.~Kruys, K.~Kim, and J.~Zuniga, ``Overview of the amendment for
+  wireless local area mesh networking,'' in \emph{IEEE 802 Plenary}, Nov 2006.
 
 \bibitem{7071706}
 P.~Murphy, A.~Sabharwal, and B.~Aazhang, ``Design of warp: A wireless
@@ -265,41 +370,6 @@ X.~Li, W.~Hu, H.~Yousefi'zadeh, and A.~Qureshi, ``A case study of a mimo sdr
 \bibitem{0002}
 J.~Seddar, H.~Khalife, V.~Conan, and J.~Leguay, ``A dtn stack for cognitive
   radio ad hoc networks,'' in \emph{8th Karlsruhe Workshop on Software Radios}.
-
-\bibitem{Akyildiz2007921}
-\BIBentryALTinterwordspacing
-I.~F. Akyildiz, T.~Melodia, and K.~R. Chowdhury, ``A survey on wireless
-  multimedia sensor networks,'' \emph{Computer Networks}, vol.~51, no.~4, pp.
-  921 -- 960, 2007. [Online]. Available:
-  \url{http://www.sciencedirect.com/science/article/pii/S1389128606002751}
-\BIBentrySTDinterwordspacing
-
-\bibitem{5771952}
-S.~M. Cheng, P.~Y. Chen, and K.~C. Chen, ``Ecology of cognitive radio ad hoc
-  networks,'' \emph{IEEE Communications Letters}, vol.~15, no.~7, pp. 764--766,
-  July 2011.
-
-\bibitem{4562561}
-V.~Kuppusamy and R.~Mahapatra, ``Primary user detection in ofdm based mimo
-  cognitive radio,'' in \emph{Cognitive Radio Oriented Wireless Networks and
-  Communications, 2008. CrownCom 2008. 3rd International Conference on}, May
-  2008, pp. 1--5.
-
-\bibitem{6527405}
-M.~T. Zia, F.~F. Qureshi, and S.~S. Shah, ``Energy efficient cognitive radio
-  mac protocols for adhoc network: A survey,'' in \emph{Computer Modelling and
-  Simulation (UKSim), 2013 UKSim 15th International Conference on}, April 2013,
-  pp. 140--143.
-
-\bibitem{6072038}
-J.~A. Msumba and H.~J. Xu, ``Spectrum sensing for cognitive radio networks: The
-  need for cross-layer design approach for multimedia applications,'' in
-  \emph{AFRICON, 2011}, Sept 2011, pp. 1--6.
-
-\bibitem{5062176}
-K.~Chowdhury, M.~Di~Felice, and I.~Akyildiz, ``Tp-crahn: a transport protocol
-  for cognitive radio ad-hoc networks,'' in \emph{INFOCOM 2009, IEEE}, April
-  2009, pp. 2482--2490.
 
 \bibitem{6526525}
 M.~Sruthi, M.~Abirami, A.~Manikkoth, R.~Gandhiraj, and K.~Soman, ``Low cost
@@ -361,6 +431,79 @@ E.~Research. (2016) B200. [Online]. Available:
   \url{https://www.ettus.com/product/details/USRP-E312}
 \BIBentrySTDinterwordspacing
 
+\bibitem{6497193}
+J.~C. Briones and J.~M. Nappier, ``Sdr input power estimation algorithms,'' in
+  \emph{Aerospace Conference, 2013 IEEE}, March 2013, pp. 1--9.
+
+\bibitem{5639025}
+B.~Wang and K.~J.~R. Liu, ``Advances in cognitive radio networks: A survey,''
+  \emph{IEEE Journal of Selected Topics in Signal Processing}, vol.~5, no.~1,
+  pp. 5--23, Feb 2011.
+
+\bibitem{6994333}
+D.~Kreutz, F.~M.~V. Ramos, P.~E. Veríssimo, C.~E. Rothenberg, S.~Azodolmolky,
+  and S.~Uhlig, ``Software-defined networking: A comprehensive survey,''
+  \emph{Proceedings of the IEEE}, vol. 103, no.~1, pp. 14--76, Jan 2015.
+
+\bibitem{7179430}
+S.~Wang, D.~Li, and S.~Xia, ``The problems and solutions of network update in
+  sdn: A survey,'' in \emph{Computer Communications Workshops (INFOCOM WKSHPS),
+  2015 IEEE Conference on}, April 2015, pp. 474--479.
+
+\bibitem{7452335}
+C.~Trois, M.~D. D.~D. Fabro, L.~C.~E. de~Bona, and M.~Martinello, ``A survey on
+  sdn programming languages: Towards a taxonomy,'' \emph{IEEE Communications
+  Surveys Tutorials}, vol.~PP, no.~99, pp. 1--1, 2016.
+
+\bibitem{6933795}
+G.~Sun, G.~Liu, and Y.~Wang, ``Sdn architecture for cognitive radio networks,''
+  in \emph{Cognitive Cellular Systems (CCS), 2014 1st International Workshop
+  on}, Sept 2014, pp. 1--5.
+
+\bibitem{6599059}
+M.~Youssef, M.~Ibrahim, M.~Abdelatif, L.~Chen, and A.~V. Vasilakos, ``Routing
+  metrics of cognitive radio networks: A survey,'' \emph{IEEE Communications
+  Surveys Tutorials}, vol.~16, no.~1, pp. 92--109, First 2014.
+
+\bibitem{5771952}
+S.~M. Cheng, P.~Y. Chen, and K.~C. Chen, ``Ecology of cognitive radio ad hoc
+  networks,'' \emph{IEEE Communications Letters}, vol.~15, no.~7, pp. 764--766,
+  July 2011.
+
+\bibitem{4562561}
+V.~Kuppusamy and R.~Mahapatra, ``Primary user detection in ofdm based mimo
+  cognitive radio,'' in \emph{Cognitive Radio Oriented Wireless Networks and
+  Communications, 2008. CrownCom 2008. 3rd International Conference on}, May
+  2008, pp. 1--5.
+
+\bibitem{6527405}
+M.~T. Zia, F.~F. Qureshi, and S.~S. Shah, ``Energy efficient cognitive radio
+  mac protocols for adhoc network: A survey,'' in \emph{Computer Modelling and
+  Simulation (UKSim), 2013 UKSim 15th International Conference on}, April 2013,
+  pp. 140--143.
+
+\bibitem{6072038}
+J.~A. Msumba and H.~J. Xu, ``Spectrum sensing for cognitive radio networks: The
+  need for cross-layer design approach for multimedia applications,'' in
+  \emph{AFRICON, 2011}, Sept 2011, pp. 1--6.
+
+\bibitem{5062176}
+K.~Chowdhury, M.~Di~Felice, and I.~Akyildiz, ``Tp-crahn: a transport protocol
+  for cognitive radio ad-hoc networks,'' in \emph{INFOCOM 2009, IEEE}, April
+  2009, pp. 2482--2490.
+
+\bibitem{7207253}
+H.~Cui, Y.~Zhang, C.~Ma, W.~Lai, N.~C. Beaulieu, S.~Sobolevsky, and Y.~Liu,
+  ``Design and realization of cognitive routing resources using big data
+  analysis in sdn,'' in \emph{2015 IEEE International Congress on Big Data},
+  June 2015, pp. 424--429.
+
+\bibitem{6982928}
+S.~Namal, I.~Ahmad, M.~Jokinen, A.~Gurtov, and M.~Ylianttila, ``Sdn core for
+  mobility between cognitive radio and 802.11 networks,'' in \emph{2014 Eighth
+  International Conference on Next Generation Mobile Apps, Services and
+  Technologies}, Sept 2014, pp. 272--281.
+
 \bibitem{1005496}
 I.~Kassabalidis, M.~A. El-Sharkawi, R.~J. Marks, P.~Arabshahi, and A.~A. Gray,
   ``Adaptive-sdr: adaptive swarm-based distributed routing,'' in \emph{Neural
@@ -381,10 +524,6 @@ V.~K, K.~K, P.~D. Shenoy, and V.~K. R, ``Iobr: Interoperable bee-hive routing
 R.~A. Mahale and S.~D. Chavan, ``Throughput aware aco based routing protocol
   for wireless sensor network,'' in \emph{Wireless Computing and Networking
   (GCWCN), 2014 IEEE Global Conference on}, Dec 2014, pp. 234--238.
-
-\bibitem{6497193}
-J.~C. Briones and J.~M. Nappier, ``Sdr input power estimation algorithms,'' in
-  \emph{Aerospace Conference, 2013 IEEE}, March 2013, pp. 1--9.
 
 \bibitem{7124804}
 P.~V. Kumar and S.~Malarvizhi, ``Experimental study of genetic algorithm based
@@ -414,28 +553,10 @@ X.~Mao and H.~Ji, ``Biologically-inspired distributed spectrum access for
   Wireless Communications Networking and Mobile Computing (WiCOM)}, Sept 2010,
   pp. 1--4.
 
-\bibitem{6599059}
-M.~Youssef, M.~Ibrahim, M.~Abdelatif, L.~Chen, and A.~V. Vasilakos, ``Routing
-  metrics of cognitive radio networks: A survey,'' \emph{IEEE Communications
-  Surveys Tutorials}, vol.~16, no.~1, pp. 92--109, First 2014.
-
-\bibitem{6892537}
-K.~K. Chauhan and A.~K.~S. Sanger, ``Survey of security threats and attacks in
-  cognitive radio networks,'' in \emph{Electronics and Communication Systems
-  (ICECS), 2014 International Conference on}, Feb 2014, pp. 1--5.
-
-\bibitem{5639025}
-B.~Wang and K.~J.~R. Liu, ``Advances in cognitive radio networks: A survey,''
-  \emph{IEEE Journal of Selected Topics in Signal Processing}, vol.~5, no.~1,
-  pp. 5--23, Feb 2011.
-
-\bibitem{Akyildiz2009810}
-\BIBentryALTinterwordspacing
-I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
-  hoc networks,'' \emph{Ad Hoc Networks}, vol.~7, no.~5, pp. 810 -- 836, 2009.
-  [Online]. Available:
-  \url{http://www.sciencedirect.com/science/article/pii/S157087050900002X}
-\BIBentrySTDinterwordspacing
+\bibitem{6737601}
+B.~Bloessl, M.~Segata, C.~Sommer, and F.~Dressler, ``Towards an open source
+  ieee 802.11p stack: A full sdr-based transceiver in gnu radio,'' in
+  \emph{2013 IEEE Vehicular Networking Conference}, Dec 2013, pp. 143--149.
 
 \bibitem{0017}
 \BIBentryALTinterwordspacing
@@ -454,6 +575,19 @@ I.~F. Akyildiz, W.-Y. Lee, and K.~R. Chowdhury, ``Crahns: Cognitive radio ad
 \BIBentryALTinterwordspacing
 (2015) socketio-client. [Online]. Available:
   \url{https://pypi.python.org/pypi/socketIO-client}
+\BIBentrySTDinterwordspacing
+
+\bibitem{specan1}
+\BIBentryALTinterwordspacing
+Tektronix. (2016) Rsa306 usb spectrum analyzer. [Online]. Available:
+  \url{http://www.tek.com/spectrum-analyzer/rsa306}
+\BIBentrySTDinterwordspacing
+
+\bibitem{0037}
+\BIBentryALTinterwordspacing
+O.~Mesh. (2016) Understand your b.a.t.m.a.n. advanced network. [Online].
+  Available:
+  \url{https://www.open-mesh.org/projects/batman-adv/wiki/Understand-your-batman-adv-network}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

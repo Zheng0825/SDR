@@ -4,6 +4,7 @@
 
 \label{Chapter2} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
+The following section provides an overview of the current work being done in this field. The first section provides an overview about Software Defined Radios. Next, tools for working with SDRs are presented and discussed. Then, various networking concepts are described with a focus on mesh networks. Then, current work on software defined radio testbeds are examined and compared to ARCAM-Net. Finally, the state of the practice and the state of the art are examined. 
 %----------------------------------------------------------------------------------------
 
 % Define some commands to keep the formatting separated from the content 
@@ -13,23 +14,22 @@
 %\newcommand{\file}[1]{\texttt{\bfseries#1}}
 %\newcommand{\option}[1]{\texttt{\itshape#1}}
 
-%----------------------------------------------------------------------------------------
-
+%---------------------------------------------------------------------------------------
 \section{SDR Fundamentals}
 
-A software defined radio, or SDR, is a radio system which performs signal processing in software instead of relying on dedicated hardware components to process signals. In a traditional hardware radio, each component is designed and built to handle a single task. If changes are needed, the hardware components must be replaced. Software defined radios are flexible and can be changed by altering code instead of components. A single SDR can be configured to act as numerous hardware radios. \cite{0018} 
+A software defined radio, or SDR, is a radio system which performs signal processing in software instead of relying on dedicated hardware components to process signals. In a traditional hardware radio, each component is designed and built to handle a single task. If changes are needed, the hardware components must be replaced. Software defined radios are flexible and can be changed by altering code instead of components. A single SDR can be configured to act as numerous hardware radios. \cite{7043470} \cite{0018} 
 
-An SDR itself is the hardware component which then offloads the data to a processing unit such as an FPGA, microprocessor, or general purpose computer \cite{0018}. There are many different SDRs available on the market but they share many common components. Every SDR works in slightly different ways, but they share many common components. 
+An SDR itself is the hardware component which then offloads the data to a processing unit such as an FPGA, microprocessor, or general purpose computer \cite{7043470} \cite{0018}. There are many different SDRs available on the market but they share many common components. Every SDR works in slightly different ways, but they share many common components. 
 
-An ``Ideal'' SDR only has a few stages. The first is the RF Amplifcation stage. These stages increase the gain of the signal as it enters and leaves the radio. A Low Noise Amplifier (LNA) is used on the receiver and a Power Amplifier (PA) is used on the output. The PA dramtically extends the range of the SDR and the LNA increases the signal to noise ratio of the reciever \cite{0020}. 
+An ``Ideal'' SDR only has a few stages. The first is the RF Amplifcation stage. These stages increase the gain of the signal as it enters and leaves the radio. A Low Noise Amplifier (LNA) is used on the receiver and a Power Amplifier (PA) is used on the output. The PA dramtically extends the range of the SDR and the LNA increases the signal to noise ratio of the reciever \cite{761033}. 
 
-In the ``digital conversion'' stage, an analog to digital (ADC) and digital to analog (DAC) converter are used to change from the analog to digital domain \cite{0020}. The ADC receives the analog signal and converts it to a digital code. The DAC takes digital material and converts it to an analog signal to be transmitted. 
+In the ``digital conversion'' stage, an analog to digital (ADC) and digital to analog (DAC) converter are used to change from the analog to digital domain \cite{761033}\cite{0020}. The ADC receives the analog signal and converts it to a digital code. The DAC takes digital material and converts it to an analog signal to be transmitted. 
 
-The final stage is the ``processing'' stage. In this stage the digital signal is sent to and from the software processor. This can come in many different forms including microcontrollers, FPGAs, and general purpose computers \cite{0020}.  
+The final stage is the ``processing'' stage. In this stage the digital signal is sent to and from the software processor. This can come in many different forms including microcontrollers, FPGAs, and general purpose computers \cite{393001}\cite{0020}.  
 
-In an ideal SDR, the DAC and ADC can receive and transmit any needed signal. In practice, a real SDR requires a ``frequency converson'' stage \cite{0020}. This is an analog preprocessing stage that allows the useable frequency range of an SDR to be increased. Without this stage, the SDR's useable frequency range would be limited by the ADC and DAC to a much smaller range. 
+In an ideal SDR, the DAC and ADC can receive and transmit any needed signal. In practice, a real SDR requires a ``frequency converson'' stage \cite{393001} \cite{0020}. This is an analog preprocessing stage that allows the useable frequency range of an SDR to be increased. Without this stage, the SDR's useable frequency range would be limited by the ADC and DAC to a much smaller range. 
 
-SDR has numerous benefits compared to Traditional Radio. A single SDR can replace a multitude of radios, saving on space and cost. The operating frequency of an SDR is also flexible. This means a radio can be moved from country to country and only the software and antenna needs to be changed to operate on new frequencies \cite{0019}. As new standards, protocols, and technologies are developed, an SDR can download new software to adjust its operating parameters. Compare this to existing Wi-fi routers, where a person needs to purchase a whole new router as new standards are created \cite{0019}. 
+SDR has numerous benefits compared to Traditional Radio. A single SDR can replace a multitude of radios, saving on space and cost. The operating frequency of an SDR is also flexible. This means a radio can be moved from country to country and only the software and antenna needs to be changed to operate on new frequencies \cite{393001} \cite{0019}. As new standards, protocols, and technologies are developed, an SDR can download new software to adjust its operating parameters. Compare this to existing Wi-fi routers, where a person needs to purchase a whole new router as new standards are created \cite{761033} \cite{0019}. 
 
 %----------------------------------------------------------------------------------------
 
@@ -61,7 +61,7 @@ Ettus Research recently released the RF Network on Chip (RFNoC) extension to GNU
 
 \section{Network Concepts}
 
-A Network consists of two or more computers that are connected together in a way that allows them to share resources, transfer files, and communicate electronically. The connection between them could be physical or wireless. Traditional computer networks include local area networks (LAN) and wireless local area networks (WLAN) \cite{0029}. 
+A Network consists of two or more computers that are connected together in a way that allows them to share resources, transfer files, and communicate electronically. The connection between them could be physical or wireless. Traditional computer networks include local area networks (LAN) and wireless local area networks (WLAN) \cite{529072} \cite{0029}. 
 
 \subsection{Mesh Network}
 
@@ -83,17 +83,17 @@ Much of the existing work done using USRPs and GNU Radio for SDR Mesh Networks r
 
 \subsection{What is a network protocol}
 
-A protocol is essentially a set of rules that govern the communication between two devices. A network protocol is used to define the way multiple computers can electronically send messages to one another. By standardizing protocols, computers and devices from various manufacturers can still communicate effectively \cite{0029}. 
+A protocol is essentially a set of rules that govern the communication between two devices. A network protocol is used to define the way multiple computers can electronically send messages to one another. By standardizing protocols, computers and devices from various manufacturers can still communicate effectively \cite{6840086} \cite{0029}. 
 
 \subsubsection{OSI Model}
 
-The Open Systems Interconnection (OSI) Model is an abstraction that breaks network communication into seven layers \cite{0030}. Each layer has a standardized way of communicating with the layers above and below it. This means that at any given layer, a protocol can be exchanged for another without making any change to the other layers \cite{0031}. 
+The Open Systems Interconnection (OSI) Model is an abstraction that breaks network communication into seven layers \cite{6840086} \cite{0030}. Each layer has a standardized way of communicating with the layers above and below it. This means that at any given layer, a protocol can be exchanged for another without making any change to the other layers\cite{6840086}. 
 
-The first layer is the physical layer. This layers deals with the transmission and reception of unstructured raw bit streams over physical mediums. Common Layer 1 protocols include ethernet and 802.11 \cite{0030}. Layer 2 is the data linke layer. This layer passes structured data to Layer 1, and passes recognized packets on to layer 3 \cite{0031}. A common layer 2 protocol is Medium Access Control (MAC) \cite{0030}. 
+The first layer is the physical layer. This layers deals with the transmission and reception of unstructured raw bit streams over physical mediums. Common Layer 1 protocols include ethernet and 802.11 \cite{6014631} \cite{0030}. Layer 2 is the data linke layer. This layer passes structured data to Layer 1, and passes recognized packets on to layer 3 \cite{6840086}. A common layer 2 protocol is Medium Access Control (MAC) \cite{6014631} \cite{0030}. 
 
-Layer 3, or the network layer, deals with routing information through the network. A common layer 3 protocol is Internet Protocol version 4 (IPv4) \cite{0031}. Layer 4 is the transport layer. Layer 4 can be used to ensure that messages are delivered error free and in sequence. Common layer 4 protocols are Universal Datagram Protocol (UDP) and Transportation Controp Protocol (TCP). The next three layers are Session, Presentation, and Application layers \cite{0030}. ARCAM-Net does not make any changes to these layers so they are less pertinent to the discussion. 
+Layer 3, or the network layer, deals with routing information through the network. A common layer 3 protocol is Internet Protocol version 4 (IPv4) \cite{6014631} \cite{0031}. Layer 4 is the transport layer. Layer 4 can be used to ensure that messages are delivered error free and in sequence. Common layer 4 protocols are Universal Datagram Protocol (UDP) and Transportation Controp Protocol (TCP). The next three layers are Session, Presentation, and Application layers \cite{6840086} \cite{0030}. ARCAM-Net does not make any changes to these layers so they are less pertinent to the discussion. 
 
-Layer 5, or session layer, allows for the establishment of sessions between processes running on different stations. Layer 6, or presentation layer formats the data to be presented to the application layer. The final layer, application layer, passes the data off to the user \cite{0030}. 
+Layer 5, or session layer, allows for the establishment of sessions between processes running on different stations. Layer 6, or presentation layer formats the data to be presented to the application layer. The final layer, application layer, passes the data off to the user \cite{6840086}. 
 
 \subsection{Common Mesh Network Protocols}
 
@@ -116,6 +116,15 @@ Batman-adv uses the principle that better links will provide fast, reliable conn
 \subsubsection{OLSR}
 
 The Optimised Link State Routing (OLSR) protocol uses a ``link-state'' algorithm to proactively find efficent paths between nodes. The network works by using Multi-Point Relays (MPRs) that increase network throughput by creating efficient network schemes. OLSR does this by selecting a subset of neighbouring nodes to relay data instead of every node acting as a relay. This minimies the number of packets required to establish a routing table. Network information is shared between MPRs. Every MPR has a complete routing \cite{5375690}. Batman-adv was created by Open Mesh to fix problems they saw with OLSR, namely creating an algorithm better suited to embedded system hardware \cite{0032}. 
+
+\subsubsection{802.11s}
+
+802.11s is an extension of the 802.11 standard to include capabilities for multihop mesh networking \cite{5483777}. 802.11s is a new standard that has been rewritten over the past few years. As such, it is hard to find a good comparison between 802.11s and batman-adv as many comparisons are based on older, draft versions of 802.11s. 
+
+802.11s combines AODV (Adhoc On-Demand Distance Vectoring) with a proactive protocol to create a Hybrid Wireless Mesh Protocol (HWMP) \cite{6379142}. AODV keeps packet overhead small by only finding routes when a route is needed. However, the trade off is higher computational complexity. AODV also takes more time to build a routing table than other protocols like OLSR and Batman-adv. To improve upon the performance of AODV, 802.11s uses the proactive route generation to create a predefined path to all mesh nodes. If the node moves, or can no longer be found, then 802.11s will use AODV to find a new path \cite{5483777}. 
+
+The open80211s project is an open source implementation of 802.11s. Currently, it only supports the AODV protocol so benchmarks cannot fully characterize the effectiveness of this standard \cite{5483777}. Testing has revealed that 802.11s has better node recovery time and lower packet loss than batman-adv. However batman-adv has much higher throughput and lower power requirements \cite{5483777} \cite{6379142}. 802.11s is also only compatible with 802.11 hardware. In order to implement it on an SDR, the radio would need to be configured as an 802.11 radio. Batman-adv is agnostic to layer 1 and can be configured to run on any standard such as ethernet \cite{5483777}. 802.11s is also designed to work with around 32 nodes \cite{ieee802tut}. 
+
 %----------------------------------------------------------------------------------------
 
 \section{Software Defined Radio Testbeds}
@@ -127,22 +136,6 @@ Another platform is the Hydra platform developed at UT Austin. This platform use
 The ADROIT project was another platform developed in conjunction with DARPA. This project relied heavily on Click and GNU Radio for much of its functionality. \cite{4286321}  Similarly, the University of California, Irvine and Boeing Corporation developed a testbed based on USRP Radios and GNU Radio, but they implement custom MAC layers \cite{4753441}. 
 
 A platform similar to ARCAM-Net is presented in \cite{0002}. However, this platform uses the Optimized Link State Routing Protocol (OLSR) which has been shown to perform poorly when compared to batman-adv. OLSR is also not truly decentralized as only certain nodes relay network information \cite{5375690}
-
-%----------------------------------------------------------------------------------------
-
-\section{SDR and Cognitive Radios}
-
-Cognitive Radio Networks (CRNs) are networks made up of SDRs that are capable of sensing their environment, making decisions, and changing transmission parameters \cite{Akyildiz2007921}. Essentially, Cognitive Radios are SDRs that employ aritifical intelligence and decision making to improve upon the operation of the radio. 
-
-Cognitive Radio decision making can be made at nearly any level of the OSI model, having different effects on the overal network operation. Layer 1 decision making can be used to enable Dynamic Spectrum Sharing (DSS) \cite{5771952}. As wireless technology grows, more and more spectrum is being allocated. However, the world is quickly running out of useable spectrum. Cognitive Radios and DSS allow for cooperative sharing of available frequency \cite{5771952}. 
-
-Primary Users (PUs), or those that have purchased a license to use the band, can operate on a given frequency \cite{4562561}. If there are any gaps in their transmission, then a secondary user (SU) can quickly transmit and receive on the frequency and then switch to a new frequency before the PU begins transmitting again \cite{4562561}. 
-
-Layer 1 decision making can also be used to avoid congestion. If a Cognitive Radio detects there are a lot of users operating on a given frequency, then it can switch to a different channel to continue transmitting.\cite{Akyildiz2007921} 
-
-Cognitive decision making is not limited to Layer 1. Layer 2 cognition could be used to reroute the paths used to transport packets. This could be done to improve throughput or reduce energy use \cite{6527405}. Layer 3 cognition could adjust signal gains if packets are being dropped too frequently \cite{6072038}. Layer 4 could detect when packets are going directly to a single node, and adjust the nodes frequency so they have their own independent channel of operation \cite{5062176}. In general, Cognitive Radios improve upon SDRs in that they can react to and predict changes in order to refine the operation of the network. 
-
-
   
 %----------------------------------------------------------------------------------------
 
@@ -165,21 +158,60 @@ ARCAM-Net uses the Universal Software Radio Peripheral (USRP) created by Ettus R
 
 The USRP line of radios are able to transmit and recieve data. The B200 and B210 operate over USB 3.0 \cite{0034}. The E310 radios are standalone systems with their own onboard processor built into the FPGA \cite{0035}. The newer E310's also come with an onboard battery, allowing them to operate in a mobile fashion \cite{0036}. The USRP line of radios is used heavily in academia. The radios form the basis of numerous testbeds  \cite{4753441} \cite{4212821}. They are also used to validate data from simulations \cite{5508221}. 
 
+\section{Industry State of the Practice}
 
+General Dynamics produces the S-Band software defined radio. This radio is used in the Space Communications and Navigation Testbed on the Internation Space Station. This SDR provides experimenters an opportunity to develop and demonstrate experimental waveforms in space \cite{6497193}. 
+
+SDRN and CRN devices are ideal for emergency response and military operations. Various countries operate using different standards for radio transmission. SDRs and CRs allow for better coordination, as the radios can be configured to operate using a form not commonly used by a given organization. In emergency response, the parameters of the radio can also be changed to provide additional bandwidth and spectrum for the duration of the operation \cite{5639025}. 
+
+Harris also develops commercially available SDRs. Harris began work in 1998 using RISC based processors for their Software Defined Payloads (SDP) \cite{5747366}. Since then, they have switched to FPGAs to offer greater flexibility. Harris's SDPs are deployed in numerous Space Telecommunications Radio Systems (STRSes). By using an SDR with an FPGA, Harris is able to remotely update and improve the capability of satellite communication devices \cite{5747366}. 
+
+\subsection{Software Defined Networks}
+
+Software Defined Networking (SDN) is a new paradigm that moves a network's control logic to a central location and away from the underlying hardware \cite{6994333}. This allows for greater flexibility in how the network is designed. The control platform can be configured to move data more predicatably and with finer control over the data. In traditional IP networks, the control and data planes are tightly coupled \cite{6994333}. Each router or switch will have both capabilities on board will need to be configured individually \cite{7179430}. This leads to fast routing, but only if each router is configured properly. A single router performing in an undesirable way may be near impossible to detect as the administrators will need to scan each router to find the cause. 
+
+Software Defined Networking separates the control and data plane from one another \cite{6994333}. The hardware devices then become simple packet forwarding elements. Forwarding decisions become flow based instead of destination based. Instead of routing tables, flow tables define how groups of packets should be treated when they reach a given piece of hardware \cite{7179430}. The control logic is removed from the hardware devices and instead an SDN controller is used \cite{6994333}. This controller is a software platform that runs on a server and provides the essential resources and abstractions needed to program the forwarding devices. Software applications running on top of this network controller allow for the administrators to interact with the data plane \cite{7452335}. 
+
+\subsection{SDRN vs SDN}
+
+SDRNs and SDNs have a similar purpose, but take very different approaches. They both seek to increase flexibility in communication, but at different layers in the OSI model. SDRNs focus on flexibility in layer 1 and 2 \cite{Akyildiz2007921}. SDN's focus on flexibility in layers 3 and 4 \cite{6994333}. Software Defined Networking is not a part of ARCAM-Net. However, as OSI layer abstraction is maintained, SDN platforms that are compatible with the hardware running the SDR could be used \cite{6933795}. 
+
+%http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/xpl/articleDetails.jsp?arnumber=5747366&newsearch=true&queryText=Harris%20Corporation%20SDR
+
+%----------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
 
 \section{State of the Art}
 
+%----------------------------------------------------------------------------------------
+
 \subsection{Cognitive Radio Networks}
 
-Cognitive Radio Networks represent a technological evolution from Software Defined Radio Networks \cite{6599059}. In a traditional Software Defined Radio Network the waveforms and transmission protocols are flexible. However, they are predefined by the software loaded onto the computer or radio. To change operating parameters, a different program is run or the user manually alters transmission patterns. In a Cognitive Radio Network, changes can be made intelligently through the use of machine learning and artificial intelligence. 
+Cognitive Radio Networks represent a technological evolution from Software Defined Radio Networks \cite{6599059}. Cognitive Radio Networks (CRNs) are networks made up of SDRs that are capable of sensing their environment, making decisions, and changing transmission parameters \cite{Akyildiz2007921}.In a traditional Software Defined Radio Network the waveforms and transmission protocols are flexible. However, they are predefined by the software loaded onto the computer or radio. To change operating parameters, a different program is run or the user manually alters transmission patterns. In a Cognitive Radio Network, changes can be made intelligently through the use of machine learning and artificial intelligence. 
 
 A major benefit of Cognitive Radio Networks is that they can use Dynamic Spectrum Allocation (DSA) \cite{6892537}. Current wireless transmission is performed on static, licensed bands. The spectrum must be purchased through the Federal Communications Commission (FCC) and the user can then only operate on that particular frequency. With Dynamic Spectrum Allocation, radios are able to find bands of frequency that are not currently being utilized and perform there transmissions there. Once a licensed user begins transmitting on that frequency, the radios can shift to a new band and continue operation. Dynamic Spectrum Allocation helps to allievate the problems of spectrum sharing and drastically increases the useability of each frequency band \cite{6599059}. 
 
 As with SDRs, Cognitive Radios are able to alter operating parameters such as transmission power, frequency, modulation type. Unlike SDRs, any of these parameters can be changed through the use of Artifical Intelligence and Machine Learning. The general cognitive functions of CRNs occur in what is called a ``cognitive cycle.'' \cite{5639025} This cycle is made up of four componenets: Sensing, Analysis, Reasoning, and Adaptation. In spectrum sensing and analysis, the radios are constantly scanning over a given frequency band, looking for openings. In the reasoning phase, the radio looks at the data for each frequency band and quantifies the ``ideal'' band to begin transmitting on. In the adaptation phase the radio switches to the new operating parameters \cite{5639025}. 
 
 Each radio may be capable of performing these actions on their own, or they may leverage a spectrum broker. The spectrum broker is a centralized cognitive radio that may have wider band sensing capabilities \cite{5639025}. This central broker will then send commands to the other cognitive radios to dictate which frequency they should continue to transmit on. This decentralized approach is less ideal, as it limits the scalability of the network. However, it can often be less computationally complex to deploy \cite{5639025}. 
+
+Cognitive Radio decision making can be made at nearly any level of the OSI model, having different effects on the overal network operation. Layer 1 decision making can be used to enable Dynamic Spectrum Sharing (DSS) \cite{5771952}. As wireless technology grows, more and more spectrum is being allocated. However, the world is quickly running out of useable spectrum. Cognitive Radios and DSS allow for cooperative sharing of available frequency \cite{5771952}. 
+
+Primary Users (PUs), or those that have purchased a license to use the band, can operate on a given frequency \cite{4562561}. If there are any gaps in their transmission, then a secondary user (SU) can quickly transmit and receive on the frequency and then switch to a new frequency before the PU begins transmitting again \cite{4562561}. 
+
+Layer 1 decision making can also be used to avoid congestion. If a Cognitive Radio detects there are a lot of users operating on a given frequency, then it can switch to a different channel to continue transmitting.\cite{Akyildiz2007921} Cognitive decision making is not limited to Layer 1. Layer 2 cognition could be used to reroute the paths used to transport packets. This could be done to improve throughput or reduce energy use \cite{6527405}. Layer 3 cognition could adjust signal gains if packets are being dropped too frequently \cite{6072038}. Layer 4 could detect when packets are going directly to a single node, and adjust the nodes frequency so they have their own independent channel of operation \cite{5062176}. In general, Cognitive Radios improve upon SDRs in that they can react to and predict changes in order to refine the operation of the network. 
+
+\subsection{Cognitive Radio Ad-Hoc Networks}
+
+Cognitive Radio Ad-Hoc Networks (CRAHNs) are essentially mesh networks made up of intelligent software defined radios \cite{Akyildiz2009810}. They are a specialized subset of Cognitive Radio Networks \cite{5639025}. CRAHNs seek to combine the flexibility of Cognitve Radios with the distributed network routing of mesh networks. CRAHNs allow for dynamic route topology due to the ability of ad-hoc networks to connect to any and all peers within their broadcast range. The features of the radio, such as frequency and amplitude, can be adjusted to force the topology of the users choosing. This can also be done dynamically using artifical intelligence and decision making \cite{Akyildiz2009810}. 
+
+Routing in multi-hop CRNs or CRAHNs has to deal with a number of challenges. The dynamic changing of the available spectrum can alter the topology of the network as different frequencies react to the environment in different ways. The routing metrics for CRAHNs will need to be able to adjust each time a hop is performed in order to rebuild the topology \cite{6599059}. The routing protocol will also have to be able to handle the transmission delay that will occur as the nodes are changing frequency \cite{6599059}. During the change, the network will be unreachable. The routing protocol will need to be able to begin transmission again just as the network comes back online or risk dropping packets. 
+
+\subsection{Cognitive Networks}
+
+Just as SDRNs can also be CRNs, SDNs can have cognitive features. These are simply referred to as Cognitive Networks \cite{7207253}. In these networks, the central control plane can reroute packets to distribute a load more evenly throughout a network \cite{6982928}. If one router is receiving much more data then the rest of the network, aritifical intelligence can be used to begin to off load some of these packets to other routers. Many of the algorithms used to find empty spectrum in Cognitive Radio Networks can be applied to find more efficent routes within software defined networks \cite{7207253} \cite{6982928}. 
+
 
 
 \subsection{Biologically Inspired Protocols}
@@ -199,7 +231,7 @@ Hive protocols emulate the behavior of bees that forage and return to a central 
 
 Ant Colony Optimization (ACO) Protocols are modeled off of ants cooperating to find food for their colony \cite{7030885}. In this protocol, a set of ``Ants'' are sent out in the form of discovery packets. The first set try to find the source node within the network. The other set try to find the destination node. As the ants walk, they deposit pheromones within the network to mark the nodes they have traversed. As more ants visit a given node, the quantity of pheromones at that location will begin to increase. After awhile, the optimal path between a source and destination node can be determined by following the path with the largest amount of pheromones \cite{7030885}. 
 
-\section{Decision Making and Biologically Inspired Decision Making}
+\subsection{Decision Making and Biologically Inspired Decision Making}
 
 At a very simple level, decision making can just be automatic gain correction (AGC). A cognitive radio with AGC may adjust its gain to its highest level until it begins to receive data. At the highest gain level, it may detect clipping and begin to lower its gain until an undistorted signal, with a good signal to noise ratio, is acheived. \cite{6497193}
 
@@ -211,49 +243,3 @@ Another biologically inspired algorithm is used to form consensus-based spectrum
 
 
 The Ant Colony Optimization (ACO) algorithm has also been applied to dynamic spectrum access in cognitive radio networks \cite{5600815} Each node explores possible bands that it can transmit in and then uses a simulated pheromone to indicate good locations to transmit on. These pheromones have a decay time to ensure that they are constantly updated. Once a band has a large number of nodes releasing pheromones on it, then the other nodes will converge on this frequency. This process can be repeated continuously to move away from primary nodes as they appear \cite{5600815}. 
-
-
-%%----------------------------------------------------
-
-% TODO
-
-%%----------------------------------------------------
-
-
-\subsection{Cognitive Radio Networks}
-
-Cognitive Radio Networks represent a technological evolution from Software Defined Radio Networks \cite{6599059}. In a traditional Software Defined Radio Network the waveforms and transmission protocols are flexible. However, they are predefined by the software loaded onto the computer or radio. To change operating parameters, a different program is run or the user manually alters transmission patterns. In a Cognitive Radio Network, changes can be made intelligently through the use of machine learning and artificial intelligence. 
-
-A major benefit of Cognitive Radio Networks is that they can use Dynamic Spectrum Allocation (DSA) \cite{6892537}. Current wireless transmission is performed on static, licensed bands. The spectrum must be purchased through the Federal Communications Commission (FCC) and the user can then only operate on that particular frequency. With Dynamic Spectrum Allocation, radios are able to find bands of frequency that are not currently being utilized and perform there transmissions there. Once a licensed user begins transmitting on that frequency, the radios can shift to a new band and continue operation. Dynamic Spectrum Allocation helps to allievate the problems of spectrum sharing and drastically increases the useability of each frequency band \cite{6599059}. 
-
-As with SDRs, Cognitive Radios are able to alter operating parameters such as transmission power, frequency, modulation type. Unlike SDRs, any of these parameters can be changed through the use of Artifical Intelligence and Machine Learning. The general cognitive functions of CRNs occur in what is called a ``cognitive cycle.'' \cite{5639025} This cycle is made up of four componenets: Sensing, Analysis, Reasoning, and Adaptation. In spectrum sensing and analysis, the radios are constantly scanning over a given frequency band, looking for openings. In the reasoning phase, the radio looks at the data for each frequency band and quantifies the ``ideal'' band to begin transmitting on. In the adaptation phase the radio switches to the new operating parameters \cite{5639025}. 
-
-Each radio may be capable of performing these actions on their own, or they may leverage a spectrum broker. The spectrum broker is a centralized cognitive radio that may have wider band sensing capabilities \cite{5639025}. This central broker will then send commands to the other cognitive radios to dictate which frequency they should continue to transmit on. This decentralized approach is less ideal, as it limits the scalability of the network. However, it can often be less computationally complex to deploy \cite{5639025}. 
-
-
-
-\subsection{Cognitive Networks}
-
-\subsection{Cognitive Radio Ad-Hoc Networks}
-
-Cognitive Radio Ad-Hoc Networks (CRAHNs) are essentially mesh networks made up of intelligent software defined radios \cite{Akyildiz2009810}. They are a specialized subset of Cognitive Radio Networks \cite{5639025}. CRAHNs seek to combine the flexibility of Cognitve Radios with the distributed network routing of mesh networks. CRAHNs allow for dynamic route topology due to the ability of ad-hoc networks to connect to any and all peers within their broadcast range. The features of the radio, such as frequency and amplitude, can be adjusted to force the topology of the users choosing. This can also be done dynamically using artifical intelligence and decision making \cite{Akyildiz2009810}. 
-
-Routing in multi-hop CRNs or CRAHNs has to deal with a number of challenges. The dynamic changing of the available spectrum can alter the topology of the network as different frequencies react to the environment in different ways. The routing metrics for CRAHNs will need to be able to adjust each time a hop is performed in order to rebuild the topology \cite{6599059}. The routing protocol will also have to be able to handle the transmission delay that will occur as the nodes are changing frequency \cite{6599059}. During the change, the network will be unreachable. The routing protocol will need to be able to begin transmission again just as the network comes back online or risk dropping packets. 
-
-
-\section{Software Defined Networks}
-
-\section{SDRN vs SDN}
-
-\section{802.11s}
-
-\section{Industry State of the Practice}
-
-General Dynamics produces the S-Band software defined radio. This radio is used in the Space Communications and Navigation Testbed on the Internation Space Station. This SDR provides experimenters an opportunity to develop and demonstrate experimental waveforms in space \cite{6497193}. 
-Mention the stuff Harris uses here.
-
-SDRN and CRN devices are ideal for emergency response and military operations. Various countries operate using different standards for radio transmission. SDRs and CRs allow for better coordination, as the radios can be configured to operate using a form not commonly used by a given organization. In emergency response, the parameters of the radio can also be changed to provide additional bandwidth and spectrum for the duration of the operation \cite{5639025}. 
-
-%http://ieeexplore.ieee.org.flpoly-proxy.flvc.org/xpl/articleDetails.jsp?arnumber=5747366&newsearch=true&queryText=Harris%20Corporation%20SDR
-
-%----------------------------------------------------------------------------------------

@@ -7,68 +7,67 @@
 \contentsline {section}{\numberline {1.2}Software Defined Radio Networks}{2}{section.1.2}
 \contentsline {section}{\numberline {1.3}Batman-adv}{2}{section.1.3}
 \contentsline {section}{\numberline {1.4}GNU Radio}{2}{section.1.4}
-\contentsline {section}{\numberline {1.5}Trends Towards Cognitive Radio Environments}{2}{section.1.5}
+\contentsline {section}{\numberline {1.5}Trends Towards Cognitive Radio Environments}{3}{section.1.5}
 \contentsline {section}{\numberline {1.6}ARCAM-Net}{3}{section.1.6}
 \contentsline {chapter}{\numberline {2}Literature Review}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}SDR Fundamentals}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}GNU Radio and MATLAB}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}GNU Radio}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}MATLAB}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}MATLAB}{7}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}RFNoc}{7}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Network Concepts}{7}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Mesh Network}{7}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Mesh Network Testbeds}{7}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}GNU Radio Mesh Networks}{7}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.2}Mesh Network Testbeds}{8}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}GNU Radio Mesh Networks}{8}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}What is a network protocol}{8}{subsection.2.3.4}
 \contentsline {subsubsection}{OSI Model}{8}{section*.8}
 \contentsline {subsection}{\numberline {2.3.5}Common Mesh Network Protocols}{9}{subsection.2.3.5}
-\contentsline {subsubsection}{Batman-adv}{9}{section*.9}
+\contentsline {subsubsection}{Batman-adv}{10}{section*.9}
 \contentsline {subsubsection}{OLSR}{10}{section*.10}
-\contentsline {section}{\numberline {2.4}Software Defined Radio Testbeds}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}SDR and Cognitive Radios}{10}{section.2.5}
-\contentsline {section}{\numberline {2.6}State of the Practice}{11}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}RTL-SDR}{11}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}USRP}{12}{subsection.2.6.2}
-\contentsline {section}{\numberline {2.7}State of the Art}{12}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Biologically Inspired Protocols}{12}{subsection.2.7.1}
-\contentsline {subsubsection}{Swarm Protocols}{12}{section*.11}
-\contentsline {subsubsection}{Hive Protocols}{13}{section*.12}
-\contentsline {subsubsection}{Ant Colony Optimization Protocols}{13}{section*.13}
-\contentsline {section}{\numberline {2.8}Decision Making and Biologically Inspired Decision Making}{13}{section.2.8}
-\contentsline {subsection}{\numberline {2.8.1}Cognitive Radio Networks}{14}{subsection.2.8.1}
-\contentsline {subsection}{\numberline {2.8.2}Cognitive Networks}{15}{subsection.2.8.2}
-\contentsline {subsection}{\numberline {2.8.3}Cognitive Radio Ad-Hoc Networks}{15}{subsection.2.8.3}
-\contentsline {section}{\numberline {2.9}Software Defined Networks}{16}{section.2.9}
-\contentsline {section}{\numberline {2.10}SDRN vs SDN}{16}{section.2.10}
-\contentsline {section}{\numberline {2.11}802.11s}{16}{section.2.11}
-\contentsline {section}{\numberline {2.12}Industry State of the Practice}{16}{section.2.12}
-\contentsline {chapter}{\numberline {3}Methodology}{17}{chapter.3}
-\contentsline {section}{\numberline {3.1}SDR}{17}{section.3.1}
-\contentsline {section}{\numberline {3.2}GNU Radio Flowgraph}{17}{section.3.2}
-\contentsline {section}{\numberline {3.3}Batman-adv}{19}{section.3.3}
-\contentsline {section}{\numberline {3.4}Flask Web Server and Socket.IO}{19}{section.3.4}
-\contentsline {section}{\numberline {3.5}A.L.F.R.E.D.}{20}{section.3.5}
-\contentsline {section}{\numberline {3.6}Fabrication and Build Process}{21}{section.3.6}
-\contentsline {section}{\numberline {3.7}Test Procedures}{21}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}Network Benchmarks}{22}{subsection.3.7.1}
-\contentsline {subsection}{\numberline {3.7.2}Route Changes}{22}{subsection.3.7.2}
-\contentsline {subsection}{\numberline {3.7.3}Frequency Distribution}{22}{subsection.3.7.3}
-\contentsline {chapter}{\numberline {4}Findings}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}Results}{23}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Network Benchmarks}{23}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Route Changes}{23}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Frequency Changes}{23}{subsection.4.1.3}
-\contentsline {section}{\numberline {4.2}Applications}{26}{section.4.2}
-\contentsline {section}{\numberline {4.3}Data Analysis}{26}{section.4.3}
-\contentsline {section}{\numberline {4.4}Assumptions and Discussion of Error}{27}{section.4.4}
-\contentsline {chapter}{\numberline {5}Discussion}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}Constraints and Limitations}{29}{section.5.1}
-\contentsline {section}{\numberline {5.2}SDR Network}{29}{section.5.2}
-\contentsline {section}{\numberline {5.3}Cognitive Networks}{30}{section.5.3}
-\contentsline {section}{\numberline {5.4}Applications}{30}{section.5.4}
-\contentsline {chapter}{\numberline {6}Conclusion}{31}{chapter.6}
-\contentsline {section}{\numberline {6.1}Summary}{31}{section.6.1}
-\contentsline {section}{\numberline {6.2}Conclusion}{31}{section.6.2}
-\contentsline {section}{\numberline {6.3}Recommendation}{31}{section.6.3}
-\contentsline {section}{\numberline {6.4}Future Work}{32}{section.6.4}
-\contentsline {section}{\numberline {6.5}Applications}{32}{section.6.5}
+\contentsline {subsubsection}{802.11s}{10}{section*.11}
+\contentsline {section}{\numberline {2.4}Software Defined Radio Testbeds}{11}{section.2.4}
+\contentsline {section}{\numberline {2.5}State of the Practice}{11}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}RTL-SDR}{11}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}USRP}{12}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Industry State of the Practice}{13}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Software Defined Networks}{13}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}SDRN vs SDN}{13}{subsection.2.6.2}
+\contentsline {section}{\numberline {2.7}State of the Art}{14}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Cognitive Radio Networks}{14}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Cognitive Radio Ad-Hoc Networks}{15}{subsection.2.7.2}
+\contentsline {subsection}{\numberline {2.7.3}Cognitive Networks}{15}{subsection.2.7.3}
+\contentsline {subsection}{\numberline {2.7.4}Biologically Inspired Protocols}{16}{subsection.2.7.4}
+\contentsline {subsubsection}{Swarm Protocols}{16}{section*.12}
+\contentsline {subsubsection}{Hive Protocols}{16}{section*.13}
+\contentsline {subsubsection}{Ant Colony Optimization Protocols}{16}{section*.14}
+\contentsline {subsection}{\numberline {2.7.5}Decision Making and Biologically Inspired Decision Making}{17}{subsection.2.7.5}
+\contentsline {chapter}{\numberline {3}Methodology}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}SDR}{19}{section.3.1}
+\contentsline {section}{\numberline {3.2}GNU Radio Flowgraph}{19}{section.3.2}
+\contentsline {section}{\numberline {3.3}Batman-adv}{21}{section.3.3}
+\contentsline {section}{\numberline {3.4}Flask Web Server and Socket.IO}{21}{section.3.4}
+\contentsline {section}{\numberline {3.5}A.L.F.R.E.D.}{22}{section.3.5}
+\contentsline {section}{\numberline {3.6}Fabrication and Build Process}{23}{section.3.6}
+\contentsline {section}{\numberline {3.7}Test Procedures}{23}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Network Benchmarks}{24}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Route Changes}{24}{subsection.3.7.2}
+\contentsline {subsection}{\numberline {3.7.3}Frequency Distribution}{24}{subsection.3.7.3}
+\contentsline {chapter}{\numberline {4}Findings}{25}{chapter.4}
+\contentsline {section}{\numberline {4.1}Results}{25}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Network Benchmarks}{25}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Route Changes}{25}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Frequency Changes}{28}{subsection.4.1.3}
+\contentsline {section}{\numberline {4.2}Applications}{28}{section.4.2}
+\contentsline {section}{\numberline {4.3}Data Analysis}{29}{section.4.3}
+\contentsline {section}{\numberline {4.4}Assumptions and Discussion of Error}{29}{section.4.4}
+\contentsline {chapter}{\numberline {5}Discussion}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Constraints and Limitations}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}SDR Network}{31}{section.5.2}
+\contentsline {section}{\numberline {5.3}Cognitive Networks}{32}{section.5.3}
+\contentsline {section}{\numberline {5.4}Applications}{32}{section.5.4}
+\contentsline {chapter}{\numberline {6}Conclusion}{33}{chapter.6}
+\contentsline {section}{\numberline {6.1}Summary}{33}{section.6.1}
+\contentsline {section}{\numberline {6.2}Conclusion}{33}{section.6.2}
+\contentsline {section}{\numberline {6.3}Recommendation}{33}{section.6.3}
+\contentsline {section}{\numberline {6.4}Future Work}{34}{section.6.4}
+\contentsline {section}{\numberline {6.5}Applications}{34}{section.6.5}
