@@ -32,11 +32,11 @@ For ARCAM-Net, we utilized a combination of Ettus Research USRP B200 and USRP B2
 
 \section{GNU Radio Flowgraph}
 
-GNU Radio utilizes programs called ``Flowgraphs" to allow for graphical programming of SDR software. To implement the physical and link layers on the SDR, we utilize the Out of Tree (OOT) module gr-mac created by John Malsbury \cite{0015}. This flowgraph is an implementation of a Gaussian Minimum-Shift Keying (GMSK) or Orthogonal Freqency-Division Multiplexing (OFDM) transceiver with a mac layer protocol called ``simple mac". There are two main blocks in the flowgraph. The first sets up the GMSK or OFDM radio. This hierarchical block is built by running a separate flowgraph which contains the UHD blocks to interface into the USRP as well as the modulation and demodulation blocks for the waveform. One of the more important aspects of the two radio blocks, is that they convert from streaming data to message data. 
+GNU Radio utilizes programs called ``Flowgraphs" to allow for graphical programming of SDR software. To implement the physical and link layers on the SDR, we utilize the Out of Tree (OOT) module gr-mac created by John Malsbury \cite{0015}. This flowgraph is an implementation of a Gaussian Minimum-Shift Keying (GMSK) or Orthogonal Frequency-Division Multiplexing (OFDM) transceiver with a mac layer protocol called ``simple mac". There are two main blocks in the flowgraph. The first sets up the GMSK or OFDM radio. This hierarchical block is built by running a separate flowgraph which contains the UHD blocks to interface into the USRP as well as the modulation and demodulation blocks for the waveform. One of the more important aspects of the two radio blocks, is that they convert from streaming data to message data. 
 
-Most features of GNU Radio work on streaming data where there is constant data transmission. However, packets are not sent continuously, therefore separate logic is needed to convert streams to messages. These messages are passed into and out of the GMSK and OFDM heirarchical blocks, so the remainder of the flowgraph deals with passing messages only \cite{6737601}. 
+Most features of GNU Radio work on streaming data where there is constant data transmission. However, packets are not sent continuously, therefore separate logic is needed to convert streams to messages. These messages are passed into and out of the GMSK and OFDM hierarchical blocks, so the remainder of the flowgraph deals with passing messages only \cite{6737601}. 
 
-We use the GMSK block to convert from streaming data to message data and then connect this block to a tunnel (TUN) or network tap (TAP) interface block. TUN/TAP devices are virtual network kernel devices supported entirely in software. TUNs are used to simulate layer 3 devices and TAPs simulate layer 2 \cite{0017}. Either of these could be selected to suit the users purpose, but as batman-adv is a layer 2 protocol, we will use the TAP protocol.
+We use the GMSK block to convert from streaming data to message data and then connect this block to a tunnel (TUN) or network tap (TAP) interface block. TUN/TAP devices are virtual network kernel devices supported entirely in software. TUNs are used to simulate layer 3 devices and TAPs simulate layer 2 \cite{0017}. Either of these could be selected to suit the user's purpose, but as batman-adv is a layer 2 protocol, we will use the TAP protocol.
 
 \section{Batman-adv}
 
@@ -72,7 +72,7 @@ The network was setup and run on a series of Lenovo S30 Computers. All computers
 
 All of the computers were connected together on a 10/100/1000 Ethernet router. This allowed for the control of the entire mesh to be handled by one computer. The popular terminal multiplexer Tmux was used in conjunction with SSH to send commands to all of the nodes in parallel. 
 
-An additional Windows 10 laptop computer was used to control a Tektronix RSA306 wireless spectrum analyzer. This computer had an Intel i7 processor, and 8 GB of RAM. It is important to note that the RSA 306 requires a Windows machine, and therefore cannot be run on the same computer as the ones being used to run ARCAM-Net. This spectrum analyzer was used to confirm the operation of the radios and that frequency changes were occuring \cite{specan1}. 
+An additional Windows 10 laptop computer was used to control a Tektronix RSA306 wireless spectrum analyzer. This computer had an Intel i7 processor, and 8 GB of RAM. It is important to note that the RSA 306 requires a Windows machine, and therefore cannot be run on the same computer as the ones being used to run ARCAM-Net. This spectrum analyzer was used to confirm the operation of the radios and that frequency changes were occurring \cite{specan1}. 
 
 %----------------------------------------------------------------------------------------
 
@@ -103,7 +103,7 @@ The first test was used to investigate the overhead each node adds to the networ
 
 \subsection{Route Changes}
 
-In a typical mesh environment, there will usually be more than one route from a source to a destination \cite{Akyildiz2009810}. In a traditional network, batman-adv switches routes based on the quality of each available link. The test was designed to determine if the same features would work in an SDRN. We initially setup four SDRs: a source, a destination, and two nodes to connect them. The first node is given a significantly larger gain in order to confirm that batman-adv will recognize that this is a more ideal path to the destination. Then, once the route is placed into the routing table, we lower the gain to 0 in order to force a transition to the other node. We then confirm that batman-adv is still able to find the new route. This setup is shown in Figure \ref{fig:NodeDrop}.
+In a typical mesh environment, there will usually be more than one route from a source to a destination \cite{Akyildiz2009810}. In a traditional network, batman-adv switches routes based on the quality of each available link. The test was designed to determine if the same features would work in an SDRN. We initially set up four SDRs: a source, a destination, and two nodes to connect them. The first node is given a significantly larger gain in order to confirm that batman-adv will recognize that this is a more ideal path to the destination. Then, once the route is placed into the routing table, we lower the gain to 0 in order to force a transition to the other node. We then confirm that batman-adv is still able to find the new route. This setup is shown in Figure \ref{fig:NodeDrop}.
 
 
 
