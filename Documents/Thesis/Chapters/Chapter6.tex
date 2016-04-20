@@ -23,16 +23,27 @@ ARCAM-Net allows for researchers to create a fully functioning SDRN in a short p
 
 \section{Conclusion}
 
-This work represents a first step in a longer term project to create a fully functioning SDRN. The work demonstrates the potential for using GNU Radio in conjunction with batman-adv and other Open-Mesh solutions. As the work continues forward, we hope the testbed can serve as a collaboration point between GNU Radio and Open-Mesh.
+ARCAM-Net is a Software Defined Radio Network (SDRN) testbed and platform. ARCAM-Net was born out of a need for a platform to develop SDRN applications. At the start of the project, no readily available system could be identified that would allow for user space applications to be run on an SDRN. Thus work began on the creation of ARCAM-Net. ARCAM-Net creates a fully functioning data network capable of acting as a multi-hop mesh network.
 
-Both represent next generation, open source, wireless solutions and could likely benefit from collaboration between the two projects. This work can be used as an excellent starting point for anyone looking to get an SDRN up and running quickly to begin prototyping other sections of the tool chain. We plan on releasing the code as well as a handful of tools to help other researchers get started. This work can serve as the first step in creating an equivalent Cognitive Radio Network platform and testbed. 
+Both Batman-adv and GNU Radio represent next generation, open source, wireless solutions and each organization could likely benefit from collaboration between the two projects. This work can be used as an excellent starting point for anyone looking to get an SDRN up and running quickly to begin prototyping other sections of the tool chain. We plan on releasing the code as well as a handful of tools to help other researchers get started. This work can serve as the first step in creating an equivalent Cognitive Radio Network platform and testbed. 
+
+This work represents a first step in a longer term project to create a fully functioning SDRN. The work demonstrates the potential for using GNU Radio in conjunction with batman-adv and other Open-Mesh solutions. As the work continues forward, we intend for the testbed to serve as a collaboration point between GNU Radio and Open-Mesh. 
+
+We were able to show that packets can successfully traverse the network. Packet loss increased linearly with each additional node the packet traversed. Initially, packet loss was near 95\%, but was brought down with changes to the flowgraphs. We were also able to prove batman-adv's multihop and rerouting features worked properly in the Software Defined Radio Network. The attempts to use A.L.F.R.E.D. as a means of sharing frequency data proved to have issues. The information could be passed from node to node, but would not reliably reach all nodes on the network. 
+
+Several applications were run over the network. Secure Shell was used to run commands remotely on another computer. Secure Copy was also used to transfer files from one machine to another. Both of these commands would work with more than one hop in between the nodes. A chat application was developed in Python using UDP packets. Nodes could broadcast text messages to the other machines on the network using the broadcast address. Finally a short, distributed program was developed in Erlang. This program was able to send commands to a process on a different machine, over the Software Defined Radio Network. 
+
+Several tools were also generated for use with the network. The Flask Server automatically setup the GNU Radio Flowgraph and then configured the batman-adv network on that node. Additonally, a script was generated to allow for all nodes on the network to be setup with just a single command. Finally, an install script was generated that could create either a full install or a virtual machine. This would install all dependencies and then configure GNU Radio and Batman-adv. 
+
+
 
 %----------------------------------------------------------------------------------------
 
 \section{Recommendation}
 
-The focus of this document is on ensuring that the platform is well described. ARCAM-Net should be built upon, not rebuilt again and again. The main chapters serve as a description of the project while the appendecies can be treated as a manual of operation. It is important to continue to document and project and ensure easy access to the documentation to outside parties. As with any platform, the value is in numerous groups working together on a standard set of tools. If the documentation lags behind the project, then it becomes too difficult for new users to join. 
+ARCAM-Net should reused and extended upon by future research efforts. It is important to continue to document and project and ensure easy access to the documentation to outside parties. As with any platform, the value is in numerous groups working together on a standard set of tools. 
 
+Moving forward, the GMSK blocks can be replaced with different protocols. Having the ability to switch between different protocols, such as OFDM, would further show the flexibility of ARCAM-Net. The same is true of batman-adv. Integrating  different protocols or including an SDN tool such as OpenFlow would make ARCAM-Net more extensible and allow control to continue to the upper layers. Finally, allowing the network to be remotely accessible would allow for other researchers to utilize the platform even if they lack equipment of their own. 
 %----------------------------------------------------------------------------------------
 
 \section{Future Work}
@@ -41,8 +52,5 @@ There are many areas of this project that can serve as starting points for new p
 
 As stated previously, ARCAM-Net is a SDRN, not a CRN or CRAHN. In order to move from an SDRN to a cognitive radio environment, it will be necessary to begin to implement artifical intelligence and decision making in some form. The decision making could be split Layer 1 and Layer 3 decision making. On Layer 1, DSP would be employed to look for PU's, noise and distortion on incoming packets, overcrowded networks, and other issues. Once these problems are deteced the system will then switch to a new frequency. On Layer 3 the nodes will look for excessive dropped packets, poor batman-adv link quality, orphaned nodes, and other factors. The system will then adjust gains and frequencies until this layer has been optimized. 
 
-While running experiments, batctl was used to monitor the quality of each node. Though batctl works fine for a few nodes, as the network scales it would make finding issues and bottle necks more difficult. Another great way to improve upon the current project would be to implement a more interactive environment for monitoring the network. A central ``control'' server could be created to monitor all of the nodes on the network and display information in a 2D or 3D environment. This would be much easier to use than batctl, as batctl produces different data on each node and therefore must be monitored on many computers simultaneously. 
-
-\section{Applications}
-
+While running experiments, batctl was used to monitor the quality of each node. Though batctl works fine for a few nodes, as the network scales it would make finding issues and bottle necks more difficult. Another great way to improve upon the current project would be to implement a more interactive environment for monitoring the network. A central ``control'' server could be created to monitor all of the nodes on the network and display information in a 2D or 3D environment. This would make network monitoring more organized, as batctl produces different data on each node and therefore must be monitored on many computers simultaneously. 
 %----------------------------------------------------------------------------------------

@@ -90,7 +90,7 @@ Several application level programs were run over the network. Each application w
 
 \section{Data Analysis}
 
-In an ideal situation, we would see minimal packet loss despite introducing batman-adv and multihopping into the network. Additional tests will need to be run to discover what causes the 1 hop with batman-adv to drop many more packets than 1 hop without batman-adv. It is possible the packets are dropped as routing table information is shared, but this has not been confirmed yet. 
+In an ideal situation, the test would show minimal packet loss despite introducing batman-adv and multihopping into the network. Additional tests will need to be run to discover what causes the 1 hop with batman-adv to drop many more packets than 1 hop without batman-adv. It is possible the packets are dropped as routing table information is shared, but this has not been confirmed yet. 
 
 It is important to notice that packet loss and round trip time of packets increases lineraly with each hop. This is good, as it indicates each hop adds a finite amount of delay and packet loss. It would be unlikely that the delay would be constant when adding more hops, so a linear time increase is good. 
 
