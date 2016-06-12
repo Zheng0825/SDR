@@ -80,3 +80,4 @@
 \contentsline {subsection}{\numberline {A.3.1}Flow Graph to Mesh Network}{51}{subsection.A.3.1}
 \contentsline {subsection}{\numberline {A.3.2}Raising the Bat Signal}{51}{subsection.A.3.2}
 \contentsline {subsection}{\numberline {A.3.3}TMux Script}{52}{subsection.A.3.3}
+\contentsline {chapter}{\numberline {B}About the Author}{55}{appendix.B}
