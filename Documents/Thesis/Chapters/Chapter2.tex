@@ -19,9 +19,9 @@ The following section provides an overview of the current work being done in thi
 
 A software defined radio, or SDR, is a radio system which performs signal processing in software instead of relying on dedicated hardware components to process signals. In a traditional hardware radio, each component is designed and built to handle a single task. If changes are needed, the hardware components must be replaced. Software defined radios are flexible and can be changed by altering code instead of components. A single SDR can be configured to act as numerous hardware radios. \cite{7043470} \cite{0018} 
 
-An SDR itself is the hardware component which then offloads the data to a processing unit such as an FPGA, microprocessor, or general purpose computer \cite{7043470} \cite{0018}. There are many different SDRs available on the market but they share many common components. Every SDR works in slightly different ways, but they share many common components. 
+An SDR itself is the hardware component which then offloads the data to a processing unit such as an FPGA, microprocessor, or general purpose computer \cite{7043470} \cite{0018}. There are many different SDRs available on the market but they share many common components. 
 
-An ``Ideal'' SDR only has a few stages. The first is the RF amplification stage. These stages increase the gain of the signal as it enters and leaves the radio. A Low Noise Amplifier (LNA) is used on the receiver and a Power Amplifier (PA) is used on the output. The PA dramatically extends the range of the SDR and the LNA increases the signal to noise ratio of the receiver \cite{761033}. 
+An ``Ideal'' SDR only has a few stages. The first is the RF amplification stage. These stages increase the gain of the signal as it enters and leaves the radio. A Low Noise Amplifier (LNA) is used on the receiver and a Power Amplifier (PA) is used on the output. The PA dramatically extends the range the radio can transmit at. The LNA amplifies incoming signals to effectively increase sensitivity of receiver on the radio.  \cite{6526408}. 
 
 In the ``digital conversion'' stage, an analog to digital (ADC) and digital to analog (DAC) converter are used to change from the analog to digital domain \cite{761033}\cite{0020}. The ADC receives the analog signal and converts it to a digital code. The DAC takes digital material and converts it to an analog signal to be transmitted. 
 
@@ -71,7 +71,7 @@ Instead of using traditional and expensive network infrastructure, mesh networks
 
 \subsection{Mesh Network Testbeds}
 
-The CONFINE platform uses batman-adv as the routing protocol for their mesh network testbed. However, their testbed does not utilize GNU Radio or SDRs. \cite{0001} batman-adv was also a key component of WiBed, a project to create a Commercial off-the-shelf (COTS) mesh test bed using low cost wireless routers \cite{6686492} \cite{6962154}. Though they are not specific to SDR platforms, these still show the usefulness of batman-adv as a component of a testbed. 
+The CONFINE platform \cite{0001} uses batman-adv as the routing protocol for their mesh network testbed. However, their testbed does not utilize GNU Radio or SDRs\cite{0001}. Batman-adv was also a key component of WiBed, a project to create a Commercial off-the-shelf (COTS) mesh test bed using low cost wireless routers \cite{6686492} \cite{6962154}. Though they are not specific to SDR platforms, these still show the usefulness of batman-adv as a component of a testbed. 
 
 \subsection{GNU Radio Mesh Networks}
 

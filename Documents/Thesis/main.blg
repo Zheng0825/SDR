@@ -23,45 +23,45 @@ Warning--empty author in 6178212
 Warning--empty year in 0002
 
 Done.
-You've used 99 entries,
+You've used 101 entries,
             4039 wiz_defined-function locations,
-            1281 strings with 24246 characters,
-and the built_in function-call counts, 66335 in all, are:
-= -- 4978
-> -- 1539
-< -- 450
-+ -- 853
-- -- 277
-* -- 2990
-:= -- 9730
-add.period$ -- 185
-call.type$ -- 99
-change.case$ -- 99
-chr.to.int$ -- 1074
-cite$ -- 101
-duplicate$ -- 4909
-empty$ -- 6036
-format.name$ -- 336
-if$ -- 15498
+            1289 strings with 24433 characters,
+and the built_in function-call counts, 67463 in all, are:
+= -- 5059
+> -- 1559
+< -- 458
++ -- 865
+- -- 280
+* -- 3034
+:= -- 9896
+add.period$ -- 188
+call.type$ -- 101
+change.case$ -- 100
+chr.to.int$ -- 1095
+cite$ -- 103
+duplicate$ -- 4994
+empty$ -- 6145
+format.name$ -- 340
+if$ -- 15760
 int.to.chr$ -- 0
-int.to.str$ -- 99
-missing$ -- 983
-newline$ -- 390
-num.names$ -- 85
-pop$ -- 2643
+int.to.str$ -- 101
+missing$ -- 1000
+newline$ -- 398
+num.names$ -- 87
+pop$ -- 2695
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 5107
+skip$ -- 5193
 stack$ -- 0
-substring$ -- 2560
-swap$ -- 3776
-text.length$ -- 92
+substring$ -- 2610
+swap$ -- 3836
+text.length$ -- 93
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 99
+type$ -- 101
 warning$ -- 2
-while$ -- 277
-width$ -- 101
-write$ -- 959
+while$ -- 282
+width$ -- 104
+write$ -- 976
 (There were 2 warnings)

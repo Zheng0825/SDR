@@ -32,7 +32,7 @@ For ARCAM-Net, we utilized a combination of Ettus Research USRP B200 and USRP B2
 
 \section{GNU Radio Flowgraph}
 
-GNU Radio utilizes programs called ``Flowgraphs" to allow for graphical programming of SDR software. To implement the physical and link layers on the SDR, we utilize the Out of Tree (OOT) module gr-mac created by John Malsbury \cite{0015}. This flowgraph is an implementation of a Gaussian Minimum-Shift Keying (GMSK) or Orthogonal Frequency-Division Multiplexing (OFDM) transceiver with a mac layer protocol called ``simple mac". There are two main blocks in the flowgraph. The first sets up the GMSK or OFDM radio. This hierarchical block is built by running a separate flowgraph which contains the UHD blocks to interface into the USRP as well as the modulation and demodulation blocks for the waveform. One of the more important aspects of the two radio blocks, is that they convert from streaming data to message data. 
+GNU Radio utilizes programs called ``Flowgraphs" to allow for graphical programming of SDR software. To implement the physical and link layers on the SDR, we utilize the Out of Tree (OOT) module gr-mac created by John Malsbury \cite{0015}. This flowgraph is an implementation of a Gaussian Minimum-Shift Keying (GMSK) and an Orthogonal Frequency-Division Multiplexing (OFDM) transceiver with a mac layer protocol called ``simple mac". There are two main blocks in the flowgraph. The first sets up the GMSK or OFDM radio. This hierarchical block is built by running a separate flowgraph which contains the UHD blocks to interface into the USRP as well as the modulation and demodulation blocks for the waveform. One of the more important aspects of the two radio blocks, is that they convert from streaming data to message data. 
 
 Most features of GNU Radio work on streaming data where there is constant data transmission. However, packets are not sent continuously, therefore separate logic is needed to convert streams to messages. These messages are passed into and out of the GMSK and OFDM hierarchical blocks, so the remainder of the flowgraph deals with passing messages only \cite{6737601}. 
 
@@ -68,7 +68,7 @@ We also use Flask to host a single webpage that displays various settings about 
 
 \section{Fabrication and Build Process}
 
-The network was setup and run on a series of Lenovo S30 Computers. All computers features an Intel Xeon E5 processor and 32 GB of RAM. Each computer was running Ubuntu 14.04 LTS. The install process for GNU Radio, Batman-adv, and the rest of the technology stack is detailed in the appendix. Each computer was connected to one Ettus B200/B210 SDR using USB 3.0. 
+The network was setup and run on a series of five Lenovo S30 Computers. All computers feature an Intel Xeon E5 processor and 32 GB of RAM. Each computer was running Ubuntu 14.04 LTS. The install process for GNU Radio, Batman-adv, and the rest of the technology stack is detailed in the appendix. Each computer was connected to one Ettus B200/B210 SDR using USB 3.0. 
 
 All of the computers were connected together on a 10/100/1000 Ethernet router. This allowed for the control of the entire mesh to be handled by one computer. The popular terminal multiplexer Tmux was used in conjunction with SSH to send commands to all of the nodes in parallel. 
 
@@ -95,8 +95,9 @@ An additional Windows 10 laptop computer was used to control a Tektronix RSA306 
 In order to characterize the platform we ran three sets of tests presented below. The first test characterizes data hopping from one node to the next. The second test demonstrates batman-adv's ability to switch routes based on the quality of each node. The final tests were used to examine A.L.F.R.E.D.'s ability to be used for exchanging frequency information from node to node. 
 
 \subsection{Network Benchmarks}
+\label{network_benchmarks}
 
-The first test was used to investigate the overhead each node adds to the network. To examine how adding hops affects the network, the USRPS were arranged so that each node was only able to directly connect to one or two neighboring nodes. This forced the nodes to need to use the multihop features of batman-adv in order to connect to the rest of the network. We used a total of 5 nodes as shown in Figure \ref{fig:HopMess}. We staggered the transmit and receive frequencies of the nodes to ensure that nodes could only talk to their immediate neighbors, forcing the network into the previously indicated configuration. The staggering of frequencies was needed to ensure each node would be unable to communicate to nodes other than its neighbors. 
+The first test was used to investigate the overhead each node adds to the network. To examine how adding hops affects the network, the USRPs were arranged so that each node was only able to directly connect to one or two neighboring nodes. This forced the nodes to need to use the multihop features of batman-adv in order to connect to the rest of the network. We used a total of 5 nodes as shown in Figure \ref{fig:HopMess}. We staggered the transmit and receive frequencies of the nodes to ensure that nodes could only talk to their immediate neighbors, forcing the network into the previously indicated configuration. The staggering of frequencies was needed to ensure each node would be unable to communicate to nodes other than its neighbors. 
 
  We then tested the setup at three different sets of frequencies, all within the Industrial, Scientific, and Medical (ISM) Band. We used different sets of ping tests in order to determine the number of dropped packets and the time it took to send the packets. We ran a standard ping test, one with reduced packet sizes, and one with increased time to live (TTL) settings. For a control group, two USRPs were connected together without batman-adv running. 
 
@@ -108,6 +109,7 @@ In a typical mesh environment, there will usually be more than one route from a 
 
 
 \subsection{Frequency Distribution}
+\label{frequency_distribution}
 
 In the final test, we tested to evaluate if A.L.F.R.E.D. would properly relay frequency changes over the mesh to other nodes. The user would increase or decrease the frequency using the web interface in order to simulate a cognitive radio making a decision to change to a new frequency. If A.L.F.R.E.D. was able to exchange the information properly, then the routing table would still show all connected nodes. We also used a Tektronix RSA306 Spectrum Analyzer in order to conclude that the transmission was occurring on the new frequency. If A.L.F.R.E.D. was not able to relay the information to all nodes, then some would change to the new frequency while others remain. This would be reflected in the output from the spectrum analyzer. 
 

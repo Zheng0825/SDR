@@ -4,7 +4,7 @@
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-The Advanced Radio Communication Ad-Hoc Mesh Network, or ARCAM-Net, is a platform formed through the union of several other projects and concepts. The main concepts embodied within ARCAM-Net are mesh networks and software defined radio networks. The current iteration of ARCAM-Net is developed using GNU Radio and Batman-adv. As work progresses on the platform, the software defined radio network can be transitioned to a cognitive radio network by leveraging the capabilities found within GNU Radio. 
+The Advanced Radio Communication Ad-Hoc Mesh Network, or ARCAM-Net, is a platform formed through the union of several other projects and concepts. The main concepts embodied within ARCAM-Net are mesh networks and software defined radio networks. The current iteration of ARCAM-Net is developed using Batman-adv and GNU Radio. As work progresses on the platform, the software defined radio network can be transitioned to a cognitive radio network by leveraging the capabilities found within GNU Radio. 
 
 %----------------------------------------------------------------------------------------
 
@@ -57,10 +57,10 @@ Beyond ensuring good throughput in a network, CRNs also solve a major issue faci
 
 \section{ARCAM-Net}
 
-In order to begin work on SDRNs and CRAHNs, a testbed and research platform needed to be established. This thesis serves to describe the Advanced Radio Communication Ad-hoc Mesh Network, or ARCAM-Net, test bed and platform. The goal of this project is to create a open source, low cost, research platform that can serve as the basis for future work at Florida Polytechnic University and other organizations due to the open source nature of the project. By combining well established open source tools, ARCAM-Net could become a great tool for other research groups to begin working with SDRs. All software used by ARCAM-Net is freely available. The only costs come from the hardware. 
+In order to begin work on SDRNs and CRAHNs, a testbed and research platform needed to be established. This thesis serves to describe the Advanced Radio Communication Ad-hoc Mesh Network, or ARCAM-Net, test bed and platform. The goal of this project is to create an open source, low cost, research platform that can serve as the basis for future work at Florida Polytechnic University and other organizations due to the open source nature of the project. By combining well established open source tools, ARCAM-Net could become a great tool for other research groups to begin working with SDRs. All software used by ARCAM-Net is freely available. The only costs come from the hardware. 
 
-ARCAM-Net's architecture will be thoroughly discussed in this document, but the two major components are GNU Radio and Batman-adv. GNU Radio is an open source toolchain for creating digital signal processing tools to be used with SDRs. Batman-adv is a layer 2 mesh networking protocol. Both projects are community driven, but exist as separate entities. I hope that with ARCAM-Net the two projects can begin collaborating to help create next generation wireless network resources. 
+ARCAM-Net's architecture will be thoroughly discussed in this document, but the two major components are GNU Radio and Batman-adv. GNU Radio is an open source toolchain for creating digital signal processing tools to be used with SDRs. Batman-adv is a layer 2 mesh networking protocol. Both projects are community driven, but exist as separate entities. I hope that with ARCAM-Net the two projects can begin collaborating to help create next generation wireless network resources. Specifically, the creation of a Batman-adv protocol block within GNU Radio would allow for easier integration versus the current setup where both programs need to be configured, monitored, and maintained separately. 
 
-ARCAM-Net is designed to be a platform. Therefore all of the code will be released on github. I encourage interested users to fork the repository and begin experimenting on their own. 
+ARCAM-Net is designed to be a platform. Therefore all of the code will be released on github \cite{MYGITHUB}. I encourage interested users to fork the repository and begin experimenting on their own. 
 
 %----------------------------------------------------------------------------------------

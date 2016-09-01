@@ -26,7 +26,7 @@
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
 english, % ngerman for German
-singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+doublespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
 %draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
 %nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
 %liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
@@ -38,6 +38,7 @@ headsepline, % Uncomment to get a line under the header
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage[T1]{fontenc} % Output font encoding for international characters
+
 
 \usepackage{palatino} % Use the Palatino font by default
 
@@ -64,10 +65,10 @@ headsepline, % Uncomment to get a line under the header
 \geometry{
 	paper=letterpaper, % Change to letterpaper for US letter
 	inner=2.5cm, % Inner margin
-	outer=3.8cm, % Outer margin
+	outer=2.5cm, % Outer margin
 	bindingoffset=2cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
 	%showframe,% show how the type block is set on the page
 }
 
@@ -195,13 +196,10 @@ We \textbf{accept and approve} the thesis of the student named above.
 
 \begin{abstract}
 \addchaptertocentry{\abstractname} % Add the abstract to the table of contents
-
+\clearpage
 ARCAM-Net is a Software Defined Radio Network (SDRN) testbed and platform. ARCAM-Net was born out of a need for a platform to develop SDRN applications. At the start of the project, no readily available system could be identified that would allow for user space applications to be run on an SDRN. Thus work began on the creation of ARCAM-Net. ARCAM-Net creates a fully functioning data network capable of acting as a multi-hop mesh network. Nearly every component of ARCAM-Net, except the Software Defined Radios (SDRs) themselves, is released using an open source license. The goal of ARCAM-Net is to establish a low cost platform that can be quickly implemented by anyone interested in experimenting with SDRNs. The system provides a simple user interface for interacting with the network. User space applications can be run on the network as if it was a traditional network.This document presents the network itself and also acts as a manual for working with ARCAM's first implementation. 
 
-This work represents a first step in a longer term project to create a fully functioning Cognitive Radio Ad-Hoc Network (CRAHN). The work demonstrates the potential for using GNU Radio in conjunction with batman-adv and other Open-Mesh solutions. As the work continues forward, we hope the testbed can serve as a collaboration point between GNU Radio and Open-Mesh.
-
-Both represent next generation, open source, wireless solutions and could likely benefit from collaboration between the two projects. This work can be used as an excellent starting point for anyone looking to get an SDRN up and running quickly to begin prototyping other sections of the tool chain. We plan on releasing the code as well as a handful of tools to help other researchers get started. This work can serve as the first step in creating an equivalent Cognitive Radio Network platform and testbed. 
-
+This work represents a first step in a longer term project to create a fully functioning Cognitive Radio Ad-Hoc Network (CRAHN). The work demonstrates the potential for using GNU Radio in conjunction with batman-adv and other Open-Mesh solutions. As the work continues forward, we hope the testbed can serve as a collaboration point between GNU Radio and Open-Mesh. Both represent next generation, open source, wireless solutions and could likely benefit from collaboration with each other. 
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
@@ -212,7 +210,7 @@ Both represent next generation, open source, wireless solutions and could likely
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
-
+\cleardoublepage
 \begin{acknowledgements}
 \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
 
